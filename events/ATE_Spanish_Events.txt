@@ -1,0 +1,117 @@
+﻿###########################
+# Spain Events
+###########################
+
+add_namespace = ate_spain
+
+#Конец ГВ Республика
+country_event = {
+	id = ate_spain.1
+	title = ate_spain.1.t
+	desc = ate_spain.1.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_spain.1.a
+		add_political_power = 100
+		add_timed_idea = {
+			idea = SPA_recovering_from_civil_war
+			days = 730
+		}
+		if = {
+			limit = { owns_state = 41 }
+			set_capital = 41
+		}
+		clr_global_flag = ate_spanish_civil_war
+		set_global_flag = scw_over
+		delete_unit_template_and_units = {
+			division_template = "Guarnición Republicana"
+		}
+	}
+}
+
+#Конец ГВ Коммуна
+country_event = {
+	id = ate_spain.2
+	title = ate_spain.2.t
+	desc = ate_spain.2.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_spain.2.a
+		add_political_power = 100
+		add_timed_idea = {
+			idea = SPA_recovering_from_civil_war
+			days = 730
+		}
+		if = {
+			limit = { owns_state = 41 }
+			set_capital = 41
+		}
+		clr_global_flag = ate_spanish_civil_war
+		set_global_flag = scw_over
+		delete_unit_template_and_units = {
+			division_template = "Brigada Internacionales"
+		}
+	}
+}
+
+#Конец ГВ Фалангисты
+country_event = {
+	id = ate_spain.3
+	title = ate_spain.3.t
+	desc = ate_spain.3.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_spain.3.a
+		add_political_power = 100
+		add_timed_idea = {
+			idea = SPA_recovering_from_civil_war
+			days = 730
+		}
+		if = {
+			limit = { owns_state = 41 }
+			set_capital = 41
+		}
+		clr_global_flag = ate_spanish_civil_war
+		set_global_flag = scw_over
+		delete_unit_template_and_units = {
+			division_template = "Guarnición Nacionalista"
+		}
+	}
+}
+
+#Конец ГВ Карлисты
+country_event = {
+	id = ate_spain.4
+	title = ate_spain.4.t
+	desc = ate_spain.4.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_spain.4.a
+		add_political_power = 100
+		add_timed_idea = {
+			idea = SPA_recovering_from_civil_war
+			days = 730
+		}
+		if = {
+			limit = { owns_state = 41 }
+			set_capital = 41
+		}
+		clr_global_flag = ate_spanish_civil_war
+		set_global_flag = scw_over
+		delete_unit_template_and_units = {
+			division_template = "Guarnición Nacionalista"
+		}
+	}
+}

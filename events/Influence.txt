@@ -1,0 +1,61 @@
+﻿###########################
+# Influence Events
+###########################
+
+add_namespace = influence
+
+#Labour advanced
+country_event = {
+	id = influence.1
+	title = influence.1.t
+	desc = influence.1.d
+	picture = GFX_report_event_election_vote
+
+	hidden = yes
+	
+	trigger = {
+		any_country = {
+			OR = { 
+				has_war_with = ROOT
+				is_puppet = yes
+				ic_ratio = {
+					tag = ROOT
+					ratio < 0.25
+				}
+			}
+			ROOT = {
+				is_in_array = {
+					array = PREV.influenced_countries
+					value = ROOT.id
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = influence.1.a
+		every_country = {
+			limit = {
+				OR = { 
+					has_war_with = ROOT
+					is_puppet = yes
+					ic_ratio = {
+						tag = ROOT
+						ratio < 0.25
+					}
+				}
+				ROOT = {
+					is_in_array = {
+						array = PREV.influenced_countries
+						value = ROOT.id
+					}
+				}
+			}
+			PREV = { ate_influence_minus_all_diplomacy = yes }
+		}
+	}
+}

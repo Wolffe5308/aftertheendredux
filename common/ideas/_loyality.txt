@@ -1,0 +1,334 @@
+ideas = {
+
+	hidden_ideas  = {
+				
+		soc_cap_plus_3 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				trade_opinion_factor = 0.15
+				local_building_slots_factor = 0.15
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_cap_plus_2 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				trade_opinion_factor = 0.1
+				local_building_slots_factor = 0.1
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_cap_plus_1 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				trade_opinion_factor = 0.05
+				local_building_slots_factor = 0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_cap_0 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_mid_plus_3 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				compliance_gain = 0.05
+				drift_defence_factor = 0.15
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_mid_plus_2 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				compliance_gain = 0.025
+				drift_defence_factor = 0.1
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_mid_plus_1 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				compliance_gain = 0.01
+				drift_defence_factor = 0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_mid_0 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		soc_lab_plus_3 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.15
+				monthly_population  = 0.2
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_lab_plus_2 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.1
+				monthly_population  = 0.1
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_lab_plus_1 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				monthly_population  = 0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		soc_lab_0 = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		stabilisation = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				resistance_target = -0.05
+				consumer_goods_factor = 0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		invest_in_industry = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_factor = 0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		coop_with_unions = {
+		
+			removal_cost = -1
+			
+			available = {
+				always = yes
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.15
+				consumer_goods_factor = 0.05
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	
+	}
+	
+}

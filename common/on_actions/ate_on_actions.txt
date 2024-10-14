@@ -1,0 +1,633 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			GER = {
+				country_event = { id = ate_germany.28 }
+				add_ideas = economic_major_6
+				AUS = {
+					add_ideas = ger_economic_puppet
+					add_to_variable = { influence@GER = 80 }
+					clamp_variable = {
+						var = influence@GER
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = AUS.id }
+				add_to_variable = { influenced@AUS = 80 }
+				clamp_variable = {
+					var = influenced@AUS
+					min = 0
+					max = 100
+				}
+				LIT = {
+					add_ideas = ger_economic_puppet
+					add_to_variable = { influence@GER = 80 }
+					clamp_variable = {
+						var = influence@GER
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = LIT.id }
+				add_to_variable = { influenced@LIT = 80 }
+				clamp_variable = {
+					var = influenced@LIT
+					min = 0
+					max = 100
+				}
+				CRL = {
+					add_ideas = ger_economic_puppet
+					add_to_variable = { influence@GER = 80 }
+					clamp_variable = {
+						var = influence@GER
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = CRL.id }
+				add_to_variable = { influenced@CRL = 80 }
+				clamp_variable = {
+					var = influenced@CRL
+					min = 0
+					max = 100
+				}
+				BLR = {
+					add_ideas = ger_economic_puppet
+					add_to_variable = { influence@GER = 80 }
+					clamp_variable = {
+						var = influence@GER
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = BLR.id }
+				add_to_variable = { influenced@BLR = 80 }
+				clamp_variable = {
+					var = influenced@BLR
+					min = 0
+					max = 100
+				}
+				UKR = {
+					add_ideas = ger_economic_puppet
+					add_to_variable = { influence@GER = 80 }
+					clamp_variable = {
+						var = influence@GER
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = UKR.id }
+				add_to_variable = { influenced@UKR = 80 }
+				clamp_variable = {
+					var = influenced@UKR
+					min = 0
+					max = 100
+				}
+				POL = {
+					add_ideas = ger_economic_puppet
+					add_to_variable = { influence@GER = 80 }
+					clamp_variable = {
+						var = influence@GER
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = POL.id }
+				add_to_variable = { influenced@POL = 80 }
+				clamp_variable = {
+					var = influenced@POL
+					min = 0
+					max = 100
+				}
+			}
+			FRA = {
+				 country_event = { id = ate_france.31 }
+			}
+			ENG = {
+				 country_event = { id = ate_britain.12 }
+				add_ideas = economic_major_6
+				CAN = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = CAN.id }
+				add_to_variable = { influenced@CAN = 80 }
+				clamp_variable = {
+					var = influenced@CAN
+					min = 0
+					max = 100
+				}
+				SAF = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = SAF.id }
+				add_to_variable = { influenced@SAF = 80 }
+				clamp_variable = {
+					var = influenced@SAF
+					min = 0
+					max = 100
+				}
+				EGY = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = EGY.id }
+				add_to_variable = { influenced@EGY = 80 }
+				clamp_variable = {
+					var = influenced@EGY
+					min = 0
+					max = 100
+				}
+				RAJ = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = RAJ.id }
+				add_to_variable = { influenced@RAJ = 80 }
+				clamp_variable = {
+					var = influenced@RAJ
+					min = 0
+					max = 100
+				}
+				MAL = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = MAL.id }
+				add_to_variable = { influenced@MAL = 80 }
+				clamp_variable = {
+					var = influenced@MAL
+					min = 0
+					max = 100
+				}
+				AST = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = AST.id }
+				add_to_variable = { influenced@AST = 80 }
+				clamp_variable = {
+					var = influenced@AST
+					min = 0
+					max = 100
+				}
+				NZL = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = NZL.id }
+				add_to_variable = { influenced@NZL = 80 }
+				clamp_variable = {
+					var = influenced@NZL
+					min = 0
+					max = 100
+				}
+				NFD = {
+					add_ideas = eng_economic_puppet
+					add_to_variable = { influence@ENG = 80 }
+					clamp_variable = {
+						var = influence@ENG
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = ENG.influenced_countries value = NFD.id }
+				add_to_variable = { influenced@NFD = 80 }
+				clamp_variable = {
+					var = influenced@NFD
+					min = 0
+					max = 100
+				}
+			}
+			HOL = {
+				INS = {
+					add_to_variable = { influence@HOL = 80 }
+					clamp_variable = {
+						var = influence@HOL
+						min = 0
+						max = 100
+					}
+				}
+				add_to_array = { array = HOL.influenced_countries value = INS.id }
+				add_to_variable = { influenced@INS = 80 }
+				clamp_variable = {
+					var = influenced@INS
+					min = 0
+					max = 100
+				}
+			}
+			RSI = {
+				load_oob = "RSI_1936"
+			}
+			SPC = {
+				load_oob = "SPC_Civil_War"
+			}
+			SPA = {
+				load_oob = "SPA_Civil_War"
+			}
+			SPB = {
+				load_oob = "SPB_Civil_War"
+			}
+			PER = {
+				give_resource_rights = { receiver = ENG state = 412 }
+				give_resource_rights = { receiver = ENG state = 413 }
+				give_resource_rights = { receiver = ENG state = 411 }
+			}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = INS_HOL
+					NOT = { is_puppet_of = HOL }
+					NOT = { is_subject_of = HOL }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = CAN_UK
+					NOT = { is_puppet_of = ENG }
+					NOT = { is_subject_of = ENG }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = RAJ_UK
+					NOT = { is_puppet_of = ENG }
+					NOT = { is_subject_of = ENG }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = MAL_UK
+					NOT = { is_puppet_of = ENG }
+					NOT = { is_subject_of = ENG }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = AST_UK
+					NOT = { is_puppet_of = ENG }
+					NOT = { is_subject_of = ENG }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = NZL_UK
+					NOT = { is_puppet_of = ENG }
+					NOT = { is_subject_of = ENG }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = NFD_UK
+					NOT = { is_puppet_of = ENG }
+					NOT = { is_subject_of = ENG }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_cosmetic_tag = AUS_GER
+					NOT = { is_puppet_of = GER }
+					NOT = { is_subject_of = GER }
+				}
+				drop_cosmetic_tag = yes
+			}
+
+			if = {
+				limit = {
+					tag = GER
+					NOT = { has_idea = ger_first_economy }
+					is_faction_leader = yes
+					has_government = socialism
+					has_war = no
+				}
+				GER = { dismantle_faction = yes }
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = wilhelm_II
+						has_idea = GER_wilhelm_iii
+					}
+					OR = {
+						GER = { exists = no }
+						has_war_with = GER
+						GER = {
+							NOT = { has_idea = wilhelm_II }
+							NOT = { has_idea = GER_wilhelm_iii }
+						}
+						has_government = communism
+					}
+				}
+				remove_ideas = wilhelm_II
+				remove_ideas = GER_wilhelm_iii
+			}
+			if = {
+				limit = {
+					has_idea = fra_potsdam_treaty
+					OR = {
+						has_war_with = ENG
+						has_war_with = GER
+					}
+				}
+				remove_ideas = fra_potsdam_treaty
+			}
+			if = {
+				limit = {
+					has_idea = ita_nationale_revolution
+					NOT = { has_war_with = RSI }
+				}
+				remove_ideas = ita_nationale_revolution
+			}
+
+
+		}
+	}
+	
+	on_weekly = {
+		effect = {
+			
+		}
+	}
+
+	on_capitulation = {
+		effect = {
+			if = { #Fascist Italy won
+				limit = {
+					original_tag = ITA
+					NOT = { has_government = fascism }
+					FROM = {
+						tag = RSI
+						has_government = fascism 
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						FROM = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+				}
+				FROM = { country_event = { id = ate_italy.1 } }
+				news_event = { id = country_capitulated.0 days = 0 }
+			}
+
+			if = { #Kingdom Italy won
+				limit = {
+					original_tag = ITA
+					has_government = fascism
+					FROM = {
+						tag = ITA
+						NOT = { has_government = fascism }
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						FROM = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+				}
+				FROM = { country_event = { id = ate_italy.2 } }
+				news_event = { id = country_capitulated.0 days = 0 }
+			}
+
+			if = { #Spain Republik capitulated
+				limit = {
+					original_tag = SPR
+					has_government = democratic
+					FROM = {
+						original_tag = SPR
+						NOT = { has_government = democratic }
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						FROM = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					every_state = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+				news_event = { id = country_capitulated.0 days = 0 }
+				if = { #End
+					limit = { 
+						has_civil_war = no
+						FROM = { has_government = communism }
+					}
+					FROM = { country_event = { id = ate_spain.2 } }
+					else = {
+						limit = { 
+							has_civil_war = no
+							FROM = { has_government = fascism }
+						}
+						FROM = { country_event = { id = ate_spain.3 } }
+						else = {
+							limit = { 
+								has_civil_war = no
+								FROM = { has_government = neutrality }
+							}
+							FROM = { country_event = { id = ate_spain.4 } }
+						}
+					}
+				}
+			}
+
+			if = { #Spain Communa capitulated
+				limit = {
+					original_tag = SPR
+					has_government = communism
+					FROM = {
+						original_tag = SPR
+						NOT = { has_government = communism }
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						FROM = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					every_state = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+				news_event = { id = country_capitulated.0 days = 0 }
+				if = { #End
+					limit = { 
+						has_civil_war = no
+						FROM = { has_government = democratic }
+					}
+					FROM = { country_event = { id = ate_spain.1 } }
+					else = {
+						limit = { 
+							has_civil_war = no
+							FROM = { has_government = fascism }
+						}
+						FROM = { country_event = { id = ate_spain.3 } }
+						else = {
+							limit = { 
+								has_civil_war = no
+								FROM = { has_government = neutrality }
+							}
+							FROM = { country_event = { id = ate_spain.4 } }
+						}
+					}
+				}
+			}
+
+			if = { #Spain Falangist capitulated
+				limit = {
+					original_tag = SPR
+					has_government = fascism
+					FROM = {
+						original_tag = SPR
+						NOT = { has_government = fascism }
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						FROM = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					every_state = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+				news_event = { id = country_capitulated.0 days = 0 }
+				if = { #End
+					limit = { 
+						has_civil_war = no
+						FROM = { has_government = democratic }
+					}
+					FROM = { country_event = { id = ate_spain.1 } }
+					else = {
+						limit = { 
+							has_civil_war = no
+							FROM = { has_government = communism }
+						}
+						FROM = { country_event = { id = ate_spain.2 } }
+						else = {
+							limit = { 
+								has_civil_war = no
+								FROM = { has_government = neutrality }
+							}
+							FROM = { country_event = { id = ate_spain.4 } }
+						}
+					}
+				}
+			}
+
+			if = { #Spain Carlist capitulated
+				limit = {
+					original_tag = SPR
+					has_government = neutrality
+					FROM = {
+						original_tag = SPR
+						NOT = { has_government = neutrality }
+					}
+				}
+				ROOT = {
+					every_owned_state = {
+						FROM = { transfer_state = PREV }
+					}
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					every_state = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+				news_event = { id = country_capitulated.0 days = 0 }
+				if = { #End
+					limit = { 
+						has_civil_war = no
+						FROM = { has_government = democratic }
+					}
+					FROM = { country_event = { id = ate_spain.1 } }
+					else = {
+						limit = { 
+							has_civil_war = no
+							FROM = { has_government = communism }
+						}
+						SPC = { country_event = { id = ate_spain.2 } }
+						else = {
+							limit = { 
+								has_civil_war = no
+								FROM = { has_government = fascism }
+							}
+							FROM = { country_event = { id = ate_spain.3 } }
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,163 @@
+guiTypes = {
+	
+	containerWindowType = {
+		name = "economy_inf_container"
+		position = { x= 0 y= 44 }
+		size = { width = 440 height = 95 }
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_tiled_window2_1b_border"
+		}
+		
+		instantTextboxType = {
+			name = "economy_system_cap_text"
+			position = { x = 60 y = 15 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_SYSTEM_T"
+			maxWidth = 300
+			alwaystransparent = yes
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "economy_system_plan_text"
+			position = { x = 60 y = 15 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_SYSTEM_PLAN_T"
+			maxWidth = 300
+			alwaystransparent = yes
+			format = center
+		}
+		
+		iconType = {
+			name = "economy_cap_icon"
+			position = { x = 25 y = 44 }
+			spriteType = "GFX_efficiency_icon"
+			pdx_tooltip = "cap_num_tt"
+		}
+		
+		iconType = {
+			name = "economy_adm_icon"
+			position = { x = 25 y = 40 }
+			spriteType = "GFX_pol_power_icon"
+			pdx_tooltip = "adm_num_tt"
+		}
+		
+		iconType ={
+			name ="cap_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=50 y=41 }
+		}
+		
+		instantTextboxType = {
+			name = "economy_capitalists_text"
+			position = { x = 42 y = 44 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_CAPITALISTS_T"
+			maxWidth = 120
+			maxHeight = 15
+			format = center
+			pdx_tooltip = "cap_num_tt"
+		}
+		
+		instantTextboxType = {
+			name = "economy_administators_text"
+			position = { x = 42 y = 44 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_ADMIN_T"
+			maxWidth = 120
+			maxHeight = 15
+			format = center
+			pdx_tooltip = "adm_num_tt"
+		}
+		
+		iconType = {
+			name = "economy_cap_build_icon"
+			position = { x = 175 y = 40 }
+			spriteType = "GFX_production_output_icon"
+		}
+		
+		instantTextboxType = {
+			name = "economy_cap_build_text"
+			position = { x = 170 y = 45 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_CAP_BUILD_T"
+			maxWidth = 120
+			maxHeight = 15
+			format = center
+			pdx_tooltip = "cap_factor_tt"
+		}
+		
+		instantTextboxType = {
+			name = "economy_adm_build_text"
+			position = { x = 170 y = 45 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_ADM_BUILD_T"
+			maxWidth = 120
+			maxHeight = 15
+			format = center
+			pdx_tooltip = "adm_factor_tt"
+		}
+		
+		iconType = {
+			name = "economy_gdp_icon"
+			position = { x = 269 y = 45 }
+			spriteType = "GFX_production_efficiency_loss_icon"
+		}
+		
+		iconType ={
+			name ="gdp_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=294 y=41 }
+		}
+		
+		instantTextboxType = {
+			name = "economy_gdp_text"
+			position = { x = 294 y = 44 }
+			font = "hoi_18mbs"
+			text = "ECONOMY_GDP_T"
+			maxWidth = 100
+			maxHeight = 15
+			format = center
+			pdx_tooltip = "gdp_num_tt"
+		}
+		
+	}
+	
+}
+
+guiTypes = {
+	
+	containerWindowType = {
+		name = "diplo_inf_container"
+		position = { x= -15 y= 275 }
+		size = { width = 440 height = 116 }
+		
+		iconType = {
+			name = "diplo_gdp_icon"
+			position = { x = 39 y = 45 }
+			spriteType = "GFX_production_efficiency_loss_icon"
+		}
+		
+		iconType ={
+			name ="diplo_gdp_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=64 y=41 }
+		}
+		
+		instantTextboxType = {
+			name = "diplo_gdp_text"
+			position = { x = 64 y = 44 }
+			font = "hoi_18mbs"
+			text = "DIPLO_GDP_T"
+			maxWidth = 100
+			maxHeight = 15
+			format = center
+			pdx_tooltip = "gdp_diplo_num_tt"
+		}
+		
+
+	}
+}
+

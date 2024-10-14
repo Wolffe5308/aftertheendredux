@@ -1,0 +1,286 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+send_volunteers_to_spain_USA = {
+	enable = {
+		tag = USA
+		has_government = communism
+		country_exists = SPC
+	}
+	abort = {
+		OR = {
+			NOT = { has_government = communism }
+			NOT = { country_exists = SPC }
+		}
+	}
+	
+	ai_strategy = {
+		type = support
+		id = "SPC"			
+		value = 100
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "SPC"			
+		value = 100
+	}	
+}
+
+usa_hold_non_agression_pact = {
+
+	enable = {
+		tag = USA
+		ENG = { 
+			exists = yes
+			has_non_aggression_pact_with = ROOT
+		}
+	}
+
+	abort = {
+		OR = {
+			has_war_with = ENG
+			NOT = { has_idea = usa_economy_restruction }
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "ENG"	
+		value = 50
+	}
+}
+
+usa_attack_england_pact = {
+
+	enable = {
+		tag = USA
+		NOT = { has_idea = usa_economy_restruction }
+		ENG = { 
+			exists = yes
+			NOT = { has_government = communism }
+			NOT = { is_in_faction_with = ROOT }
+			NOT = { has_non_aggression_pact_with = ROOT }
+		}
+	}
+	
+	abort = {
+		ENG = { exists = no }
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = "ENG"	
+		value = 500
+	}
+
+	ai_strategy = {
+		type = antagonize
+		id = "ENG"	
+		value = 500
+	}
+}
+
+USA_template_design_1 = {
+	enable = {
+		original_tag = USA
+		date < 1940.1.1				
+	}
+	abort = { 
+		date > 1940.1.1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = -10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 60
+	}
+}
+
+USA_template_design_2 = {
+	enable = {
+		original_tag = USA
+		date > 1940.1.1				
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = -20
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = 40
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -20
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 10
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = marines
+		value = 100
+	}
+}
+
+USA_naval_role_ratios_historical = {
+	enable = {
+		has_dlc = "Man the Guns"
+		original_tag = USA
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bb
+		value = 10
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_capital_bc
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_carrier
+		value = 25
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_submarine
+		value = 25
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_screen
+		value = 130 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_escort
+		value = 65 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_light
+		value = 40
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_cruiser_heavy
+		value = 5
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_sweeper
+		value = 15
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = naval_mine_layer
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 1		 #1 to 2
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 100		 #1 to 2
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = carrier
+		value = 1		 #1 to 2
+	}
+}

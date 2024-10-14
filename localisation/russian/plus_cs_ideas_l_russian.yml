@@ -1,0 +1,3 @@
+﻿l_english:
+  war_reparations:0 "Военные репарации"
+  war_reparations_desc:0 "Страна платит военные репарации государству [?war_reps_to.GetNameDef]"

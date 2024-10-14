@@ -1,0 +1,84 @@
+fra_una_bills_decisions = {
+	icon = ger_mefo_bills
+
+	picture = GFX_decision_cat_generic_mefo_bills
+
+	allowed = {
+		original_tag = FRA
+	}
+}
+
+fra_corporate_decisions = {
+	icon = generic_industry
+
+	picture = GFX_decision_cat_generic_mefo_bills
+
+	allowed = {
+		original_tag = FRA
+	}
+}
+
+fra_foreign_politics_decisions = {
+	icon = intervention_overseas
+	
+	picture = GFX_decision_cat_picture_chi_political_support
+	
+	priority = 50
+	
+	visible_when_empty = yes
+
+	allowed = {
+		original_tag = FRA
+	}
+	
+	visible = {
+		original_tag = FRA
+	}
+}
+
+fra_invade_spanish_civil_war = {
+	icon = spr_the_inevitable_civil_war
+
+	allowed = {
+		original_tag = FRA
+	}
+	
+	visible = {
+		original_tag = FRA
+		has_country_flag = fra_help_spain_flag
+		has_global_flag = ate_spanish_civil_war
+	}
+	
+	priority = 20
+}
+
+fra_kampf_mit_revolutions_decisions = {
+	icon = category_power_struggle
+
+	picture = GFX_decision_picture_fra_commies
+
+	allowed = {
+		original_tag = FRA
+	}
+	
+	visible = {
+		original_tag = FRA
+	}
+	
+	priority = 30
+}
+
+fra_chevalier_decisions = {
+	icon = fra_chevalier
+
+	allowed = {
+		original_tag = FRA
+	}
+	
+	visible = {
+		original_tag = FRA
+		has_idea = fra_chevalier_idea
+	}
+	
+	priority = 30
+}

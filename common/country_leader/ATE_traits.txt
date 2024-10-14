@@ -1,0 +1,221 @@
+leader_traits = {
+	
+	ate_reactionar = {
+		sprite = 13
+		random = no
+		stability_factor = 0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_revolutionar = {
+		sprite = 13
+		random = no
+		stability_factor = -0.02
+		political_power_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_kaiser = {
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_king = {
+		random = no
+		stability_factor = 0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_queen = {
+		random = no
+		stability_factor = 0.05
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_president = {
+		random = no
+		political_power_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_dictator = {
+		random = no
+		political_power_factor = 0.3
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	
+	ate_neutral = {
+		random = no
+		ai_get_ally_desire_factor = -100
+		ai_focus_aggressive_factor = -0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ate_sick = {
+		random = no
+		stability_factor = -0.1
+		political_power_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ate_anticommunist = {
+		random = no
+		communism_acceptance = -50
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ate_procommunist = {
+		random = no
+		communism_acceptance = 25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ate_socialist_reformer = {
+		sprite = 13
+		random = no
+		socialism_drift = 0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ate_active_potilician = {
+		random = no
+		political_power_factor = 0.2
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ate_pragmatic = {
+		random = no
+		stability_factor = 0.1
+		democratic_acceptance = 10
+		fascism_acceptance = 10
+		neutrality_acceptance = 10
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	spg_manufacturer = {
+		random = no
+		equipment_bonus = {
+			light_tank_artillery_equipment = {
+				reliability = 0.05
+				armor_value = 0.05
+			}
+			medium_tank_artillery_equipment = {
+				reliability = 0.05
+				armor_value = 0.05
+			}
+			heavy_tank_artillery_equipment = {
+				reliability = 0.05
+				armor_value = 0.05
+			}
+			modern_tank_artillery_equipment = {
+				reliability = 0.05
+				armor_value = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ate_only_good_trend = {
+		random = no
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ate_no_radical_trend = {
+		random = no
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ate_only_bad_trend = {
+		random = no
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ate_warmonger = {
+		random = no
+		war_support_weekly = 0.001
+		political_power_factor = -0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	ate_protectionist = {
+		random = no
+		consumer_goods_factor = -0.05
+		political_power_factor = -0.05
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	ate_british_puppet = {
+		random = no
+		political_power_factor = -0.1
+		communism_drift = -0.05
+		fascism_drift = -0.05
+		democratic_acceptance = 25
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}

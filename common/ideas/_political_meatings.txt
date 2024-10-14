@@ -1,0 +1,247 @@
+ideas = {
+
+		meatings_laws {
+				law = yes
+				
+				meat_free = {
+					
+					cost = 200
+					removal_cost = -1
+					level = 5
+					
+					available = {
+						if = {
+							limit = { 
+								has_elections = yes
+							}
+							custom_trigger_tooltip = {
+								tooltip = ATE_more_100_parlament_tt
+								if = {
+									limit = { has_government = democratic }
+									check_variable = { dem_parl > 100 }
+								}
+								if = {
+									limit = { has_government = liberalism }
+									check_variable = { lib_parl > 100 }
+								}
+								if = {
+									limit = { has_government = socialism }
+									check_variable = { soc_parl > 100 }
+								}
+								if = {
+									limit = { has_government = communism }
+									check_variable = { com_parl > 100 }
+								}
+								if = {
+									limit = { has_government = fascism }
+									check_variable = { fas_parl > 100 }
+								}
+								if = {
+									limit = { has_government = centrism }
+									check_variable = { cent_parl > 100 }
+								}
+								if = {
+									limit = { has_government = neutrality }
+									check_variable = { neut_parl > 100 }
+								}
+							}
+						}
+					}
+
+					modifier = {
+						political_power_factor = 0.1
+					}
+			
+					ai_will_do = {
+						factor = 1
+					}
+			
+					cancel_if_invalid = no
+					default = yes
+				}
+				
+				meat_police = {
+					
+					cost = 200
+					removal_cost = -1
+					level = 4
+					
+					available = {
+						OR = {
+							has_stability < 0.75
+							has_government = fascism
+							has_government = communism
+							has_government = neutrality
+						}
+						if = {
+							limit = { 
+								has_elections = yes
+							}
+							custom_trigger_tooltip = {
+								tooltip = ATE_more_100_parlament_tt
+								if = {
+									limit = { has_government = democratic }
+									check_variable = { dem_parl > 100 }
+								}
+								if = {
+									limit = { has_government = liberalism }
+									check_variable = { lib_parl > 100 }
+								}
+								if = {
+									limit = { has_government = socialism }
+									check_variable = { soc_parl > 100 }
+								}
+								if = {
+									limit = { has_government = communism }
+									check_variable = { com_parl > 100 }
+								}
+								if = {
+									limit = { has_government = fascism }
+									check_variable = { fas_parl > 100 }
+								}
+								if = {
+									limit = { has_government = centrism }
+									check_variable = { cent_parl > 100 }
+								}
+								if = {
+									limit = { has_government = neutrality }
+									check_variable = { neut_parl > 100 }
+								}
+							}
+						}
+					}
+
+					modifier = {
+						political_power_factor = 0.05
+						stability_factor = 0.04
+						resistance_target = -0.01
+					}
+			
+					ai_will_do = {
+						factor = 1
+					}
+			
+					cancel_if_invalid = no
+					default = no
+				}
+				
+				
+				meat_army = {
+				
+					cost = 200
+					removal_cost = -1
+					level = 3
+					
+					available = {
+						OR = {
+							has_stability < 0.5
+							has_government = fascism
+							has_government = communism
+							has_government = neutrality
+						}
+						if = {
+							limit = { 
+								has_elections = yes
+							}
+							custom_trigger_tooltip = {
+								tooltip = ATE_more_100_parlament_tt
+								if = {
+									limit = { has_government = democratic }
+									check_variable = { dem_parl > 100 }
+								}
+								if = {
+									limit = { has_government = liberalism }
+									check_variable = { lib_parl > 100 }
+								}
+								if = {
+									limit = { has_government = socialism }
+									check_variable = { soc_parl > 100 }
+								}
+								if = {
+									limit = { has_government = communism }
+									check_variable = { com_parl > 100 }
+								}
+								if = {
+									limit = { has_government = fascism }
+									check_variable = { fas_parl > 100 }
+								}
+								if = {
+									limit = { has_government = centrism }
+									check_variable = { cent_parl > 100 }
+								}
+								if = {
+									limit = { has_government = neutrality }
+									check_variable = { neut_parl > 100 }
+								}
+							}
+						}
+					}
+
+					modifier = {
+						political_power_factor = -0.05
+						stability_factor = 0.06
+						resistance_target = -0.02
+					}
+			
+					ai_will_do = {
+						factor = 1
+					}
+			
+					cancel_if_invalid = no
+					default = no
+				}
+
+				meat_no = {
+				
+					cost = 200
+					removal_cost = -1
+					level = 1
+			
+					available = {
+						OR = {
+							has_government = fascism
+							has_government = communism
+							has_government = neutrality
+						}
+						if = {
+							limit = { 
+								has_elections = yes
+								OR = {
+									has_government = fascism
+									has_government = communism
+									has_government = neutrality
+								}
+							}
+							custom_trigger_tooltip = {
+								tooltip = ATE_more_100_parlament_tt
+								if = {
+									limit = { has_government = communism }
+									check_variable = { com_parl > 100 }
+								}
+								if = {
+									limit = { has_government = fascism }
+									check_variable = { fas_parl > 100 }
+								}
+								if = {
+									limit = { has_government = neutrality }
+									check_variable = { neut_parl > 100 }
+								}
+							}
+						}
+					}
+
+					modifier = {
+						political_power_factor = -0.1
+						stability_factor = 0.08
+						resistance_target = -0.03
+					}
+			
+					ai_will_do = {
+						factor = 1
+					}
+			
+					cancel_if_invalid = no
+					default = no
+				}
+		}
+}

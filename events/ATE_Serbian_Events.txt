@@ -1,0 +1,103 @@
+﻿###########################
+# Serbian Events
+###########################
+
+add_namespace = ate_serbia
+
+#Little Entente invite
+country_event = {
+	id = ate_serbia.1
+	title = ate_serbia.1.t
+	desc = ate_serbia.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_serbia.1.a
+		ai_chance = { 
+			base = 10
+		}
+		FROM = { add_to_faction = ROOT }
+	}
+	
+	option = {
+		name = ate_serbia.1.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		FROM = { country_event = { id = ate_serbia.2 days = 1 } }
+	}
+}
+
+#Little Entente no
+country_event = {
+	id = ate_serbia.2
+	title = ate_serbia.2.t
+	desc = ate_serbia.2.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_serbia.2.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = {
+				FROM = { tag = BOS }
+			}
+			set_country_flag = ate_ser_no_bos
+		}
+		if = {
+			limit = {
+				FROM = { tag = ROM }
+			}
+			set_country_flag = ate_ser_no_rom
+		}
+		if = {
+			limit = {
+				FROM = { tag = MNT }
+			}
+			set_country_flag = ate_ser_no_mnt
+		}
+	}
+}
+
+#Hungary new Serbia
+country_event = {
+	id = ate_serbia.3
+	title = ate_serbia.3.t
+	desc = ate_serbia.3.d
+	picture = GFX_report_event_hungarian_soldiers
+	
+	trigger = {
+		tag = HUN
+		OR = {
+			owns_state = 108
+			owns_state = 107
+			owns_state = 106
+		}
+		SER = { exists = no }
+	}
+	
+	mean_time_to_happen = { 
+		days = 5
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = ate_serbia.3.a
+		ai_chance = { 
+			base = 10
+		}
+		add_stability = 0.05
+		release_puppet = SER
+	}
+}

@@ -1,0 +1,52 @@
+ger_invade_spanish_civil_war = {
+	icon = spr_the_inevitable_civil_war
+
+	allowed = {
+		original_tag = GER
+	}
+	
+	visible = {
+		original_tag = GER
+		has_country_flag = ger_help_spain_flag
+		has_global_flag = ate_spanish_civil_war
+	}
+	
+	priority = 20
+}
+
+ger_foreign_politics_decisions = {
+	icon = generic
+	
+	picture = GFX_decision_cat_picture_chi_political_support
+	
+	priority = 50
+	
+	visible_when_empty = yes
+
+	allowed = {
+		original_tag = GER
+	}
+	
+	visible = {
+		original_tag = GER
+	}
+}
+
+ger_eu_decisions = {
+	icon = ger_eu
+	
+	priority = 40
+	
+	visible_when_empty = yes
+
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		OR = {
+			has_idea = ger_european_union
+			has_idea = ger_european_member
+		}
+	}
+}

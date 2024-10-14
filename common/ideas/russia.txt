@@ -1,0 +1,566 @@
+ideas = {
+
+	country = {
+		
+		rus_agrar_country = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_agrarian_reform
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				monthly_population = 0.2
+				industrial_capacity_factory = -0.2
+				production_speed_industrial_complex_factor = -0.2
+				production_speed_arms_factory_factor = -0.2
+			}
+		}
+		
+		rus_revolutions_limit = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+			
+			picture = mex_revolutionary_army
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.05
+				communism_drift = -0.02
+			}
+		}
+		
+		rus_kolchak = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+			
+			available = {
+				NOT = { has_government = communism }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.05
+				opinion_gain_monthly_factor = -0.1
+			}
+		}
+
+	}
+	
+	army_chief = {
+
+		petr_wrangel = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { army_chief_defensive_2 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		lavr_kornilov = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { army_chief_offensive_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		anton_denikin = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { army_chief_organizational_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+	navy_chief = {
+
+		alexander_kolchak = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { navy_chief_decisive_battle_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		jewgeniy_miller = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { navy_chief_maneuver_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+	air_chief = {
+
+		josep_bashko = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { air_air_combat_training_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		alexander_romanov = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { air_chief_all_weather_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+	high_command = {
+
+		mihail_alexeev = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { army_infantry_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		petr_krasnov = {
+			
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { army_cavalry_2 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		nikolay_udenich = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { army_logistics_1 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		eduard_tomson = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { air_air_superiority_2 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		vasiliy_kanin = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { navy_fleet_logistics_2 }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+	theorist = {
+
+		ivan_romanovskiy = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { military_theorist }	
+			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		nikolay_vikorst = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { naval_theorist }	
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		nikolay_zukovskiy = {
+		
+			ledger = army
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			traits = { air_warfare_theorist }	
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	tank_manufacturer = {
+		
+		designer = yes
+		
+		morozov_design_bureau = {
+		
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { fast_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		astrov_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				armor = 0.10
+			}
+			
+			traits = { medium_tank_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	aircraft_manufacturer = {
+		
+		designer = yes
+		
+		mig_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		ilyushin_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		tupolev_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		yakovlev_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				air_equipment = 0.10
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}	
+	
+	
+	industrial_concern = {
+				
+		siemens_schuckertwerke = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+				NOT = { has_war_with = GER }
+			}
+			
+			research_bonus = {
+				industry = 0.10
+			}
+			
+			traits = { industrial_concern }
+			
+			modifier = {
+			}
+		}
+		
+		petersburg_polytechnical_institute = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+			}
+			
+			traits = { electronics_concern }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		grabin_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { artillery_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		tula_arms_plant = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+		
+		gaz = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			available = {
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+				mot_rockets = 0.50
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}
+	
+	naval_manufacturer = {
+	
+		designer = yes
+		
+		nevskoye_design_bureau = {
+			
+			allowed = {
+				original_tag = RUS
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			traits = { naval_manufacturer }
+			
+			modifier = {
+			}
+		}
+	}
+}

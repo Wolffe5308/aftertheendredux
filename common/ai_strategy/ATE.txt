@@ -1,0 +1,437 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+little_entente_stratey = {
+
+	enable = {
+		OR = {
+			tag = BOS
+			tag = SER
+			tag = ROM
+		}
+		NOT = { has_government = communism }
+		NOT = { has_war_with = BOS }
+		NOT = { has_war_with = SER }
+		NOT = { has_war_with = ROM }
+		country_exists = HUN
+		is_neighbor_of = HUN
+		NOT = { is_in_faction_with = HUN }
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance
+		id = "SER"	
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "ROM"	
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "BOS"	
+		value = 100
+	}
+}
+
+ser_jugoslavia_strategy = {
+
+	enable = {
+		tag = SER
+		has_idea = fra_protection
+		FRA = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			is_puppet = no
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FRA"	
+		value = 200
+	}
+}
+
+ser_no_ethiope_strategy = {
+
+	enable = {
+		tag = SER
+		ETH = {
+			exists = yes
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = befriend
+		id = "ETH"	
+		value = -50
+	}
+}
+
+hungary_great_war_stratey = {
+
+	enable = {
+		tag = HUN
+		NOT = { has_government = communism }
+		NOT = { GER = { has_government = communism } }
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = "FRA"	
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "GER"	
+		value = 10
+	}
+	
+}
+
+hungary_agressive_stratey = {
+
+	enable = {
+		tag = HUN
+		NOT = { has_government = communism }
+		OR = {
+			country_exists = BOS
+			country_exists = SER
+		}
+		OR = {
+			is_neighbor_of = BOS
+			is_neighbor_of = SER
+		}
+		NOT = { is_in_faction_with = BOS }
+		NOT = { is_in_faction_with = SER }
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = "SER"	
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "BOS"	
+		value = 200
+	}
+	
+}
+
+hungary_attack_bosnia_stratey = {
+
+	enable = {
+		tag = HUN
+		NOT = { has_government = communism }
+		country_exists = BOS
+		is_neighbor_of = BOS
+		NOT = { is_in_faction_with = BOS }
+		date > 1939.5.1
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = conquer
+		id = "BOS"	
+		value = 200
+	}
+	
+}
+
+poland_antigerman_stratey = {
+
+	enable = {
+		tag = POL
+		NOT = { is_in_faction_with = GER }
+		NOT = { is_puppet_of = GER }
+		NOT = { is_subject_of = GER }
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = antagonize
+		id = "GER"	
+		value = 200
+	}
+	
+}
+
+poland_profrench_strategy = {
+
+	enable = {
+		tag = POL
+		is_puppet = no
+		is_subject = no
+		has_opinion_modifier = ate_fra_pol_secret_modifier
+		FRA = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			is_puppet = no
+			is_subject = no
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FRA"			
+		value = 150
+	}
+}
+
+turkey_fra_strategy = {
+
+	enable = {
+		tag = TUR
+		has_idea = fra_econ_member
+		is_puppet = no
+		is_subject = no
+		has_war_with = GRE
+		FRA = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			is_puppet = no
+			is_subject = no
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FRA"			
+		value = 100
+	}
+}
+
+cze_strategy = {
+
+	enable = {
+		tag = CZE
+		NOT = { owns_state = 69 }
+		is_in_faction_with = FRA
+		is_puppet = no
+		is_subject = no
+		FRA = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			is_puppet = no
+			is_subject = no
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FRA"			
+		value = 100
+	}
+}
+
+man_concordia_member_strategy = {
+
+	enable = {
+		has_idea = man_concordia_member
+		MAN = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			is_puppet = no
+			has_idea = man_concordia
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "MAN"	
+		value = 150
+	}
+}
+
+man_concordia_strategy = {
+
+	enable = {
+		tag = MAN
+		has_idea = man_concordia
+		is_puppet = no
+	}
+
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance
+		id = "MON"	
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "XSM"	
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "SHX"	
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "TIB"	
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "YUN"	
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "GXC"	
+		value = 50
+	}
+}
+
+man_concordia_xsm_strategy = {
+
+	enable = {
+		tag = MAN
+		has_idea = man_concordia
+		is_puppet = no
+		XSM = {
+			exists = yes
+			NOT = { has_government = communism }
+			NOT = { has_country_flag = ate_man_no_concordia }
+			is_puppet = no
+			NOT = { is_in_faction_with = CHI }
+			NOT = { has_war_with = MAN }
+			has_opinion = {
+				target = MAN
+				value < 10
+			}
+		}
+	}
+	
+	abort = {
+		XSM = {
+			has_opinion = {
+				target = MAN
+				value > 25
+			}
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = befriend
+		id = "XSM"	
+		value = 150
+	}
+}
+
+man_concordia_gxc_strategy = {
+
+	enable = {
+		tag = MAN
+		has_idea = man_concordia
+		is_puppet = no
+		GXC = {
+			exists = yes
+			NOT = { has_government = communism }
+			NOT = { has_country_flag = ate_man_no_concordia }
+			is_puppet = no
+			NOT = { is_in_faction_with = CHI }
+			NOT = { has_war_with = MAN }
+			has_opinion = {
+				target = MAN
+				value < 10
+			}
+		}
+	}
+
+	abort = {
+		GXC = {
+			has_opinion = {
+				target = MAN
+				value > 25
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "GXC"	
+		value = 150
+	}
+}
+
+man_concordia_yun_strategy = {
+
+	enable = {
+		tag = MAN
+		has_idea = man_concordia
+		is_puppet = no
+		YUN = {
+			exists = yes
+			NOT = { has_government = communism }
+			NOT = { has_country_flag = ate_man_no_concordia }
+			is_puppet = no
+			NOT = { is_in_faction_with = CHI }
+			NOT = { has_war_with = MAN }
+			has_opinion = {
+				target = MAN
+				value < 10
+			}
+		}
+	}
+	
+	abort = {
+		YUN = {
+			has_opinion = {
+				target = MAN
+				value > 25
+			}
+		}
+	}
+
+	ai_strategy = {
+		type = befriend
+		id = "YUN"	
+		value = 150
+	}
+}

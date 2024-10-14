@@ -1,0 +1,146 @@
+hun_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = HUN
+	}
+	
+	visible = {
+		original_tag = HUN
+	}
+	
+	priority = 50
+}
+
+ser_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = SER
+	}
+	
+	visible = {
+		original_tag = SER
+	}
+	
+	priority = 50
+}
+
+rus_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = RUS
+	}
+	
+	visible = {
+		original_tag = RUS
+	}
+	
+	priority = 50
+}
+
+bul_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = BUL
+	}
+	
+	visible = {
+		original_tag = BUL
+	}
+	
+	priority = 50
+}
+
+rom_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = ROM
+	}
+	
+	visible = {
+		original_tag = ROM
+	}
+	
+	priority = 50
+}
+
+tur_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = TUR
+	}
+	
+	visible = {
+		original_tag = TUR
+	}
+	
+	priority = 50
+}
+
+rsi_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = ITA
+	}
+	
+	visible = {
+		original_tag = ITA
+		has_government = fascism
+	}
+	
+	priority = 50
+}
+
+aus_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = AUS
+	}
+	
+	visible = {
+		original_tag = AUS
+	}
+	
+	priority = 50
+}
+
+man_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		original_tag = MAN
+	}
+	
+	visible = {
+		original_tag = MAN
+	}
+	
+	priority = 50
+}
+
+south_a_foreign_politics = {
+	icon = generic_political_actions
+
+	allowed = {
+		OR = {
+			original_tag = PRU
+			original_tag = BOL
+		}
+	}
+	
+	visible = {
+		OR = {
+			original_tag = PRU
+			original_tag = BOL
+		}
+	}
+	
+	priority = 50
+}

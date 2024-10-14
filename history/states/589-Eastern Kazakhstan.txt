@@ -1,0 +1,24 @@
+state={
+	id=589
+	name="STATE_589"
+
+	history={
+		owner = KAZ
+		add_core_of = KAZ
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			1668 1
+		}
+	}
+
+	provinces={
+		1239 1287 1668 4674 4764 4867 7332 7350 7405 7784 10218 10290 10292 10610 10161 10584 12635 10653 10680 12564 12662 13148 13149 13151 
+	}
+	manpower=535191
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

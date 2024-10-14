@@ -1,0 +1,72 @@
+﻿capital = 44
+
+OOB = "ALB_1936"
+set_convoys = 5
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_recon = 1
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1917.2.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 0
+	liberalism = 0
+	socialism = 0
+	communism = 0
+	fascism = 0
+	centrism = 0
+	neutrality = 100
+}
+
+create_country_leader = {
+	name = "Ahmet Zogu"
+	desc = "POLITICS_KING_ZOG_DESC"
+	picture = "Portrait_Albania_King_Zog.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Enver Hoxha"
+	desc = "POLITICS_HOXHA_DESC"
+	picture = "Portrait_Albania_Enver_Hoxha.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Fan Stilian Noli"
+	desc = "POLITICS_NOLI_DESC"
+	picture = "Portrait_Albania_Enver_Hoxha.dds"
+	expire = "1965.1.1"
+	ideology = socialism_ideology
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Xhemal Aranitasi"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
+	traits = { }
+	skill = 2
+	attack_skill = 1
+    defense_skill = 3
+    planning_skill = 2
+    logistics_skill = 1
+}
+

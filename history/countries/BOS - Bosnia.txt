@@ -1,0 +1,48 @@
+﻿capital = 104
+
+oob = "BOS_1936"
+set_research_slots = 2
+
+# Starting tech
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+}
+
+give_guarantee = SER
+give_guarantee = ROM
+
+add_ideas = {
+	volunteer_only
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.7.10"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 10
+	liberalism = 0
+	socialism = 8
+	communism = 4
+	fascism = 6
+	centrism = 0
+	neutrality = 72
+}
+
+create_country_leader = {
+	name = "Stjepan Sarkotić Lovćenski"
+	desc = ""
+	picture = "gfx/leaders/BOS/Portrait_Bosnia_Sarkotic.dds"
+	expire = "1953.3.1"
+	ideology = traditionalism
+	traits = {
+		
+	}
+}

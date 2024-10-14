@@ -1,0 +1,355 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "División de Infantería" 		# Used for both regular infantry divisions and larger garrison divisions
+	division_names_group = SPR_INF_01
+	# Note: Spanish divisions were 2x brigades of 2x2 rgts each, + support
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Spanish Arty Rgt/Bge had 2 Bn 105mm arty
+		engineer = { x = 0 y = 1 }   # Eng Bn
+	}
+}
+division_template = {
+	name = "División de Caballería"  		# Only one Cavalry Division (3x bge of 2x2 Rgts)
+	division_names_group = SPR_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 2 y = 2 }
+		cavalry = { x = 2 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      # Recon consisted of motorcycles and ACs
+	}
+}
+division_template = {
+	name = "Brigada Montaña"  		# Mountain Brigades were 2x2 Rgts + support
+	division_names_group = SPR_MNT_01
+	regiments = {
+		mountaineers = { x = 0 y = 0 }	
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Spanish Arty Rgt/Bge had 2 Bn 105mm arty
+	}
+}
+division_template = {
+	name = "Brigada de Infantería" 		# Infantry Brigade - Used for smaller garrison units
+	division_names_group = SPR_GAR_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }	
+		infantry = { x = 0 y = 1 }	
+		infantry = { x = 1 y = 0 }	
+		infantry = { x = 1 y = 1 }	
+	}
+	support = {
+		engineer = { x = 0 y = 0 }   # Eng Bn
+	}
+}
+division_template = {
+	name = "Guarnición Republicana"			# International volunteers -- poor equipment, no experience (militia)
+	is_locked = yes
+	template_counter = 6
+	division_names_group = SPR_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = { # "1a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 3938  # Madrid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}			
+	division = { # "2a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 4098  # Sevilla
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}			
+	division = { # "3a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 6906  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}
+	
+	division = { # "1a División de Caballería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 942  # Barcelona
+		division_template = "División de Caballería"
+		start_experience_factor = 0.3
+	}
+	division = { # "2a División de Caballería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 942  # Barcelona
+		division_template = "División de Caballería"
+		start_experience_factor = 0.3
+	}
+	
+	division = {			
+		name = "1a Brigada Montaña"		
+		location = 9800  # Canary Islands
+		division_template = "Brigada Montaña"
+		start_experience_factor = 0.3
+	}			
+	division = {			
+		name = "2a Brigada Montaña"		
+		location = 9933  #Bilbao
+		division_template = "Brigada Montaña"
+		start_experience_factor = 0.3
+	}		
+	
+	division = {
+		name = "I Guarnición Republicana"
+		location = 874  # Madrid
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "II Guarnición Republicana"
+		location = 6867  # Madrid
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "III Guarnición Republicana"
+		location = 3874  # Madrid
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "IV Guarnición Republicana"
+		location = 9800  # Madrid
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "V Guarnición Republicana"
+		location = 3794  # Madrid
+		division_template = "Guarnición Republicana"
+	}
+
+	division = {
+		name = "VI Guarnición Republicana"
+		location = 977  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "VII Guarnición Republicana"
+		location = 6841  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "VIII Guarnición Republicana"
+		location = 9785  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "IX Guarnición Republicana"
+		location = 9933  # Valencia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "X Guarnición Republicana"
+		location = 3945  # Valencia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XI Guarnición Republicana"
+		location = 3891  # Valencia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XII Guarnición Republicana"
+		location = 3799  # Murcia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XIII Guarnición Republicana"
+		location = 6906  # Murcia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XIV Guarnición Republicana"
+		location = 10109  # Murcia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XV Guarnición Republicana"
+		location = 7111  # Malaga
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XVI Guarnición Republicana"
+		location = 4195  # Malaga
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XVII Guarnición Republicana"
+		location = 11807  # Malaga
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XVIII Guarnición Republicana"
+		location = 9828  # Bilbao
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XIX Guarnición Republicana"
+		location = 12081  # Bilbao
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XX Guarnición Republicana"
+		location = 6896  # Bilbao
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXI Guarnición Republicana"
+		location = 3810  # Madrid
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXII Guarnición Republicana"
+		location = 809  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXIII Guarnición Republicana"
+		location = 931  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXIV Guarnición Republicana"
+		location = 6902  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXV Guarnición Republicana"
+		location = 3938  # Barcelona
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXVI Guarnición Republicana"
+		location = 3938  # Valencia
+		division_template = "Guarnición Republicana"
+	}
+	division = {
+		name = "XXVII Guarnición Republicana"
+		location = 3938  # Valencia
+		division_template = "Guarnición Republicana"
+	}
+
+	division = {
+		name = "XXVIII Guarnición Republicana"
+		location = 4098 
+		division_template = "Guarnición Republicana"
+	}	
+	division = {
+		name = "XXIX Guarnición Republicana"
+		location = 4098
+		division_template = "Guarnición Republicana"
+	}	
+	division = {
+		name = "XXX Guarnición Republicana"
+		location = 4098
+		division_template = "Guarnición Republicana"
+	}	
+	division = {
+		name = "XXXI Guarnición Republicana"
+		location = 4098
+		division_template = "Guarnición Republicana"
+	}	
+	
+	division = {
+		name = "XXXII Guarnición Republicana"
+		location = 3938
+		division_template = "Guarnición Republicana"
+	}
+}
+
+### Air Wings
+air_wings = {
+	# Arma de Aviación -- Madrid (Getafe)
+	41 = { 
+		# Grupo n.1 de Caza FARE 'Alas Rojas'
+		fighter_equipment_0 = {
+			owner = "SPR" 
+			amount = 40
+		}
+	}
+	# Aeronáutica Naval -- Murcia
+	168 = {
+		nav_bomber_equipment_1 = {
+			owner = "SPR" 
+			amount = 30
+		}
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "SPR"
+		}
+		requested_factories = 2
+		progress = 0.42
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SPR"
+		}
+		requested_factories = 1
+		progress = 0.24
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "SPR"
+		}
+		requested_factories = 1
+		progress = 0.24
+		efficiency = 100
+	}
+}

@@ -1,0 +1,94 @@
+﻿capital = 107
+
+oob = "YUG_1919"
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+}
+
+set_convoys = 10
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1935.5.3"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 0
+	liberalism = 0
+	socialism = 0
+	communism = 0
+	fascism = 0
+	centrism = 0
+	neutrality = 100
+}
+
+set_stability = 0.6
+
+create_country_leader = {
+	name = "Petar I"
+	desc = "POLITICS_PETAR_I_DESC"
+	picture = "gfx/leaders/YUG/Portrait_Peter I.dds"
+	expire = "1965.1.1"
+	ideology = despotism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Milan Grol"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+	expire = "1965.1.1"
+	ideology = socialism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Petar I"
+	desc = ""
+	picture = "gfx/leaders/YUG/Portrait_Peter I.dds"
+	expire = "1965.1.1"
+	ideology = centrism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Milan Stojadinovic"
+	desc = "POLITICS_MILAN_STOJADINOVIC_DESC"
+	picture = "gfx/leaders/YUG/Portrait_Yugoslavia_Milan_Stojadinovic.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Milan Grol"
+	desc = "POLITICS_MILAN_GROL_DESC"
+	picture = "gfx/leaders/YUG/Portrait_Yugoslavia_Milan_Grol.dds"
+	expire = "1965.1.1"
+	ideology = liberalism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Josip Broz Tito"
+	desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
+	picture = "Portrait_Yugoslavia_Josip_Broz_Tito.dds"
+	expire = "1965.1.1"
+	ideology = leninism
+	traits = {
+		#
+	}
+}

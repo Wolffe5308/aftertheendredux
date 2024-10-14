@@ -1,0 +1,1083 @@
+ideas = {
+
+	country = {
+	
+		gre_rodos_crisis = {
+		
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				FRA = {
+					OR = {
+						controls_state = 164
+						any_allied_country = {
+							controls_state = 164
+						}
+					}
+					NOT = { is_in_faction_with = GRE }
+					NOT = { has_war_with = GRE }
+				}
+			}
+			
+			picture = generic_navy_bonus
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.1
+				consumer_goods_factor = 0.1
+				industrial_capacity_dockyard = -0.1
+				industrial_capacity_factory = -0.1
+			}
+
+			traits = { ate_only_bad_trend }
+			
+			cancel_if_invalid = yes
+		}
+	}
+
+	political_advisor = {
+
+		GRE_ioannis_metaxas = {
+
+			picture = gre_ioannis_metaxas
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {	
+				NOT = {
+					has_country_leader = {
+						name = "Ioannis Metaxas"
+						ruling_only = yes
+					}
+				}
+			}
+
+			traits = { devoted_corporatist }
+		}
+
+		GRE_konstantinos_maniadakis = {
+
+			picture = generic_political_advisor_south_america_3
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {	
+				
+			}
+			
+			traits = { prince_of_terror }
+		}
+
+		GRE_georgios_papandreou_bftb = {
+
+			name = GRE_georgios_papandreou
+
+			picture = gre_george_papandreou
+				
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				has_government = democratic
+			}
+
+			traits = { resolute_social_democrat }
+		}
+
+		GRE_konstantinos_tsaldaris = {
+
+			picture = gre_konstantinos_tsaldaris
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			traits = { sharp_tongued_lawyer }
+		}
+
+		GRE_aristeidis_dimitratos = {
+
+			picture = generic_political_advisor_south_america_1
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			traits = { war_industrialist }
+		}
+
+		GRE_emmanouil_tsouderos = {
+
+			picture = gre_emmanouil_tsouderos
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = {
+					OR = { 
+						has_government = communism
+						has_country_leader = {
+							name = "Emmanouil Tsouderos"
+							ruling_only = yes
+						}
+					}
+				}
+			}
+			
+			traits = { financial_expert }
+		}
+
+		GRE_sophoklis_venizelos = {
+
+			picture = gre_sophoklis_venizelos
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			traits = { backroom_backstabber }
+		}
+
+		GRE_aristotle_onassis = {
+
+			picture = gre_aristotle_onassis
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = {
+					has_country_leader = {
+						name = "Aristotle Onassis"
+						ruling_only = yes
+					}
+				}
+			}
+			
+			traits = { gifted_shipping_magnate }
+		}
+
+		GRE_xenophon_giosmas = {
+
+			picture = gre_xenophon_giosmas
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { national_socialist_paramilitarist }
+		}
+
+		GRE_dimitris_glinos = {
+
+			picture = gre_dimitris_glinos
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				has_government = communism
+			}
+			
+			traits = { marxist_academic }
+		}					
+
+
+		GRE_dimitrios_holevas = {
+
+			picture = gre_dimitrios_holevas
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				
+			}
+			
+			traits = { marxist_priest }
+		}
+
+		GRE_markos_vafiadis = {
+
+			picture = gre_markos_vafiadis
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			traits = { guerilla_warfare_expert }
+		}
+
+		GRE_father_dimistrios = {
+
+			picture = gre_father_dimistrios
+				
+			allowed = {
+				original_tag = GRE
+				has_dlc = "La Resistance"
+			}
+
+			available = {
+				has_intelligence_agency = yes
+			}
+				
+			traits = { head_of_intelligence }
+		}
+	}
+
+	theorist = {
+
+		GRE_alexandros_papagos_theorist = {
+			
+			picture = gre_alexandros_papagos
+
+			ledger = army
+			
+			allowed = {
+				original_tag = GRE
+			}
+				
+			available = {
+				
+			}
+
+			traits = { army_chief_entrenchment_expert }
+
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_konstantinos_ventiris_bftb = {
+			
+			name = GRE_konstantinos_ventiris
+
+			picture = gre_konstantinos_ventiris
+
+			ledger = army
+
+			allowed = {
+				original_tag = GRE
+			}
+			
+			cost = 250
+				
+			research_bonus = {
+				cat_grand_battle_plan = 0.15
+			}
+			
+			traits = { grand_battle_plan_expert }
+		}
+
+		GRE_marinos_mitralexis = {
+			ledger = air
+					
+			picture = generic_air_warfare_theorist_south_american_2d
+				
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.10
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+
+		spyridon_avgeris = {
+			ledger = navy
+					
+			picture = generic_navy_anti_submarine_eastern_european_2d
+				
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.10
+			}
+			
+			traits = { naval_theorist }
+		}
+	}
+	
+	# MILITARY
+	army_chief = {
+		
+		GRE_alexandros_papagos = {
+			
+			picture = gre_alexandros_papagos
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				
+			}
+
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+			
+		GRE_georgios_tsolakoglou = {
+			
+			picture = gre_georgios_tsolakoglou
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				
+			}
+			
+			traits = { army_chief_offensive_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		 GRE_nikolaos_plastiras_bftb = {
+			ledger = army
+
+			name = GRE_nikolaos_plastiras
+			
+			picture = gre_nikolaos_plastiras
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				
+			}
+
+			traits = { army_chief_maneuver_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_aris_velouchiotis_bftb = {
+
+			name = GRE_aris_velouchiotis
+			
+			picture = gre_aris_velouchiotis
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			traits = { army_chief_defensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+		
+		GRE_panagiotis_gazis_bftb = {
+
+			name = GRE_panagiotis_gazis
+			
+			picture = gre_panagiotis_gazis
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			traits = { air_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_vasilios_tsarpalis_bftb = {
+
+			name = GRE_vasilios_tsarpalis
+			
+			picture = gre_vasilios_tsarpalis
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			traits = { air_chief_safety_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = {
+		
+		GRE_alexandros_sakellariou_bftb = {
+
+			name = GRE_alexandros_sakellariou
+			
+			picture = gre_alexandros_sakellariou
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+					
+			}
+
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_petros_voulgaris_bftb = {
+			
+			name = GRE_petros_voulgaris
+
+			picture = gre_petros_voulgaris
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+							
+			}
+
+			traits = { navy_chief_maneuver_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+
+		GRE_napoleon_zervas_bftb = {
+			ledger = army
+
+			name = GRE_napoleon_zervas	
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+				
+			}
+			
+			picture = gre_napoleon_zervas
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	
+		GRE_nikos_beloyannis_bftb = {
+			ledger = army
+
+			name = GRE_nikos_beloyannis
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			available = {
+						
+			}
+			
+			picture = gre_nikos_beloyannis
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_georgios_kosmas = {
+			ledger = navy
+			
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			picture = gre_giorgios_kosmas
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_epameinondas_kavvadias = {
+			ledger = air
+			
+			picture = gre_epameinondas_kavvadias
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			traits = { navy_screen_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+			
+		GRE_dimitrios_oikonomou = {
+			
+			picture = gre_dimitrios_oikonomou
+
+			ledger = navy
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			traits = { air_naval_strike_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	tank_manufacturer = { 
+		
+		designer = yes
+		
+		GRE_biamax = {
+			
+			picture = gre_biamax
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { fast_tank_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+
+			modifier = { 
+				motorized_defence_factor = 0.05
+				mechanized_defence_factor = 0.05
+			}
+		}
+
+		GRE_man = {	
+
+			picture = GER_MAN
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_war_with = GER }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				armor = 0.1
+			}
+			
+			traits = { heavy_tank_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_fiat = {	
+		
+			picture = fiat
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_war_with = ITA }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				armor = 0.1
+			}
+			
+			traits = { infantry_tank_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_vickers_armstrong = {
+		
+			picture = vickers_armstrong_eng
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_war_with = ENG }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				armor = 0.1
+			}
+			
+			traits = { medium_tank_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	aircraft_manufacturer = { 
+			
+		designer = yes
+		
+		gnaf = {
+			
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer_2 }
+			
+			# trainers for RAF, great handling
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_aekkea = {
+			
+			picture = gre_phaliron_aekka
+
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		GRE_phaliron_aircraft = {
+			
+			picture = gre_phaliron_aircraft
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { CAS_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	naval_manufacturer = { 
+			
+		designer = yes
+		
+		GRE_royal_hellenic_naval_shipyard = {
+			
+			picture = gre_royal_hellenic_naval_shipyard
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+
+		GRE_basileiades = {
+			
+			picture = gre_basileiades
+			
+			allowed = {
+				original_tag = GRE
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { mediterranean_naval_manufacturer }
+		}
+
+		GRE_astilleros_onassis = {
+			
+			picture = gre_astilleros_onassis
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				has_country_leader = {
+					name = "Aristotle Onassis"
+					ruling_only = yes
+				}
+			}
+
+			cost = 75
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+		
+		GRE_dep = {
+			
+			picture = gre_dep
+		
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = { 
+				
+			}			
+			
+			research_bonus = {
+				synth_resources = 0.1
+			}
+			
+			traits = { refinery_concern }
+			
+			modifier = {
+				fuel_gain_factor_from_states = 0.15
+			}
+		}
+
+		GRE_english_electric = {
+			
+			picture = english_electric
+
+			allowed = {
+				original_tag = GRE
+			}			
+
+			available = { 
+				NOT = { has_war_with = ENG }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { british_industrial_benefactor }
+			
+		}
+
+		GRE_siemens = {
+			
+			picture = siemens
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = { 
+				NOT = { has_war_with = GER }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { german_technological_patron }
+
+			modifier = { 
+				min_export = 0.05
+			}
+		}
+
+		GRE_pitsos = {
+			
+			picture = gre_pitsos
+		
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = { 
+				
+			}	
+			
+			research_bonus = {
+				electronics = 0.05
+			}
+			
+			traits = { electronics_developer }
+			
+			modifier = {
+				consumer_goods_factor = -0.07
+			}
+		}
+
+		GRE_aete = {
+			
+			picture = gre_aete
+
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = { 
+				
+			}
+			
+			research_bonus = {
+				electronics = 0.1
+			}
+			
+			traits = { electronics_developer }
+
+			modifier = { 
+				production_speed_radar_station_factor = 0.25
+			}
+		}
+
+		GRE_neorion = {
+			
+			picture = gre_neorion
+		
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = { 
+				
+			}		
+			
+			research_bonus = {
+				industry = 0.1
+			}
+			
+			traits = { construction_company }
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.15
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		GRE_pyrkal = {
+
+			picture = gre_pyrkal
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			modifier = {
+				army_infantry_attack_factor = 0.05
+			}
+		}
+		
+		GRE_petropoulos = {
+
+			picture = gre_petropoulos
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+
+			modifier = {
+				motorized_defence_factor = 0.1
+			}
+		}
+
+		GRE_rsaf_enfield = {
+
+			picture = rsaf_enfield
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_war_with = ENG }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+
+		GRE_rheinmetall = {
+
+			picture = rheinmetall
+			
+			allowed = {
+				original_tag = GRE
+			}
+
+			available = {
+				NOT = { has_war_with = GER }
+			}
+
+			cost = 120
+			
+			research_bonus = {
+				artillery = 0.1
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+	}
+}

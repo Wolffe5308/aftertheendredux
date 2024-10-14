@@ -1,0 +1,210 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_idea_free_economy"
+		texturefile = "gfx/interface/ideas/idea_economy_free_economy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_invervention_economy"
+		texturefile = "gfx/interface/ideas/idea_economy_vmesh.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_corporativist_economy"
+		texturefile = "gfx/interface/ideas/idea_economy_goskapit.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_plan_economy"
+		texturefile = "gfx/interface/ideas/idea_economy_plan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_labour_slavery"
+		texturefile = "gfx/interface/ideas/idea_labour_slavery.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_labour_basic_codex"
+		texturefile = "gfx/interface/ideas/idea_labour_basic_codex.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_labour_advanced_codex"
+		texturefile = "gfx/interface/ideas/idea_labour_advanced_codex.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_labour_social_state"
+		texturefile = "gfx/interface/ideas/idea_labour_social_state.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_labour_socialism"
+		texturefile = "gfx/interface/ideas/idea_labour_socialism.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_press_free"
+		texturefile = "gfx/interface/ideas/idea_press_free.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_press_censored"
+		texturefile = "gfx/interface/ideas/idea_press_censored.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_press_state"
+		texturefile = "gfx/interface/ideas/idea_press_state.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_marx_idea"
+		texturefile = "gfx/interface/ideas/trotskyite_plot_purged.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_marx_idea_2"
+		texturefile = "gfx/interface/ideas/trotskyite_plot_purged.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_marx_idea_3"
+		texturefile = "gfx/interface/ideas/trotskyite_plot_purged.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_antifascism_idea"
+		texturefile = "gfx/interface/ideas/idea_generic_fascism_banned.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_project_of_national_defence_idea"
+		texturefile = "gfx/interface/ideas/idea_yug_federal_defense_council.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_idea_generic_president_europe"
+		texturefile = "gfx/interface/ideas/idea_yug_federal_defense_council.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_economic_crisis"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_crisis.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_economic_recession"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_recession.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_economic_stagnation"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_stagnation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_economic_groth"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_groth.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_economic_boom"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_boom.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_free_economic_crisis"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_crisis.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_free_economic_recession"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_recession.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_free_economic_stagnation"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_stagnation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_free_economic_groth"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_groth.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_free_economic_boom"
+		texturefile = "gfx/interface/ideas/idea_economic_trend_boom.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_view"
+		texturefile = "gfx/interface/ideas/idea_vid.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_no_imm_emm"
+		texturefile = "gfx/interface/ideas/idea_no_imm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_no_immigration"
+		texturefile = "gfx/interface/ideas/idea_no_imm_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_all_welcome"
+		texturefile = "gfx/interface/ideas/idea_all_welcome.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_meat_free"
+		texturefile = "gfx/interface/ideas/idea_mit_free.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_idea_meat_police"
+		textureFile = "gfx/interface/ideas/idea_mit_police.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_meat_army"
+		textureFile = "gfx/interface/ideas/idea_mit_army.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_meat_no"
+		textureFile = "gfx/interface/ideas/idea_mit_no.dds"
+	}
+
+
+
+	###ECONOMIC_ALLIANCE###
+	spriteType = {
+		name = "GFX_econ_economic_no"
+		textureFile = "gfx/interface/economic_alliance/economic_no.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_econ_economic_france"
+		textureFile = "gfx/interface/economic_alliance/economic_france.dds"
+	}
+
+	spriteType = {
+		name = "GFX_econ_economic_germany"
+		textureFile = "gfx/interface/economic_alliance/economic_germany.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_econ_economic_britain"
+		textureFile = "gfx/interface/economic_alliance/economic_britain.dds"
+	}
+
+	spriteType = {
+		name = "GFX_econ_economic_europe"
+		textureFile = "gfx/interface/economic_alliance/economic_europe.dds"
+	}
+}

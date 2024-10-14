@@ -1,0 +1,50 @@
+﻿capital = 315
+
+oob = "CUB_1936"
+set_war_support = 0.1
+set_convoys = 20
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	early_fighter = 1
+}
+
+set_politics = {
+	ruling_party = liberalism
+	last_election = "1936.1.10"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 0
+	liberalism = 80
+	socialism = 20
+	communism = 0
+	fascism = 0
+	centrism = 0
+	neutrality = 0
+}
+
+create_country_leader = {
+	name = "José Agripino Barnet"
+	desc = "POLITICS_JOSE_AGRIPINO_BARNET_DESC"
+	picture = "GFX_portrait_cuba_jose_barnet"
+	expire = "1965.1.1"
+	ideology = liberalism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Federico Laredo Brú"
+	desc = "POLITICS_FEDERICO_LAREDO_BRU_DESC"
+	picture = "gfx/leaders/South America/Portrait_South_America_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism_ideology
+	traits = {
+		#
+	}
+}

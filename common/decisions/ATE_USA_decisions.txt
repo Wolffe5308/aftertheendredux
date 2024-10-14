@@ -1,0 +1,205 @@
+usa_foreign_politics_decisions = {
+	
+	usa_mexico_communism = {
+	
+		icon = generic_political_discourse
+	
+		available = {
+			is_puppet = no
+			has_government = communism
+			OR = {
+				NOT = { has_idea = usa_economy_restruction }
+				threat > 0.15
+			}
+			MEX = {
+				exists = yes
+				has_capitulated = no
+				is_neighbor_of = ROOT
+				NOT = { has_government = communism }
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		targets = { MEX }
+		
+		target_trigger = {
+			FROM = {
+				tag = MEX
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_government = communism
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 90
+		days_re_enable = 30
+		
+		complete_effect = {
+			MEX = {
+				add_timed_idea = {
+				    idea = communist_influence
+				    days = 90
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	usa_mexico_revolution = {
+	
+		icon = generic_civil_support
+	
+		available = {
+			is_puppet = no
+			has_government = communism
+			MEX = {
+				communism > 0.35
+				exists = yes
+				has_capitulated = no
+				is_neighbor_of = ROOT
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		targets = { MEX }
+		
+		target_trigger = {
+			FROM = {
+				tag = MEX
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_government = communism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			MEX = { country_event = { id = political.19 days = 1 } }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	usa_panama_state = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			has_government = communism
+			OR = {
+				NOT = { has_idea = usa_economy_restruction }
+				threat > 0.35
+			}
+			NOT = { owns_state = 685 }
+		}
+		
+		target_trigger = {
+			FROM = {
+				owns_state = 685
+			}
+		}
+
+		visible = {
+			has_government = communism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_state_claim = 685
+			add_war_support = 0.3
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	usa_war_britain = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			is_puppet = no
+			has_government = communism
+			NOT = { has_idea = usa_economy_restruction }
+			ENG = {
+				exists = yes
+				has_capitulated = no
+				has_war = yes
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				tag = ENG
+				exists = yes
+				has_capitulated = no
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_government = communism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			declare_war_on = {
+			    target = ENG
+			    type = puppet_wargoal_focus
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				date < 1941.02.23
+			}
+		}
+		
+		cost = 75
+	}
+}
+

@@ -1,0 +1,103 @@
+﻿capital = 60
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+set_research_slots = 4
+set_convoys = 50
+set_stability = 0.3
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.6.8"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 55
+	liberalism = 10
+	socialism = 20
+	communism = 10
+	fascism = 5
+	centrism = 0
+	neutrality = 0
+}
+
+add_ideas = {
+}
+
+create_country_leader = {
+	name = "Manfred Gerlach"
+	desc = ""	 
+	picture = gfx/leaders/GER/Portrait_Germany_Gerlach.dds
+	expire = "1965.1.1"
+	ideology = leninism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Gerald Götting"
+	desc = ""
+	picture = "gfx/leaders/GER/Portrait_Germany_Goetting.dds"
+	expire = "1998.11.26"
+	ideology = conservatism_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Manfred Gerlach"
+	desc = ""	 
+	picture = gfx/leaders/GER/Portrait_Germany_Gerlach.dds
+	expire = "1965.1.1"
+	ideology = liberalism_ideology
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Harry Tisch"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+	expire = "1965.1.1"
+	ideology = socialism_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Martin Mußgnug"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Günther Maleuda"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+	expire = "1965.1.1"
+	ideology = centrism_ideology
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Friedhelm Busse"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
+	expire = "2008.1.1"
+	ideology = traditionalism
+	traits = {
+	}
+}
+

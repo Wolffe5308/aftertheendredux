@@ -1,0 +1,1452 @@
+hun_foreign_politics = {
+	
+	hun_attack_bosnia = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			is_puppet = no
+			has_army_manpower = {
+				size > 199999
+			}
+			NOT = { has_government = communism }
+			BOS = {
+				exists = yes
+				is_neighbor_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = BOS
+				exists = yes
+				is_neighbor_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		remove_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = BOS
+			}
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_news.10 days = 1 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+	
+}
+
+ser_foreign_politics = {
+
+	ser_make_little_entente = {
+	
+		icon = generic_form_nation
+	
+		available = {
+			OR = {
+				has_war_support > 0.5
+				threat > 0.1
+			}
+			NOT = { has_government = communism }
+			is_in_faction = no
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = { 
+			create_faction = Little_entente
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_news.1 days = 1 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 50
+	}
+	
+	ser_ent_invite_bos = {
+	
+		icon = generic_nationalism
+	
+		available = {
+			is_puppet = no
+			is_faction_leader = yes
+			OR = {
+				has_war_support > 0.5
+				threat > 0.1
+			}
+			NOT = { has_government = communism }
+			BOS = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = BOS
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			NOT = { has_government = communism }
+			BOS = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = { 
+			BOS = { country_event = { id = ate_serbia.1 days = 1 } }
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 75
+	}
+	
+	ser_ent_invite_rom = {
+	
+		icon = generic_nationalism
+	
+		available = {
+			is_puppet = no
+			is_faction_leader = yes
+			OR = {
+				has_war_support > 0.5
+				threat > 0.1
+			}
+			NOT = { has_government = communism }
+			ROM = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = ROM
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			NOT = { has_government = communism }
+			ROM = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = { 
+			ROM = { country_event = { id = ate_serbia.1 days = 1 } }
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 75
+	}
+	
+	ser_ent_invite_mnt = {
+	
+		icon = generic_nationalism
+	
+		available = {
+			is_puppet = no
+			is_faction_leader = yes
+			OR = {
+				has_war_support > 0.5
+				threat > 0.1
+			}
+			NOT = { has_government = communism }
+			MNT = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = MNT
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			NOT = { has_government = communism }
+			MNT = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = { 
+			MNT = { country_event = { id = ate_serbia.1 days = 1 } }
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 75
+	}
+	
+}
+
+rus_foreign_politics = {
+	
+	rus_cores_baltic = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			OR = {
+				NOT = { is_in_faction_with = EST }
+				NOT = { is_in_faction_with = LAT }
+				NOT = { is_in_faction_with = LIT }
+			}
+			NOT = { has_non_aggression_pact_with = GER }
+			has_army_manpower = {
+				size > 999999
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			custom_effect_tooltip = ate_rus_core_baltic_tt
+			hidden_effect = {
+				add_state_core = 13
+				add_state_core = 191
+				add_state_core = 12
+				add_state_core = 190
+				add_state_core = 189
+				add_state_core = 11
+				add_state_core = 784
+				add_state_core = 95
+				add_state_core = 97
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	rus_cores_asia = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			OR = {
+				NOT = { is_in_faction_with = KAZ }
+				NOT = { is_in_faction_with = KYR }
+				NOT = { is_in_faction_with = UZB }
+				NOT = { is_in_faction_with = TAJ }
+			}
+			NOT = { is_in_faction_with = ENG }
+			has_army_manpower = {
+				size > 1499999
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			custom_effect_tooltip = ate_rus_core_asia_tt
+			hidden_effect = {
+				add_state_core = 402
+				add_state_core = 404
+				add_state_core = 589
+				add_state_core = 586
+				add_state_core = 798
+				add_state_core = 732
+				add_state_core = 797
+				add_state_core = 585
+				add_state_core = 587
+				add_state_core = 584
+				add_state_core = 799
+				add_state_core = 405
+				add_state_core = 742
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	rus_cores_belarus = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			OR = {
+				has_country_flag = ate_rus_cores_flag
+				has_government = fascism
+				owns_state = 206
+			}
+			NOT = { is_in_faction_with = BLR }
+			has_army_manpower = {
+				size > 799999
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = BLR
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			custom_effect_tooltip = ate_rus_core_belarus_tt
+			hidden_effect = {
+				add_state_core = 241
+				add_state_core = 207
+				add_state_core = 206
+				add_state_core = 204
+				add_state_core = 96
+				add_state_core = 94
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 2
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				date < 1939.01.01
+			}
+		}
+		
+		cost = 75
+	}
+
+	rus_cores_ukraine = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			OR = {
+				has_country_flag = ate_rus_cores_flag
+				has_government = fascism
+				owns_state = 202
+			}
+			NOT = { is_in_faction_with = UKR }
+			has_army_manpower = {
+				size > 799999
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = UKR
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			custom_effect_tooltip = ate_rus_core_ukraine_tt
+			hidden_effect = {
+				add_state_core = 228
+				add_state_core = 240
+				add_state_core = 221
+				add_state_core = 227
+				add_state_core = 226
+				add_state_core = 200
+				add_state_core = 196
+				add_state_core = 259
+				add_state_core = 225
+				add_state_core = 193
+				add_state_core = 203
+				add_state_core = 197
+				add_state_core = 192
+				add_state_core = 202
+				add_state_core = 194
+				add_state_core = 201
+				add_state_core = 198
+				add_state_core = 199
+				add_state_core = 93
+				add_state_core = 91
+				add_state_core = 89
+				add_state_core = 80
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 2
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				date < 1939.01.01
+			}
+		}
+		
+		cost = 75
+	}
+
+	rus_attack_germany = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_manpower = {
+				size > 999999
+			}
+			OR = {
+				GER = { has_war_with = FRA }
+				AND = {
+					UKR = { is_puppet = no }
+					UKR = { is_subject = no }
+				}
+			}
+			NOT = { has_non_aggression_pact_with = GER }
+			FROM = {
+				tag = UKR
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = UKR
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+			NOT = { has_wargoal_against = UKR }
+			NOT = { has_idea = fra_rus_secret_idea }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 5
+			create_wargoal = {
+				type = annex_everything
+				target = UKR
+			}
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_news.8 days = 1 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 5
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				date < 1939.01.01
+			}
+		}
+		
+		cost = 75
+	}
+
+	rus_cores_caucasus = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			NOT = { is_in_faction_with = TCC }
+			NOT = { is_in_faction_with = ENG }
+			has_army_manpower = {
+				size > 999999
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = TCC
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			custom_effect_tooltip = ate_rus_core_caucasus_tt
+			hidden_effect = {
+				add_state_core = 231
+				add_state_core = 230
+				add_state_core = 229
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	rus_attack_caucasus = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_manpower = {
+				size > 999999
+			}
+			OR = {
+				has_war_with = ENG
+				NOT = { TCC = { is_guaranteed_by = ENG } }
+			}
+			FROM = {
+				tag = TCC
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+				any_owned_state = {				
+					is_core_of = ROOT
+				}
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = TCC
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = annex_everything
+				target = TCC
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 2
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 75
+	}
+	
+}
+
+bul_foreign_politics = {
+
+	bul_attack_serbia = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_manpower = {
+				size > 99999
+			}
+			SER = {
+				exists = yes
+				owns_state = 106
+				NOT = { is_in_faction_with = ROOT }
+				has_war_with = HUN
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = take_state_focus
+				target = SER
+				generator = { 106 }
+			}
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_news.9 days = 1 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 5
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 75
+	}
+	
+}
+
+rom_foreign_politics = {
+
+	rom_attack_moldavia = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_government = fascism
+			has_army_manpower = {
+				size > 99999
+			}
+			MOL = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = annex_everything
+				target = MOL
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 5
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 75
+	}
+	
+	rom_attack_hungary = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_government = fascism
+			has_army_manpower = {
+				size > 199999
+			}
+			HUN = {
+				exists = yes
+				OR = {
+					owns_state = 84
+					owns_state = 83
+					owns_state = 82
+					owns_state = 76
+				}
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = take_state_focus
+				target = HUN
+				generator = { 84 83 82 76 } 
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 20
+				HUN = { has_war_with = SER }
+			}
+		}
+		
+		cost = 75
+	}
+}
+
+tur_foreign_politics = {
+
+	tur_attack_greece = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			has_army_manpower = {
+				size > 149999
+			}
+			NOT = { owns_state = 340 }
+			GRE = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = take_state_focus
+				target = GRE
+				generator = { 342 339 340 341 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+}
+
+rsi_foreign_politics = {
+
+	ITA_albania_war_goal = {
+	
+		icon = oppression
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			NOT = { has_war_with = ITA }
+			has_army_manpower = {
+				size > 199999
+			}
+			ALB = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = ALB
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_state_claim = 44
+			ALB = { country_event = { id = ate_italy.3 } }
+		}
+		
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 2
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 75
+	}
+	
+	rsi_attack_ethiop = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			NOT = { has_war_with = ITA }
+			has_army_manpower = {
+				size > 249999
+			}
+			ETH = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = ETH
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			add_state_claim = 271
+			create_wargoal = {
+			    type = annex_everything
+			    target = ETH
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	rsi_cro_slov_states = {
+	
+		icon = infiltrate_state
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			has_army_manpower = {
+				size > 249999
+			}
+		}
+
+		visible = {
+			has_government = fascism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			add_state_claim = 102
+			add_state_claim = 103
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+}
+
+aus_foreign_politics = {
+
+	aus_independence = {
+	
+		icon = generic_nationalism
+	
+		available = {
+			OR = {
+				is_puppet_of = GER
+				is_subject_of = GER
+			}
+			has_army_manpower = {
+				size > 149999
+			}
+		}
+
+		visible = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+			OR = {
+				is_puppet_of = GER
+				is_subject_of = GER
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 2
+			GER = { end_puppet = ROOT }
+			leave_faction = yes
+			if = {
+				limit = { has_idea = GER_wilhelm_iii }
+				remove_ideas = GER_wilhelm_iii
+			}
+			if = {
+				limit = { has_idea = wilhelm_II }
+				remove_ideas = wilhelm_II
+			}
+			GER = { country_event = { id = ate_germany.61 } }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		cost = 75
+	}
+}
+
+man_foreign_politics = {
+
+	man_remove_kvantun = {
+	
+		icon = generic_independence
+	
+		available = {
+			has_idea = man_kvantun
+			has_army_manpower = {
+				size > 199999
+			}
+			has_war = no
+		}
+
+		visible = {
+			has_idea = man_kvantun
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 10
+		days_re_enable = 1
+		
+		remove_effect = {
+			remove_ideas = man_kvantun
+			add_ideas = man_concordia
+			create_faction = MAN_concordia_faction
+			add_equipment_to_stockpile = {
+			    type = infantry_equipment
+			    amount = 1000
+			    producer = MAN
+			}
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_news.12 days = 1 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	man_make_concordia = {
+	
+		icon = generic_diplomacy
+	
+		available = {
+			has_idea = man_concordia
+			FROM = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = CHI }
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 10
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_government = communism }
+			has_idea = man_concordia
+		}
+		
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = XSM
+					tag = YUN
+					tag = GXC
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		remove_effect = {
+			FROM = { country_event = { id = ate_asian.1 days = 1 } }
+		}
+		
+		ai_will_do = {
+			factor = 250
+		}
+		
+		cost = 25
+	}
+	
+	man_attack_china = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_manpower = {
+				size > 399999
+			}
+			NOT = { has_war_with = JAP }
+			CHI = { 
+				exists = yes
+				is_neighbor_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			NOT = { has_government = communism }
+		}
+		
+		target_trigger = {
+			FROM = {
+				tag = CHI
+				exists = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		remove_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = annex_everything
+				target = CHI
+			}
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_news.11 days = 1 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					is_in_faction_with = MON
+					is_in_faction_with = XSM
+					is_in_faction_with = SHX
+					is_in_faction_with = TIB
+					is_in_faction_with = YUN
+					is_in_faction_with = GXC
+				}
+			}
+		}
+		
+		cost = 75
+	}
+
+	man_attack_militarists = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_manpower = {
+				size > 499999
+			}
+			NOT = { has_war_with = JAP }
+			OR = {
+				CHI = { exists = no }
+				CHI = { is_puppet_of = ROOT }
+			}
+			OR = {
+				any_allied_country = {
+					is_neighbor_of = FROM
+				}
+				is_neighbor_of = FROM
+			}
+			FROM = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			OR = {
+				CHI = { exists = no }
+				CHI = { is_puppet_of = ROOT }
+			}
+			NOT = { has_government = communism }
+		}
+		
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = SIK
+					tag = XSM
+					tag = SHX
+					tag = TIB
+					tag = YUN
+					tag = GXC
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	man_war_with_japan = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_army_manpower = {
+				size > 699999
+			}
+			NOT = { has_war_with = JAP }
+			OR = {
+				CHI = { exists = no }
+				CHI = { is_puppet_of = ROOT }
+			}
+			JAP = { 
+				exists = yes
+				is_neighbor_of = ROOT
+				OR = {
+					has_war_with = FRA
+					has_war_with = USA
+				}
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			OR = {
+				CHI = { exists = no }
+				CHI = { is_puppet_of = ROOT }
+			}
+			NOT = { has_government = communism }
+		}
+		
+		target_trigger = {
+			FROM = {
+				tag = JAP
+				exists = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		remove_effect = {
+			add_threat = 2
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = JAP
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					is_in_faction_with = MON
+					is_in_faction_with = XSM
+					is_in_faction_with = SHX
+					is_in_faction_with = TIB
+					is_in_faction_with = YUN
+					is_in_faction_with = GXC
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		
+		cost = 75
+	}
+	
+}
+
+south_a_foreign_politics = {
+	
+	pru_attack_ecu = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			is_puppet = no
+			has_capitulated = no
+			OR = {
+				has_war_support > 0.45
+				threat > 0.1
+			}
+			ECU = {
+				exists = yes
+				is_puppet = no
+				has_capitulated = no
+				is_neighbor_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				tag = ECU
+				exists = yes
+				is_puppet = no
+				has_capitulated = no
+				is_neighbor_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			tag = PRU
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		remove_effect = {
+			add_state_core = 490
+			add_state_core = 491
+			create_wargoal = {
+				type = take_state_focus
+				target = ECU
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+}

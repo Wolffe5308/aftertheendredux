@@ -1,0 +1,70 @@
+scripted_gui = {
+
+	economy_show = {
+		context_type = player_context
+		
+		window_name = "economy_inf_container"
+		
+		parent_window_token = construction_tab
+		
+		visible = {
+            always = yes
+		}
+
+		effects = {
+		}
+		
+		triggers = {
+			economy_system_cap_text_visible = {
+				NOT = { has_idea = plan_economy }
+			}
+			economy_system_plan_text_visible = {
+				has_idea = plan_economy
+			}
+			economy_cap_icon_visible = {
+				NOT = { has_idea = plan_economy }
+			}
+			economy_capitalists_text_visible = {
+				NOT = { has_idea = plan_economy }
+			}
+			economy_cap_build_text_visible = {
+				NOT = { has_idea = plan_economy }
+			}
+			economy_adm_icon_visible = {
+				has_idea = plan_economy
+			}
+			economy_administators_text_visible = {
+				has_idea = plan_economy
+			}
+			economy_adm_build_text_visible = {
+				has_idea = plan_economy
+			}
+		}
+	}
+	
+}
+
+scripted_gui = {
+
+	diplo_show = {
+		context_type = selected_country_context
+		
+		window_name = "diplo_inf_container"
+		
+		parent_window_token = selected_country_view_diplomacy
+		
+		visible = {
+            always = yes
+		}
+
+		effects = {
+		}
+		
+		triggers = {
+			
+		}
+	}
+	
+}
+
+

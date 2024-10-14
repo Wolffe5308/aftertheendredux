@@ -1,0 +1,193 @@
+﻿###########################
+# Italian Events
+###########################
+
+add_namespace = ate_italy
+
+#Fascist won
+country_event = {
+	id = ate_italy.1
+	title = ate_italy.1.t
+	desc = ate_italy.1.d
+	picture = GFX_report_event_spr_italian_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_italy.1.a
+		add_political_power = 100
+		set_capital = 2
+	}
+}
+
+#Democrat won
+country_event = {
+	id = ate_italy.2
+	title = ate_italy.2.t
+	desc = ate_italy.2.d
+	picture = GFX_report_event_spr_italian_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_italy.2.a
+		add_political_power = 100
+		set_capital = 2
+	}
+}
+
+# Albania Receives Ultimatum
+country_event = {
+	id = ate_italy.3
+	title = ate_italy.3.t
+	desc = ate_italy.3.d
+	picture = GFX_report_event_albanian_king_zog
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_italy.3.a
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0				
+				any_other_country = {
+					OR = {
+						is_major = yes
+						tag = YUG
+					}
+					NOT = { tag = ITA }
+					OR = {
+						has_guaranteed = ALB
+						is_in_faction_with = ALB
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+		FROM = {
+			country_event = { id = ate_italy.4 days = 1 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	
+	option = { # Resist
+		name = ate_italy.3.b
+		ai_chance = {
+			factor = 20 
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						is_in_faction_with = ITA
+						ITA = { is_faction_leader = yes }
+					}
+					is_historical_focus_on = yes
+					AND = {
+						is_in_faction = no 
+						NOT = {
+							any_other_country = {
+								NOT = { tag = ITA }
+								has_guaranteed = ALB
+							} 
+						}
+					}
+				}
+			}
+		}
+		FROM = {
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ALB
+					generator = { 44 }
+				}
+			}
+			country_event = { days = 1 id = ate_italy.5 }
+		}
+	}
+}
+
+# Albania Yields
+country_event = {
+	id = ate_italy.4
+	title = ate_italy.4.t
+	desc = ate_italy.4.d
+	picture = GFX_report_event_royal_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_italy.4.a
+		ai_chance = {
+			factor = 10
+		}
+		annex_country = { target = ALB }
+		add_named_threat = { threat = 2 name = ITA_albania_war_goal }
+		hidden_effect = {
+			every_country = {
+				news_event = { id = ate_italy.6 days = 1 }
+			}
+		}
+	}
+}
+
+# Zog Rejects Ultimatum
+country_event = {
+	id = ate_italy.5
+	title = ate_italy.5.t
+	desc = ate_italy.5.d
+	picture = GFX_report_event_albanian_partisans
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = italy.5.a
+		ai_chance = {
+			factor = 10
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = ALB
+		}
+		hidden_effect = {
+			every_country = {
+				news_event = { id = ate_italy.7 days = 1 }
+			}
+		}
+	}
+}
+
+# Italian Ultimatum - Zog Yields
+news_event = {
+	id = ate_italy.6
+	title = ate_italy.6.t
+	desc = ate_italy.6.d
+	picture = GFX_news_event_008
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_italy.6.a
+	}
+}
+
+# Italian Ultimatum - Zog Resists
+news_event = {
+	id = ate_italy.7
+	title = ate_italy.7.t
+	desc = ate_italy.7.d
+	picture = GFX_news_event_016
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_italy.7.a
+	}
+}

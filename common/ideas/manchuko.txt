@@ -1,0 +1,405 @@
+ideas = {
+	
+	country = {
+		
+		man_kvantun = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				is_puppet = no
+				NOT = { has_war_with = JAP }
+				has_government = fascism
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				war_support_weekly = 0.001
+				political_power_factor = -0.1
+				conscription = 0.02
+			}
+		}
+		
+		man_concordia = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				NOT = { has_government = communism }
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = -0.05
+				opinion_gain_monthly_factor = 0.1
+				neutrality_acceptance = 25
+				custom_modifier_tooltip = ate_more_cap_2_tt
+			}
+			
+			rule = {
+				can_create_factions = yes
+			}
+		}
+		
+		man_concordia_member = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				NOT = { has_government = communism }
+				MAN = {
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					is_puppet = no
+					has_idea = man_concordia
+				}
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = -0.05
+				opinion_gain_monthly_factor = 0.1
+				fascism_acceptance = 25
+				custom_modifier_tooltip = ate_more_cap_2_tt
+			}
+		}
+	}
+
+	political_advisor = {
+
+		MAN_megata_toshiro = {
+
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { armaments_organizer }
+		}
+
+		MAN_nalan_kang_an = {
+
+			picture = generic_political_advisor_asia_3
+				
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { fortification_engineer }
+		}
+
+		MAN_songgotu_zhanshan = {
+
+			picture = generic_political_advisor_asia_1
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { captain_of_industry }
+		}
+	}	
+
+	army_chief = {
+
+		MAN_guan_xingde = {
+			
+			picture = generic_army_asia_4
+
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+		
+		MAN_nakajima_kesago = {
+
+			picture = generic_air_asia_3
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { air_chief_ground_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+	navy_chief = {
+		
+		MAN_yin_zuoqian = {
+
+			picture = generic_navy_asia_3
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { navy_chief_decisive_battle_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+
+
+	high_command = {
+
+		MAN_yonimitsu_kasahara = {
+			ledger = army
+
+			picture = generic_army_asia_3
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		MAN_kyoiji_tomonaga = {
+			ledger = army
+
+			picture = generic_air_asia_2
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		MAN_hesehn_tiemei = {
+			ledger = army
+
+			picture = generic_army_asia_1
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+
+	theorist = {
+		MAN_hung_zhehuang = {
+			ledger = army
+
+			picture = generic_army_asia_1
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.10
+			}
+			
+			traits = { military_theorist }
+		}
+
+		MAN_xian_yuan = {
+			ledger = navy
+
+			picture = generic_navy_asia_1
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.10
+			}
+			
+			traits = { naval_theorist }
+		}
+		
+		MAN_deng_linge = { 
+			ledger = air
+
+			picture = generic_air_asia_2
+			
+			allowed = {
+				original_tag = MAN
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.10
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+	}
+
+	aircraft_manufacturer = {
+		designer = yes
+
+		MAN_manshu = {
+
+			picture = generic_air_manufacturer_1
+
+			available = {
+				controls_state = 714
+			}
+
+			allowed = {
+				original_tag = MAN
+				NOT = { has_dlc = "Waking the Tiger" }
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		MAN_mamc_light = {
+
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
+			}
+
+			cost = 75
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { light_aircraft_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		MAN_mamc_medium = {
+
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
+			}
+
+			cost = 75
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		MAN_mamc_heavy = {
+
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				original_tag = MAN
+				has_dlc = "Waking the Tiger"
+			}
+
+			cost = 75
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+	}
+	industrial_concern = {
+		MAN_south_manchuria_railway_company = {
+
+			picture = generic_industrial_concern_2			
+			
+			available = {
+				
+			}
+
+			allowed = {
+				has_dlc = "Waking the Tiger"
+				original_tag = MAN
+			}
+
+			traits = {
+				construction_company
+			}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+}

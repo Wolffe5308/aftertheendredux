@@ -1,0 +1,163 @@
+spriteTypes = {	
+	
+	spriteType = {
+		name = "GFX_budget_button"
+		texturefile = "gfx/interface/budget_button.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_capitalist_icon"
+		texturefile = "gfx/interface/capitalist_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_left_dis"
+		texturefile = "gfx/interface/button_left.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_right_dis"
+		texturefile = "gfx/interface/button_right.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_parl_smi_no_button"
+		texturefile = "gfx/interface/parl_smi_no_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_parl_smi_yes_button"
+		texturefile = "gfx/interface/parl_smi_yes_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_parl_more_button"
+		texturefile = "gfx/interface/parl_more_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_parl_no_button"
+		texturefile = "gfx/interface/parl_no_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_pol_parl_window"
+		texturefile = "gfx/interface/pol_parl_window.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_social_sphere_window"
+		texturefile = "gfx/interface/social_sphere_window.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_min_3"
+		texturefile = "gfx/interface/social/soc_cap_min_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_min_2"
+		texturefile = "gfx/interface/social/soc_cap_min_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_min_1"
+		texturefile = "gfx/interface/social/soc_cap_min_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_0"
+		texturefile = "gfx/interface/social/soc_cap_0.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_plus_1"
+		texturefile = "gfx/interface/social/soc_cap_plus_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_plus_2"
+		texturefile = "gfx/interface/social/soc_cap_plus_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_cap_plus_3"
+		texturefile = "gfx/interface/social/soc_cap_plus_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_min_3"
+		texturefile = "gfx/interface/social/soc_mid_min_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_min_2"
+		texturefile = "gfx/interface/social/soc_mid_min_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_min_1"
+		texturefile = "gfx/interface/social/soc_mid_min_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_0"
+		texturefile = "gfx/interface/social/soc_mid_0.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_plus_1"
+		texturefile = "gfx/interface/social/soc_mid_plus_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_plus_2"
+		texturefile = "gfx/interface/social/soc_mid_plus_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_mid_plus_3"
+		texturefile = "gfx/interface/social/soc_mid_plus_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_min_3"
+		texturefile = "gfx/interface/social/soc_lab_min_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_min_2"
+		texturefile = "gfx/interface/social/soc_lab_min_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_min_1"
+		texturefile = "gfx/interface/social/soc_lab_min_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_0"
+		texturefile = "gfx/interface/social/soc_lab_0.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_plus_1"
+		texturefile = "gfx/interface/social/soc_lab_plus_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_plus_2"
+		texturefile = "gfx/interface/social/soc_lab_plus_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_soc_lab_plus_3"
+		texturefile = "gfx/interface/social/soc_lab_plus_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_influence_texticon"
+		texturefile = "gfx/texticons/influence_texticon.dds"
+	}
+}

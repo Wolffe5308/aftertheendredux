@@ -1,0 +1,1180 @@
+ger_invade_spanish_civil_war = {
+
+	ger_economic_help_FROM = {
+	
+		icon = ger_mefo_bills
+	
+		available = {
+			has_stability > 0.5
+			num_of_civilian_factories_available_for_projects > 5
+			NOT = { FROM = { has_idea = economic_boom } }
+		}
+
+		visible = { 
+			has_country_flag = ger_help_spain_flag
+			has_global_flag = ate_spanish_civil_war
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		targets = { SPR }
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		days_remove = 60
+		days_re_enable = 30
+		
+		complete_effect = { 
+			FROM = {
+				country_event = { id = ate_germany.4 days = 1 }
+			}
+			add_stability = -0.02
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				FROM = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				FROM = { has_government = fascism }
+				factor = 0.5
+			}
+		}
+		
+		cost = 75
+	}
+	
+	ger_volunteers_help_FROM = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_stability > 0.5
+			has_manpower > 1000
+		}
+
+		visible = { 
+			has_country_flag = ger_help_spain_flag
+			has_global_flag = ate_spanish_civil_war
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		targets = { SPR }
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		days_remove = 60
+		days_re_enable = 30
+		
+		complete_effect = { 
+			FROM = {
+				country_event = { id = ate_germany.5 days = 1 }
+			}
+			add_stability = -0.02
+			add_manpower = -1000
+		}
+		
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				FROM = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				FROM = { has_government = fascism }
+				factor = 0.5
+			}
+		}
+		
+		cost = 75
+	}
+	
+	ger_weapon_help_FROM = {
+	
+		available = {
+			has_stability > 0.5
+			has_equipment = {
+				infantry_equipment > 99
+			}
+		}
+
+		visible = { 
+			has_country_flag = ger_help_spain_flag
+			has_global_flag = ate_spanish_civil_war
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		targets = { SPR }
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		days_remove = 60
+		days_re_enable = 30
+		
+		complete_effect = { 
+			send_equipment = {
+				type = infantry_equipment
+				amount = 100
+				target = FROM
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ate_ger_spanish_help_modifier
+				}
+			}
+			add_stability = -0.04
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				FROM = { has_government = ROOT }
+				factor = 5
+			}
+			modifier = {
+				FROM = { has_government = fascism }
+				factor = 0.5
+			}
+		}
+		cost = 75
+	}
+	
+}
+
+ger_foreign_politics_decisions = {
+
+	ger_help_spain = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { SPR }
+		
+		target_trigger = {
+			FROM = {
+				tag = SPR
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.1
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			has_global_flag = ate_spanish_civil_war
+			SPR = {
+				exists = yes
+				is_subject = no
+				has_war = yes
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			unlock_decision_category_tooltip = ger_invade_spanish_civil_war
+			set_country_flag = ger_help_spain_flag
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	ger_help_italy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { ITA }
+		
+		target_trigger = {
+			FROM = {
+				tag = ITA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.15
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			ITA = {
+				exists = yes
+				is_subject = no
+				has_war = yes
+			}
+			OR = {
+				num_of_civilian_factories_available_for_projects > 5
+				has_manpower > 5000
+				has_equipment = {
+					infantry_equipment > 499
+				}
+			}
+		}
+
+		visible = {
+			FROM = {
+				tag = ITA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			add_stability = -0.1
+			ITA = { country_event = { id = ate_germany.6 days = 1 } }
+			if = {
+				limit = {
+					has_equipment = {
+						infantry_equipment > 499
+					}
+				}
+				send_equipment = {
+					type = infantry_equipment
+					amount = 500
+					target = FROM
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	ger_invite_hungary = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { HUN }
+		
+		target_trigger = {
+			FROM = {
+				tag = HUN
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.2
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			HUN = {
+				exists = yes
+				is_subject = no
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			add_opinion_modifier = {
+				target = HUN
+				modifier = ate_ger_hungary_ally_modifier
+			}
+			HUN = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ate_ger_hungary_ally_modifier
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	ger_visit_russia = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { RUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = RUS
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.1
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_opinion_modifier = ate_ger_antirussian_propaganda_modifier }
+			RUS = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+			NOT = { has_opinion_modifier = ate_ger_antirussian_propaganda_modifier }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ate_ger_visit_russia_modifier
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ate_ger_visit_russia_modifier
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+	
+	ger_smolensk_treaty = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { RUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = RUS
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.15
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			RUS = {
+				exists = yes
+				is_subject = no
+			}
+		}
+
+		visible = {
+			has_opinion_modifier = ate_ger_visit_russia_modifier
+			NOT = { has_opinion_modifier = ate_ger_antirussian_propaganda_modifier }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			RUS = { country_event = { id = ate_germany.10 days = 1 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	ger_antirussian_propaganda = {
+	
+		icon = generic_nationalism
+		
+		allowed = { original_tag = GER }
+		
+		targets = { RUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = RUS
+				exists = yes
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.15
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			RUS = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+			NOT = { has_opinion_modifier = ate_ger_visit_russia_modifier }
+		}
+
+		visible = {
+			NOT = { has_opinion_modifier = ate_ger_visit_russia_modifier }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			add_war_support = 0.1
+			if = {
+				limit = {
+					OR = {
+						BLR = { is_puppet_of = GER }
+						BLR = { is_subject_of = GER }
+					}
+				}
+				BLR = { add_war_support = 0.1 }
+			}
+			if = {
+				limit = {
+					OR = {
+						UKR = { is_puppet_of = GER }
+						UKR = { is_subject_of = GER }
+					}
+				}
+				UKR = { add_war_support = 0.1 }
+			}
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ate_ger_antirussian_propaganda_modifier
+			}
+			RUS = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = ate_ger_antirussian_propaganda_modifier
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 50
+	}
+	
+	ger_invest_russia = {
+	
+		icon = generic_construction
+		
+		allowed = { original_tag = GER }
+		
+		targets = { RUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = RUS
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			RUS = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_opinion_modifier = ate_ger_smolensk_treaty_modifier
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			set_country_flag = ate_take_foreign_dec_flag
+			RUS = { country_event = { id = ate_germany.12 days = 1 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	ger_invite_holland = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { HOL }
+		
+		target_trigger = {
+			FROM = {
+				tag = HOL
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+				has_idea = ger_economic_puppet
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.15
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			add_opinion_modifier = {
+				target = HOL
+				modifier = ate_ger_holland_ally_modifier
+			}
+			HOL = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = ate_ger_holland_ally_modifier
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	ger_guarantee_mexico = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { MEX }
+		
+		target_trigger = {
+			FROM = {
+				tag = MEX
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.35
+			USA = { has_government = communism }
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			give_guarantee = MEX
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 150
+		}
+		
+		cost = 50
+	}
+
+	ger_guarantee_argentine = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { ARG }
+		
+		target_trigger = {
+			FROM = {
+				tag = ARG
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.35
+			OR = {
+				BRA = { has_government = fascism }
+				CHL = { has_government = communism }
+				BOL = { has_government = communism }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			give_guarantee = ARG
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 150
+		}
+		
+		cost = 50
+	}
+
+	ger_advisors_eth = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = GER }
+		
+		targets = { ETH }
+		
+		target_trigger = {
+			FROM = {
+				tag = ETH
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.25
+			RSI = {
+				exists = yes
+				has_government = fascism
+			}
+		}
+
+		visible = {
+			always = yes
+			FROM = {
+				tag = ETH
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			ETH = { country_event = { id = ate_germany.50 days = 2 } }
+		 	custom_effect_tooltip = ate_ger_eth_treaty_tt
+			effect_tooltip = {
+				ETH = { add_ideas = german_advisors }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+}
+
+ger_eu_decisions = {
+
+	ger_eu_investments_industry = {
+	
+		icon = generic_construction
+	
+		available = {
+			has_idea = ger_european_member
+			has_stability > 0.5
+			GER = { has_idea = ger_european_union }
+		}
+
+		visible = {
+			has_idea = ger_european_member
+			GER = { has_completed_focus = ger_europe_industrial_fund }
+		}
+		
+		days_remove = 1
+		days_re_enable = 150
+		
+		complete_effect = {
+			random_list = {
+			    50 = {
+			        random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+					GER = { add_political_power = 20 }
+			    }
+			    50 = {
+			    	
+			    }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		cost = 150
+	}
+
+	ger_eu_investments_infra = {
+	
+		icon = generic_construction
+	
+		available = {
+			has_idea = ger_european_member
+			has_stability > 0.5
+			GER = { has_idea = ger_european_union }
+		}
+
+		visible = {
+			has_idea = ger_european_member
+			GER = { has_completed_focus = ger_europe_industrial_fund }
+		}
+		
+		days_remove = 1
+		days_re_enable = 150
+		
+		complete_effect = {
+			random_list = {
+			    50 = {
+			        random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = infrastructure
+								size > 0
+							}
+							OR = {
+								is_in_home_area = yes
+								NOT = {
+									owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = infrastructure
+												size > 0
+											}
+											is_in_home_area = yes
+										}
+									}
+								}
+							}
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+					GER = { add_political_power = 20 }
+			    }
+			    50 = {
+			    	
+			    }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+		
+		cost = 100
+	}
+
+	ger_eu_research = {
+	
+		icon = generic_research
+	
+		available = {
+			has_idea = ger_european_member
+			GER = {
+				has_idea = ger_european_union
+				is_in_tech_sharing_group = ger_european_research
+			}
+		}
+
+		visible = {
+			has_idea = ger_european_member
+			NOT = { is_in_tech_sharing_group = ger_european_research }
+		}
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = { 
+			add_to_tech_sharing_group = ger_european_research
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		cost = 50
+	}
+
+	ger_eu_research_no = {
+	
+		icon = generic_research
+	
+		available = {
+			has_idea = ger_european_member
+			is_in_tech_sharing_group = ger_european_research
+			GER = {
+				has_idea = ger_european_union
+				is_in_tech_sharing_group = ger_european_research
+			}
+		}
+
+		visible = {
+			has_idea = ger_european_member
+			is_in_tech_sharing_group = ger_european_research
+		}
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = { 
+			remove_from_tech_sharing_group = ger_european_research
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost = 50
+	}
+
+	ger_eu_invite = {
+	
+		icon = generic_diplomacy
+	
+		available = {
+			FROM = {
+				exists = yes
+				has_elections = yes
+				NOT = { has_idea = ger_european_member }
+				has_capitulated = no
+				NOT = { has_government = communism }
+			}
+		}
+
+		visible = {
+			has_idea = ger_european_union
+			NOT = { has_government = communism }
+			if = {
+				limit = { NOT = { has_government = fascism } }
+				FROM = { NOT = { has_government = fascism } }
+			}
+			FROM = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = GER
+					is_puppet_of = GER
+				}
+				NOT = { has_idea = ger_european_union }
+				NOT = { has_idea = ger_european_member }
+				NOT = { has_war_with = ROOT }
+				if = {
+					limit = {
+						FRA = { 
+							is_puppet = no
+							is_subject = no
+							has_government = fascism
+						}
+					}
+					NOT = { is_in_faction_with = FRA }
+				}
+				NOT = { has_government = communism }
+				is_major = no
+				any_owned_state = {
+					is_core_of = FROM
+					is_on_continent = europe
+				}
+			}
+		}
+
+		target_trigger = {
+			if = {
+				limit = { NOT = { has_government = fascism } }
+				FROM = { NOT = { has_government = fascism } }
+			}
+			FROM = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = GER
+					is_puppet_of = GER
+				}
+				NOT = { has_idea = ger_european_union }
+				NOT = { has_idea = ger_european_member }
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				if = {
+					limit = {
+						FRA = { 
+							is_puppet = no
+							is_subject = no
+							has_government = fascism
+						}
+					}
+					NOT = { is_in_faction_with = FRA }
+				}
+				NOT = { has_government = communism }
+				is_major = no
+				any_owned_state = {
+					is_core_of = FROM
+					is_on_continent = europe
+				}
+			}
+		}
+		
+		days_remove = 1
+		days_re_enable = 10
+		
+		complete_effect = { 
+			FROM = {
+				country_event = { id = ate_germany.44 days = 2 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+		cost = 20
+	}
+}

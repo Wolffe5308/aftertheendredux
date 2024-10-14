@@ -1,0 +1,183 @@
+﻿division_template = {
+	name = "Strelkovaya Diviziya"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {	
+	}
+}
+division_template = {
+	name = "Kavaleriyskaya Diviziya" 	
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	
+	}
+}
+
+units = {
+
+	division= {	
+		name = "1. Strelkovaya Diviziya"
+		location = 525
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "2. Strelkovaya Diviziya"
+		location = 6232
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "3. Strelkovaya Diviziya"
+		location = 3520
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "4. Strelkovaya Diviziya"
+		location = 6474
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "5. Strelkovaya Diviziya"
+		location = 9461
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "6. Strelkovaya Diviziya"
+		location = 418
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "7. Strelkovaya Diviziya"
+		location = 3568
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "8. Strelkovaya Diviziya"
+		location = 3542
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "9. Strelkovaya Diviziya"
+		location = 11479
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		name = "10. Strelkovaya Diviziya"
+		location = 513
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		name = "11. Strelkovaya Diviziya"
+		location = 476
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		name = "12. Strelkovaya Diviziya"
+		location = 11411
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		name = "13. Strelkovaya Diviziya"
+		location = 11670
+		division_template = "Strelkovaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+	}
+	
+	division= {	
+		name = "1. Kavaleriyskaya Diviziya"
+		location = 3542
+		division_template = "Kavaleriyskaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		name = "2. Kavaleriyskaya Diviziya"
+		location = 525
+		division_template = "Kavaleriyskaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+	}
+	division= {	
+		name = "3. Kavaleriyskaya Diviziya"
+		location = 11479
+		division_template = "Kavaleriyskaya Diviziya"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "4. Kavaleriyskaya Diviziya"
+		location = 568
+		division_template = "Kavaleriyskaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+	division= {	
+		name = "5. Kavaleriyskaya Diviziya"
+		location = 11500
+		division_template = "Kavaleriyskaya Diviziya"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+	}
+}
+
+air_wings = {
+	202 = {
+		fighter_equipment_0 =  {
+			owner = "UKR"
+			amount = 20
+		}
+	}
+	226 = {
+		fighter_equipment_0 =  {
+			owner = "UKR"
+			amount = 20
+		}
+	}
+}
+
+instant_effect = {
+    add_equipment_production = {
+        equipment = {
+            type = infantry_equipment_0 creator = "UKR"
+        }
+        requested_factories = 2 progress = 0.2 efficiency = 20
+    }
+}
+	

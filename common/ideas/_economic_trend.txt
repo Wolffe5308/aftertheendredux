@@ -1,0 +1,320 @@
+ideas = {
+
+	economic_trend = {
+		law = yes
+		use_list_view = yes
+				
+		economic_crisis = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				NOT = { has_idea = free_economy }
+			}
+
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = -0.1
+				research_speed_factor = -0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		economic_recession = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				NOT = { has_idea = free_economy }
+			}
+
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = -0.05
+				research_speed_factor = -0.05
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		economic_stagnation = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				NOT = { has_idea = free_economy }
+			}
+
+			modifier = {
+				
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = yes
+		}
+		
+		economic_groth = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				NOT = { has_idea = free_economy }
+			}
+
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.05
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		economic_boom = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				NOT = { has_idea = free_economy }
+			}
+
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.1
+				research_speed_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		free_economic_crisis = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				has_idea = free_economy
+			}
+
+			modifier = {
+				stability_factor = -0.2
+				political_power_factor = -0.2
+				research_speed_factor = -0.2
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+				production_speed_buildings_factor = -0.2
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		free_economic_recession = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				has_idea = free_economy
+			}
+
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = -0.1
+				research_speed_factor = -0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		free_economic_stagnation = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				has_idea = free_economy
+			}
+
+			modifier = {
+				
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		free_economic_groth = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				has_idea = free_economy
+			}
+
+			modifier = {
+				stability_factor = 0.1
+				political_power_factor = 0.1
+				research_speed_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		free_economic_boom = {
+		
+			cost = 500
+			removal_cost = -1
+			
+			available = {
+				always = no
+			}
+			
+			visible = {
+				has_idea = free_economy
+			}
+
+			modifier = {
+				stability_factor = 0.2
+				political_power_factor = 0.2
+				research_speed_factor = 0.2
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+				production_speed_buildings_factor = 0.2
+			}
+			
+			on_add = { custom_effect_tooltip = ate_economic_trend_tt }
+			
+			ai_will_do = {
+				factor = 0
+			}
+			
+			cancel_if_invalid = no
+			default = no
+		}
+	}
+}
+				
+				
+				

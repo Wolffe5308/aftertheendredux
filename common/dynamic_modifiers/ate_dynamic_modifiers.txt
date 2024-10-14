@@ -1,0 +1,55 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+fra_chevalier_pp = {
+	enable = { has_idea = fra_chevalier_idea }
+	
+	political_power_factor = var_chev
+}
+
+fra_puppets_political_power = {
+	enable = { has_idea = fra_econ_leader }
+	
+	political_power_factor = var_puppets
+}
+
+ger_puppets_political_power = {
+	enable = { has_idea = ger_first_economy }
+	
+	political_power_factor = var_puppets
+}
+
+ger_eu_puppets_political_power = {
+	enable = { has_idea = ger_european_union }
+	
+	political_power_factor = var_puppets
+}
+
+eng_puppets_political_power = {
+	enable = { has_idea = eng_econ_leader }
+	
+	political_power_factor = var_puppets
+}

@@ -1,0 +1,94 @@
+eng_foreign_politics_decisions = {
+	icon = generic
+	
+	picture = GFX_decision_cat_picture_chi_political_support
+	
+	priority = 50
+	
+	visible_when_empty = yes
+
+	allowed = {
+		original_tag = ENG
+	}
+	
+	visible = {
+		original_tag = ENG
+	}
+}
+
+eng_economic_expantion_decisions = {
+	icon = generic_industry
+
+	allowed = {
+		original_tag = ENG
+	}
+	
+	visible = {
+		original_tag = ENG
+		has_completed_focus = eng_economic_expantion
+	}
+	
+	priority = 40
+}
+
+eng_autarky_decisions = {
+	icon = generic_industry
+
+	allowed = {
+		original_tag = ENG
+	}
+	
+	visible = {
+		original_tag = ENG
+		has_completed_focus = eng_limit_companies
+	}
+	
+	priority = 40
+}
+
+eng_south_fond_decisions = {
+	icon = generic_economy
+
+	allowed = {
+		OR = {
+			original_tag = ENG
+			original_tag = VEN
+			original_tag = BRA
+			original_tag = COL
+			original_tag = ECU
+			original_tag = PRU
+			original_tag = CHL
+			original_tag = BOL
+			original_tag = ARG
+			original_tag = PAR
+			original_tag = URG
+			original_tag = GYA
+			original_tag = SUR
+			original_tag = CAY
+		}
+	}
+	
+	visible = {
+		OR = {
+			original_tag = ENG
+			original_tag = VEN
+			original_tag = BRA
+			original_tag = COL
+			original_tag = ECU
+			original_tag = PRU
+			original_tag = CHL
+			original_tag = BOL
+			original_tag = ARG
+			original_tag = PAR
+			original_tag = URG
+			original_tag = GYA
+			original_tag = SUR
+			original_tag = CAY
+		}
+		ENG = { has_completed_focus = eng_south_found }
+		NOT = { has_government = communism }
+		NOT = { has_government = fascism }
+	}
+	
+	priority = 40
+}

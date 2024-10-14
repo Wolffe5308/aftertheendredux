@@ -1,0 +1,18 @@
+technology_sharing_group = {
+
+	id = ger_european_research
+	name = ger_european_research
+	desc = ger_european_research_desc
+	picture = GFX_idea_ger_eu_research
+    
+	research_sharing_per_country_bonus = 0.05
+
+	categories = { electronics industry }
+
+    available = {
+		OR = {
+			has_idea = ger_european_member
+    		has_idea = ger_european_union
+		}
+    }
+}

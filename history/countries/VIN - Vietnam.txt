@@ -1,0 +1,76 @@
+﻿capital = 671 #Hanoi
+
+oob = "VIN_1936"
+
+set_research_slots = 3
+
+# Starting tech
+# clone of France
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1933.2.16"
+	election_frequency = 36
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 75
+	liberalism = 0
+	socialism = 5
+	communism = 10
+	fascism = 0
+	centrism = 0
+	neutrality = 10
+}
+
+create_country_leader = {
+	name = "Phan Bôi Châu" 
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_warlord2.dds"
+	expire = "1953.3.1"
+	ideology = fascism_ideology 
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Ho Chí Minh" 
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_communism.dds"
+	expire = "1953.3.1"
+	ideology = marxism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Ngô Đình Diêm"
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+	expire = "1953.3.1"
+	ideology = conservatism_ideology
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Nguyen Tuong Tam"
+	desc = ""
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_3.dds"
+	expire = "1953.3.1"
+	ideology = moderatism
+	traits = {
+		
+	}
+}
+
+
+

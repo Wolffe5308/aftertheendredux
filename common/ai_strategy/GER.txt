@@ -1,0 +1,447 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+ger_hamburg_treaty_strategy = {
+	enable = {
+		tag = GER
+		has_idea = ger_hamburg_treaty
+		country_exists = ENG
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = ENG }
+			NOT = { has_idea = ger_hamburg_treaty }
+		}
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "ENG"	
+		value = 150
+	}
+}
+
+ger_dont_protect_british_borders = {
+	enable = {
+		tag = GER
+		is_in_faction_with = ENG
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "ENG"
+		value = 100
+	}
+}
+
+ger_dont_protect_east_borders = {
+
+	enable = {
+		tag = GER
+		surrender_progress > 0.15
+		OR = {
+			is_in_faction_with = UKR
+			is_in_faction_with = CRL
+			is_in_faction_with = BLR
+		}
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "UKR"
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "BLR"
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "CRL"
+		value = 100
+	}
+}
+
+ger_dont_protect_aus_borders = {
+
+	enable = {
+		tag = GER
+		surrender_progress > 0.25
+		is_in_faction_with = AUS
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "AUS"
+		value = 100
+	}
+}
+
+ger_dont_protect_hungarian_borders = {
+	enable = {
+		tag = GER
+		is_in_faction_with = HUN
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "HUN"
+		value = 100
+	}
+}
+
+ger_hungary_ally_strategy = {
+	enable = {
+		OR = {
+			tag = GER
+			tag = HUN
+		}
+		NOT = { has_war_with = GER }
+		NOT = { has_war_with = HUN }
+		NOT = { has_government = communism }
+		NOT = { has_government = fascism }
+		has_opinion_modifier = ate_ger_hungary_ally_modifier
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance
+		id = "GER"	
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "HUN"	
+		value = 100
+	}
+}
+
+ger_holland_ally_strategy = {
+	enable = {
+		OR = {
+			tag = GER
+			tag = HOL
+		}
+		NOT = { has_war_with = GER }
+		NOT = { has_war_with = HOL }
+		NOT = { has_government = communism }
+		NOT = { has_government = fascism }
+		has_opinion_modifier = ate_ger_holland_ally_modifier
+	}
+	
+	abort_when_not_enabled = yes
+	
+	ai_strategy = {
+		type = alliance
+		id = "GER"	
+		value = 100
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "HOL"	
+		value = 100
+	}
+}
+
+ger_hold_non_agression_pact = {
+	enable = {
+		tag = GER
+		has_opinion_modifier = ate_ger_smolensk_treaty_modifier
+		country_exists = RUS
+		NOT = { has_war_with = RUS }
+	}
+	abort = {
+		OR = {
+			has_war_with = RUS
+			RUS = { is_in_faction_with = FRA }
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "RUS"	
+		value = 100
+	}
+}
+
+GER_area_priority = {
+	enable = {
+		original_tag = GER
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = scandinavia
+		value = 80
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = 80
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = south_america
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = asia
+		value = 60
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = middle_east
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = suez
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = oceania
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = pacific
+		value = 10
+	}
+}
+
+GER_unit_production = {
+	enable = {
+		original_tag = GER
+	}
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {
+		type = role_ratio
+		id = garrison
+		value = 10
+	}
+
+
+	ai_strategy = {
+		type = role_ratio
+		id = paratroopers
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = mountaineers
+		value = 30 
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = marines
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = cavalry
+		value = 0
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = armor
+		value = 5
+	}
+
+	ai_strategy = {
+		type = role_ratio
+		id = infantry
+		value = 80 
+	}
+	
+	#Air unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = fighter
+		value = 75 # From 70 to 75
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = cas
+		value = 10 # 15 to 10
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = tactical_bomber
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = strategic_bomber
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = unit_ratio
+		id = naval_bomber
+		value = 5
+	}
+	
+	# Naval unit factors
+	ai_strategy = {
+		type = unit_ratio
+		id = capital_ship
+		value = 10
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = submarine
+		value = 50
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = screen_ship
+		value = 20
+	}
+
+	ai_strategy = {
+		type = unit_ratio
+		id = convoy
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = fighter
+		value = 100
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = cas
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = tactical_bomber
+		value = 40
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = naval_bomber
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = strategic_bomber
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 0
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_tank
+		value = 20
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = anti_air
+		value = 30
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 10
+	} 
+	ai_strategy = {
+		type = equipment_production_factor
+		id = motorized
+		value = 40
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 3
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 4
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = strat_bomber_equipment
+		value = 10
+	}
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = support_equipment
+		value = 30
+	}
+}

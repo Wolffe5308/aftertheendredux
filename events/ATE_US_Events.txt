@@ -1,0 +1,37 @@
+﻿###########################
+# US Events
+###########################
+
+add_namespace = ate_usa
+
+#Civil war
+country_event = {
+	id = ate_usa.1
+	title = ate_usa.1.t
+	desc = ate_usa.1.d
+	picture = GFX_report_event_american_hunger_march
+	
+	trigger = {
+		tag = USA
+		has_government = communism
+		has_idea = usa_weak_party
+		has_stability < 0.25
+	}
+	
+	mean_time_to_happen = { 
+		days = 50
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = ate_usa.1.a
+		add_political_power = -100
+		start_civil_war = {
+			ideology = fascism
+			size = 0.5
+		}
+	}
+}
+
+

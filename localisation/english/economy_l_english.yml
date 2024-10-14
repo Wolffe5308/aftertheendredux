@@ -1,0 +1,132 @@
+﻿l_english:
+
+budget:0 "Budget"
+tax_level:0 "Tax level"
+spend_government:0 "Administration"
+spend_social:0 "Social sphere"
+spend_education:0 "Education"
+spend_police:0 "Police"
+spend_army:0 "Army"
+
+TAXES_LAWS_TEXT:0 "§YTax level§!"
+TAXES_VERY_LOW_TEXT:0 "Very low"
+TAXES_LOW_TEXT:0 "Low"
+TAXES_NORM_TEXT:0 "Medium"
+TAXES_HIGH_TEXT:0 "High"
+TAXES_VERY_HIGH_TEXT:0 "Very high"
+
+GOVERN_LAWS_TEXT:0 "§YAdministration support§!"
+GOVERN_VERY_LOW_TEXT:0 "Very low"
+GOVERN_LOW_TEXT:0 "Low"
+GOVERN_NORM_TEXT:0 "Medium"
+GOVERN_HIGH_TEXT:0 "High"
+GOVERN_VERY_HIGH_TEXT:0 "Very high"
+
+SOCIAL_LAWS_TEXT:0 "§YSocial support§!"
+SOCIAL_VERY_LOW_TEXT:0 "Very low"
+SOCIAL_LOW_TEXT:0 "Low"
+SOCIAL_NORM_TEXT:0 "Medium"
+SOCIAL_HIGH_TEXT:0 "High"
+SOCIAL_VERY_HIGH_TEXT:0 "Very high"
+
+EDUC_LAWS_TEXT:0 "§YEducation support§!"
+EDUC_VERY_LOW_TEXT:0 "Very low"
+EDUC_LOW_TEXT:0 "Low"
+EDUC_NORM_TEXT:0 "Medium"
+EDUC_HIGH_TEXT:0 "High"
+EDUC_VERY_HIGH_TEXT:0 "Very high"
+
+POL_LAWS_TEXT:0 "§YPolice support§!"
+POL_VERY_LOW_TEXT:0 "Very low"
+POL_LOW_TEXT:0 "Low"
+POL_NORM_TEXT:0 "Medium"
+POL_HIGH_TEXT:0 "High"
+POL_VERY_HIGH_TEXT:0 "Very high"
+
+ARMY_LAWS_TEXT:0 "§YArmy support§!"
+ARMY_VERY_LOW_TEXT:0 "Very low"
+ARMY_LOW_TEXT:0 "Low"
+ARMY_NORM_TEXT:0 "Medium"
+ARMY_HIGH_TEXT:0 "High"
+ARMY_VERY_HIGH_TEXT:0 "Very high"
+
+taxes_very_low:0 "Very low taxes"
+taxes_low:0 "Low taxes"
+taxes_norm:0 "Medium taxes"
+taxes_high:0 "High taxes"
+taxes_very_high:0 "Very high taxes"
+
+government_very_low:0 "Very low administration support"
+government_low:0 "Low administration support"
+government_norm:0 "Medium administration support"
+government_high:0 "High administration support"
+government_very_high:0 "Very high administration support"
+
+social_very_low:0 "Very low social support"
+social_low:0 "Low social support"
+social_norm:0 "Medium social support"
+social_high:0 "High social support"
+social_very_high:0 "Very high social support"
+
+education_very_low:0 "Very low education support"
+education_low:0 "Low education support"
+education_norm:0 "Medium education support"
+education_high:0 "High education support"
+education_very_high:0 "Very high education support"
+
+police_very_low:0 "Very low police support"
+police_low:0 "Low police support"
+police_norm:0 "Medium police support"
+police_high:0 "High police support"
+police_very_high:0 "Very high police support"
+
+army_very_low:0 "Very low army support"
+army_low:0 "Low army support"
+army_norm:0 "Medium army support"
+army_high:0 "High army support"
+army_very_high:0 "Very high army support"
+
+tax_very_low_level_tt:0 "§YVery low taxes§!\nConsumer Goods Factories: §Y-5%§!\nStability: §G+20.00%§!\n"
+tax_low_level_tt:0 "§YLow taxes§!\nConsumer Goods Factories: §Y-10%§!\nStability: §G+10.00%§!\n"
+tax_norm_level_tt:0 "§YMedium taxes§!\nConsumer Goods Factories: §Y-15%§!\n"
+tax_high_level_tt:0 "§YHigh taxes§!\nConsumer Goods Factories: §Y-20%§!\nStability: §R-10.00%§!\n"
+tax_very_high_level_tt:0 "§YVery high taxes§!\nConsumer Goods Factories: §Y-25%§!\nStability: §R-20.00%§!\n"
+
+government_very_low_tt:0 "§YVery low administration support§!\nConsumer Goods Factories: §Y2%§!\nPolitical Power Gain: §G+0.02%§!\n"
+government_low_tt:0 "§YLow administration support§!\nConsumer Goods Factories: §Y4%§!\nPolitical Power Gain: §G+0.04%§!\n"
+government_norm_tt:0 "§YMedium administration support§!\nConsumer Goods Factories: §Y6%§!\nPolitical Power Gain: §G+0.06%§!\n"
+government_high_tt:0 "§YHigh administration support§!\nConsumer Goods Factories: §Y8%§!\nPolitical Power Gain: §G+0.08%§!\n"
+government_very_high_tt:0 "§YVery high administration support§!\nConsumer Goods Factories: §Y10%§!\nPolitical Power Gain: §G+0.1%§!\n"
+
+social_very_low_tt:0 "§YVery low social support§!\nConsumer Goods Factories: §Y2%§!\nMonthly Population: §G+5.00%§!\n"
+social_low_tt:0 "§YLow social support§!\nConsumer Goods Factories: §Y4%§!\nMonthly Population: §G+10.00%§!\n"
+social_norm_tt:0 "§YMedium social support§!\nConsumer Goods Factories: §Y6%§!\nMonthly Population: §G+15.00%§!\n"
+social_high_tt:0 "§YHigh social support§!\nConsumer Goods Factories: §Y8%§!\nMonthly Population: §G+20.00%§!\n"
+social_very_high_tt:0 "§YVery high social support§!\nConsumer Goods Factories: §Y10%§!\nMonthly Population: §G+25.00%§!\n"
+
+education_very_low_tt:0 "§YVery low education support§!\nConsumer Goods Factories: §Y2%§!\nResearch Speed: §G+2.00%§!\n"
+education_low_tt:0 "§YLow education support§!\nConsumer Goods Factories: §Y4%§!\nResearch Speed: §G+4.00%§!\n"
+education_norm_tt:0 "§YMedium education support§!\nConsumer Goods Factories: §Y6%§!\nResearch Speed: §G+6.00%§!\n"
+education_high_tt:0 "§YHigh education support§!\nConsumer Goods Factories: §Y8%§!\nResearch Speed: §G+8.00%§!\n"
+education_very_high_tt:0 "§YVery high education support§!\nConsumer Goods Factories: §Y10%§!\nResearch Speed: §G+10.00%§!\n"
+
+police_very_low_tt:0 "§YVery low police support§!\nConsumer Goods Factories: §Y2%§!\nResistance Target: §G-2%§!\n"
+police_low_tt:0 "§YLow police support§!\nConsumer Goods Factories: §Y4%§!\nResistance Target: §G-4%§!\n"
+police_norm_tt:0 "§YMedium police support§!\nConsumer Goods Factories: §Y6%§!\nResistance Target: §G-6%§!\n"
+police_high_tt:0 "§YHigh police support§!\nConsumer Goods Factories: §Y8%§!\nResistance Target: §G-8%§!\n"
+police_very_high_tt:0 "§YVery high police support§!\nConsumer Goods Factories: §Y10%§!\nResistance Target: §G-10%§!\n"
+
+army_very_low_tt:0 "§YVery low army support§!\nConsumer Goods Factories: §Y2%§!\nDivision training time: §G-2.00%§!\nDivision Organization: §G+2.0%§!\n"
+army_low_tt:0 "§YLow army support§!\nConsumer Goods Factories: §Y4%§!\nDivision training time: §G-4.00%§!\nDivision Organization: §G+4.0%§!\n"
+army_norm_tt:0 "§YMedium army support§!\nConsumer Goods Factories: §Y6%§!\nDivision training time: §G-6.00%§!\nDivision Organization: §G+6.0%§!\n"
+army_high_tt:0 "§YHigh army support§!\nConsumer Goods Factories: §Y8%§!\nDivision training time: §G-8.00%§!\nDivision Organization: §G+8.0%§!\n"
+army_very_high_tt:0 "§YVery high army support§!\nConsumer Goods Factories: §Y10%§!\nDivision training time: §G-10.00%§!\nDivision Organization: §G+10.0%§!\n"
+
+BUDGET_TOOLTIP:0 "Budget management"
+BUDGET_desc_TOOLTIP:0 "Current budget allocation"
+ 
+
+
+
+
+

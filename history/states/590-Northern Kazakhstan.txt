@@ -1,0 +1,19 @@
+state={
+	id=590
+	name="STATE_590" # Akmolinsk
+	manpower = 980533
+	
+	state_category = pastoral
+
+	history={
+		owner = RUS
+		add_core_of = RUS
+		buildings = {
+			infrastructure = 4
+		}
+	}
+
+	provinces={
+		1229 1309 1375 1391 1418 1662 1680 1694 4238 4309 4850 7298 7741 7874 10211 10308 10633 12619 
+	}
+}

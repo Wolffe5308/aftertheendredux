@@ -1,0 +1,2647 @@
+fra_una_bills_decisions = {
+
+	fra_una_bills_mission = {
+
+		allowed = { always = no }
+
+		icon = ger_mefo_bills
+
+		available = {
+			has_government = fascism
+			fra_can_delay_una_payment = yes
+			has_political_power > 0
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 180
+		is_good = yes
+		fire_only_once = yes
+
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					NOT = { fra_has_una_bills = yes }
+					has_idea = fra_una_bills_ended
+				}
+			}
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_war = no
+					OR = {
+						has_country_flag = fra_has_cancelled_una
+						has_idea = fra_una_bills_8
+					}
+				}
+				fra_remove_una_bills = yes
+				add_political_power = -150
+				add_timed_idea = { idea = fra_una_bills_ended days = 180 }
+				else = {
+					custom_effect_tooltip = fra_una_bills_mission_tt
+					fra_una_bills_level_up = yes
+					hidden_effect = {
+						activate_mission = fra_una_bills_mission
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	fra_cancel_una = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			hidden_trigger = { 
+				NOT = { has_country_flag = fra_has_cancelled_una } 
+				NOT = {
+					OR = {
+						NOT = { fra_has_una_bills = yes }
+						has_idea = fra_una_bills_ended
+					}
+				}
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			hidden_trigger = { 
+				NOT = { has_country_flag = fra_has_cancelled_una } 
+				NOT = {
+					OR = {
+						NOT = { fra_has_una_bills = yes }
+						has_idea = fra_una_bills_ended
+					}
+				}
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		remove_effect = {
+			set_country_flag = fra_has_cancelled_una
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	fra_renew_una = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			hidden_trigger = { 
+				has_country_flag = fra_has_cancelled_una
+				NOT = {
+					OR = {
+						NOT = { fra_has_una_bills = yes }
+						has_idea = fra_una_bills_ended
+					}
+				}
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			hidden_trigger = { 
+				has_country_flag = fra_has_cancelled_una
+				NOT = {
+					OR = {
+						NOT = { fra_has_una_bills = yes }
+						has_idea = fra_una_bills_ended
+					}
+				}
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		remove_effect = {
+			clr_country_flag = fra_has_cancelled_una
+			add_ideas = fra_una_bills
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+}
+
+fra_foreign_politics_decisions = {
+
+	fra_goal_united_french = {
+	
+		icon = generic_form_nation
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = form_eu_france_required_states_tt
+				controls_state = 29
+				controls_state = 18
+				controls_state = 17
+				controls_state = 15
+				controls_state = 16
+				controls_state = 27
+				controls_state = 14
+				controls_state = 30
+				controls_state = 24
+				controls_state = 23
+				controls_state = 33
+				controls_state = 26
+				controls_state = 20
+				controls_state = 32
+				controls_state = 25
+				controls_state = 22
+				controls_state = 21
+				controls_state = 19
+				controls_state = 20
+				controls_state = 1
+				controls_state = 785
+				controls_state = 31
+			}
+			controls_state = 34
+			controls_state = 28
+			controls_state = 3
+			controls_state = 735
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			swap_ideas = {
+			    remove_idea = fra_revanchism
+			    add_idea = fra_united_french
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 0
+	}
+	
+	fra_goal_revenge = {
+	
+		icon = generic_form_nation
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_subject = no
+			GER = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+					is_subject_of = ROOT
+					FRA = { 
+						owns_state = 28
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_political_power = 200
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 0
+	}
+
+	fra_help_spain = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { SPA }
+		
+		target_trigger = {
+			FROM = {
+				tag = SPA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_idea = fra_potsdam_treaty }
+			has_global_flag = ate_spanish_civil_war
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			SPA = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+			}
+		}
+
+		visible = {
+			has_completed_focus = fra_vic_free
+			NOT = { has_completed_focus = fra_catalonia_annex }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			unlock_decision_category_tooltip = fra_invade_spanish_civil_war
+			set_country_flag = fra_help_spain_flag
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	fra_italian_kingdom_diplo = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { ITA }
+		
+		target_trigger = {
+			FROM = {
+				tag = ITA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_opinion_modifier = ate_fra_milan_treaty_modifier }
+			ITA = {
+				exists = yes
+				is_subject = no
+				has_idea = victor_emmanuel
+				has_war_with = RSI
+				owns_state = 553
+				owns_state = 268
+			}
+			NOT = {
+				RSI = {
+					has_volunteers_amount_from = {
+					    tag = FRA
+					    count > 0
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+			FROM = {
+				tag = ITA
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			ITA = { country_event = { id = ate_france.32 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 25
+	}
+
+	fra_rsi_marsel_treaty = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { ITA }
+		
+		target_trigger = {
+			FROM = {
+				tag = ITA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = fascism }
+				has_opinion_modifier = ate_fra_meet_victor_modifier
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_idea = fra_potsdam_treaty }
+			has_army_manpower = {
+				size > 239999
+			}
+			NOT = { has_opinion_modifier = ate_fra_milan_treaty_modifier }
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			ITA = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				has_war_with = RSI
+				controls_state = 553
+				controls_state = 268
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			ITA = { country_event = { id = ate_france.35 days = 2 } }
+			custom_effect_tooltip = ATE_fra_italy_tt
+			effect_tooltip = {
+				transfer_state = 553
+				transfer_state = 268
+				add_timed_idea = {
+					idea = fra_french_officiers_fr
+					days = 180
+				}
+				ITA = {
+					add_timed_idea = {
+						idea = fra_french_officiers
+						days = 180
+					}
+				}
+				RSI = {
+					add_opinion_modifier = {
+						target = FRA
+						modifier = ate_fra_hate_mussolini_modifier
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 50
+	}
+	
+	fra_italian_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { RSI }
+		
+		target_trigger = {
+			FROM = {
+				tag = RSI
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_opinion_modifier = ate_fra_marcel_treaty_modifier }
+			RSI = {
+				exists = yes
+				is_subject = no
+				has_war_with = ITA
+			}
+			NOT = {
+				ITA = {
+					has_volunteers_amount_from = {
+					    tag = FRA
+					    count > 0
+					}
+				}
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			country_event = { id = ate_france.5 days = 2 }
+			RSI = { country_event = { id = ate_france.5 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+	
+	fra_rsi_milan_treaty = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { RSI }
+		
+		target_trigger = {
+			FROM = {
+				tag = RSI
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				has_opinion_modifier = ate_fra_meet_mussolini_modifier
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_idea = fra_potsdam_treaty }
+			has_army_manpower = {
+				size > 239999
+			}
+			NOT = { has_opinion_modifier = ate_fra_hate_mussolini_modifier }
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			RSI = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				has_war_with = ITA
+				controls_state = 735
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+			NOT = { has_opinion_modifier = ate_fra_hate_mussolini_modifier }
+			RSI = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				has_war_with = ITA
+				controls_state = 735
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			RSI = { country_event = { id = ate_france.6 days = 2 } }
+			custom_effect_tooltip = ATE_fra_italy_tt
+			effect_tooltip = {
+				transfer_state = 735
+				add_timed_idea = {
+					idea = fra_french_officiers_fr
+					days = 180
+				}
+				RSI = {
+					add_timed_idea = {
+						idea = fra_french_officiers
+						days = 180
+					}
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	fra_rsi_alliance = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { RSI }
+		
+		target_trigger = {
+			FROM = {
+				tag = RSI
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				has_government = fascism
+				has_opinion_modifier = ate_fra_meet_mussolini_modifier
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_idea = fra_potsdam_treaty }
+			has_army_manpower = {
+				size > 299999
+			}
+			is_faction_leader = yes
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_opinion_modifier = ate_fra_hate_mussolini_modifier }
+			NOT = { has_country_flag = fra_milan_no }
+			RSI = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ITA }
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+			NOT = { has_opinion_modifier = ate_fra_hate_mussolini_modifier }
+			NOT = { has_country_flag = fra_milan_no }
+			RSI = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ITA }
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			RSI = { country_event = { id = ate_france.9 days = 2 } }
+			custom_effect_tooltip = ATE_fra_italy_tt
+			effect_tooltip = {
+				add_to_faction = RSI
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+
+	fra_spa_alliance = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { SPA }
+		
+		target_trigger = {
+			FROM = {
+				tag = SPA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				has_government = fascism
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_idea = fra_potsdam_treaty }
+			has_army_manpower = {
+				size > 299999
+			}
+			is_faction_leader = yes
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			SPA = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ITA }
+				NOT = { is_in_faction_with = FRA }
+				NOT = { has_idea = SPA_recovering_from_civil_war }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			NOT = { has_global_flag = ate_spanish_civil_war }
+			FROM = {
+				tag = SPA
+				has_government = fascism
+				exists = yes
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			SPA = { country_event = { id = ate_france.21 days = 2 } }
+			custom_effect_tooltip = ATE_fra_spain_tt
+			effect_tooltip = {
+				add_to_faction = SPA
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 150
+		}
+		
+		cost = 75
+	}
+
+	fra_hitler_revolution = {
+	
+		icon = generic_civil_support
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { AUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = AUS
+				exists = yes
+				has_capitulated = no
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			AUS = {
+				exists = yes
+				has_capitulated = no
+				fascism > 0.3
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_help_hitler
+			AUS = {
+				exists = yes
+				has_capitulated = no
+				NOT = { is_in_faction_with = FRA }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			AUS = { country_event = { id = ate_france.47 days = 1 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+	
+	fra_rexist_revolution = {
+	
+		icon = generic_civil_support
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { BEL }
+		
+		target_trigger = {
+			FROM = {
+				tag = BEL
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = FRA }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			BEL = {
+				exists = yes
+				has_capitulated = no
+				fascism > 0.3
+				NOT = { has_war_with = FRA }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_get_degrelle
+			BEL = {
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = FRA }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			BEL = { country_event = { id = political.18 days = 1 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	fra_turkish_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { TUR }
+		
+		target_trigger = {
+			FROM = {
+				tag = TUR
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			TUR = {
+				exists = yes
+				is_subject = no
+				NOT = { has_government = communism }
+			}
+			NOT = { is_in_faction_with = GRE }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			country_event = { id = ate_france.49 days = 2 }
+			TUR = { country_event = { id = ate_france.49 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	fra_tur_economic = {
+	
+		icon = generic_construction
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { TUR }
+		
+		target_trigger = {
+			FROM = {
+				tag = TUR
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			TUR = {
+				exists = yes
+				is_subject = no
+				NOT = { has_government = communism }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+			has_opinion_modifier = ate_fra_tur_diplo_modifier
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			custom_effect_tooltip = ate_fra_add_influence_tur_tt
+			TUR = {
+				add_to_variable = { influence@FRA = 50 }
+				clamp_variable = {
+					var = influence@FRA
+					min = 0
+					max = 100
+				}
+			}
+			if = {
+				limit = { 
+					TUR = {
+						NOT = {
+							is_in_array = {
+								array = FRA.influenced_countries
+								value = TUR.id
+							}
+						}
+					}
+				}
+				add_to_array = { array = FRA.influenced_countries value = TUR.id }
+			}
+			add_to_variable = { influenced@TUR = 50 }
+			clamp_variable = {
+				var = influenced@TUR
+				min = 0
+				max = 100
+			}
+			TUR = { country_event = { id = ate_france.52 days = 2 } }
+			add_opinion_modifier = {
+				target = TUR
+				modifier = ate_fra_tur_firms_modifier
+			}
+			effect_tooltip = {
+				TUR = { add_ideas = fra_econ_member }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	fra_russish_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { RUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = RUS
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			RUS = {
+				exists = yes
+				is_subject = no
+				is_puppet = no
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = GER }
+			}
+			NOT = { is_in_faction_with = GER }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			country_event = { id = ate_france.56 days = 2 }
+			RUS = { country_event = { id = ate_france.56 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	fra_rus_secret_treaty = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { RUS }
+		
+		target_trigger = {
+			FROM = {
+				tag = RUS
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			is_puppet = no
+			has_army_manpower = {
+				size > 599999
+			}
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_opinion_modifier = ate_fra_pol_secret_modifier }
+			RUS = {
+				exists = yes
+				is_subject = no
+				is_puppet = no
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = GER }
+			}
+			NOT = { is_in_faction_with = GER }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+			has_opinion_modifier = ate_fra_rus_diplo_modifier
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			custom_effect_tooltip = fra_no_pol_secret_tt
+			RUS = { country_event = { id = ate_france.57 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	fra_polish_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { POL }
+		
+		target_trigger = {
+			FROM = {
+				tag = POL
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_puppet = no
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			POL = {
+				exists = yes
+				NOT = { has_government = communism }
+			}
+			NOT = { is_in_faction_with = POL }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			country_event = { id = ate_france.70 days = 2 }
+			POL = { country_event = { id = ate_france.70 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	fra_pol_treaty = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { POL }
+		
+		target_trigger = {
+			FROM = {
+				tag = POL
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			is_puppet = no
+			has_army_manpower = {
+				size > 599999
+			}
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_opinion_modifier = ate_fra_rus_secret_modifier }
+			POL = {
+				exists = yes
+				NOT = { has_government = communism }
+			}
+			NOT = { is_in_faction_with = RUS }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_vic_free
+			has_opinion_modifier = ate_fra_pol_diplo_modifier
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			custom_effect_tooltip = fra_no_rus_secret_tt
+			POL = { country_event = { id = ate_france.71 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 50
+	}
+	
+	fra_swi_war = {
+	
+		icon = generic_prepare_civil_war
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { SWI }
+		
+		target_trigger = {
+			FROM = {
+				tag = SWI
+				exists = yes
+			}
+		}
+	
+		available = {
+			is_subject = no
+			is_puppet = no
+			OR = {
+				has_war_with = GER
+				owns_state = 28
+			}
+			SWI = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_swi_cores
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_threat = 5
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SWI
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 75
+	}
+
+	fra_eng_afrika_reb = {
+	
+		icon = generic_prepare_civil_war
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { ENG }
+		
+		target_trigger = {
+			FROM = {
+				tag = ENG
+				exists = yes
+				has_capitulated = no
+				has_war_with = ROOT
+				OR = {
+					owns_state = 556
+					owns_state = 557
+					owns_state = 272
+				}
+			}
+		}
+	
+		available = {
+			is_subject = no
+			has_war_with = ENG
+			surrender_progress < 0.1
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			ENG = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+			}
+		}
+
+		visible = {
+			has_government = fascism
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			ENG = { country_event = { id = ate_france.30 days = 2 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 75
+	}
+	
+	fra_ger_war = {
+	
+		icon = generic_prepare_civil_war
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { GER }
+		
+		target_trigger = {
+			FROM = {
+				tag = GER
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			has_army_manpower = {
+				size > 499999
+			}
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			FROM = {
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+				NOT = { has_idea = ger_revanchism }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_war_with_germany
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			add_threat = 10
+			country_event = { id = ate_france.114 }
+			if = {
+				limit = { NOT = { has_war_with = GER } }
+				create_wargoal = {
+				    type = puppet_wargoal_focus
+				    target = GER
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				has_idea = fra_una_bills_ended
+			}
+			modifier = {
+				factor = 0
+				has_war_with = BEL
+				BEL = { has_capitulated = no }
+			}
+			modifier = {
+				factor = 0
+				has_war_with = HOL
+				HOL = { has_capitulated = no }
+			}
+		}
+		
+		cost = 75
+	}
+
+	fra_ger_divide = {
+	
+		icon = generic_operation
+		
+		allowed = { original_tag = FRA }
+		
+		targets = { GER }
+		
+		target_trigger = {
+			FROM = {
+				tag = GER
+				exists = yes
+				NOT = { is_in_faction_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			GER = {
+				has_war_with = ROOT
+				surrender_progress > 0.9
+				NOT = { has_government = fascism }
+				NOT = { has_government = communism }
+				NOT = { is_in_faction_with = ENG }
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_country_flag = fra_divided_germany_flag
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			country_event = { id = ate_france.113 }
+		}
+		
+		ai_will_do = {
+			factor = 500
+		}
+		
+		cost = 0
+	}
+	
+}
+
+fra_invade_spanish_civil_war = {
+
+	fra_economic_help_FROM = {
+	
+		icon = ger_mefo_bills
+	
+		available = {
+			has_stability > 0.6
+			num_of_civilian_factories_available_for_projects > 5
+			NOT = { FROM = { has_idea = economic_boom } }
+		}
+
+		visible = {
+			has_government = fascism
+			has_country_flag = fra_help_spain_flag
+			has_global_flag = ate_spanish_civil_war
+			SPA = { 
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		targets = { SPA }
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+			}
+		}
+		
+		days_remove = 60
+		days_re_enable = 60
+		
+		complete_effect = { 
+			FROM = {
+				country_event = { id = ate_france.18 days = 1 }
+			}
+			add_stability = -0.01
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 50
+				FROM = { NOT = { has_opinion_modifier = ate_fra_spanish_help_modifier } }
+			}
+		}
+		
+		cost = 25
+	}
+	
+	fra_volunteers_help_FROM = {
+	
+		icon = generic_prepare_civil_war
+	
+		available = {
+			has_stability > 0.6
+			has_manpower > 1000
+		}
+
+		visible = {
+			has_government = fascism
+			has_country_flag = fra_help_spain_flag
+			has_global_flag = ate_spanish_civil_war
+			SPA = { 
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		targets = { SPA }
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+			}
+		}
+		
+		days_remove = 60
+		days_re_enable = 60
+		
+		complete_effect = { 
+			FROM = {
+				country_event = { id = ate_france.19 days = 1 }
+			}
+			add_stability = -0.01
+			add_manpower = -1000
+		}
+		
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		cost = 25
+	}
+	
+	fra_weapon_help_FROM = {
+	
+		available = {
+			has_stability > 0.75
+			has_equipment = {
+				infantry_equipment > 499
+			}
+		}
+
+		visible = {
+			has_government = fascism
+			has_country_flag = fra_help_spain_flag
+			has_global_flag = ate_spanish_civil_war
+			SPA = { 
+				exists = yes
+				has_capitulated = no
+			}
+		}
+
+		targets = { SPA }
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				has_war = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+			}
+		}
+		
+		days_remove = 60
+		days_re_enable = 60
+		
+		complete_effect = { 
+			send_equipment = {
+				type = infantry_equipment
+				amount = 500
+				target = FROM
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = ate_fra_spanish_help_modifier
+				}
+			}
+			add_stability = -0.02
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+
+		cost = 25
+	}
+	
+}
+
+fra_corporate_decisions = {
+
+	fra_go_plan = {
+	
+		icon = generic_operation
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			NOT = { has_idea = fra_plan_idea }
+			has_country_flag = fra_corporated_economy_flag
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_corporate_state
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 1
+		days_re_enable = 1
+		
+		complete_effect = {
+			add_ideas = fra_plan_idea
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	fra_corporate_military = {
+	
+		icon = generic_industry
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+			NOT = { has_country_flag = fra_corporativise_flag }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_corporate_state
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+			industrial_capacity_dockyard = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = fra_corporativise_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = fra_corporativise_flag
+			if = {
+				limit = { check_variable = { fra_corp = 4 } }
+				clear_variable = fra_corp
+				set_country_flag = fra_corporated_economy_flag
+			}
+			if = {
+				limit = { 
+					NOT = { check_variable = { fra_corp = 4 } }
+				}
+				add_to_variable = { fra_corp = 1 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
+	}
+
+	fra_corporate_hard = {
+	
+		icon = generic_construction
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+			NOT = { has_country_flag = fra_corporativise_flag }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_corporate_state
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+
+		modifier = {
+			production_speed_buildings_factor = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = fra_corporativise_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = fra_corporativise_flag
+			if = {
+				limit = { check_variable = { fra_corp = 4 } }
+				clear_variable = fra_corp
+				set_country_flag = fra_corporated_economy_flag
+			}
+			if = {
+				limit = { 
+					NOT = { check_variable = { fra_corp = 4 } }
+				}
+				add_to_variable = { fra_corp = 1 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
+	}
+
+	fra_corporate_resorce = {
+	
+		icon = oil
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+			NOT = { has_country_flag = fra_corporativise_flag }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_corporate_state
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+
+		modifier = {
+			local_resources_factor = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = fra_corporativise_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = fra_corporativise_flag
+			if = {
+				limit = { check_variable = { fra_corp = 4 } }
+				clear_variable = fra_corp
+				set_country_flag = fra_corporated_economy_flag
+			}
+			if = {
+				limit = { 
+					NOT = { check_variable = { fra_corp = 4 } }
+				}
+				add_to_variable = { fra_corp = 1 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
+	}
+
+	fra_corporate_light = {
+	
+		icon = generic_decision
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+			NOT = { has_country_flag = fra_corporativise_flag }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_corporate_state
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+
+		modifier = {
+			trade_opinion_factor = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = fra_corporativise_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = fra_corporativise_flag
+			if = {
+				limit = { check_variable = { fra_corp = 4 } }
+				clear_variable = fra_corp
+				set_country_flag = fra_corporated_economy_flag
+			}
+			if = {
+				limit = { 
+					NOT = { check_variable = { fra_corp = 4 } }
+				}
+				add_to_variable = { fra_corp = 1 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
+	}
+
+	fra_corporate_agri = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			has_government = fascism
+			is_subject = no
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+			NOT = { has_country_flag = fra_corporativise_flag }
+		}
+
+		visible = {
+			has_government = fascism
+			has_completed_focus = fra_corporate_state
+			NOT = { has_country_flag = fra_corporated_economy_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+
+		modifier = {
+			stability_factor = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = fra_corporativise_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = fra_corporativise_flag
+			if = {
+				limit = { check_variable = { fra_corp = 4 } }
+				clear_variable = fra_corp
+				set_country_flag = fra_corporated_economy_flag
+			}
+			if = {
+				limit = { 
+					NOT = { check_variable = { fra_corp = 4 } }
+				}
+				add_to_variable = { fra_corp = 1 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
+	}
+
+}
+
+fra_kampf_mit_revolutions_decisions = {
+
+	fra_commies_mission = {
+
+		allowed = { always = yes }
+
+		icon = revolt
+
+		available = {
+			has_government = communism
+		}
+
+		days_mission_timeout = 90
+		is_good = yes
+		fire_only_once = yes
+
+		cancel_trigger = {
+			NOT = { has_idea = fra_revolution_threat }
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					NOT = {	has_country_flag = fra_commies_documents_flag }
+				}
+				custom_effect_tooltip = ate_fra_commies_etwas_tt
+				hidden_effect = {
+					random_list = {
+						50 = {
+							country_event = { id = ate_france.115 days = 0 }
+						}
+						30 = {
+							country_event = { id = ate_france.116 days = 0 }
+						}
+						20 = {
+							country_event = { id = ate_france.117 days = 0 }
+						}
+					}
+					activate_mission = fra_commies_mission
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = fra_commies_documents_flag
+				}
+				random_list = {
+					50 = {
+						country_event = { id = ate_france.115 days = 0 }
+					}
+					30 = {
+						country_event = { id = ate_france.116 days = 0 }
+					}
+					20 = {
+						country_event = { id = ate_france.117 days = 0 }
+					}
+				}
+				hidden_effect = {
+					activate_mission = fra_commies_mission
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	fra_commies_integrate_to_cells = {
+
+		icon = infiltrate_state
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_party_cells
+			NOT = { has_country_flag = fra_commies_cells_done_flag }
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_country_flag = fra_commies_cells_done_flag }
+			NOT = { has_government = communism }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 30
+		days_re_enable = 30
+
+		remove_effect = {
+			random_list = {
+				70 = {
+					country_event = { id = ate_france.104 days = 0 }
+				}
+				30 = {
+					country_event = { id = ate_france.103 days = 0 }
+				}
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	fra_commies_spread_in_cells = {
+
+		icon = generic_civil_support
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_party_cells
+			has_country_flag = fra_commies_cells_done_flag
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_country_flag = fra_commies_cells_spreaded_flag }
+			NOT = { has_government = communism }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 30
+		days_re_enable = 30
+
+		remove_effect = {
+			add_political_power = 20
+			set_country_flag = fra_commies_cells_spreaded_flag
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	fra_commies_end_cells = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_party_cells
+			has_country_flag = fra_commies_cells_spreaded_flag
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_government = communism }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 30
+		days_re_enable = 30
+
+		remove_effect = {
+			random_list = {
+				70 = {
+					country_event = { id = ate_france.105 days = 0 }
+				}
+				30 = {
+					country_event = { id = ate_france.106 days = 0 }
+				}
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	fra_commies_find_collaborates = {
+
+		icon = generic_political_discourse
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_service_securite
+			NOT = { has_country_flag = fra_commies_collab_done_flag }
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_country_flag = fra_commies_collab_done_flag }
+			NOT = { has_government = communism }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 30
+		days_re_enable = 30
+
+		remove_effect = {
+			random_list = {
+				70 = {
+					country_event = { id = ate_france.119 days = 0 }
+				}
+				30 = {
+					country_event = { id = ate_france.118 days = 0 }
+				}
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	fra_commies_open_plans = {
+
+		icon = generic_operation
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_service_securite
+			has_country_flag = fra_commies_collab_done_flag
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_government = communism }
+			NOT = { has_country_flag = fra_commies_documents_flag }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 30
+		days_re_enable = 1
+
+		remove_effect = {
+			add_political_power = 20
+			set_country_flag = fra_commies_documents_flag
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	fra_commies_radiogame = {
+
+		icon = generic_decision
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_service_securite
+			has_country_flag = fra_commies_collab_done_flag
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_country_flag = fra_commies_radiogame_flag }
+			NOT = { has_government = communism }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 60
+		days_re_enable = 30
+
+		remove_effect = {
+			add_political_power = 20
+			set_country_flag = fra_commies_radiogame_flag
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	fra_commies_liqudation_leaders = {
+
+		icon = oppression
+
+		available = {
+			political_power_daily > 0.5
+			has_completed_focus = fra_service_securite
+			has_country_flag = fra_commies_radiogame_flag
+		}
+
+		cost = 0
+
+		fire_only_once = no
+
+		visible = {
+			NOT = { has_government = communism }
+			has_idea = fra_revolution_threat
+		}
+
+		days_remove = 60
+		days_re_enable = 30
+
+		remove_effect = {
+			random_list = {
+				70 = {
+					country_event = { id = ate_france.120 days = 0 }
+				}
+				30 = {
+					country_event = { id = ate_france.121 days = 0 }
+				}
+			}
+		}
+
+		modifier = {
+			political_power_gain = -0.1
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+}
+
+fra_chevalier_decisions = {
+
+	fra_chev_new_generals = {
+	
+		icon = fra_chevalier
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_major = yes
+			is_puppet = no
+			has_government = fascism
+		}
+
+		visible = {
+			has_government = fascism
+			has_idea = fra_chevalier_idea
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 60
+		days_re_enable = 1
+		
+		remove_effect = {
+			subtract_from_variable = { var_chev = 0.04 }
+			add_to_variable = { var_chevalier = 4 }
+			create_corps_commander = {
+				name = "Charles De Gaulle"
+				picture = "Portrait_France_Charles_De_Gaulle.dds"
+				traits = {  armor_officer harsh_leader media_personality }
+				id = 101
+				skill = 5
+				attack_skill = 5
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Philippe Leclerc"
+				picture = "portrait_france_philippe_leclerc.dds"
+				traits = {  armor_officer trait_reckless career_officer }
+				skill = 4
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 3
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		cost = 25
+	}
+	
+	fra_chev_orlean = {
+	
+		icon = fra_chevalier
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_major = yes
+			is_puppet = no
+			has_government = fascism
+			controls_state = 24
+		}
+
+		visible = {
+			has_government = fascism
+			has_idea = fra_chevalier_idea
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 60
+		days_re_enable = 1
+		
+		remove_effect = {
+			subtract_from_variable = { var_chev = 0.02 }
+			add_to_variable = { var_chevalier = 2 }
+			24 = {
+				create_unit = {
+					division = "name = \"3e Division Chevalier d'Orléans\" division_template = \"Division Chevalier\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		cost = 25
+	}
+
+	fra_chev_brest = {
+	
+		icon = fra_chevalier
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_major = yes
+			is_puppet = no
+			has_government = fascism
+			controls_state = 14
+		}
+
+		visible = {
+			has_government = fascism
+			has_idea = fra_chevalier_idea
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 60
+		days_re_enable = 1
+		
+		remove_effect = {
+			subtract_from_variable = { var_chev = 0.02 }
+			add_to_variable = { var_chevalier = 2 }
+			14 = {
+				create_unit = {
+					division = "name = \"4e Division Chevalier de Brest\" division_template = \"Division Chevalier\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+		cost = 25
+	}
+
+	fra_chev_bordeaux = {
+	
+		icon = fra_chevalier
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_major = yes
+			is_puppet = no
+			has_government = fascism
+			controls_state = 19
+		}
+
+		visible = {
+			has_government = fascism
+			has_idea = fra_chevalier_idea
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 60
+		days_re_enable = 1
+		
+		remove_effect = {
+			subtract_from_variable = { var_chev = 0.02 }
+			add_to_variable = { var_chevalier = 2 }
+			19 = {
+				create_unit = {
+					division = "name = \"5e Division Chevalier de Bordeaux\" division_template = \"Division Chevalier\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+		cost = 25
+	}
+
+	fra_chev_lyon = {
+	
+		icon = fra_chevalier
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_major = yes
+			is_puppet = no
+			has_government = fascism
+			has_tech = basic_medium_tank
+			controls_state = 20
+		}
+
+		visible = {
+			has_government = fascism
+			has_idea = fra_chevalier_idea
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+		
+		remove_effect = {
+			subtract_from_variable = { var_chev = 0.04 }
+			add_to_variable = { var_chevalier = 4 }
+			division_template = {
+				name = "Division Cuirassée Chevalier" 	
+				is_locked = yes
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					mechanized = { x = 1 y = 0 }
+					mechanized = { x = 1 y = 1 }
+					mechanized = { x = 1 y = 2 }
+					mechanized = { x = 1 y = 3 }
+					mechanized = { x = 2 y = 0 }
+					mechanized = { x = 2 y = 1 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }      		
+					artillery = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+				}
+			}
+			20 = {
+				create_unit = {
+					division = "name = \"6e Division Cuirassée Chevalier de Lyon\" division_template = \"Division Cuirassée Chevalier\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		cost = 25
+	}
+
+	fra_chev_marcel = {
+	
+		icon = fra_chevalier
+		
+		allowed = { original_tag = FRA }
+	
+		available = {
+			is_major = yes
+			is_puppet = no
+			has_government = fascism
+			has_tech = basic_medium_tank
+			has_template = "Division Cuirassée Chevalier"
+			controls_state = 21
+		}
+
+		visible = {
+			has_government = fascism
+			has_idea = fra_chevalier_idea
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 90
+		days_re_enable = 1
+		
+		remove_effect = {
+			subtract_from_variable = { var_chev = 0.04 }
+			add_to_variable = { var_chevalier = 4 }
+			21 = {
+				create_unit = {
+					division = "name = \"7e Division Cuirassée Chevalier de Marseille\" division_template = \"Division Cuirassée Chevalier\" start_experience_factor = 0.3"  
+					owner = ROOT
+				}
+			}
+		}
+
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		cost = 25
+	}
+}

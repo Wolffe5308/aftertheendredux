@@ -1,0 +1,437 @@
+scripted_gui = {
+
+	econ_all_show = {
+		context_type = player_context
+		
+		window_name = "economic_alliance_politics_container"
+		
+		parent_window_token = politics_tab
+		
+		visible = {
+            always = yes
+		}
+
+		effects = {
+          
+		}
+		
+		triggers = {
+			no_economic_icon_visible = {
+				always = yes
+			}
+			france_economic_member_icon_visible = {
+				has_idea = fra_econ_member
+			}
+			france_leader_economic_icon_visible = {
+				has_idea = fra_econ_leader
+			}
+			germany_economic_leader_icon_visible = {
+				has_idea = ger_first_economy
+			}
+			germany_economic_member_icon_visible = {
+				has_idea = ger_economic_puppet
+			}
+			britain_economic_leader_icon_visible = {
+				has_idea = eng_econ_leader
+			}
+			britain_economic_member_icon_visible = {
+				has_idea = eng_economic_puppet
+			}
+			europe_economic_leader_icon_visible = {
+				has_idea = ger_european_union
+			}
+			europe_economic_member_icon_visible = {
+				has_idea = ger_european_member
+			}
+		}
+	}
+	
+	econ_all_diplo_show = {
+		context_type = selected_country_context
+		
+		window_name = "economic_alliance_diplomatic_container"
+		
+		parent_window_token = selected_country_view_diplomacy
+		
+		visible = {
+            always = yes
+		}
+
+		effects = {
+          
+		}
+		
+		triggers = {
+			no_economic_icon_visible = {
+				always = yes
+			}
+			france_economic_member_icon_visible = {
+				FROM = { has_idea = fra_econ_member }
+			}
+			france_economic_leader_icon_visible = {
+				FROM = { has_idea = fra_econ_leader }
+			}
+			germany_economic_leader_icon_visible = {
+				FROM = { has_idea = ger_first_economy }
+			}
+			germany_economic_member_icon_visible = {
+				FROM = { has_idea = ger_economic_puppet }
+			}
+			britain_economic_leader_icon_visible = {
+				FROM = { has_idea = eng_econ_leader }
+			}
+			britain_economic_member_icon_visible = {
+				FROM = { has_idea = eng_economic_puppet }
+			}
+			europe_economic_leader_icon_visible = {
+				FROM = { has_idea = ger_european_union }
+			}
+			europe_economic_member_icon_visible = {
+				FROM = { has_idea = ger_european_member }
+			}
+		}
+	}
+
+	parlament_show = {
+		context_type = player_context
+		
+		window_name = "parlament_container"
+		
+		parent_window_token = politics_tab
+		
+		visible = {
+            always = yes
+		}
+
+		effects = {
+          social_icon_click = {
+				if = {
+					limit = { check_variable = { keks = 0 } }
+					set_variable = { keks = 1 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { keks > 0.99 } }
+						set_variable = { keks = 0 }
+					}
+				}
+			}
+			parlament_icon_click = {
+				if = {
+					limit = { check_variable = { kek_parl = 0 } }
+					set_variable = { kek_parl = 1 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { kek_parl > 0.99 } }
+						set_variable = { kek_parl = 0 }
+					}
+				}
+			}
+		}
+		
+		triggers = {
+			parlament_icon_click_enabled = {
+				has_elections = yes
+			}
+			social_icon_click_enabled = {
+				always = yes
+			}
+		}
+	}
+	
+	parlament = {
+		context_type = player_context
+		
+		window_name = "parlament_window"
+		
+		visible = {
+			has_elections = yes
+			check_variable = { kek_parl > 0.00 }
+		}
+
+		effects = {
+			close_click = {
+				set_variable = { kek_parl = 0 }
+			}
+			remove_parl_but_click = {
+				if = {
+					limit = { has_government = neutrality }
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+				}
+				if = {
+					limit = { has_government = fascism }
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+				}
+				if = {
+					limit = { has_government = communism }
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+				}
+				clear_variable = all_parl
+				clear_variable = dem_parl
+				clear_variable = lib_parl
+				clear_variable = soc_parl
+				clear_variable = com_parl
+				clear_variable = fas_parl
+				clear_variable = cent_parl
+				clear_variable = neut_parl
+				add_political_power = -150
+				add_stability = -0.1
+			}
+			elect_parl_but_click = {
+				ROOT = { country_event = { id = elections.1 days = 0 } }
+				add_stability = -0.05
+			}
+			chres_parl_but_click = {
+				add_stability = -0.1
+				set_country_flag = ATE_elections_war
+			}
+			chres_no_parl_but_click = {
+				add_stability = 0.1
+				clr_country_flag = ATE_elections_war
+			}
+		}
+		
+		triggers = {
+			chres_parl_but_click_enabled = {
+				has_war = yes
+				has_elections = yes
+				NOT = { has_country_flag = ATE_elections_war }
+				NOT = { has_country_flag = ATE_elections }
+			}
+			chres_parl_but_visible = {
+				NOT = { has_country_flag = ATE_elections_war }
+			}
+			chres_no_parl_but_click_enabled = {
+				has_war = no
+				has_elections = yes
+				has_country_flag = ATE_elections_war
+			}
+			chres_no_parl_but_visible = {
+				has_country_flag = ATE_elections_war
+			}
+			remove_parl_but_click_enabled = {
+				has_political_power > 150
+				has_stability > 0.2
+				has_elections = yes
+				has_war = no
+				NOT = { has_country_flag = ATE_elections }
+				OR = {
+					has_government = communism
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
+			elect_parl_but_click_enabled = {
+				has_war = no
+				has_elections = yes
+				NOT = { has_country_flag = ATE_elections }
+				if = {
+					limit = { has_government = liberalism }
+					liberalism < 0.3
+				}
+				if = {
+					limit = { has_government = democratic }
+					democratic < 0.3
+				}
+				if = {
+					limit = { has_government = socialism }
+					socialism < 0.3
+				}
+				if = {
+					limit = { has_government = communism }
+					communism < 0.3
+				}
+				if = {
+					limit = { has_government = fascism }
+					fascism < 0.3
+				}
+				if = {
+					limit = { has_government = neutrality }
+					neutrality < 0.3
+				}
+				if = {
+					limit = { has_government = centrism }
+					centrism < 0.3
+				}
+				OR = {
+					democratic > 0.3
+					liberalism > 0.3
+					socialism > 0.3
+					communism > 0.3
+					fascism > 0.3
+					neutrality > 0.3
+					centrism > 0.3
+				}
+			}
+		}
+		
+		ai_weights = {
+            chres_parl_but_click = {
+                ai_will_do = {
+                    base = 10                    
+                }
+            }
+        }
+	}
+	
+	social_sphere = {
+		context_type = player_context
+		
+		window_name = "social_window"
+		
+		parent_window_token = politics_tab
+		
+		visible = {
+			check_variable = { keks > 0.00 }
+		}
+
+		effects = {
+			close_click = {
+				set_variable = { keks = 0 }
+			}
+			more_capital_click = {
+				add_political_power = -150
+				add_to_variable = { cap_num = 10 }
+			}
+			invest_industry_click = {
+				add_political_power = -150
+				add_timed_idea = {
+					idea = invest_in_industry
+					days = 90
+				}
+			}
+			more_admins_click = {
+				add_political_power = -100
+				add_to_variable = { adm_num = 10 }
+			}
+			stabilisation_click = {
+				add_political_power = -150
+				add_timed_idea = {
+					idea = stabilisation
+					days = 90
+				}
+			}
+			more_immigration_click = {
+				add_political_power = -150
+				add_manpower = 1000
+			}
+			coop_unions_click = {
+				add_political_power = -150
+				add_timed_idea = {
+					idea = coop_with_unions
+					days = 90
+				}
+			}
+		}
+		
+		triggers = {
+			more_capital_click_enabled = {
+				NOT = { has_idea = plan_economy }
+				OR = {
+					has_idea = soc_cap_plus_2
+					has_idea = soc_cap_plus_3
+					has_idea = soc_cap_plus_1
+				}
+				has_political_power > 150
+			}
+			invest_industry_click_enabled = {
+				OR = {
+					has_idea = soc_cap_plus_2
+					has_idea = soc_cap_plus_3
+				}
+				NOT = { has_idea = invest_in_industry }
+				has_political_power > 150
+			}
+			more_admins_click_enabled = {
+				has_idea = plan_economy
+				OR = {
+					has_idea = soc_mid_plus_2
+					has_idea = soc_mid_plus_3
+					has_idea = soc_mid_plus_1
+				}
+				has_political_power > 100
+			}
+			stabilisation_click_enabled = {
+				OR = {
+					has_idea = soc_mid_plus_2
+					has_idea = soc_mid_plus_3
+				}
+				NOT = { has_idea = stabilisation }
+				has_political_power > 150
+			}
+			more_immigration_click_enabled = {
+				OR = {
+					has_idea = view
+					has_idea = all_welcome
+				}
+				OR = {
+					has_idea = soc_lab_plus_2
+					has_idea = soc_lab_plus_3
+					has_idea = soc_lab_plus_1
+				}
+				has_political_power > 150
+			}
+			coop_unions_click_enabled = {
+				OR = {
+					has_idea = soc_lab_plus_2
+					has_idea = soc_lab_plus_3
+				}
+				NOT = { has_idea = coop_with_unions }
+				has_political_power > 150
+			}
+			
+			soc_cap_0_visible = {
+				has_idea = soc_cap_0
+			}
+			soc_cap_plus_1_visible = {
+				has_idea = soc_cap_plus_1
+			}
+			soc_cap_plus_2_visible = {
+				has_idea = soc_cap_plus_2
+			}
+			soc_cap_plus_3_visible = {
+				has_idea = soc_cap_plus_3
+			}
+			
+			soc_mid_0_visible = {
+				has_idea = soc_mid_0
+			}
+			soc_mid_plus_1_visible = {
+				has_idea = soc_mid_plus_1
+			}
+			soc_mid_plus_2_visible = {
+				has_idea = soc_mid_plus_2
+			}
+			soc_mid_plus_3_visible = {
+				has_idea = soc_mid_plus_3
+			}
+			
+			soc_lab_0_visible = {
+				has_idea = soc_lab_0
+			}
+			soc_lab_plus_1_visible = {
+				has_idea = soc_lab_plus_1
+			}
+			soc_lab_plus_2_visible = {
+				has_idea = soc_lab_plus_2
+			}
+			soc_lab_plus_3_visible = {
+				has_idea = soc_lab_plus_3
+			}
+		}
+		
+		ai_weights = {
+        }
+	}
+}
+

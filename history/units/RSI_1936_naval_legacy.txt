@@ -1,0 +1,103 @@
+﻿##### NAVAL UNITS #####
+units = {
+	### ITALY ###
+	fleet = {
+		name = "Comando Navale Alto Tirreno"
+		naval_base = 6973 # La Spezia, Italy
+
+		task_force = {
+			name = "II Squadra Navale" # Dipartimento Militare Marittimo 'Alto Tirreno' / II Squadra
+			location = 6973 # La Spezia, Italy
+
+			# Comando di Squadra
+			ship = { name = "RI Pola" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = ITA version_name = "Zara Class" } } }
+			# II Divisione Incrociatori
+			ship = { name = "RI Giovanni dalle Bande Nere" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ITA version_name = "Giussano Class" } } }
+			ship = { name = "RI Bartolomeo Colleoni" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ITA version_name = "Giussano Class" } } }
+			# III Divisione Incrociatori
+			ship = { name = "RI Bolzano" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = ITA version_name = "Zara Class" } } }
+			ship = { name = "RI Trento" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RI Trieste" definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = ITA } } }
+			# VI Divisione Incrociatori
+			ship = { name = "RI Emanuele Filiberto Duca d'Aosta" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ITA version_name = "Montecuccoli Class" } } }
+			ship = { name = "RI Muzio Attendolo" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ITA version_name = "Montecuccoli Class" } } }
+			ship = { name = "RI Raimondo Montecuccoli" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = ITA version_name = "Montecuccoli Class" } } }
+			# X Squadriglia Cacciatorpediniere
+			ship = { name = "RCT Maestrale" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Maestrale Class" } } }
+			ship = { name = "RCT Grecale" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Maestrale Class" } } }
+			ship = { name = "RCT Libeccio" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Maestrale Class" } } }
+			ship = { name = "RCT Scirocco" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Maestrale Class" } } }
+			# XI Squadriglia Cacciatorpediniere
+			ship = { name = "RCT Antonio da Noli" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Ugolino Vivaldi" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Lanzerotto Malocello" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Leone Pancaldo" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			# XII Squadriglia Cacciatorpediniere
+			ship = { name = "RCT Antonio Pigafetta" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Alvise da Mosto" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Giovanni da Verrazzano" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+			ship = { name = "RCT Nicolò Zeno" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA version_name = "Navigatori Class" } } }
+		}
+
+		task_force = {
+			name = "I Gruppo Sommergibili"
+			location = 6973 # La Spezia, Italy
+
+			# XI Squadriglia Sommergibili
+			ship = { name = "RSmg Pietro Calvi" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			ship = { name = "RSmg Giuseppe Finzi" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			ship = { name = "RSmg Ettore Fieramosca" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Bandiera Class" } } }
+			# XII Squadriglia Sommergibili
+			ship = { name = "RSmg Glauco" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			ship = { name = "RSmg Otaria" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			# XIII Squadriglia Sommergibili
+			ship = { name = "RSmg Rubino" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			ship = { name = "RSmg Ondina" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			# XIV Squadriglia Sommergibili
+			ship = { name = "RSmg H 1" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RSmg H 2" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RSmg H 4" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RSmg H 6" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RSmg H 8" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA } } }
+		}
+	}
+	
+	fleet = {
+		name = "Comando Navale Sardegna"
+		naval_base = 6891 # La Maddalena, Sardinia
+
+		task_force = {
+			name = "Squadra di Sardegna" # Comando Militare Marittimo 'Sardegna'
+			location = 6891 # La Maddalena, Sardinia
+
+			# II Squadriglia Torpediniere
+			ship = { name = "RCT Generale Achille Papa" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RCT Generale Carlo Montanari" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RCT Generale Antonino Cascino" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RCT Generale Antonio Chinotto" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+			# IX Squadriglia Torpediniere
+			ship = { name = "RCT Antonio Mosto" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RCT Ippolito Nievo" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+			ship = { name = "RCT Fratelli Cairoli" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ITA } } }
+		}
+
+		task_force = {
+			name = "VII Gruppo Sommergibili"
+			location = 6891 # La Maddalena, Sardinia
+
+			# LXXI Squadriglia Sommergibili
+			ship = { name = "RSmg Medusa" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+			ship = { name = "RSmg Anfitrite" definition = submarine equipment = { submarine_1 = { amount = 1 owner = ITA version_name = "Sirena Class" } } }
+		}
+	}
+}
+#######################
+
+##### STARTING PRODUCTION #####
+instant_effect = {
+	if = {
+		limit = { is_tutorial = no }
+		
+	}
+}
+###############################

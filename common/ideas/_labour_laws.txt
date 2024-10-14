@@ -1,0 +1,257 @@
+ideas = {
+
+	labour_laws = {
+		law = yes
+		use_list_view = yes
+				
+		labour_slavery = {
+			
+			cost = 200
+			removal_cost = -1
+			level = 5
+				
+			available = {
+				has_government = neutrality
+				has_elections = no
+				num_of_factories < 5
+			}
+
+			modifier = {
+				stability_factor = -0.1
+				monthly_population = -0.1
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 2
+					num_of_factories < 5
+				}
+			}
+		
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		labour_basic_codex = {
+			
+			cost = 200
+			removal_cost = -1
+			level = 4
+				
+			available = {
+				NOT = { has_government = socialism }
+				NOT = { has_government = communism }
+				if = {
+					limit = { has_elections = yes }
+					OR = {
+						has_country_flag = ATE_elections_war
+						custom_trigger_tooltip = {
+							tooltip = ATE_more_100_parlament_tt
+							if = {
+								limit = { has_government = democratic }
+								check_variable = { dem_parl > 100 }
+							}
+							if = {
+								limit = { has_government = liberalism }
+								check_variable = { lib_parl > 100 }
+							}
+							if = {
+								limit = { has_government = fascism }
+								check_variable = { fas_parl > 100 }
+							}
+							if = {
+								limit = { has_government = centrism }
+								check_variable = { cent_parl > 100 }
+							}
+							if = {
+								limit = { has_government = neutrality }
+								check_variable = { neut_parl > 100 }
+							}
+						}
+					}
+				}
+			}
+
+			modifier = {
+				stability_factor = -0.04
+				monthly_population = -0.04
+				production_speed_buildings_factor = 0.04
+				industrial_capacity_factory = 0.04
+				industrial_capacity_dockyard = 0.04
+			}
+		
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 4
+					num_of_factories < 5
+				}
+			}
+		
+			cancel_if_invalid = no
+			default = yes
+		}
+		
+		labour_advanced_codex = {
+			
+			cost = 200
+			removal_cost = -1
+			level = 3
+				
+			available = {
+				OR = {
+					num_of_factories > 25
+					has_government = socialism
+				}
+				NOT = { has_government = communism }
+				if = {
+					limit = { has_elections = yes }
+					OR = {
+						has_country_flag = ATE_elections_war
+						custom_trigger_tooltip = {
+							tooltip = ATE_more_100_parlament_tt
+							if = {
+								limit = { has_government = democratic }
+								check_variable = { dem_parl > 100 }
+							}
+							if = {
+								limit = { has_government = liberalism }
+								check_variable = { lib_parl > 100 }
+							}
+							if = {
+								limit = { has_government = socialism }
+								check_variable = { soc_parl > 100 }
+							}
+							if = {
+								limit = { has_government = fascism }
+								check_variable = { fas_parl > 100 }
+							}
+							if = {
+								limit = { has_government = centrism }
+								check_variable = { cent_parl > 100 }
+							}
+							if = {
+								limit = { has_government = neutrality }
+								check_variable = { neut_parl > 100 }
+							}
+						}
+					}
+				}
+			}
+
+			modifier = {
+				stability_factor = 0.02
+				monthly_population = 0.02
+			}
+		
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 4
+					num_of_factories > 5
+				}
+			}
+		
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		labour_social_state = {
+			
+			cost = 200
+			removal_cost = -1
+			level = 2
+				
+			available = {
+				OR = {
+					num_of_factories > 50
+					has_government = socialism
+				}
+				NOT = { has_government = neutrality }
+				NOT = { has_government = communism }
+				if = {
+					limit = { has_elections = yes }
+					OR = {
+						has_country_flag = ATE_elections_war
+						custom_trigger_tooltip = {
+							tooltip = ATE_more_100_parlament_tt
+							if = {
+								limit = { has_government = democratic }
+								check_variable = { dem_parl > 100 }
+							}
+							if = {
+								limit = { has_government = liberalism }
+								check_variable = { lib_parl > 100 }
+							}
+							if = {
+								limit = { has_government = socialism }
+								check_variable = { soc_parl > 100 }
+							}
+							if = {
+								limit = { has_government = fascism }
+								check_variable = { fas_parl > 100 }
+							}
+							if = {
+								limit = { has_government = centrism }
+								check_variable = { cent_parl > 100 }
+							}
+						}
+					}
+				}
+			}
+
+			modifier = {
+				stability_factor = 0.04
+				monthly_population = 0.04
+				production_speed_buildings_factor = -0.04
+				industrial_capacity_factory = -0.04
+				industrial_capacity_dockyard = -0.04
+			}
+		
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 2
+					num_of_factories > 5
+				}
+			}
+		
+			cancel_if_invalid = no
+			default = no
+		}
+		
+		labour_socialism = {
+			
+			cost = 200
+			removal_cost = -1
+			level = 1
+				
+			available = {
+				has_government = communism
+			}
+
+			modifier = {
+				stability_factor = 0.1
+				monthly_population = 0.1
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+			}
+		
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 4
+					num_of_factories > 10
+				}
+			}
+		
+			cancel_if_invalid = no
+			default = no
+		}
+	}
+}

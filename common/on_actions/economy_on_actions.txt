@@ -1,0 +1,848 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { has_government = fascism }
+				swap_ideas = {
+					remove_idea = free_economy
+					add_idea = corporativist_economy
+				}
+			}
+			every_country = {
+				limit = { has_government = socialism }
+				swap_ideas = {
+					remove_idea = labour_basic_codex
+					add_idea = labour_advanced_codex
+				}
+				swap_ideas = {
+					remove_idea = free_economy
+					add_idea = invervention_economy
+				}
+			}
+			every_country = {
+				limit = { has_government = communism }
+				swap_ideas = {
+					remove_idea = free_economy
+					add_idea = plan_economy
+				}
+				swap_ideas = {
+					remove_idea = labour_basic_codex
+					add_idea = labour_socialism
+				}
+			}
+			every_country = {
+				limit = { has_idea = free_economy }
+				swap_ideas = {
+					remove_idea = economic_stagnation
+					add_idea = free_economic_stagnation
+				}
+			}
+			every_country = {
+				if = {
+					limit = { has_idea = free_economy }
+					add_ideas = soc_cap_plus_3
+				}
+				if = {
+					limit = { has_idea = invervention_economy }
+					add_ideas = soc_cap_plus_2
+				}
+				if = {
+					limit = { has_idea = corporativist_economy }
+					add_ideas = soc_cap_plus_1
+				}
+				if = {
+					limit = { has_idea = plan_economy }
+					add_ideas = soc_cap_0
+				}
+			}
+			every_country = {
+				if = {
+					limit = {
+						has_stability < 0.5
+					}
+					add_ideas = soc_mid_0
+				}
+				if = {
+					limit = {
+						has_stability > 0.49
+						has_stability < 0.65
+					}
+					add_ideas = soc_mid_plus_1
+				}
+				if = {
+					limit = {
+						has_stability > 0.64
+						has_stability < 0.85
+					}
+					add_ideas = soc_mid_plus_2
+				}
+				if = {
+					limit = {
+						has_stability > 0.84
+					}
+					add_ideas = soc_mid_plus_3
+				}
+			}
+			every_country = {
+				if = {
+					limit = { has_idea = labour_socialism }
+					add_ideas = soc_lab_plus_3
+				}
+				if = {
+					limit = { has_idea = labour_social_state }
+					add_ideas = soc_lab_plus_2
+				}
+				if = {
+					limit = { has_idea = labour_advanced_codex }
+					add_ideas = soc_lab_plus_1
+				}
+				if = {
+					limit = { has_idea = labour_basic_codex }
+					add_ideas = soc_lab_0
+				}
+				if = {
+					limit = { has_idea = labour_slavery }
+					add_ideas = soc_lab_0
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = { has_idea = plan_economy }
+				}
+				set_variable = { cap_num = num_of_factories }
+				round_variable = cap_num
+			}
+			every_country = {
+				limit = {
+					has_idea = plan_economy
+				}
+				set_variable = { adm_num = num_of_factories }
+				round_variable = adm_num
+				set_temp_variable = { adm_num_temp = adm_num }
+				divide_temp_variable = { adm_num_temp = 10 }
+				set_variable = { adm_build = adm_num_temp }
+				round_variable = adm_build
+			}
+			every_country = {
+				limit = { NOT = { has_idea = plan_economy } }
+				set_variable = { cap_factories = cap_num }
+				divide_variable = { cap_factories = 10 }
+				round_variable = cap_factories
+			}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = free_economy
+					NOT = { has_idea = free_economic_crisis }
+					NOT = { has_idea = free_economic_recession }
+					NOT = { has_idea = free_economic_stagnation }
+					NOT = { has_idea = free_economic_groth }
+					NOT = { has_idea = free_economic_boom }
+				}
+				remove_ideas = economic_stagnation
+				add_ideas = free_economic_stagnation
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = free_economy }
+					OR = { 
+						has_idea = free_economic_crisis
+						has_idea = free_economic_recession
+						has_idea = free_economic_stagnation
+						has_idea = free_economic_groth
+						has_idea = free_economic_boom
+					}
+				}
+				remove_ideas = free_economic_stagnation
+				add_ideas = economic_stagnation
+			}
+			if = {
+				limit = {
+					has_idea = plan_economy
+					NOT = { has_idea = economic_stagnation }
+				}
+				remove_ideas = economic_recession
+				add_ideas = economic_stagnation
+			}
+			if = {
+				limit = { has_idea = soc_cap_plus_3 }
+				set_variable = { cap_from_laws = 0.05 }
+				add_to_temp_variable = { cap_num_temp = 0.05 }
+			}
+			if = {
+				limit = { has_idea = soc_cap_plus_2 }
+				set_variable = { cap_from_laws = 0.025 }
+				add_to_temp_variable = { cap_num_temp = 0.025 }
+			}
+			if = {
+				limit = { has_idea = soc_cap_plus_1 }
+				set_variable = { cap_from_laws = 0.01 }
+				add_to_temp_variable = { cap_num_temp = 0.01 }
+			}
+			
+			if = {
+				limit = { has_idea = man_concordia }
+				set_variable = { cap_other = 0.02 }
+				add_to_temp_variable = { cap_num_temp = 0.02 }
+			}
+			
+			if = {
+				limit = { has_idea = chi_hyper_inflation }
+				set_variable = { cap_other = -0.02 }
+				add_to_temp_variable = { cap_num_temp = -0.02 }
+			}
+			
+			if = {
+				limit = { has_idea = chi_inflation }
+				set_variable = { cap_other = -0.02 }
+				add_to_temp_variable = { cap_num_temp = -0.02 }
+			}
+			
+			if = {
+				limit = { 
+					NOT = { has_idea = plan_economy }
+				}
+				set_temp_variable = { cap_from_fac_temp = num_of_factories }
+				divide_temp_variable = { cap_from_fac_temp = 1000 }
+				set_variable = { cap_from_fac = cap_from_fac_temp }
+				add_to_temp_variable = { cap_num_temp = cap_from_fac_temp }
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = plan_economy }
+					has_country_flag = no_cap_factories_flag
+				}
+				set_variable = { cap_from_fac = -0.005 }
+				add_to_temp_variable = { cap_num_temp = -0.005 }
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = plan_economy }
+				}
+				add_to_variable = { cap_num = cap_num_temp }
+			}
+			if = {
+				limit = { 
+					has_idea = plan_economy
+					has_idea = soc_mid_plus_3 
+				}
+				set_variable = { adm_from_laws = 0.05 }
+				add_to_temp_variable = { adm_num_temp = 0.05 }
+			}
+			if = {
+				limit = { 
+					has_idea = plan_economy
+					has_idea = soc_mid_plus_2
+				}
+				set_variable = { adm_from_laws = 0.025 }
+				add_to_temp_variable = { adm_num_temp = 0.025 }
+			}
+			if = {
+				limit = { 
+					has_idea = plan_economy
+					has_idea = soc_mid_plus_1
+				}
+				set_variable = { adm_from_laws = 0.01 }
+				add_to_temp_variable = { adm_num_temp = 0.01 }
+			}
+			if = {
+				limit = {
+					has_idea = plan_economy
+				}
+				set_temp_variable = { adm_from_fac_temp = num_of_factories }
+				divide_temp_variable = { adm_from_fac_temp = 1000 }
+				set_variable = { adm_from_fac = adm_from_fac_temp }
+				add_to_temp_variable = { adm_num_temp = adm_from_fac_temp }
+			}
+			if = {
+				limit = {
+					has_idea = plan_economy
+				}
+				add_to_variable = { adm_num = adm_num_temp }
+			}
+			if = {
+				limit = { NOT = { has_idea = plan_economy } }
+				clear_variable = adm_build
+				clear_variable = adm_num
+				set_variable = { cap_factories = num_of_factories }
+				divide_variable = { cap_factories = 10 }
+				round_variable = cap_factories
+			}
+			set_variable = { gdp_fac = num_of_factories }
+			divide_variable = { gdp_fac = 10 }
+			set_variable = { work_temp = max_available_manpower_k }
+			divide_variable = { work_temp = 100000 }
+			set_variable = { stab_temp = stability }
+			divide_variable = { stab_temp = 10 }
+			add_to_temp_variable = { gdp_temp = gdp_fac }
+			add_to_temp_variable = { gdp_temp = work_temp }
+			add_to_temp_variable = { gdp_temp = stab_temp }
+			set_variable = { gdp_num = gdp_temp }
+			if = {
+				limit = {
+					has_idea = plan_economy
+				}
+				clear_variable = cap_num
+				clear_variable = cap_factories
+				set_temp_variable = { adm_num_temp = adm_num }
+				divide_temp_variable = { adm_num_temp = 10 }
+				set_variable = { adm_build = adm_num_temp }
+				round_variable = adm_build
+			}
+			
+			every_country = {
+				if = {
+					limit = { 
+						NOT = { has_idea = soc_cap_plus_3 }
+						has_idea = free_economy 
+					}
+					remove_ideas = soc_cap_plus_2
+					remove_ideas = soc_cap_plus_1
+					remove_ideas = soc_cap_0
+					add_ideas = soc_cap_plus_3
+				}
+				if = {
+					limit = { 
+						NOT = { has_idea = soc_cap_plus_2 }
+						has_idea = invervention_economy 
+					}
+					remove_ideas = soc_cap_plus_3
+					remove_ideas = soc_cap_plus_1
+					remove_ideas = soc_cap_0
+					add_ideas = soc_cap_plus_2
+				}
+				if = {
+					limit = { 
+						NOT = { has_idea = soc_cap_plus_1 }
+						has_idea = corporativist_economy 
+					}
+					remove_ideas = soc_cap_plus_3
+					remove_ideas = soc_cap_plus_2
+					remove_ideas = soc_cap_0
+					add_ideas = soc_cap_plus_1
+				}
+				if = {
+					limit = { 
+						NOT = { has_idea = soc_cap_0 }
+						has_idea = plan_economy 
+					}
+					remove_ideas = soc_cap_plus_3
+					remove_ideas = soc_cap_plus_2
+					remove_ideas = soc_cap_plus_1
+					add_ideas = soc_cap_0
+				}
+			}
+			every_country = {
+				if = {
+					limit = {
+						has_stability < 0.5
+						NOT = { has_idea = soc_mid_0 }
+					}
+					remove_ideas = soc_mid_plus_3
+					remove_ideas = soc_mid_plus_2
+					remove_ideas = soc_mid_plus_1
+					add_ideas = soc_mid_0
+				}
+				if = {
+					limit = {
+						has_stability > 0.49
+						has_stability < 0.65
+						NOT = { has_idea = soc_mid_plus_1 }
+					}
+					remove_ideas = soc_mid_plus_3
+					remove_ideas = soc_mid_plus_2
+					remove_ideas = soc_mid_0
+					add_ideas = soc_mid_plus_1
+				}
+				if = {
+					limit = {
+						has_stability > 0.64
+						has_stability < 0.85
+						NOT = { has_idea = soc_mid_plus_2 }
+					}
+					remove_ideas = soc_mid_plus_3
+					remove_ideas = soc_mid_plus_1
+					remove_ideas = soc_mid_0
+					add_ideas = soc_mid_plus_2
+				}
+				if = {
+					limit = {
+						has_stability > 0.84
+						NOT = { has_idea = soc_mid_plus_3 }
+					}
+					remove_ideas = soc_mid_plus_2
+					remove_ideas = soc_mid_plus_1
+					remove_ideas = soc_mid_0
+					add_ideas = soc_mid_plus_3
+				}
+			}
+			every_country = {
+				if = {
+					limit = {
+						has_idea = labour_socialism
+						NOT = { has_idea = soc_lab_plus_3 }
+					}
+					remove_ideas = soc_lab_plus_2
+					remove_ideas = soc_lab_plus_1
+					remove_ideas = soc_lab_0
+					add_ideas = soc_lab_plus_3
+				}
+				if = {
+					limit = {
+						has_idea = labour_social_state
+						NOT = { has_idea = soc_lab_plus_2 }
+					}
+					remove_ideas = soc_lab_plus_3
+					remove_ideas = soc_lab_plus_1
+					remove_ideas = soc_lab_0
+					add_ideas = soc_lab_plus_2
+				}
+				if = {
+					limit = {
+						has_idea = labour_advanced_codex
+						NOT = { has_idea = soc_lab_plus_1 }
+					}
+					remove_ideas = soc_lab_plus_3
+					remove_ideas = soc_lab_plus_2
+					remove_ideas = soc_lab_0
+					add_ideas = soc_lab_plus_1
+				}
+				if = {
+					limit = {
+						has_idea = labour_basic_codex
+						NOT = { has_idea = soc_lab_0 }
+					}
+					remove_ideas = soc_lab_plus_3
+					remove_ideas = soc_lab_plus_2
+					remove_ideas = soc_lab_plus_1
+					add_ideas = soc_lab_0
+				}
+				if = {
+					limit = {
+						has_idea = labour_slavery
+						NOT = { has_idea = soc_lab_0 }
+					}
+					remove_ideas = soc_lab_plus_3
+					remove_ideas = soc_lab_plus_2
+					remove_ideas = soc_lab_plus_1
+					add_ideas = soc_lab_0
+				}
+			}
+		}
+	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = free_economy
+					has_idea = free_economic_crisis
+				}
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_idea_with_trait = ate_only_good_trend
+								has_idea_with_trait = ate_no_radical_trend
+							}
+						}
+						swap_ideas = {
+							remove_idea = free_economic_crisis
+							add_idea = free_economic_recession
+						}
+					}
+					15 = {
+						swap_ideas = {
+							remove_idea = free_economic_crisis
+							add_idea = free_economic_stagnation
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_idea_with_trait = ate_only_good_trend
+								has_idea_with_trait = ate_no_radical_trend
+							}
+						}
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						swap_ideas = {
+							remove_idea = free_economic_crisis
+							add_idea = free_economic_boom
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = free_economy }
+					NOT = { has_idea = plan_economy }
+					has_idea = economic_crisis
+				}
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_idea_with_trait = ate_only_good_trend
+								has_idea_with_trait = ate_no_radical_trend
+							}
+						}
+						swap_ideas = {
+							remove_idea = economic_crisis
+							add_idea = economic_recession
+						}
+					}
+					15 = {
+						swap_ideas = {
+							remove_idea = economic_crisis
+							add_idea = economic_stagnation
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_idea_with_trait = ate_only_good_trend
+								has_idea_with_trait = ate_no_radical_trend
+							}
+						}
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						swap_ideas = {
+							remove_idea = economic_crisis
+							add_idea = economic_boom
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = free_economy
+					has_idea = free_economic_recession
+				}
+				random_list = {
+					10 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_idea_with_trait = ate_only_good_trend
+								has_idea_with_trait = ate_no_radical_trend
+							}
+						}
+						swap_ideas = {
+							remove_idea = free_economic_recession
+							add_idea = free_economic_crisis
+						}
+					}
+					40 = {
+						swap_ideas = {
+							remove_idea = free_economic_recession
+							add_idea = free_economic_stagnation
+						}
+					}
+					50 = {
+						
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = free_economy }
+					NOT = { has_idea = plan_economy }
+					has_idea = economic_recession
+				}
+				random_list = {
+					10 = {
+						modifier = {
+							factor = 0
+							OR = {
+								has_idea_with_trait = ate_only_good_trend
+								has_idea_with_trait = ate_no_radical_trend
+							}
+						}
+						swap_ideas = {
+							remove_idea = economic_recession
+							add_idea = economic_crisis
+						}
+					}
+					40 = {
+						swap_ideas = {
+							remove_idea = economic_recession
+							add_idea = economic_stagnation
+						}
+					}
+					50 = {
+						
+					}
+				}
+			}
+		}
+	}
+			
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = free_economy
+					has_idea = free_economic_stagnation
+				}
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_good_trend
+						}
+						swap_ideas = {
+							remove_idea = free_economic_stagnation
+							add_idea = free_economic_recession
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						swap_ideas = {
+							remove_idea = free_economic_stagnation
+							add_idea = free_economic_groth
+						}
+					}
+					50 = {
+						
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = free_economy }
+					NOT = { has_idea = plan_economy }
+					has_idea = economic_stagnation
+				}
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_good_trend
+						}
+						swap_ideas = {
+							remove_idea = economic_stagnation
+							add_idea = economic_recession
+						}
+					}
+					25 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						swap_ideas = {
+							remove_idea = economic_stagnation
+							add_idea = economic_groth
+						}
+					}
+					50 = {
+						
+					}
+				}
+			}
+		}
+	}
+			
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = free_economy
+					has_idea = free_economic_groth
+				}
+				random_list = {
+					40 = {
+						swap_ideas = {
+							remove_idea = free_economic_groth
+							add_idea = free_economic_stagnation
+						}
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						swap_ideas = {
+							remove_idea = free_economic_groth
+							add_idea = free_economic_boom
+						}
+					}
+					50 = {
+						
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = free_economy }
+					NOT = { has_idea = plan_economy }
+					has_idea = economic_groth
+				}
+				random_list = {
+					40 = {
+						swap_ideas = {
+							remove_idea = economic_groth
+							add_idea = economic_stagnation
+						}
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						swap_ideas = {
+							remove_idea = economic_groth
+							add_idea = economic_boom
+						}
+					}
+					50 = {
+						
+					}
+				}
+			}
+		}
+	}
+			
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = free_economy
+					has_idea = free_economic_boom
+				}
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						swap_ideas = {
+							remove_idea = free_economic_boom
+							add_idea = free_economic_groth
+						}
+					}
+					15 = {
+						swap_ideas = {
+							remove_idea = free_economic_boom
+							add_idea = free_economic_stagnation
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_good_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						swap_ideas = {
+							remove_idea = free_economic_boom
+							add_idea = free_economic_crisis
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = free_economy }
+					NOT = { has_idea = plan_economy }
+					has_idea = economic_boom
+				}
+				random_list = {
+					25 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+						swap_ideas = {
+							remove_idea = economic_boom
+							add_idea = economic_groth
+						}
+					}
+					15 = {
+						swap_ideas = {
+							remove_idea = economic_boom
+							add_idea = economic_stagnation
+						}
+					}
+					50 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_bad_trend
+						}
+					}
+					10 = {
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_only_good_trend
+						}
+						modifier = {
+							factor = 0
+							has_idea_with_trait = ate_no_radical_trend
+						}
+						swap_ideas = {
+							remove_idea = economic_boom
+							add_idea = economic_crisis
+						}
+					}
+				}
+			}
+		}
+	}
+}

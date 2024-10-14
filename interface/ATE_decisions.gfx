@@ -1,0 +1,18 @@
+spriteTypes = {	
+	
+	spriteType = {
+		name = "GFX_decision_picture_fra_commies"
+		texturefile = "gfx/interface/decisions/decision_picture_fra_commies.dds"
+	}
+
+	spriteType = {
+		name = "GFX_decision_category_fra_chevalier"
+		texturefile = "gfx/interface/decisions/decision_category_fra_chevalier.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_decision_fra_chevalier"
+		texturefile = "gfx/interface/decisions/decision_fra_chevalier.dds"
+	}
+
+}

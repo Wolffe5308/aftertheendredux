@@ -1,0 +1,4099 @@
+###########################
+# French Events
+###########################
+
+add_namespace = ate_france
+
+#Economy choice
+country_event = {
+	id = ate_france.1
+	title = ate_france.1.t
+	desc = ate_france.1.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.1.a
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		set_country_flag = fra_nationalisation_flag
+	}
+	
+	option = {
+		name = ate_france.1.b
+		ai_chance = { 
+			base = 10
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		set_country_flag = fra_privatisation_flag
+	}
+}
+
+#Army choice
+country_event = {
+	id = ate_france.2
+	title = ate_france.2.t
+	desc = ate_france.2.d
+	picture = GFX_report_event_france_tank_production
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.2.a
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		set_country_flag = fra_secret_militarise_flag
+	}
+	
+	option = {
+		name = ate_france.2.b
+		ai_chance = { 
+			base = 10
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		set_country_flag = fra_cancel_potsdam_flag
+	}
+}
+
+#Foreign choice
+country_event = {
+	id = ate_france.3
+	title = ate_france.3.t
+	desc = ate_france.3.d
+	picture = GFX_report_event_france_victory_syria
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.3.a
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		set_country_flag = fra_rocque_strategy_flag
+	}
+	
+	option = {
+		name = ate_france.3.b
+		ai_chance = { 
+			base = 10
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		set_country_flag = fra_laval_strategy_flag
+	}
+}
+
+#Morocco help
+country_event = {
+	id = ate_france.4
+	title = ate_france.4.t
+	desc = ate_france.4.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.4.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_help_morocco_modifier
+		}
+		add_timed_idea = {
+			idea = fra_help_from_france
+			days = 180
+		}
+		FROM = {
+			add_timed_idea = {
+				idea = fra_help_others
+				days = 180
+			}
+			set_country_flag = ate_fra_help_morocco_yes
+		}
+	}
+	
+	option = {
+		name = ate_france.4.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 100
+	}
+}
+
+#Mussolini
+country_event = {
+	id = ate_france.5
+	title = ate_france.5.t
+	desc = ate_france.5.d
+	picture = GFX_report_event_mussolini_hotel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.5.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		if = {
+			limit = { tag = RSI }
+			add_opinion_modifier = {
+				target = FRA
+				modifier = ate_fra_meet_mussolini_modifier
+			}
+		}
+		if = {
+			limit = { tag = FRA }
+			add_opinion_modifier = {
+				target = RSI
+				modifier = ate_fra_meet_mussolini_modifier
+			}
+		}
+	}
+}
+
+#Milan treaty
+country_event = {
+	id = ate_france.6
+	title = ate_france.6.t
+	desc = ate_france.6.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.6.a
+		ai_chance = {
+			base = 10
+		}
+		add_timed_idea = {
+			idea = fra_french_officiers
+			days = 180
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_milan_treaty_modifier
+		}
+		FROM = {
+			transfer_state = 735
+			add_threat = 5
+			add_timed_idea = {
+				idea = fra_french_officiers_fr
+				days = 180
+			}
+			add_opinion_modifier = {
+				target = RSI
+				modifier = ate_fra_milan_treaty_modifier
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.8 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.6.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 50
+		FROM = { country_event = { id = ate_france.7 days = 1 } }
+	}
+}
+
+#Milan no
+country_event = {
+	id = ate_france.7
+	title = ate_france.7.t
+	desc = ate_france.7.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.7.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+		set_country_flag = fra_milan_no
+	}
+}
+
+#Milan news
+news_event = {
+	id = ate_france.8
+	title = ate_france.8.t
+	desc = ate_france.8.d
+	picture = GFX_news_event_french_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.8.a
+	}
+}
+
+#Italy alliance
+country_event = {
+	id = ate_france.9
+	title = ate_france.9.t
+	desc = ate_france.9.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.9.a
+		ai_chance = {
+			base = 10
+		}
+		FROM = {
+			add_to_faction = RSI
+			add_threat = 5
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.11 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.9.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 75
+		FROM = { country_event = { id = ate_france.10 days = 1 } }
+	}
+}
+
+#Italy no
+country_event = {
+	id = ate_france.10
+	title = ate_france.10.t
+	desc = ate_france.10.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.10.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Italy news
+news_event = {
+	id = ate_france.11
+	title = ate_france.11.t
+	desc = ate_france.11.d
+	picture = GFX_news_event_french_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.11.a
+	}
+}
+
+#Cancel Potsdam
+news_event = {
+	id = ate_france.12
+	title = ate_france.12.t
+	desc = ate_france.12.d
+	picture = GFX_news_event_french_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.12.a
+	}
+}
+
+#WWII
+news_event = {
+	id = ate_france.13
+	title = ate_france.13.t
+	desc = ate_france.13.d
+	picture = GFX_news_event_french_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.13.a
+	}
+}
+
+#Three principles
+country_event = {
+	id = ate_france.14
+	title = ate_france.14.t
+	desc = ate_france.14.d
+	picture = GFX_report_event_fra_de_la_roque
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.14.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#Strikes
+country_event = {
+	id = ate_france.15
+	title = ate_france.15.t
+	desc = ate_france.15.d
+	picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.15.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -40
+		add_popularity = {
+		    ideology = communism
+		    popularity = 0.05
+		}
+		add_timed_idea = {
+		    idea = FRA_factory_strikes
+		    days = 90
+		}
+		country_event = { id = ate_france.38 days = 30 }
+	}
+}
+
+#Commies
+country_event = {
+	id = ate_france.16
+	title = ate_france.16.t
+	desc = ate_france.16.d
+	picture = GFX_report_event_generic_communist_congress
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.16.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 50
+		add_named_threat = { 
+		    threat = 2
+		    name = FRA_killing_commies
+		}
+	}
+
+	option = {
+		name = ate_france.16.b
+		ai_chance = {
+			base = 50
+		}
+		add_political_power = 25
+		add_stability = 0.05
+	}
+}
+
+#Clerics
+country_event = {
+	id = ate_france.17
+	title = ate_france.17.t
+	desc = ate_france.17.d
+	picture = GFX_report_event_fra_catolic
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.17.a
+		ai_chance = {
+			base = 10
+		}
+		ATE_fra_radical_wing_more = yes
+		add_popularity = {
+		    ideology = fascism
+		    popularity = 0.05
+		}
+	}
+
+	option = {
+		name = ate_france.17.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_ideas = fra_catholic
+		ATE_fra_moderate_wing_more = yes
+	}
+}
+
+#Help Spain economy
+country_event = {
+	id = ate_france.18
+	title = ate_france.18.t
+	desc = ate_france.18.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.18.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_opinion_modifier = {
+			target = FRA
+			modifier = ate_fra_spanish_help_modifier
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = economic_boom }
+			}
+			ATE_better_economic_situatuion = yes
+		}
+	}
+}
+
+#Help Spain volunteers
+country_event = {
+	id = ate_france.19
+	title = ate_france.19.t
+	desc = ate_france.19.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.19.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_manpower = 1000
+		add_opinion_modifier = {
+			target = FRA
+			modifier = ate_fra_spanish_help_modifier
+		}
+	}
+}
+
+#Invest Spain
+country_event = {
+	id = ate_france.20
+	title = ate_france.20.t
+	desc = ate_france.20.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.20.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FRA
+			modifier = ate_fra_spa_invest_modifier
+		}
+		modify_timed_idea = {
+			idea = SPA_recovering_from_civil_war
+			days = -120
+		}
+	}
+}
+
+#Spain alliance
+country_event = {
+	id = ate_france.21
+	title = ate_france.21.t
+	desc = ate_france.21.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.21.a
+		ai_chance = {
+			base = 10
+		}
+		FROM = {
+			add_to_faction = SPA
+			add_threat = 5
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.23 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.21.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 75
+		FROM = { country_event = { id = ate_france.22 days = 1 } }
+	}
+}
+
+#Spain no
+country_event = {
+	id = ate_france.22
+	title = ate_france.22.t
+	desc = ate_france.22.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.22.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Spain news
+news_event = {
+	id = ate_france.23
+	title = ate_france.23.t
+	desc = ate_france.23.d
+	picture = GFX_news_event_french_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.23.a
+	}
+}
+
+#Vallonie referendum
+country_event = {
+	id = ate_france.24
+	title = ate_france.24.t
+	desc = ate_france.24.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.24.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0.5
+				ENG = {
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					NOT = { is_in_faction_with = FRA }
+				}
+			}
+		}
+		FRA = {
+			transfer_state = 34
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.25 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.24.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 75
+		if = {
+			limit = {
+				ENG = {
+					exists = yes
+					NOT = { has_war_with = ROOT }
+					NOT = { is_in_faction_with = FRA }
+				}
+			}
+			ENG = { country_event = { id = ate_france.27 days = 1 } }
+		}
+		FROM = { country_event = { id = ate_france.28 days = 2 } }
+	}
+}
+
+#Wallonie ref yes
+news_event = {
+	id = ate_france.25
+	title = ate_france.25.t
+	desc = ate_france.25.d
+	picture = GFX_news_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.25.a
+	}
+}
+
+#Wallonie ref eng
+country_event = {
+	id = ate_france.26
+	title = ate_france.26.t
+	desc = ate_france.26.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.26.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -50
+		add_to_faction = FROM
+	}
+
+	option = {
+		name = ate_france.26.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 50
+	}
+}
+
+#Wallonie ref eng
+country_event = {
+	id = ate_france.27
+	title = ate_france.27.t
+	desc = ate_france.27.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.27.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -50
+		give_guarantee = FROM
+	}
+
+	option = {
+		name = ate_france.27.b
+		ai_chance = {
+			base = 1
+		}
+		add_political_power = 50
+	}
+}
+
+#Wallonie ref fra
+country_event = {
+	id = ate_france.28
+	title = ate_france.28.t
+	desc = ate_france.28.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.28.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -50
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = BEL
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.29 days = 1 }
+			}
+		}
+	}
+}
+
+#Wallonie ref no
+news_event = {
+	id = ate_france.29
+	title = ate_france.29.t
+	desc = ate_france.29.d
+	picture = GFX_news_event_french_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.29.a
+	}
+}
+
+#Afrikan rebellion eng
+country_event = {
+	id = ate_france.30
+	title = ate_france.30.t
+	desc = ate_france.30.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.30.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -50
+		if = {
+			limit = { 
+				owns_state = 786
+				owns_state = 557
+			}
+			786 = { add_resistance = 25 }
+			557 = { add_resistance = 25 }
+		}
+		if = {
+			limit = { 
+				owns_state = 782
+				owns_state = 556
+			}
+			782 = { add_resistance = 25 }
+			556 = { add_resistance = 25 }
+		}
+	}
+}
+
+#French start
+country_event = {
+	id = ate_france.31
+	title = ate_france.31.t
+	desc = ate_france.31.d
+	picture = GFX_report_event_fra_doriot
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.31.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 10
+	}
+}
+
+#Italy kingdom
+country_event = {
+	id = ate_france.32
+	title = ate_france.32.t
+	desc = ate_france.32.d
+	picture = GFX_report_event_ita_victor_emmanuel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.32.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_meet_victor_modifier
+		}
+		FROM = { country_event = { id = ate_france.33 days = 2 } }
+	}
+
+	option = {
+		name = ate_france.32.b
+		ai_chance = { 
+			base = 8
+		}
+		add_political_power = 20
+		FROM = { country_event = { id = ate_france.34 days = 2 } }
+	}
+}
+
+#Italy kingdom yes
+country_event = {
+	id = ate_france.33
+	title = ate_france.33.t
+	desc = ate_france.33.d
+	picture = GFX_report_event_ita_victor_emmanuel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.33.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_meet_victor_modifier
+		}
+	}
+}
+
+#Italy kingdom no
+country_event = {
+	id = ate_france.34
+	title = ate_france.34.t
+	desc = ate_france.34.d
+	picture = GFX_report_event_ita_victor_emmanuel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.34.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Italy marcel
+country_event = {
+	id = ate_france.35
+	title = ate_france.35.t
+	desc = ate_france.35.d
+	picture = GFX_report_event_ita_victor_emmanuel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.35.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_marcel_treaty_modifier
+		}
+		add_timed_idea = {
+			idea = fra_french_officiers
+			days = 180
+		}
+		FROM = {
+			add_opinion_modifier = {
+				target = ITA
+				modifier = ate_fra_marcel_treaty_modifier
+			}
+			set_country_flag = ate_fra_marcel_treaty_modifier
+			transfer_state = 553
+			transfer_state = 268
+			add_timed_idea = {
+				idea = fra_french_officiers_fr
+				days = 180
+			}
+			add_opinion_modifier = {
+				target = RSI
+				modifier = ate_fra_hate_mussolini_modifier
+			}
+			RSI = {
+				add_opinion_modifier = {
+					target = FRA
+					modifier = ate_fra_hate_mussolini_modifier
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.36 days = 1 }
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.35.b
+		ai_chance = { 
+			base = 2
+		}
+		add_political_power = 20
+		FROM = { country_event = { id = ate_france.37 days = 2 } }
+	}
+}
+
+#Italy marcel yes
+news_event = {
+	id = ate_france.36
+	title = ate_france.36.t
+	desc = ate_france.36.d
+	picture = GFX_news_event_ita_victor_emmanuel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.36.a
+		ai_chance = { 
+			base = 10
+		}
+	}
+}
+
+#Italy marcel no
+country_event = {
+	id = ate_france.37
+	title = ate_france.37.t
+	desc = ate_france.37.d
+	picture = GFX_report_event_ita_victor_emmanuel
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.37.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -25
+	}
+}
+
+#Dictator
+country_event = {
+	id = ate_france.38
+	title = ate_france.38.t
+	desc = ate_france.38.d
+	picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.38.a
+		ai_chance = {
+			base = 10
+		}
+		set_country_flag = ATE_NO_communism
+		hidden_effect = {
+			activate_decision = ban_communist_party
+			set_cosmetic_tag = FRA_THIRD_EMPIRE
+		}
+		remove_country_leader_trait = ate_active_potilician
+		add_country_leader_trait = dictator
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		if = {
+			limit = { 
+				NOT = { has_idea = press_state }
+			}
+			swap_ideas = {
+				remove_idea = press_free
+				add_idea = press_state
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_idea = meat_no }
+			}
+			swap_ideas = {
+				remove_idea = meat_free
+				add_idea = meat_no
+			}
+		}
+		clear_variable = all_parl
+		clear_variable = dem_parl
+		clear_variable = lib_parl
+		clear_variable = soc_parl
+		clear_variable = com_parl
+		clear_variable = fas_parl
+		clear_variable = cent_parl
+		clear_variable = neut_parl
+	}
+}
+
+#Savoia crisis fra win
+country_event = {
+	id = ate_france.39
+	title = ate_france.39.t
+	desc = ate_france.39.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.39.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		transfer_state = 735
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.44 days = 1 }
+			}
+		}
+	}
+}
+
+#Savoia crisis fra lose
+country_event = {
+	id = ate_france.40
+	title = ate_france.40.t
+	desc = ate_france.40.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.40.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.45 days = 1 }
+			}
+		}
+	}
+}
+
+#Savoia crisis fra cancel
+country_event = {
+	id = ate_france.41
+	title = ate_france.41.t
+	desc = ate_france.41.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.41.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -5
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.46 days = 1 }
+			}
+		}
+	}
+}
+
+#Savoia crisis ita win
+country_event = {
+	id = ate_france.42
+	title = ate_france.42.t
+	desc = ate_france.42.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.42.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+	}
+}
+
+#Savoia crisis ita lose
+country_event = {
+	id = ate_france.43
+	title = ate_france.43.t
+	desc = ate_france.43.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.43.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Savoia crisis fra win news
+news_event = {
+	id = ate_france.44
+	title = ate_france.44.t
+	desc = ate_france.44.d
+	picture = GFX_news_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.44.a
+	}
+}
+
+#Savoia crisis fra lose news
+news_event = {
+	id = ate_france.45
+	title = ate_france.45.t
+	desc = ate_france.45.d
+	picture = GFX_news_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.45.a
+	}
+}
+
+#Savoia crisis fra cancel news
+news_event = {
+	id = ate_france.46
+	title = ate_france.46.t
+	desc = ate_france.46.d
+	picture = GFX_news_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.46.a
+	}
+}
+
+#Hitler power
+country_event = {
+	id = ate_france.47
+	title = ate_france.47.t
+	desc = ate_france.47.d
+	picture = GFX_report_event_aus_hitler
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.47.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		add_popularity = {
+		    ideology = fascism
+		    popularity = 0.2
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		if = {
+			limit = {	
+				is_puppet_of = GER 
+			}
+			GER = {
+				country_event = { id = ate_france.108 days = 1 }
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.109 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.47.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = -100
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = fascism
+			size = 0.5
+			capital = 152
+			states = { 
+				152 153 39
+			}
+			keep_political_leader = yes
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.110 days = 1 }
+			}
+		}
+	}
+}
+
+#Italy navy
+country_event = {
+	id = ate_france.48
+	title = ate_france.48.t
+	desc = ate_france.48.d
+	picture = GFX_report_event_fra_navy
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.48.a
+		ai_chance = { 
+			base = 10
+		}
+		navy_experience = 20
+		add_tech_bonus = {
+			name = FRA_naval_doctrine
+			bonus = 1.0
+			uses = 2
+			category = naval_doctrine
+		}
+	}
+}
+
+#Turkey diplomacy
+country_event = {
+	id = ate_france.49
+	title = ate_france.49.t
+	desc = ate_france.49.d
+	picture = GFX_report_event_tur_ataturk
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.49.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = { tag = TUR }
+			add_opinion_modifier = {
+				target = FROM
+				modifier = ate_fra_tur_diplo_modifier
+			}
+		}
+		if = {
+			limit = { tag = FRA }
+			add_opinion_modifier = {
+				target = TUR
+				modifier = ate_fra_tur_diplo_modifier
+			}
+		}
+	}
+}
+
+#Rodos crisis
+country_event = {
+	id = ate_france.50
+	title = ate_france.50.t
+	desc = ate_france.50.d
+	picture = GFX_report_event_fra_navy
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.50.a
+		ai_chance = { 
+			base = 10
+		}
+		add_ideas = gre_rodos_crisis
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_gre_rodos_modifier
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.51 days = 1 }
+			}
+		}
+	}
+}
+
+#Rodos crisis news
+news_event = {
+	id = ate_france.51
+	title = ate_france.51.t
+	desc = ate_france.51.d
+	picture = GFX_news_event_fra_navy
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.51.a
+	}
+}
+
+#Turkey fims
+country_event = {
+	id = ate_france.52
+	title = ate_france.52.t
+	desc = ate_france.52.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.52.a
+		ai_chance = { 
+			base = 10
+		}
+		add_ideas = fra_econ_member
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_tur_firms_modifier
+		}
+	}
+}
+
+#Afrika plan
+country_event = {
+	id = ate_france.53
+	title = ate_france.53.t
+	desc = ate_france.53.d
+	picture = GFX_report_event_french_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.53.a
+		ai_chance = { 
+			base = 5
+		}
+		set_country_flag = ate_fra_part_afrika_flag
+		RSI = { country_event = { id = ate_france.54 days = 1 } }
+	}
+
+	option = {
+		name = ate_france.53.b
+		ai_chance = { 
+			base = 15
+		}
+		set_country_flag = ate_fra_full_afrika_flag
+		if = {
+			limit = { has_war_with = ENG }
+			274 = { add_claim_by = FRA }
+			708 = { add_claim_by = FRA }
+			706 = { add_claim_by = FRA }
+			707 = { add_claim_by = FRA }
+			704 = { add_claim_by = FRA }
+			703 = { add_claim_by = FRA }
+			709 = { add_claim_by = FRA }
+			add_state_claim = 701
+			add_state_claim = 558
+		}
+		RSI = { country_event = { id = ate_france.55 days = 1 } }
+	}
+}
+
+#Afrika plan ita
+country_event = {
+	id = ate_france.54
+	title = ate_france.54.t
+	desc = ate_france.54.d
+	picture = GFX_report_event_french_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.54.a
+		ai_chance = { 
+			base = 10
+		}
+		FRA = {
+			transfer_state = 458
+			transfer_state = 665
+			transfer_state = 268
+			transfer_state = 553
+		}
+		if = {
+			limit = { has_war_with = ENG }
+			RSI = {
+				add_state_claim = 452
+				add_state_claim = 552
+				add_state_claim = 447
+				add_state_claim = 446
+				add_state_claim = 453
+				add_state_claim = 456
+				add_state_claim = 457
+			}
+		}
+	}
+}
+
+#Afrika plan ita
+country_event = {
+	id = ate_france.55
+	title = ate_france.55.t
+	desc = ate_france.55.d
+	picture = GFX_report_event_french_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.55.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 50
+		if = {
+			limit = { has_country_flag = ate_fra_full_afrika_flag is_in_faction_with = RSI }
+			RSI = {
+				add_state_claim = 452
+				add_state_claim = 552
+				add_state_claim = 447
+				add_state_claim = 446
+				add_state_claim = 453
+				add_state_claim = 456
+				add_state_claim = 457
+
+				add_state_claim = 767
+				add_state_claim = 551
+				add_state_claim = 549
+				add_state_claim = 269
+				add_state_claim = 547
+				add_state_claim = 548
+				add_state_claim = 659
+			}
+		}
+	}
+}
+
+#Russian diplomacy
+country_event = {
+	id = ate_france.56
+	title = ate_france.56.t
+	desc = ate_france.56.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.56.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = { tag = RUS }
+			add_opinion_modifier = {
+				target = FROM
+				modifier = ate_fra_rus_diplo_modifier
+			}
+		}
+		if = {
+			limit = { tag = FRA }
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ate_fra_rus_diplo_modifier
+			}
+		}
+	}
+}
+
+#Russia secret
+country_event = {
+	id = ate_france.57
+	title = ate_france.57.t
+	desc = ate_france.57.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.57.a
+		ai_chance = { 
+			base = 10
+		}
+		set_country_flag = ate_rus_cores_flag
+		add_ideas = fra_rus_secret_idea
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_rus_secret_modifier
+		}
+		FRA = { country_event = { id = ate_france.58 days = 1 } }
+	}
+
+	option = {
+		name = ate_france.57.b
+		ai_chance = { 
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 50
+		FRA = { country_event = { id = ate_france.59 days = 1 } }
+	}
+}
+
+#Russia secret yes
+country_event = {
+	id = ate_france.58
+	title = ate_france.58.t
+	desc = ate_france.58.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.58.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_rus_secret_modifier
+		}
+	}
+}
+
+#Russia secret no
+country_event = {
+	id = ate_france.59
+	title = ate_france.59.t
+	desc = ate_france.59.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.59.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Russia secret war
+country_event = {
+	id = ate_france.60
+	title = ate_france.60.t
+	desc = ate_france.60.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = { 
+		tag = RUS
+		has_idea = fra_rus_secret_idea
+		NOT = { has_war_with = FRA }
+		NOT = { FRA = { has_government = communism } }
+		NOT = { has_government = communism }
+		FRA = { has_war_with = GER }
+		NOT = { is_in_faction_with = GER }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { 
+		days = 10
+	}
+	
+	option = {
+		name = ate_france.60.a
+		ai_chance = { 
+			base = 10
+		}
+		activate_decision = rus_attack_germany
+		declare_war_on = {
+		    target = GER
+		    type = annex_everything
+		}
+	}
+
+	option = {
+		name = ate_france.60.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 10
+				FRA = { has_war_with = ENG }
+			}
+		}
+		remove_ideas = fra_rus_secret_idea
+		add_opinion_modifier = {
+			target = FRA
+			modifier = ate_fra_rus_break_treaty_modifier
+		}
+		FRA = { country_event = { id = ate_france.61 days = 1 } }
+	}
+}
+
+#Russia secret break
+country_event = {
+	id = ate_france.61
+	title = ate_france.61.t
+	desc = ate_france.61.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.61.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_rus_break_treaty_modifier
+		}
+	}
+}
+
+#Sudetenland
+country_event = {
+	id = ate_france.62
+	title = ate_france.62.t
+	desc = ate_france.62.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.62.a
+		ai_chance = {
+			base = 10
+		}
+		if = {
+			limit = {
+				AUS = {
+					owns_state = 762
+					OR = {
+						is_puppet_of = FRA
+						is_subject_of = FRA
+						is_in_faction_with = FRA
+						NOT = { owns_state = 39 }
+					}
+				}
+			}
+			transfer_state = 762
+		}
+		add_state_core = 762
+		FRA = { add_to_faction = ROOT }
+		if = {
+			limit = { has_idea = antifascism_idea }
+			remove_ideas = antifascism_idea
+		}
+		if = {
+			limit = { has_idea = neutrality_idea }
+			remove_ideas = neutrality_idea
+		}
+		if = {
+			limit = {
+				FRA = { has_war_with = GER }
+			}
+			declare_war_on = {
+				target = GER
+				type = take_state_focus
+				generator = { 69 }
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					owns_state = 69
+					OR = {
+						AND = {
+							has_idea = ger_revanchism
+							NOT = { has_war_with = FRA }
+						}
+						is_puppet_of = FRA
+						is_subject_of = FRA
+						AND = {
+							NOT = { has_war_with = FRA }
+							NOT = { has_idea = ger_first_economy }
+						}
+					}
+				}
+			}
+			transfer_state = 69
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_france.63 days = 1 }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.62.b
+		ai_chance = {
+			base = 2
+		}
+		add_political_power = 20
+		FRA = { country_event = { id = ate_france.64 days = 1 } }
+	}
+}
+
+#Sudetenland news
+news_event = {
+	id = ate_france.63
+	title = ate_france.63.t
+	desc = ate_france.63.d
+	picture = GFX_news_event_cze_sudeten
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.63.a
+	}
+}
+
+#Sudetenland no
+country_event = {
+	id = ate_france.64
+	title = ate_france.64.t
+	desc = ate_france.64.d
+	picture = GFX_report_event_czech_soldiers_01
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.64.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Divided germany
+news_event = {
+	id = ate_france.65
+	title = ate_france.65.t
+	desc = ate_france.65.d
+	picture = GFX_news_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.65.a
+	}
+}
+
+#Lion conf fra
+country_event = {
+	id = ate_france.66
+	title = ate_france.66.t
+	desc = ate_france.66.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.66.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+	}
+}
+
+#Lion conf ita
+country_event = {
+	id = ate_france.67
+	title = ate_france.67.t
+	desc = ate_france.67.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.67.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_state_claim = 546
+		add_state_claim = 768
+		add_state_claim = 769
+		add_state_claim = 102
+		add_state_claim = 103
+		add_state_claim = 109
+		add_state_claim = 104
+	}
+}
+
+#Lion conf rus
+country_event = {
+	id = ate_france.68
+	title = ate_france.68.t
+	desc = ate_france.68.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.68.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_state_core = 95
+		add_state_core = 97
+		add_state_core = 78
+		add_state_core = 766
+	}
+}
+
+#Lion conf pol
+country_event = {
+	id = ate_france.69
+	title = ate_france.69.t
+	desc = ate_france.69.d
+	picture = GFX_report_event_generic_conference
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.69.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_state_core = 85
+		add_state_core = 86
+	}
+}
+
+#Polish diplomacy
+country_event = {
+	id = ate_france.70
+	title = ate_france.70.t
+	desc = ate_france.70.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.70.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = { tag = POL }
+			add_opinion_modifier = {
+				target = FROM
+				modifier = ate_fra_pol_diplo_modifier
+			}
+		}
+		if = {
+			limit = { tag = FRA }
+			add_opinion_modifier = {
+				target = POL
+				modifier = ate_fra_pol_diplo_modifier
+			}
+		}
+	}
+}
+
+#Poland secret
+country_event = {
+	id = ate_france.71
+	title = ate_france.71.t
+	desc = ate_france.71.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.71.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_pol_secret_modifier
+		}
+		add_ideas = pol_nationalism
+		if = {
+			limit = { has_idea = neutrality_idea }
+			remove_ideas = neutrality_idea
+		}
+		if = {
+			limit = { has_idea = antifascism_idea }
+			remove_ideas = antifascism_idea
+		}
+		add_state_core = 85
+		add_state_core = 86
+		add_state_core = 72
+		add_state_core = 97
+		add_state_core = 95
+		add_state_core = 96
+		add_state_core = 94
+		add_state_core = 93
+		add_state_core = 91
+		add_state_core = 89
+		add_state_core = 80
+		country_event = { id = ate_germany.14 }
+		FRA = { country_event = { id = ate_france.72 days = 2 } }
+	}
+
+	option = {
+		name = ate_france.71.b
+		ai_chance = { 
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 50
+		FRA = { country_event = { id = ate_france.73 days = 2 } }
+	}
+}
+
+#Poland secret yes
+country_event = {
+	id = ate_france.72
+	title = ate_france.72.t
+	desc = ate_france.72.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.72.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_pol_secret_modifier
+		}
+	}
+}
+
+#Poland secret no
+country_event = {
+	id = ate_france.73
+	title = ate_france.73.t
+	desc = ate_france.73.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.73.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Italy non-agression
+country_event = {
+	id = ate_france.74
+	title = ate_france.74.t
+	desc = ate_france.74.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.74.a
+		ai_chance = { 
+			base = 10
+		}
+		diplomatic_relation = {
+		    country = FRA
+		    relation = non_aggression_pact
+		    active = yes
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.75 days = 1 }
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.74.b
+		ai_chance = { 
+			base = 2
+		}
+		add_political_power = 50
+		FRA = { country_event = { id = ate_france.76 days = 1 } }
+	}
+}
+
+#Italy non-agression news
+news_event = {
+	id = ate_france.75
+	title = ate_france.75.t
+	desc = ate_france.75.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.75.a
+	}
+}
+
+#Italy non-agression no
+country_event = {
+	id = ate_france.76
+	title = ate_france.76.t
+	desc = ate_france.76.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.76.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Little Entente
+news_event = {
+	id = ate_france.77
+	title = ate_france.77.t
+	desc = ate_france.77.d
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.77.a
+	}
+}
+
+#Little Entente bunkers ser
+country_event = {
+	id = ate_france.78
+	title = ate_france.78.t
+	desc = ate_france.78.d
+	picture = GFX_report_event_generic_bunker
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.78.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_little_bunker_modifier
+		}
+		107 = {
+			add_building_construction = {
+				type = bunker
+				province = 11586
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3609
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6634
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = { has_full_control_of_state = 106 }
+			106 = {
+				add_building_construction = {
+					type = bunker
+					province = 11868
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 11857
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 907
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+#Little Entente bunkers bos
+country_event = {
+	id = ate_france.79
+	title = ate_france.79.t
+	desc = ate_france.79.d
+	picture = GFX_report_event_generic_bunker
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.79.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_little_bunker_modifier
+		}
+		104 = {
+			add_building_construction = {
+				type = bunker
+				province = 11899
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 606
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11574
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9591
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9588
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6983
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6942
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Little Entente military
+country_event = {
+	id = ate_france.80
+	title = ate_france.80.t
+	desc = ate_france.80.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.80.a
+		ai_chance = { 
+			base = 10
+		}
+		army_experience = 10
+		add_ideas = fra_french_military_school
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_little_military_modifier
+		}
+	}
+}
+
+#Yugoslavia
+country_event = {
+	id = ate_france.81
+	title = ate_france.81.t
+	desc = ate_france.81.d
+	picture = GFX_report_event_yugoslavian_split
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.81.a
+		ai_chance = { 
+			base = 10
+		}
+		add_state_core = 105
+		add_state_core = 104
+		add_state_core = 764
+		add_state_core = 45
+		add_state_core = 109
+		add_state_core = 103
+		add_state_core = 102
+		add_state_core = 736
+		set_cosmetic_tag = YUG
+		if = {
+			limit = { BOS = { is_in_faction_with = ROOT } }
+			BOS = { country_event = { id = ate_france.84 days = 1 } }
+		}
+		if = {
+			limit = { MNT = { is_in_faction_with = ROOT } }
+			MNT = { country_event = { id = ate_france.84 days = 1 } }
+		}
+		dismantle_faction = yes
+		FROM = { add_to_faction = ROOT }
+		add_ideas = fra_protection
+		if = {
+			limit = { has_idea = neutrality_idea }
+			remove_ideas = neutrality_idea
+		}
+		if = {
+			limit = { has_idea = antifascism_idea }
+			remove_ideas = antifascism_idea
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.82 days = 1 }
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.81.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 50
+		FROM = { country_event = { id = ate_france.83 days = 1 } }
+	}
+}
+
+#Yugoslavia news
+news_event = {
+	id = ate_france.82
+	title = ate_france.82.t
+	desc = ate_france.82.d
+	picture = GFX_news_event_yugoslavian_split
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.82.a
+	}
+}
+
+#Yugoslavia no
+country_event = {
+	id = ate_france.83
+	title = ate_france.83.t
+	desc = ate_france.83.d
+	picture = GFX_report_event_yugoslavian_split
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.83.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Yugoslavia others
+country_event = {
+	id = ate_france.84
+	title = ate_france.84.t
+	desc = ate_france.84.d
+	picture = GFX_news_event_yugoslavian_split
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.84.a
+		ai_chance = { 
+			base = 10
+		}
+		FROM = { 
+			annex_country = {
+			    target = ROOT
+			    transfer_troops = yes
+			}
+			change_tag_from = ROOT
+		}
+	}
+
+	option = {
+		name = ate_france.84.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 50
+		FROM = { 
+			create_wargoal = {
+			    type = annex_everything
+			    target = ROOT
+			}
+		}
+	}
+}
+
+#Degrelle
+country_event = {
+	id = ate_france.85
+	title = ate_france.85.t
+	desc = ate_france.85.d
+	picture = GFX_report_event_bel_degrelle
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.85.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+		add_ideas = fra_leon_degrelle
+	}
+}
+
+#Degrelle puppet
+country_event = {
+	id = ate_france.86
+	title = ate_france.86.t
+	desc = ate_france.86.d
+	picture = GFX_report_event_bel_degrelle
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_france.86.a
+		ai_chance = { 
+			base = 10
+		}
+		FROM = { 
+			puppet = ROOT
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = satellite
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.87 days = 1 }
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.86.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 50
+		FROM = { country_event = { id = ate_france.88 days = 1 } }
+	}
+}
+
+#Degrelle puppet news
+news_event = {
+	id = ate_france.87
+	title = ate_france.87.t
+	desc = ate_france.87.d
+	picture = GFX_news_event_bel_degrelle
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.87.a
+	}
+}
+
+#Degrelle puppet no
+country_event = {
+	id = ate_france.88
+	title = ate_france.88.t
+	desc = ate_france.88.d
+	picture = GFX_report_event_bel_degrelle
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.88.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		add_state_core = 34
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+	}
+}
+
+#Eng peace
+country_event = {
+	id = ate_france.89
+	title = ate_france.89.t
+	desc = ate_france.89.d
+	picture = GFX_report_event_eng_royal_family
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.89.a
+		ai_chance = { 
+			base = 10
+		}
+			if = {
+				limit = { owns_state = 786 }
+				FROM = { transfer_state = 786 }
+			}
+			if = {
+				limit = { owns_state = 782 }
+				FROM = { transfer_state = 782 }
+			}
+			if = {
+				limit = { owns_state = 557 }
+				FROM = { transfer_state = 557 }
+			}
+			if = {
+				limit = { owns_state = 272 }
+				FROM = { transfer_state = 272 }
+			}
+			if = {
+				limit = { owns_state = 556 }
+				FROM = { transfer_state = 556 }
+			}
+			if = {
+				limit = { owns_state = 780 }
+				FROM = { transfer_state = 780 }
+			}
+			if = {
+				limit = { owns_state = 778 }
+				FROM = { transfer_state = 778 }
+			}
+			if = {
+				limit = { owns_state = 779 }
+				FROM = { transfer_state = 779 }
+			}
+			if = {
+				limit = { owns_state = 776 }
+				FROM = { transfer_state = 776 }
+			}
+			if = {
+				limit = { owns_state = 781 }
+				FROM = { transfer_state = 781 }
+			}
+			if = {
+				limit = { owns_state = 515 }
+				FROM = { transfer_state = 515 }
+			}
+			if = {
+				limit = { owns_state = 775 }
+				FROM = { transfer_state = 775 }
+			}
+			if = {
+				limit = { owns_state = 774 }
+				FROM = { transfer_state = 774 }
+			}
+			if = {
+				limit = { owns_state = 660 }
+				FROM = { transfer_state = 660 }
+			}
+			if = {
+				limit = { owns_state = 772 }
+				FROM = { transfer_state = 772 }
+			}
+			if = {
+				limit = { owns_state = 539 }
+				FROM = { transfer_state = 539 }
+			}
+			if = {
+				limit = { owns_state = 543 }
+				FROM = { transfer_state = 543 }
+			}
+			if = {
+				limit = { owns_state = 730 }
+				FROM = { transfer_state = 730 }
+			}
+			if = {
+				limit = { owns_state = 674 }
+				FROM = { transfer_state = 674 }
+			}
+			if = {
+				limit = { owns_state = 708 }
+				FROM = { transfer_state = 708 }
+			}
+			if = {
+				limit = { owns_state = 706 }
+				FROM = { transfer_state = 706 }
+			}
+			if = {
+				limit = { owns_state = 310 }
+				FROM = { transfer_state = 310 }
+			}
+		if = { 
+			limit = { 
+				RSI = { is_in_faction_with = FROM }
+			}
+			if = {
+				limit = { owns_state = 547 }
+				RSI = { transfer_state = 547 }
+			}
+			if = {
+				limit = { owns_state = 548 }
+				RSI = { transfer_state = 548 }
+			}
+			if = {
+				limit = { owns_state = 269 }
+				RSI = { transfer_state = 269 }
+			}
+		}
+		every_country = {
+			limit = { 
+				has_war_with = ENG
+				is_in_faction_with = FROM
+			}
+			white_peace = ENG
+			white_peace = CAN
+			white_peace = RAJ
+			white_peace = AST
+			white_peace = NZL
+			white_peace = MAL
+			white_peace = SAF
+			white_peace = EGY
+		}
+		white_peace = FROM
+		every_owned_state = {
+			limit = { is_claimed_by = FROM }
+			FROM = { remove_state_claim = PREV }
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.90 }
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.89.b
+		ai_chance = { 
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 50
+		FROM = { country_event = { id = ate_france.91 days = 1 } }
+	}
+}
+
+#Eng peace news
+news_event = {
+	id = ate_france.90
+	title = ate_france.90.t
+	desc = ate_france.90.d
+	picture = GFX_news_event_eng_churchill_sign_treaty
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.90.a
+	}
+}
+
+#Eng peace no
+country_event = {
+	id = ate_france.91
+	title = ate_france.91.t
+	desc = ate_france.91.d
+	picture = GFX_report_event_eng_royal_family
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.91.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Catalonia crisis fra win
+country_event = {
+	id = ate_france.92
+	title = ate_france.92.t
+	desc = ate_france.92.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.92.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		transfer_state = 165
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.97 days = 1 }
+			}
+		}
+	}
+}
+
+#Catalonia crisis fra lose
+country_event = {
+	id = ate_france.93
+	title = ate_france.93.t
+	desc = ate_france.93.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.93.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.98 days = 1 }
+			}
+		}
+	}
+}
+
+#Catalonia crisis fra cancel
+country_event = {
+	id = ate_france.94
+	title = ate_france.94.t
+	desc = ate_france.94.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.94.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -5
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.98 days = 1 }
+			}
+		}
+	}
+}
+
+#Catalonia crisis spr win
+country_event = {
+	id = ate_france.95
+	title = ate_france.95.t
+	desc = ate_france.95.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.95.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+	}
+}
+
+#Catalonia crisis spr lose
+country_event = {
+	id = ate_france.96
+	title = ate_france.96.t
+	desc = ate_france.96.d
+	picture = GFX_report_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.96.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Catalonia crisis fra win news
+news_event = {
+	id = ate_france.97
+	title = ate_france.97.t
+	desc = ate_france.97.d
+	picture = GFX_news_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.97.a
+	}
+}
+
+#Catalonia crisis fra lose news
+news_event = {
+	id = ate_france.98
+	title = ate_france.98.t
+	desc = ate_france.98.d
+	picture = GFX_news_event_fra_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.98.a
+	}
+}
+
+#Portugal non-agression
+country_event = {
+	id = ate_france.99
+	title = ate_france.99.t
+	desc = ate_france.99.d
+	picture = GFX_report_event_por_salazar_military
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.99.a
+		ai_chance = { 
+			base = 10
+		}
+		diplomatic_relation = {
+		    country = FROM
+		    relation = non_aggression_pact
+		    active = yes
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.100 }
+			}
+		}
+	}
+
+	option = {
+		name = ate_france.99.b
+		ai_chance = { 
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 50
+		FROM = { country_event = { id = ate_france.101 days = 1 } }
+	}
+}
+
+#Portugal non-agression news
+news_event = {
+	id = ate_france.100
+	title = ate_france.100.t
+	desc = ate_france.100.d
+	picture = GFX_news_event_por_salazar_franco
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.100.a
+	}
+}
+
+#Portugal non-agression no
+country_event = {
+	id = ate_france.101
+	title = ate_france.101.t
+	desc = ate_france.101.d
+	picture = GFX_report_event_por_salazar_military
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.101.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Economic question
+country_event = {
+	id = ate_france.102
+	title = ate_france.102.t
+	desc = ate_france.102.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.102.a
+		ai_chance = { 
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		ATE_fra_radical_wing_more = yes
+		set_country_flag = fra_marcel_dea_flag
+		add_political_power = 50
+	}
+	
+	option = {
+		name = ate_france.102.b
+		ai_chance = { 
+			base = 10
+		}
+		ATE_fra_moderate_wing_more = yes
+		set_country_flag = fra_pier_pushe_flag
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = FRA_pierre_pucheu
+	}
+}
+
+#Party cells not done
+country_event = {
+	id = ate_france.103
+	title = ate_france.103.t
+	desc = ate_france.103.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.103.a
+		ai_chance = { 
+			base = 5
+		}
+	}
+}
+
+#Party cells done
+country_event = {
+	id = ate_france.104
+	title = ate_france.104.t
+	desc = ate_france.104.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.104.a
+		ai_chance = { 
+			base = 5
+		}
+		add_stability = 0.01
+		add_political_power = 10
+		set_country_flag = fra_commies_cells_done_flag
+	}
+}
+
+#Party cells end
+country_event = {
+	id = ate_france.105
+	title = ate_france.105.t
+	desc = ate_france.105.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.105.a
+		ai_chance = { 
+			base = 5
+		}
+		remove_ideas = fra_revolution_threat
+		clr_country_flag = fra_commies_cells_done_flag
+		clr_country_flag = fra_commies_cells_spreaded_flag
+		complete_national_focus = fra_comm_liquidate
+	}
+}
+
+#Party cells not end
+country_event = {
+	id = ate_france.106
+	title = ate_france.106.t
+	desc = ate_france.106.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.106.a
+		ai_chance = { 
+			base = 5
+		}
+		add_political_power = -20
+	}
+}
+
+#Revolution
+country_event = {
+	id = ate_france.107
+	title = ate_france.107.t
+	desc = ate_france.107.d
+	picture = GFX_report_event_worker_protests
+
+	trigger = {
+		tag = FRA
+		NOT = { has_government = communism }
+		has_idea = fra_revolution_threat
+		has_stability < 0.2
+	}
+
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = ate_france.107.a
+		ai_chance = { 
+			base = 5
+		}
+		add_political_power = -20
+		remove_ideas = fra_revolution_threat
+		start_civil_war = {
+			ideology = communism
+			size = 0.4
+		}
+	}
+
+	option = {
+		name = ate_france.107.b
+		ai_chance = { 
+			base = 0
+		}
+		add_political_power = -20
+		remove_ideas = fra_revolution_threat
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_popularity = {
+		    ideology = communism
+		    popularity = 0.45
+		}
+		swap_ideas = {
+		    remove_idea = corporativist_economy
+		    add_idea = plan_economy
+		}
+		swap_ideas = {
+		    remove_idea = labour_basic_codex
+		    add_idea = labour_socialism
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = 0.6
+		}
+	}
+}
+
+#Hitler putch Germany
+country_event = {
+	id = ate_france.108
+	title = ate_france.108.t
+	desc = ate_france.108.d
+	picture = GFX_report_event_aus_hitler
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.108.a
+		add_political_power = -20
+	}
+}
+
+#Hitler Putch suckass
+news_event = {
+	id = ate_france.109
+	title = ate_france.109.t
+	desc = ate_france.109.d
+	picture = GFX_news_event_aus_hitler
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.109.a
+	}
+}
+
+#Hitler Putch civil war
+news_event = {
+	id = ate_france.110
+	title = ate_france.110.t
+	desc = ate_france.110.d
+	picture = GFX_news_event_aus_hitler
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.110.a
+	}
+}
+
+#Poland secret war
+country_event = {
+	id = ate_france.111
+	title = ate_france.111.t
+	desc = ate_france.111.d
+	picture = GFX_report_event_polish_tanks_01
+
+	trigger = { 
+		tag = POL
+		has_idea = pol_nationalism
+		NOT = { has_war_with = FRA }
+		NOT = { FRA = { has_government = communism } }
+		NOT = { has_government = communism }
+		FRA = { has_war_with = GER }
+		NOT = { is_in_faction_with = GER }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { 
+		days = 10
+	}
+	
+	option = {
+		name = ate_france.111.a
+		ai_chance = { 
+			base = 10
+		}
+		declare_war_on = {
+		    target = GER
+		    type = annex_everything
+		}
+	}
+
+	option = {
+		name = ate_france.111.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 10
+				FRA = { has_war_with = ENG }
+			}
+		}
+		remove_ideas = pol_nationalism
+		add_opinion_modifier = {
+			target = FRA
+			modifier = ate_fra_pol_break_treaty_modifier
+		}
+		FRA = { country_event = { id = ate_france.112 days = 1 } }
+	}
+}
+
+#Poland secret break
+country_event = {
+	id = ate_france.112
+	title = ate_france.112.t
+	desc = ate_france.112.d
+	picture = GFX_report_event_polish_tanks_01
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.112.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_fra_pol_break_treaty_modifier
+		}
+	}
+}
+
+#Peace france
+country_event = {
+	id = ate_france.113
+	title = ate_france.113.t
+	desc = ate_france.113.d
+	picture = GFX_report_event_ger_reichstag
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+		transfer_state = 28
+		if = {
+			limit = { GER = { owns_state = 777 } }
+			transfer_state = 777
+		}
+		if = {
+			limit = { GER = { owns_state = 773 } }
+			transfer_state = 773
+		}
+		if = {
+			limit = { GER = { owns_state = 541 } }
+			transfer_state = 541
+		}
+		if = {
+			limit = { GER = { owns_state = 523 } }
+			transfer_state = 523
+		}
+		if = {
+			limit = { GER = { owns_state = 737 } }
+			transfer_state = 737
+		}
+		if = {
+			limit = { GER = { owns_state = 743 } }
+			transfer_state = 743
+		}
+		if = {
+			limit = { GER = { owns_state = 42 } }
+			transfer_state = 42
+		}
+		if = {
+			limit = { GER = { owns_state = 8 } }
+			transfer_state = 8
+		}
+		if = {
+			limit = { GER = { owns_state = 51 } }
+			transfer_state = 51
+		}
+		if = {
+			limit = { BEL = { is_in_faction_with = GER } }
+			transfer_state = 34
+		}
+		if = {
+			limit = { SWI = { is_in_faction_with = GER } }
+			transfer_state = 3
+		}
+		if = {
+			limit = { 
+				GER = { owns_state = 546 }
+				NOT = { ITA = { is_in_faction_with = ROOT } }
+			}
+			transfer_state = 546
+		}
+		if = {
+			limit = { 
+				GER = { owns_state = 768 }
+				NOT = { ITA = { is_in_faction_with = ROOT } }
+			}
+			transfer_state = 768
+		}
+		if = {
+			limit = { 
+				GER = { owns_state = 769 }
+				NOT = { ITA = { is_in_faction_with = ROOT } }
+			}
+			transfer_state = 769
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				UKR = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = UKR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				BLR = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = BLR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				97 = { is_core_of = RUS }
+				95 = { is_core_of = RUS }
+				LIT = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = LIT
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				190 = { is_core_of = RUS }
+				CRL = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = CRL
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				TCC = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = TCC
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				GER = { owns_state = 546 }
+			}
+			ITA = { transfer_state = 546 }
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				GER = { owns_state = 768 }
+			}
+			ITA = { transfer_state = 768 }
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				GER = { owns_state = 769 }
+			}
+			ITA = { transfer_state = 769 }
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 39 }
+			}
+			ITA = { transfer_state = 39 }
+		}
+		if = {
+			limit = {
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 736 }
+			}
+			ITA = { transfer_state = 736 }
+		}
+		if = {
+			limit = { 
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 102 }
+			}
+			ITA = { transfer_state = 102 }
+		}
+		if = {
+			limit = {
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 103 }
+			}
+			ITA = { transfer_state = 103 }
+		}
+		if = {
+			limit = { 
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				OR = {
+					has_war_with = BOS
+					BOS = { exists = no }
+				}
+				NOT = { is_in_faction_with = BOS }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 109 }
+			}
+			HUN = { release = CRO }
+		}
+		if = {
+			limit = { 
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				BOS = { exists = yes }
+				is_in_faction_with = BOS
+				HUN = { has_war_with = BOS }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 109 }
+			}
+			BOS = { transfer_state = 109 }
+		}
+		if = {
+			limit = {
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 104 }
+			}
+			ITA = { transfer_state = 104 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 736 }
+			}
+			SER = { transfer_state = 736 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 102 }
+			}
+			SER = { transfer_state = 102 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 109 }
+			}
+			SER = { transfer_state = 109 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 103 }
+			}
+			SER = { transfer_state = 103 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 45 }
+			}
+			SER = { transfer_state = 45 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 764 }
+			}
+			SER = { transfer_state = 764 }
+		}
+		if = {
+			limit = {
+				AUS = { is_in_faction_with = GER }
+				AUS = { has_cosmetic_tag = AUS_GER }
+			}
+			AUS = { drop_cosmetic_tag = yes }
+		}
+		if = {
+			limit = { 
+				CZE = { is_in_faction_with = ROOT }
+				GER = { owns_state = 69 }
+			}
+			CZE = { transfer_state = 69 }
+		}
+		if = {
+			limit = { 
+				CZE = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 762 }
+			}
+			CZE = { transfer_state = 762 }
+		}
+		if = {
+			limit = { 
+				POL = { is_in_faction_with = ROOT }
+				GER = { owns_state = 86 }
+			}
+			POL = { transfer_state = 86 }
+			POL = { add_state_core = 86 }
+		}
+		if = {
+			limit = { 
+				POL = { is_in_faction_with = ROOT }
+				GER = { owns_state = 85 }
+			}
+			POL = { transfer_state = 85 }
+			POL = { add_state_core = 85 }
+		}
+		if = {
+			limit = { 
+				POL = { is_in_faction_with = ROOT }
+				has_opinion_modifier = ate_fra_pol_secret_modifier
+				GER = { owns_state = 85 }
+			}
+			POL = { 
+				transfer_state = 72
+				transfer_state = 97
+				transfer_state = 95
+				transfer_state = 96
+				transfer_state = 94
+				transfer_state = 93
+				transfer_state = 91
+				transfer_state = 89
+				transfer_state = 80
+			}
+		}
+		if = {
+			limit = { 
+				AUS = { is_in_faction_with = ROOT }
+			}
+			AUS = { 
+				transfer_state = 52
+				transfer_state = 53
+				transfer_state = 54
+				transfer_state = 50
+			}
+		}
+		if = {
+			limit = { 
+				AUS = { is_in_faction_with = ROOT }
+				SWI = { is_in_faction_with = GER }
+			}
+			AUS = { 
+				transfer_state = 151
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				has_opinion_modifier = ate_fra_pol_secret_modifier
+				UKR = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = UKR
+					transfer_troops = no
+				}
+				annex_country = {
+					target = BLR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				TUR = { is_in_faction_with = ROOT }
+				GRE = { is_in_faction_with = GER }
+			}
+			GRE = { release = TUR }
+		}
+		every_country = {
+			limit = {
+				OR = { 
+					is_puppet_of = GER
+					is_subject_of = GER
+				}
+			}
+			GER = { end_puppet = PREV }
+			remove_ideas = GER_wilhelm_iii
+			remove_ideas = wilhelm_II
+		}
+		every_country = {
+			limit = { 
+				has_war_with = GER
+				is_in_faction_with = FRA
+			}
+			white_peace = GER
+			white_peace = UKR
+			white_peace = BLR
+			white_peace = POL
+			white_peace = LIT
+			white_peace = AUS
+			white_peace = CRL
+			if = {
+				limit = { HUN = { is_in_faction_with = GER } }
+				white_peace = HUN
+			}
+			if = {
+				limit = { SER = { is_in_faction_with = GER } }
+				white_peace = SER
+			}
+			if = {
+				limit = { BOS = { is_in_faction_with = GER } }
+				white_peace = BOS
+			}
+			if = {
+				limit = { MNT = { is_in_faction_with = GER } }
+				white_peace = MNT
+			}
+		}
+		white_peace = GER
+		if = {
+			limit = { HUN = { is_in_faction_with = GER } }
+			every_country = {
+				limit = {
+					OR = { 
+						is_puppet_of = HUN
+						is_subject_of = HUN
+					}
+				}
+				HUN = { end_puppet = PREV }
+			}
+			HUN = { release = ROM }
+			HUN = { release = SER }
+			HUN = { release = SLO }
+			HUN = { release = CRO }
+			add_to_faction = SLO
+			add_to_faction = CRO
+		}
+		GER = { release = PRE }
+		GER = { release = WST }
+		FRA = { puppet = WST }
+		GER = { release = OLD }
+		GER = { release = THR }
+		GER = { release = SAX }
+		GER = { release = HAN }
+		GER = { release = SHL }
+		GER = { release = MEK }
+		GER = { release = CZE }
+		if = {
+			limit = { 
+				is_in_faction_with = POL
+			}
+			GER = { release = POL }
+		}
+		if = {
+			limit = { 
+				NOT = { is_in_faction_with = AUS }
+			}
+			GER = { release = BAY }
+			GER = { release = WUR }
+			FRA = { puppet = WUR }
+		}
+		if = {
+			limit = { 
+				AUS = { is_in_faction_with = GER }
+			}
+			puppet = AUS
+		}
+		every_country = {
+			limit = {
+				is_guaranteed_by = GER
+			}
+			GER = {
+				diplomatic_relation = {
+					country = PREV
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+		annex_country = {
+		    target = GER
+		    transfer_troops = no
+		}
+		GER = {
+			dismantle_faction = yes
+			add_ideas = ger_revanchism
+			remove_ideas = ger_first_economy
+			remove_ideas = ger_rotfront
+			remove_ideas = ger_iron_front
+			remove_ideas = ger_food_from_afrika
+			remove_ideas = ger_settle_programm
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+		}
+		}
+	}
+
+	option = {
+		name = ate_france.113.a
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}
+
+#Germany choice
+country_event = {
+	id = ate_france.114
+	title = ate_france.114.t
+	desc = ate_france.114.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.114.a
+		trigger = {
+			NOT = { has_idea = fra_mod_wing_3 }
+		}
+		ai_chance = { 
+			base = 50
+		}
+		set_country_flag = fra_divided_germany_flag
+		custom_effect_tooltip = fra_divided_germany_tt
+		unlock_decision_tooltip = fra_ger_war
+		add_state_claim = 8
+		add_state_claim = 42
+		add_state_claim = 51
+		if = {
+			limit = {
+				POL = { is_in_faction_with = ROOT }
+			}
+			POL = {
+				add_state_core = 86
+				add_state_core = 86
+				add_state_core = 5
+				add_state_core = 67
+				add_state_core = 66
+				add_state_core = 68
+				add_state_core = 63
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_france.65 days = 1 }
+			}
+		}
+		add_threat = 5
+		GER = { add_war_support = 0.2 }
+		if = {
+			limit = {
+				has_non_aggression_pact_with = ENG
+			}
+			diplomatic_relation = {
+			    country = ENG
+			    relation = non_aggression_pact
+			    active = no
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.114.b
+		trigger = {
+			NOT = { has_idea = fra_rad_wing_3 }
+		}
+		ai_chance = { 
+			base = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 100
+	}
+}
+
+#Commies - propaganda
+country_event = {
+	id = ate_france.115
+	title = ate_france.115.t
+	desc = ate_france.115.d
+	picture = GFX_report_event_fra_commies_propaganda
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.115.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.04
+	}
+}
+
+#Commies - political kill
+country_event = {
+	id = ate_france.116
+	title = ate_france.116.t
+	desc = ate_france.116.d
+	picture = GFX_report_event_fra_commies_murder
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.116.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -40
+	}
+}
+
+#Commies - terror
+country_event = {
+	id = ate_france.117
+	title = ate_france.117.t
+	desc = ate_france.117.d
+	picture = GFX_report_event_fra_commies_terror
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.117.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.04
+		add_political_power = -40
+	}
+}
+
+#Party securite not done
+country_event = {
+	id = ate_france.118
+	title = ate_france.118.t
+	desc = ate_france.118.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.118.a
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+#Party securite done
+country_event = {
+	id = ate_france.119
+	title = ate_france.119.t
+	desc = ate_france.119.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.119.a
+		ai_chance = { 
+			base = 5
+		}
+		add_stability = 0.01
+		add_political_power = 10
+		set_country_flag = fra_commies_collab_done_flag
+	}
+}
+
+#Party securite end
+country_event = {
+	id = ate_france.120
+	title = ate_france.120.t
+	desc = ate_france.120.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.120.a
+		ai_chance = { 
+			base = 5
+		}
+		remove_ideas = fra_revolution_threat
+		clr_country_flag = fra_commies_collab_done_flag
+		clr_country_flag = fra_commies_radiogame_flag
+		complete_national_focus = fra_comm_liquidate
+	}
+}
+
+#Party securite not end
+country_event = {
+	id = ate_france.121
+	title = ate_france.121.t
+	desc = ate_france.121.d
+	picture = GFX_report_event_communist_leader
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.121.a
+		ai_chance = { 
+			base = 5
+		}
+		add_political_power = -20
+	}
+}
+
+#Nuclear research Start
+country_event = {
+	id = ate_france.122
+	title = ate_france.122.t
+	desc = ate_france.122.d
+	picture = GFX_report_event_nuclear_research
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.122.a
+		ai_chance = { 
+			base = 5
+		}
+		add_tech_bonus = {
+			name = USA_manhattan_project
+			bonus = 1.0
+			uses = 1
+			category = nuclear
+		}
+		add_tech_bonus = {
+			name = USA_manhattan_project
+			bonus = 1.0
+			uses = 1
+			category = nuclear
+		}
+		hidden_effect = {
+			country_event = { id = ate_france.123 days = 180 }
+		}
+	}
+}
+
+#Nuclear research More
+country_event = {
+	id = ate_france.123
+	title = ate_france.123.t
+	desc = ate_france.123.d
+	picture = GFX_report_event_nuclear_research
+
+	trigger = {
+		is_puppet = no
+		is_major = yes
+		has_government = fascism
+		has_tech = nuclear_reactor
+	}
+	
+	is_triggered_only = yes 
+
+	immediate = {
+		random_owned_controlled_state = {
+			limit = { is_core_of = ROOT }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = nuclear_reactor
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = { is_core_of = ROOT }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = nuclear_reactor
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = {
+		name = ate_france.123.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -100
+	}
+
+	option = {
+		name = ate_france.123.b
+		ai_chance = { 
+			base = 5
+		}
+		custom_effect_tooltip = ate_fra_nuclear_tt
+		set_country_flag = ate_fra_killed_curie_flag
+	}
+}
+
+#Chevalier
+country_event = {
+	id = ate_france.124
+	title = ate_france.124.t
+	desc = ate_france.124.d
+	picture = GFX_report_event_fra_chevalier
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.124.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = fra_chevalier_idea
+		add_dynamic_modifier = {
+			modifier = fra_chevalier_pp
+		}
+		set_variable = { var_chev = -0.04 }
+		add_to_variable = { var_chevalier = 4 }
+		division_template = {
+			name = "Division Chevalier" 	
+			is_locked = yes
+			regiments = {
+				mechanized = { x = 0 y = 0 }		
+				mechanized = { x = 0 y = 1 }		
+				mechanized = { x = 0 y = 2 }		
+				mechanized = { x = 0 y = 3 }		
+				mechanized = { x = 1 y = 0 }			
+				mechanized = { x = 1 y = 1 }
+				mechanized = { x = 1 y = 2 }
+				mechanized = { x = 1 y = 3 }
+				motorized = { x = 2 y = 0 }
+				motorized = { x = 2 y = 1 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }      		
+				artillery = { x = 0 y = 1 }
+				engineer = { x = 0 y = 2 }
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"Garde Nationale Chevalier\" division_template = \"Division Chevalier\" start_experience_factor = 0.3"  
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"2e Division Chevalier de Paris\" division_template = \"Division Chevalier\" start_experience_factor = 0.3"  
+				owner = ROOT
+			}
+		}
+	}
+}
+
+#Algerie oil
+country_event = {
+	id = ate_france.125
+	title = ate_france.125.t
+	desc = ate_france.125.d
+	picture = GFX_report_event_france_parade
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_france.125.a
+		ai_chance = {
+			base = 10
+		}
+		add_resource = {
+			type = oil
+			amount = 60
+			state = 514
+		}
+	}
+}

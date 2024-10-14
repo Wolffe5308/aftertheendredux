@@ -1,0 +1,194 @@
+﻿l_english:
+ PARLAMENT_TEXT:0 "Parlament"
+ PARLAMENT_T:0 "Parlament"
+ BUDGET_T:0 "Budget"
+ 
+ PARLAMENT_ICON:0 "Parlament"
+ 
+ DEM_PARL_TEXT:0 "Conservative Democrats: [GetPartyNumberDem]"
+ PARTY_NUMBER_RULING_DEM:0 "§O[?dem_parl]§!"
+ PARTY_NUMBER_DEM:0 "§Y[?dem_parl]§!"
+ PARTY_NUMBER_YES_DEM:0 "§G[?dem_parl]§!"
+ PARTY_NUMBER_NO_DEM:0 "§R[?dem_parl]§!"
+ PARTY_NUMBER_BAN_DEM:0 "§RBanned§!"
+ 
+ LIB_PARL_TEXT:0 "Liberal Democrats: [GetPartyNumberLib]"
+ PARTY_NUMBER_RULING_LIB:0 "§O[?lib_parl]§!"
+ PARTY_NUMBER_LIB:0 "§Y[?lib_parl]§!"
+ PARTY_NUMBER_YES_LIB:0 "§G[?lib_parl]§!"
+ PARTY_NUMBER_NO_LIB:0 "§R[?lib_parl]§!"
+ PARTY_NUMBER_BAN_LIB:0 "§RBanned§!"
+ 
+ SOC_PARL_TEXT:0 "Social Democrats: [GetPartyNumberSoc]"
+ PARTY_NUMBER_RULING_SOC:0 "§O[?soc_parl]§!"
+ PARTY_NUMBER_SOC:0 "§Y[?soc_parl]§!"
+ PARTY_NUMBER_YES_SOC:0 "§G[?soc_parl]§!"
+ PARTY_NUMBER_NO_SOC:0 "§R[?soc_parl]§!"
+ PARTY_NUMBER_BAN_SOC:0 "§RBanned§!"
+ 
+ COM_PARL_TEXT:0 "Radical Socialists: [GetPartyNumberCom]"
+ PARTY_NUMBER_RULING_COM:0 "§O[?com_parl]§!"
+ PARTY_NUMBER_COM:0 "§Y[?com_parl]§!"
+ PARTY_NUMBER_YES_COM:0 "§G[?com_parl]§!"
+ PARTY_NUMBER_NO_COM:0 "§R[?com_parl]§!"
+ PARTY_NUMBER_BAN_COM:0 "§RBanned§!"
+ 
+ FAS_PARL_TEXT:0 "Ultranationalists: [GetPartyNumberFas]"
+ PARTY_NUMBER_RULING_FAS:0 "§O[?fas_parl]§!"
+ PARTY_NUMBER_FAS:0 "§Y[?fas_parl]§!"
+ PARTY_NUMBER_YES_FAS:0 "§G[?fas_parl]§!"
+ PARTY_NUMBER_NO_FAS:0 "§R[?fas_parl]§!"
+ PARTY_NUMBER_BAN_FAS:0 "§RBanned§!"
+ 
+ CENT_PARL_TEXT:0 "Centrist Democrats: [GetPartyNumberCent]"
+ PARTY_NUMBER_RULING_CENT:0 "§O[?cent_parl]§!"
+ PARTY_NUMBER_CENT:0 "§Y[?cent_parl]§!"
+ PARTY_NUMBER_YES_CENT:0 "§G[?cent_parl]§!"
+ PARTY_NUMBER_NO_CENT:0 "§R[?cent_parl]§!"
+ PARTY_NUMBER_BAN_CENT:0 "§RBanned§!"
+
+ NEUT_PARL_TEXT:0 "Radical Reactionaries: [GetPartyNumberNeut]"
+ PARTY_NUMBER_RULING_NEUT:0 "§O[?neut_parl]§!"
+ PARTY_NUMBER_NEUT:0 "§Y[?neut_parl]§!"
+ PARTY_NUMBER_YES_NEUT:0 "§G[?neut_parl]§!"
+ PARTY_NUMBER_NO_NEUT:0 "§R[?neut_parl]§!"
+ PARTY_NUMBER_BAN_NEUT:0 "§RBanned§!"
+ 
+ YES_PARL_TEXT:0 "For the law: §G[?vote_yes]§!"
+ NO_PARL_TEXT:0 "Against the law: §R[?vote_no]§!"
+ 
+ ALL_PARL_TEXT:0 "Filled seats:: §Y[?all_parl]§!/§Y200§!\nEntry threshold: 5%"
+ 
+ PARL_TEXT:0 "Parlament"
+ 
+ ATE_more_100_parlament_tt:0 "§Y[Root.GetRulingParty]§! has more than §Y100§! deputies in Parliament."
+ 
+ ban_liberal_party:0 "Ban Liberal Democracy"
+ ban_liberal_party_desc:0 "The parties in the political center have been a thorn in the side of our government for too long. Their insistence on the 'rights' of the individual undermine our efforts to create a better nation for the whole of our population."
+ ban_liberal_party_tt:0 "§YLiberal Democracy§! - change in popularity: §G-§![?.Root.party_popularity@liberalism|%0G].\n"
+ no_ban_liberal_party:0 "Remove the ban from Liberal Democracy"
+ no_ban_democratic_party:0 "Remove the ban from Conservative Democracy"
+ 
+ ban_socialist_party:0 "Ban Social Democracy"
+ ban_socialist_party_desc:0 "The parties in the political center have been a thorn in the side of our government for too long. Their insistence on the 'rights' of the individual undermine our efforts to create a better nation for the whole of our population."
+ ban_socialist_party_tt:0 "§YSocial Democracy§! - change in popularity: §G-§![?.Root.party_popularity@socialism|%0G].\n"
+ no_ban_socialist_party:0 "Remove the ban from Social Democracy"
+ 
+ ban_centrist_party:0 "Ban Centrist Democracy"
+ ban_centrist_party_desc:0 "The parties in the political center have been a thorn in the side of our government for too long. Their insistence on the 'rights' of the individual undermine our efforts to create a better nation for the whole of our population."
+ ban_centrist_party_tt:0 "§YCentrist Democracy§! - change in popularity: §G-§![?.Root.party_popularity@centrism|%0G].\n"
+ no_ban_centrist_party:0 "Remove the ban from Centrist Democracy"
+ 
+ ban_reaction_party:0 "Ban Radiacal Reaction"
+ ban_reaction_party_desc:0 "Reactors impede the reform of our society and its development. They cannot be convinced of the need for change, so the reactionaries need to be removed from the political arena."
+ ban_reaction_party_tt:0 "§YRadiacal Reaction§! - change in popularity: §G-§![?.Root.party_popularity@neutrality|%0G].\n"
+ no_ban_reaction_party:0 "Remove the ban from Radiacal Reaction"
+ 
+ no_ban_communist_party:0 "Remove the ban from Ultranationalism"
+ no_ban_fascist_party:0 "Remove the ban from Radiacal Socialism"
+ anti_reaction_raids:0 "Anti-Reaction Raids"
+ 
+ REMOVE_PARL_TEXT:0 "Parliament dissolution"
+ REM_PARL_TT:0 "§YParliament dissolution§!\n[!remove_parl_but_click_enabled]"
+ parl_elec_tt:0 "Less than §Y180§! deputies in parliament"
+ Inter_vibory:0 " Election campaign"
+ ATE_elections_war:0 " State of emergency"
+ 
+ ELEC_PARL_TEXT:0 "Early election"
+ ELEC_PARL_TT:0 "§YEarly election§!\n[!elect_parl_but_click_enabled]"
+ 
+ CHS_PARL_TEXT:0 "State of emergency"
+ CHS_PARL_TT:0 "§YState of emergency§!\n[!chres_parl_but_click_enabled]"
+ 
+ CHS_NO_PARL_TEXT:0 "Lifting a state of emergency"
+ CHS_NO_PARL_TT:0 "§YLifting a state of emergency§!\n[!chres_no_parl_but_click_enabled]"
+ 
+ democratisation:0 "Democratisation"
+ 
+ ATE_sup_democratic:0 " Support §YConservatives§!"
+ ATE_sup_liberalism:0 " Support §YLiberals§!"
+ ATE_sup_socialism:0 " Support §YSocialists§!"
+ ATE_sup_communism:0 " Support §YCommunists§!"
+ ATE_sup_fascism:0 " Support §YNationalists§!"
+ ATE_sup_neutrality:0 " Support §YReactionaries§!"
+ ATE_sup_centrism:0 " Support §YCentrists§!"
+ 
+ ATE_NO_democratic:0 " §YConservatives§! banned"
+ ATE_NO_liberalism:0 " §YLiberals§! banned"
+ ATE_NO_socialism:0 " §YSocialists§! banned"
+ ATE_NO_communism:0 " §YCommunists§! banned"
+ ATE_NO_fascism:0 " §YNationalists§! banned"
+ ATE_NO_neutrality:0 " §YReactionaries§! banned"
+ ATE_NO_centrism:0 " §YCentrists§! banned"
+ 
+ parlament_actions:0 "Parlament"
+ ATE_parlament_law_tt:0 "Parliament will be presented with a bill.\n"
+ ATE_voting:0 " Voting in Parliament"
+ parlament_trade_export:0 "Trade: §YExport Focus§!"
+ parlament_trade_free:0 "Trade: §YFree Trade§!"
+ parlament_trade_limited:0 "Trade: §YLimited Exports§!"
+ parlament_trade_closed:0 "Trade: §YClosed Economy§!"
+ 
+ parlament_economy_civilian:0 "Economy: §YCivilian Economy§!"
+ parlament_economy_low_mob:0 "Economy: §YEarly Mobilisation§!"
+ parlament_economy_par_mob:0 "Economy: §YPartial Mobilisation§!"
+ 
+ parlament_economy_more_manpower:0 "Conscription: §Y[GetManpowerLaw]§!"
+ 
+ FRAC_T:0 "Fractions"
+ 
+ elections.1.t:0 "Elections"
+ elections.1.d:0 "The time has come for new elections to the State Parliament. All parties filed applications for participation, lists of deputies formed. It remains to appoint an election commission and wait for the results."
+ elections.1.a:0 "Begin"
+ elections.1.b:0 "Elections will be after the war"
+ 
+ elections.3.t:0 "The victory of Conservative Democrats"
+ elections.3.d:0 "The Conservative Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Conservatives are gathering a new government."
+ elections.3.a:0 "Good job"
+ 
+ elections.4.t:0 "The victory of Liberal Democrats"
+ elections.4.d:0 "The Liberal Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Liberals are gathering a new government."
+ elections.4.a:0 "Good job"
+
+ elections.5.t:0 "The victory of Social Democrats"
+ elections.5.d:0 "The Socialist Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Socialists are gathering a new government."
+ elections.5.a:0 "Good job"
+ 
+ elections.6.t:0 "The victory of Radiacal Socialists"
+ elections.6.d:0 "The Communist Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Communists are gathering a new government."
+ elections.6.a:0 "Good job"
+ 
+ elections.7.t:0 "The victory of Ultranationalists"
+ elections.7.d:0 "The Nationalist Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Nationalists are gathering a new government."
+ elections.7.a:0 "Good job"
+ 
+ elections.8.t:0 "The victory of Centrist Democrats"
+ elections.8.d:0 "The Centrist Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Centrists are gathering a new government."
+ elections.8.a:0 "Good job"
+ 
+ elections.9.t:0 "The victory of Radiacal Reactionaries"
+ elections.9.d:0 "The Reaction Party won a landslide victory in the last election. The party’s program identified important economic and political issues that they promised to solve. The people drew attention to this and now the Reactionaries are gathering a new government."
+ elections.9.a:0 "Good job"
+ 
+ parlament.1.t:0 "New Bill: Enhancing Benefits"
+ parlament.1.d:0 "Deputies from left-wing parties submitted the bill to Parliament. It involves increasing unemployment benefits to all people who are able-bodied and are actively looking for work, but cannot find."
+ parlament.1.a:0 "Vote for"
+ parlament.1.b:0 "Vote against"
+ 
+ parlament.3.t:0 "Adoption of the bill"
+ parlament.3.d:0 "After discussions of the bill in Parliament, it was approved. There is a formality left - the head of state [ROOT.GetLeader] must sign it and thereby approve it so that the law begins to operate throughout the country."
+ parlament.3.a:0 "Sign"
+ 
+ parlament.4.t:0 "Bill rejection"
+ parlament.4.d:0 "After discussions of the bill in Parliament, it was rejected. Some deputies noted the low need for such a reform; some advised that the bill be substantially finalized. But the majority agreed that the country does not need a law at the moment."
+ parlament.4.a:0 "Okay"
+ 
+ parlament.5.t:0 "New Bill: Enhancing Pensions"
+ parlament.5.d:0 "Deputies from left-wing parties submitted the bill to Parliament. It involves raising pensions for old age, disability, as well as veterans. These measures are designed to improve the social situation of vulnerable sections of the population."
+ parlament.5.a:0 "Vote for"
+ parlament.5.b:0 "Vote against"
+ 
+ parlament.6.t:0 "New Bill: Enhancing Healthcare"
+ parlament.6.d:0 "Deputies from left-wing parties submitted the bill to Parliament. It involves improving government support for healthcare in the country. With the allocated funds, new equipment will be purchased, and medical universities and research centers will be financed."
+ parlament.6.a:0 "Vote for"
+ parlament.6.b:0 "Vote against"

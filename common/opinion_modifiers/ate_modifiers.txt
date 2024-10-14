@@ -1,0 +1,250 @@
+opinion_modifiers = {
+	
+	#Germany
+	ate_ger_socintern_modifier = {
+		value = 20
+	}
+	
+	ate_ger_antifascism_modifier = {
+		value = -20
+	}
+	
+	ate_ger_invest_east_modifier = {
+		value = 15
+	}
+	
+	ate_ger_spanish_help_modifier = {
+		value = 10
+	}
+	
+	ate_ger_hungary_ally_modifier = {
+		value = 50
+	}
+	
+	ate_ger_visit_russia_modifier = {
+		value = 25
+	}
+	
+	ate_ger_smolensk_treaty_modifier = {
+		value = 35
+	}
+	
+	ate_ger_antirussian_propaganda_modifier = {
+		value = -50
+	}
+	
+	ate_ger_invest_russia_modifier = {
+		value = 15
+	}
+	
+	ate_ger_eco_treaty_modifier = {
+		trade = yes
+		value = 50
+	}
+	
+	ate_ger_hol_influence_modifier = {
+		trade = yes
+		value = 50
+	}
+	
+	ate_ger_hol_yes_eng_modifier = {
+		value = -40
+	}
+	
+	ate_ger_holland_ally_modifier = {
+		value = 50
+	}
+	
+	ate_ger_swedish_steel_modifier = {
+		value = 20
+	}
+	
+	ate_ger_no_pirates_modifier = {
+		value = 20
+	}
+	
+	ate_ger_jap_friend_modifier = {
+		value = 25
+	}
+	
+	ate_ger_jap_friend_trade_modifier = {
+		trade = yes
+		value = 25
+	}
+	
+	ate_ger_china_advisors_modifier = {
+		value = 30
+	}
+	
+	ate_ger_swe_panzer_modifier = {
+		value = 30
+	}
+	
+	ate_ger_eu_treaty_modifier = {
+		value = 30
+	}
+
+	
+	#France
+	ate_fra_help_morocco_modifier = {
+		value = 25
+	}
+	
+	ate_fra_canceled_potsdam_modifier = {
+		value = -50
+	}
+	
+	ate_fra_revanshism_modifier = {
+		value = -100
+	}
+	
+	ate_fra_meet_mussolini_modifier = {
+		value = 20
+	}
+	
+	ate_fra_milan_treaty_modifier = {
+		value = 25
+	}
+	
+	ate_fra_spanish_help_modifier = {
+		value = 10
+	}
+	
+	ate_fra_spa_invest_modifier = {
+		value = 25
+	}
+	
+	ate_fra_meet_victor_modifier = {
+		value = 20
+	}
+	
+	ate_fra_hate_mussolini_modifier = {
+		value = -75
+	}
+	
+	ate_fra_marcel_treaty_modifier = {
+		value = 25
+	}
+	
+	ate_fra_tur_diplo_modifier = {
+		value = 20
+	}
+	
+	ate_fra_gre_rodos_modifier = {
+		value = -30
+	}
+	
+	ate_fra_tur_firms_modifier = {
+		value = 25
+	}
+	
+	ate_fra_rus_diplo_modifier = {
+		value = 20
+	}
+	
+	ate_fra_rus_secret_modifier = {
+		value = 25
+	}
+	
+	ate_fra_rus_break_treaty_modifier = {
+		value = -50
+	}
+	
+	ate_fra_pol_diplo_modifier = {
+		value = 20
+	}
+	
+	ate_fra_pol_secret_modifier = {
+		value = 25
+	}
+	
+	ate_fra_little_ent_modifier = {
+		value = 20
+	}
+	
+	ate_fra_little_bunker_modifier = {
+		value = 15
+	}
+	
+	ate_fra_little_military_modifier = {
+		value = 15
+	}
+	
+	ate_fra_bel_friend_modifier = {
+		value = 15
+	}
+	
+	ate_fra_rom_alliance_modifier = {
+		value = 50
+	}
+	
+	ate_fra_jap_friend_modifier = {
+		value = 50
+	}
+	
+	ate_fra_chi_friend_modifier = {
+		value = 50
+	}
+
+	ate_fra_pol_break_treaty_modifier = {
+		value = -50
+	}
+
+	
+	#Britain
+	ate_eng_expantion_modifier = {
+		value = -10
+	}
+	
+	ate_eng_irish_const_modifier = {
+		value = -50
+	}
+	
+	ate_eng_us_diplo_modifier = {
+		value = 20
+	}
+	
+	ate_eng_us_govern_modifier = {
+		value = -20
+	}
+
+	ate_eng_french_diplo_modifier = {
+		value = 15
+	}
+
+	ate_eng_us_friend_modifier = {
+		value = 20
+	}
+
+	ate_eng_red_menace_modifier = {
+		value = -20
+	}
+
+	ate_eng_south_fund_modifier = {
+		value = 25
+	}
+
+	ate_eng_no_pressure_modifier = {
+		value = -25
+	}
+
+	ate_eng_alcase_ger_modifier = {
+		value = -20
+	}
+
+	ate_eng_jap_friend_modifier = {
+		value = 25
+	}
+
+	
+	#Japan
+	ate_jap_economy_help_modifier = {
+		value = 50
+	}
+	
+	#Manchuko
+	ate_man_no_concordia_modifier = {
+		value = -25
+	}
+	
+}

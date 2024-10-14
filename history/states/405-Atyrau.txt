@@ -1,0 +1,22 @@
+state={
+	id=405
+	name="STATE_405"
+
+	history={
+		owner = BKH
+		add_core_of = BKH
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+		}
+	}
+
+	provinces={
+		1554 1623 1919 4499 4629 7682 7775 9605 10470 11687 12161 12430 
+	}
+	manpower=6275820
+	buildings_max_level_factor=1.000
+	state_category=city
+}

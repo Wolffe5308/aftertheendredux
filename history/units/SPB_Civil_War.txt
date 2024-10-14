@@ -1,0 +1,331 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "División de Infantería" 		# Used for both regular infantry divisions and larger garrison divisions
+	division_names_group = SPR_INF_01
+	# Note: Spanish divisions were 2x brigades of 2x2 rgts each, + support
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Spanish Arty Rgt/Bge had 2 Bn 105mm arty
+		engineer = { x = 0 y = 1 }   # Eng Bn
+	}
+}
+division_template = {
+	name = "División de Caballería"  		# Only one Cavalry Division (3x bge of 2x2 Rgts)
+	division_names_group = SPR_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 2 y = 2 }
+		cavalry = { x = 2 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      # Recon consisted of motorcycles and ACs
+	}
+}
+division_template = {
+	name = "Brigada Montaña"  		# Mountain Brigades were 2x2 Rgts + support
+	division_names_group = SPR_MNT_01
+	regiments = {
+		mountaineers = { x = 0 y = 0 }	
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  # Spanish Arty Rgt/Bge had 2 Bn 105mm arty
+	}
+}
+division_template = {
+	name = "Brigada de Infantería" 		# Infantry Brigade - Used for smaller garrison units
+	division_names_group = SPR_GAR_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }	
+		infantry = { x = 0 y = 1 }	
+		infantry = { x = 1 y = 0 }	
+		infantry = { x = 1 y = 1 }	
+	}
+	support = {
+		engineer = { x = 0 y = 0 }   # Eng Bn
+	}
+}
+division_template = {
+	name = "Guarnición Nacionalista"			# International volunteers -- poor equipment, no experience (militia)
+	is_locked = yes
+	template_counter = 6
+	division_names_group = SPR_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	division = { # "1a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 6907  # Madrid
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}			
+	division = { # "2a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 3820  # Sevilla
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}			
+	division = { # "3a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 3859  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}
+	division = { # "4a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 4
+		}
+		location = 3902  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}
+	division = { # "5a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 5
+		}
+		location = 13220  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}
+	division = { # "6a División de Infantería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 6
+		}
+		location = 726  # Valencia
+		division_template = "División de Infantería"
+		start_experience_factor = 0.3
+	}
+	
+	division = { # "1a División de Caballería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 9846  # Barcelona
+		division_template = "División de Caballería"
+		start_experience_factor = 0.3
+	}
+	division = { # "2a División de Caballería"		
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 11766  # Barcelona
+		division_template = "División de Caballería"
+		start_experience_factor = 0.3
+	}
+	
+	division = {			
+		name = "1a Brigada Montaña"		
+		location = 6903  # Canary Islands
+		division_template = "Brigada Montaña"
+		start_experience_factor = 0.3
+	}			
+	division = {			
+		name = "2a Brigada Montaña"		
+		location = 11852  #Bilbao
+		division_template = "Brigada Montaña"
+		start_experience_factor = 0.3
+	}		
+	
+	division = {
+		name = "I Guarnición Nacionalista"
+		location = 11688  # Madrid
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "II Guarnición Nacionalista"
+		location = 13220  # Madrid
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "III Guarnición Nacionalista"
+		location = 11852  # Madrid
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "IV Guarnición Nacionalista"
+		location = 3902  # Madrid
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "V Guarnición Nacionalista"
+		location = 6903  # Madrid
+		division_template = "Guarnición Nacionalista"
+	}
+
+	division = {
+		name = "VI Guarnición Nacionalista"
+		location = 3887  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "VII Guarnición Nacionalista"
+		location = 11766  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "VIII Guarnición Nacionalista"
+		location = 3859  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "IX Guarnición Nacionalista"
+		location = 11806  # Valencia
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "X Guarnición Nacionalista"
+		location = 13227  # Valencia
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XI Guarnición Nacionalista"
+		location = 3820  # Valencia
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XII Guarnición Nacionalista"
+		location = 9827  # Murcia
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XIII Guarnición Nacionalista"
+		location = 9846  # Murcia
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XIV Guarnición Nacionalista"
+		location = 13232  # Murcia
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XV Guarnición Nacionalista"
+		location = 6907  # Malaga
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XVI Guarnición Nacionalista"
+		location = 11825  # Malaga
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XVII Guarnición Nacionalista"
+		location = 11825  # Malaga
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XVIII Guarnición Nacionalista"
+		location = 11707  # Bilbao
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XIX Guarnición Nacionalista"
+		location = 11707  # Bilbao
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XX Guarnición Nacionalista"
+		location = 758  # Bilbao
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XXI Guarnición Nacionalista"
+		location = 758  # Madrid
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XXII Guarnición Nacionalista"
+		location = 9945  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XXIII Guarnición Nacionalista"
+		location = 12100  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XXIV Guarnición Nacionalista"
+		location = 13071  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XXV Guarnición Nacionalista"
+		location = 8038  # Barcelona
+		division_template = "Guarnición Nacionalista"
+	}
+	division = {
+		name = "XXVI Guarnición Nacionalista"
+		location = 12857  # Valencia
+		division_template = "Guarnición Nacionalista"
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "SPB"
+		}
+		requested_factories = 1
+		progress = 0.42
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "SPB"
+		}
+		requested_factories = 1
+		progress = 0.24
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "SPB"
+		}
+		requested_factories = 1
+		progress = 0.24
+		efficiency = 100
+	}
+}

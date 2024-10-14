@@ -1,0 +1,320 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { has_elections = yes }
+				set_variable = { voting_parl = 100 }
+			}
+			every_country = {
+				if = {
+					limit = {
+						democratic > 0.05
+						has_elections = yes
+					}
+					set_variable = {
+						var = dem_parl
+						value = party_popularity@democratic
+					}
+					multiply_variable = {
+						var = dem_parl
+						value = 200
+					}
+					round_variable = dem_parl
+				}
+				if = {
+					limit = {
+						liberalism > 0.05
+						has_elections = yes
+					}
+					set_variable = { lib_parl = party_popularity@liberalism } 
+					multiply_variable = {
+						var = lib_parl
+						value = 200
+					}
+					round_variable = lib_parl
+				}
+				if = {
+					limit = {
+						socialism > 0.05
+						has_elections = yes
+					}
+					set_variable = { soc_parl = party_popularity@socialism } 
+					multiply_variable = {
+						var = soc_parl
+						value = 200
+					}
+					round_variable = soc_parl
+				}
+				if = {
+					limit = {
+						communism > 0.05
+						has_elections = yes
+					}
+					set_variable = { com_parl = party_popularity@communism } 
+					multiply_variable = {
+						var = com_parl
+						value = 200
+					}
+					round_variable = com_parl
+				}
+				if = {
+					limit = {
+						fascism > 0.05
+						has_elections = yes
+					}
+					set_variable = { fas_parl = party_popularity@fascism } 
+					multiply_variable = {
+						var = fas_parl
+						value = 200
+					}
+					round_variable = fas_parl
+				}
+				if = {
+					limit = {
+						centrism > 0.05
+						has_elections = yes
+					}
+					set_variable = { cent_parl = party_popularity@centrism } 
+					multiply_variable = {
+						var = cent_parl
+						value = 200
+					}
+					round_variable = cent_parl
+				}
+				if = {
+					limit = {
+						neutrality > 0.05
+						has_elections = yes
+					}
+					set_variable = {
+						var = neut_parl
+						value = party_popularity@neutrality
+					}
+					multiply_variable = {
+						var = neut_parl
+						value = 200
+					}
+					round_variable = neut_parl
+				}
+				if = {
+					limit = {
+						has_elections = yes
+					}
+					add_to_variable = {
+						var = all_parl
+						value = dem_parl
+					}
+					add_to_variable = {
+						var = all_parl
+						value = lib_parl
+					}
+					add_to_variable = {
+						var = all_parl
+						value = soc_parl
+					}
+					add_to_variable = {
+						var = all_parl
+						value = com_parl
+					}
+					add_to_variable = {
+						var = all_parl
+						value = fas_parl
+					}
+					add_to_variable = {
+						var = all_parl
+						value = cent_parl
+					}
+					add_to_variable = {
+						var = all_parl
+						value = neut_parl
+					}
+				}
+			}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_war = no
+					has_country_flag = ATE_elections_war
+				}
+				add_stability = 0.1
+				clr_country_flag = ATE_elections_war
+			}
+			if = {
+				limit = { 
+					has_elections = yes
+					NOT = { check_variable = { voting_parl = 0 } }
+				}
+				subtract_from_variable = { voting_parl = 1 }
+			}
+			if = {
+				limit = { 
+					has_elections = no
+					NOT = { check_variable = { all_parl = 0 } }
+				}
+				clear_variable = all_parl
+				clear_variable = dem_parl
+				clear_variable = lib_parl
+				clear_variable = soc_parl
+				clear_variable = com_parl
+				clear_variable = fas_parl
+				clear_variable = cent_parl
+				clear_variable = neut_parl
+			}
+
+			if = {
+				limit = {
+					any_country = {
+						is_in_array = {
+							array = PREV.influenced_countries
+							value = ROOT.id
+						}
+						check_variable = { influence@ROOT < 1 }
+					}
+				}
+				every_country = {
+					limit = {
+						has_government = ROOT
+						is_in_array = {
+							array = PREV.influenced_countries
+							value = ROOT.id
+						}
+						check_variable = { influence@ROOT < 1 }
+					}
+					remove_from_array = { array = PREV.influenced_countries value = ROOT.id }
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = fra_econ_leader
+				}
+				every_country = {
+					limit = {
+						has_idea = fra_econ_member
+					}
+					FRA = {
+						add_to_temp_variable = { var_puppets_temp = 0.04 }
+						set_variable = { var_puppets = var_puppets_temp }
+						set_temp_variable = { var_puppets_num_t = var_puppets }
+						multiply_temp_variable = { var_puppets_num_t = 100 }
+						set_variable = { var_puppets_num = var_puppets_num_t }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ger_first_economy
+				}
+				every_country = {
+					limit = {
+						has_idea = ger_economic_puppet
+					}
+					GER = {
+						add_to_temp_variable = { var_puppets_temp = 0.04 }
+						set_variable = { var_puppets = var_puppets_temp }
+						set_temp_variable = { var_puppets_num_t = var_puppets }
+						multiply_temp_variable = { var_puppets_num_t = 100 }
+						set_variable = { var_puppets_num = var_puppets_num_t }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ger_european_union
+				}
+				every_country = {
+					limit = {
+						has_idea = ger_european_member
+					}
+					GER = {
+						add_to_temp_variable = { var_puppets_temp = 0.04 }
+						set_variable = { var_puppets = var_puppets_temp }
+						set_temp_variable = { var_puppets_num_t = var_puppets }
+						multiply_temp_variable = { var_puppets_num_t = 100 }
+						set_variable = { var_puppets_num = var_puppets_num_t }
+					}
+				}
+			}			
+			if = {
+				limit = {
+					has_idea = eng_econ_leader
+				}
+				every_country = {
+					limit = {
+						has_idea = eng_economic_puppet
+					}
+					ENG = {
+						add_to_temp_variable = { var_puppets_temp = 0.04 }
+						set_variable = { var_puppets = var_puppets_temp }
+						set_temp_variable = { var_puppets_num_t = var_puppets }
+						multiply_temp_variable = { var_puppets_num_t = 100 }
+						set_variable = { var_puppets_num = var_puppets_num_t }
+					}
+				}
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					any_country = {
+						has_government = ROOT
+						is_in_array = {
+							array = ROOT.influenced_countries
+							value = PREV.id
+						}
+						ROOT = { check_variable = { influence@PREV > 0 } }
+					}
+				}
+				every_country = {
+					limit = {
+						has_government = ROOT
+						is_in_array = {
+							array = ROOT.influenced_countries
+							value = PREV.id
+						}
+						ROOT = { check_variable = { influence@PREV > 0 } }
+					}
+					PREV = { subtract_from_variable = { influence@ROOT = 1 } }
+					PREV = {
+						ROOT = { subtract_from_variable = { influenced@PREV = 1 } }
+					}
+				}
+			}
+
+			if = {
+				limit = {
+					any_country = {
+						NOT = { has_government = ROOT }
+						is_in_array = {
+							array = ROOT.influenced_countries
+							value = PREV.id
+						}
+						ROOT = { check_variable = { influence@PREV > 0 } }
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { has_government = ROOT }
+						is_in_array = {
+							array = ROOT.influenced_countries
+							value = PREV.id
+						}
+						ROOT = { check_variable = { influence@PREV > 0 } }
+					}
+					PREV = { subtract_from_variable = { influence@ROOT = 2 } }
+					PREV = {
+						ROOT = { subtract_from_variable = { influenced@PREV = 2 } }
+					}
+				}
+			}
+		}
+	}
+}

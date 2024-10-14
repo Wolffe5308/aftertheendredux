@@ -1,0 +1,23 @@
+
+state={
+	id=609
+	name="STATE_609" # East Hebei
+	manpower = 6400000
+	
+	state_category = town
+
+	history={
+		owner = GER
+		add_core_of = GER
+		add_core_of = WST
+		buildings = {
+			infrastructure = 8
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+
+	provinces={
+		529 3512 6469 6570 9482 
+	}
+}

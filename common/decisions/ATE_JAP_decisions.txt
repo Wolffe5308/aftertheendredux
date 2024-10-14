@@ -1,0 +1,126 @@
+jap_foreign_politics_decisions = {
+
+	jap_guarantee_siam = {
+	
+		icon = generic_nationalism
+	
+		available = {
+			OR = {
+				has_war_support > 0.9
+				threat > 0.2
+			}
+			has_army_manpower = {
+				size > 549999
+			}
+			FROM = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_government = communism }
+				is_in_faction = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+		
+		target_trigger = {
+			FROM = { tag = SIA }
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		remove_effect = {
+			give_guarantee = SIA
+		}
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				date < 1938.01.01
+			}
+		}
+		
+		cost = 50
+	}
+	
+	jap_help_china = {
+	
+		icon = generic_industry
+	
+		available = {
+			AND = {
+				has_war_support > 0.8
+				threat > 0.2
+			}
+			num_of_civilian_factories_available_for_projects > 5
+			FROM = {
+				exists = yes
+				is_puppet = no
+				NOT = { has_government = communism }
+				NOT = { has_war_with = ROOT }
+				has_idea = chi_hyper_inflation
+			}
+		}
+		
+		target_trigger = {
+			FROM = { tag = CHI }
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 60
+		days_re_enable = 1
+		
+		complete_effect = {
+			FROM = { country_event = { id = ate_asian.6 days = 1 } }
+			effect_tooltip = {
+				CHI = {
+					if = {
+						limit = { has_idea = chi_hyper_inflation }
+						swap_ideas = {
+							remove_idea = chi_hyper_inflation
+							add_idea = chi_inflation
+						}
+					}
+					if = {
+						limit = { has_idea = chi_inflation }
+						remove_ideas = chi_inflation
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				date < 1938.01.01
+			}
+		}
+		
+		cost = 75
+	}
+	
+}

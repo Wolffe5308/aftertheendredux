@@ -1,0 +1,1270 @@
+eng_economic_expantion_decisions = {
+
+	eng_ec_portugal = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { POR }
+		
+		target_trigger = {
+			FROM = {
+				tag = POR
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_eco_dec_flag }
+			POR = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_economic_expantion
+			has_idea = isolation
+			POR = { NOT = { has_idea = eng_economic_puppet } }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 45
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_eco_dec_flag
+			custom_effect_tooltip = ate_eng_eco_exp_tt
+			hidden_effect = {
+				POR = { country_event = { id = ate_britain.5 days = 14 } }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_eco_dec_flag
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_ec_brazil = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { BRA }
+		
+		target_trigger = {
+			FROM = {
+				tag = BRA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_eco_dec_flag }
+			BRA = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_economic_expantion
+			has_idea = isolation
+			BRA = { NOT = { has_idea = eng_economic_puppet } }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 45
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_eco_dec_flag
+			custom_effect_tooltip = ate_eng_eco_exp_tt
+			hidden_effect = {
+				BRA = { country_event = { id = ate_britain.5 days = 14 } }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_eco_dec_flag
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_ec_iran = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { PER }
+		
+		target_trigger = {
+			FROM = {
+				tag = PER
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_eco_dec_flag }
+			PER = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_economic_expantion
+			has_idea = isolation
+			PER = { NOT = { has_idea = eng_economic_puppet } }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 45
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_eco_dec_flag
+			custom_effect_tooltip = ate_eng_eco_exp_tt
+			hidden_effect = {
+				PER = { country_event = { id = ate_britain.5 days = 14 } }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_eco_dec_flag
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_ec_argentine = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { ARG }
+		
+		target_trigger = {
+			FROM = {
+				tag = ARG
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_eco_dec_flag }
+			ARG = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_economic_expantion
+			has_idea = isolation
+			ARG = { NOT = { has_idea = eng_economic_puppet } }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 45
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_eco_dec_flag
+			custom_effect_tooltip = ate_eng_eco_exp_tt
+			hidden_effect = {
+				ARG = { country_event = { id = ate_britain.5 days = 14 } }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_eco_dec_flag
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_ec_albania = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { ALB }
+		
+		target_trigger = {
+			FROM = {
+				tag = ALB
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_eco_dec_flag }
+			ALB = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_economic_expantion
+			has_idea = isolation
+			ALB = { NOT = { has_idea = eng_economic_puppet } }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 45
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_eco_dec_flag
+			custom_effect_tooltip = ate_eng_eco_exp_tt
+			hidden_effect = {
+				ALB = { country_event = { id = ate_britain.5 days = 14 } }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_eco_dec_flag
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_ec_greece = {
+	
+		icon = infiltrate_state
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { GRE }
+		
+		target_trigger = {
+			FROM = {
+				tag = GRE
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_eco_dec_flag }
+			GRE = {
+				exists = yes
+				is_subject = no
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_economic_expantion
+			has_idea = isolation
+			GRE = { NOT = { has_idea = eng_economic_puppet } }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 45
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_eco_dec_flag
+			custom_effect_tooltip = ate_eng_eco_exp_tt
+			hidden_effect = {
+				GRE = { country_event = { id = ate_britain.5 days = 14 } }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_eco_dec_flag
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+}
+
+eng_autarky_decisions = {
+
+	eng_autarky_dec = {
+	
+		icon = generic_independence
+		
+		allowed = { original_tag = ENG }
+	
+		available = {
+			is_subject = no
+			custom_trigger_tooltip = {
+			    tooltip = eng_autarky_dec_tt		
+			    check_variable = { eng_aut > 2 }
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_limit_companies
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 70
+		days_re_enable = 1
+
+		remove_effect = {
+			add_ideas = eng_autarky
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	eng_aut_light = {
+	
+		icon = generic_operation
+		
+		allowed = { original_tag = ENG }
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_aut_flag }
+		}
+
+		visible = {
+			has_completed_focus = eng_limit_companies
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 70
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_aut_flag
+			custom_effect_tooltip = ate_eng_autarky_tt
+			hidden_effect = {
+				country_event = { id = ate_britain.14 days = 35 }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_aut_flag
+			add_to_variable = { eng_aut = 1 }
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_aut_food = {
+	
+		icon = generic_decision
+		
+		allowed = { original_tag = ENG }
+	
+		available = {
+			is_subject = no
+			has_war = no
+			num_of_civilian_factories_available_for_projects > 3
+			NOT = { has_idea = eng_food_5 }
+		}
+
+		visible = {
+			has_completed_focus = eng_limit_companies
+			has_country_flag = eng_aut_food_supplies_flag
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 120
+		days_re_enable = 1
+
+		remove_effect = {
+			if = {
+				limit = { has_idea = eng_food_4 }
+				swap_ideas = {
+				    remove_idea = eng_food_4
+				    add_idea = eng_food_5
+				}
+			}
+			if = {
+				limit = { has_idea = eng_food_3 }
+				swap_ideas = {
+				    remove_idea = eng_food_3
+				    add_idea = eng_food_4
+				}
+			}
+			if = {
+				limit = { has_idea = eng_food_2 }
+				swap_ideas = {
+				    remove_idea = eng_food_2
+				    add_idea = eng_food_3
+				}
+			}
+			if = {
+				limit = { has_idea = eng_food_1 }
+				swap_ideas = {
+				    remove_idea = eng_food_1
+				    add_idea = eng_food_2
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = eng_food_5
+						has_idea = eng_food_4
+						has_idea = eng_food_3
+						has_idea = eng_food_2
+						has_idea = eng_food_1
+					}
+				}
+				add_ideas = eng_food_1
+			}
+		}
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 50
+	}
+
+	eng_food_mission = {
+
+		allowed = { original_tag = ENG }
+
+		icon = generic_decision
+
+		available = {
+			is_subject = no
+			is_puppet = no
+			has_war = yes
+		}
+
+		days_mission_timeout = 366
+		is_good = yes
+		fire_only_once = yes
+		
+		visible = {
+			has_completed_focus = eng_limit_companies
+			has_country_flag = eng_aut_food_supplies_flag
+		}
+
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					is_subject = yes
+					is_puppet = yes
+					has_war = no
+					has_idea = eng_famine
+				}
+			}
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = eng_food_5
+						has_idea = eng_food_4
+						has_idea = eng_food_3
+						has_idea = eng_food_2
+						has_idea = eng_food_1
+					}
+				}
+				add_ideas = eng_famine
+			}
+			if = {
+				limit = { has_idea = eng_food_1 }
+				remove_ideas = eng_food_1
+			}
+			if = {
+				limit = { has_idea = eng_food_2 }
+				swap_ideas = {
+				    remove_idea = eng_food_2
+				    add_idea = eng_food_1
+				}
+			}
+			if = {
+				limit = { has_idea = eng_food_3 }
+				swap_ideas = {
+				    remove_idea = eng_food_3
+				    add_idea = eng_food_2
+				}
+			}
+			if = {
+				limit = { has_idea = eng_food_4 }
+				swap_ideas = {
+				    remove_idea = eng_food_4
+				    add_idea = eng_food_3
+				}
+			}
+			if = {
+				limit = { has_idea = eng_food_5 }
+				swap_ideas = {
+				    remove_idea = eng_food_5
+				    add_idea = eng_food_4
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 200
+		}
+	}
+
+	eng_aut_oil = {
+	
+		icon = oil
+		
+		allowed = { original_tag = ENG }
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_aut_flag }
+		}
+
+		visible = {
+			has_completed_focus = eng_limit_companies
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 70
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_aut_flag
+			custom_effect_tooltip = ate_eng_autarky_tt
+			hidden_effect = {
+				country_event = { id = ate_britain.15 days = 35 }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_aut_flag
+			add_to_variable = { eng_aut = 1 }
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_aut_industry = {
+	
+		icon = generic_industry
+		
+		allowed = { original_tag = ENG }
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_eng_take_aut_flag }
+		}
+
+		visible = {
+			has_completed_focus = eng_limit_companies
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 70
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_eng_take_aut_flag
+			custom_effect_tooltip = ate_eng_autarky_tt
+			hidden_effect = {
+				country_event = { id = ate_britain.17 days = 35 }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_eng_take_aut_flag
+			add_to_variable = { eng_aut = 1 }
+		}
+
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+}
+
+eng_foreign_politics_decisions = {
+
+	eng_usa_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { USA }
+		
+		target_trigger = {
+			FROM = {
+				tag = USA
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_government = communism
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_country_flag = eng_amerikan_gov_flag }
+			FROM = {
+				tag = USA
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_government = communism
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = eng_amerikan_gov_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			set_country_flag = eng_amerikan_diplomacy_flag
+			add_popularity = {
+			    ideology = democratic
+			    popularity = -0.02
+			}
+			FROM = { country_event = { id = ate_britain.23 days = 1 } }
+			add_opinion_modifier = {
+				target = FROM
+				modifier = ate_eng_us_diplo_modifier
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+	
+	eng_usa_amerikan_gov = {
+	
+		icon = generic_nationalism
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { USA }
+		
+		target_trigger = {
+			FROM = {
+				tag = USA
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_government = communism
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			NOT = { has_country_flag = eng_amerikan_diplomacy_flag }
+			FROM = {
+				tag = USA
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_government = communism
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = eng_amerikan_diplomacy_flag }
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			set_country_flag = eng_amerikan_gov_flag
+			add_popularity = {
+			    ideology = democratic
+			    popularity = 0.02
+			}
+			FROM = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = ate_eng_us_govern_modifier
+				}
+			}
+			hidden_effect = {
+				every_country = {
+					news_event = { id = ate_britain.25 days = 1 }
+				}
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		cost = 25
+	}
+
+	eng_fra_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { FRA }
+		
+		target_trigger = {
+			FROM = {
+				tag = FRA
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_government = fascism
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			FROM = {
+				tag = FRA
+				exists = yes
+				NOT = { has_war_with = ROOT }
+				has_government = fascism
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			FROM = { country_event = { id = ate_britain.26 days = 1 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_ger_diplomacy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { GER }
+		
+		target_trigger = {
+			FROM = {
+				tag = GER
+				exists = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			FROM = {
+				tag = GER
+				exists = yes
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		visible = {
+			always = yes
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			FROM = { country_event = { id = ate_britain.29 days = 1 } }
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		cost = 25
+	}
+
+	eng_help_italy = {
+	
+		icon = generic_diplomacy
+		
+		allowed = { original_tag = ENG }
+		
+		targets = { ITA }
+		
+		target_trigger = {
+			FROM = {
+				tag = ITA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+	
+		available = {
+			is_subject = no
+			threat > 0.15
+			has_stability > 0.45
+			NOT = { has_country_flag = ate_take_foreign_dec_flag }
+			ITA = {
+				exists = yes
+				is_subject = no
+				has_war = yes
+			}
+		}
+
+		visible = {
+			FROM = {
+				tag = ITA
+				exists = yes
+				has_capitulated = no
+				NOT = { has_war_with = ROOT }
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+		}
+		
+		fire_only_once = yes
+		
+		days_remove = 7
+		days_re_enable = 1
+		
+		complete_effect = {
+			set_country_flag = ate_take_foreign_dec_flag
+			ITA = { country_event = { id = ate_britain.32 days = 1 } }
+			custom_effect_tooltip = ATE_fra_italy_tt
+			effect_tooltip = {
+				add_stability = -0.1
+				ITA = { add_ideas = eng_economic_puppet }
+			}
+		}
+
+		remove_effect = {
+			clr_country_flag = ate_take_foreign_dec_flag
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 50
+	}
+}
+
+eng_south_fond_decisions = {
+
+	eng_fond_more = {
+	
+		icon = ger_mefo_bills
+		
+		allowed = { original_tag = ENG }
+	
+		available = {
+			is_subject = no
+			num_of_civilian_factories_available_for_projects > 2
+			any_country = {
+				OR = {
+					has_idea = eng_south_fond_0
+					has_idea = eng_south_fond_1
+					has_idea = eng_south_fond_2
+					has_idea = eng_south_fond_3
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = eng_south_found
+			is_puppet = no
+			NOT = { has_government = communism }
+			NOT = { has_government = fascism }
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 90
+		days_re_enable = 60
+
+		remove_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_idea = eng_south_fond_0
+						has_idea = eng_south_fond_1
+						has_idea = eng_south_fond_2
+						has_idea = eng_south_fond_3
+					}
+				}
+				ATE_eng_south_fund_more_effect = yes
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		ai_will_do = {
+			factor = 150
+		}
+		
+		cost = 50
+	}
+
+	eng_fond_construction = {
+	
+		icon = generic_construction
+		
+		allowed = { 
+			OR = {
+				original_tag = ENG
+				original_tag = VEN
+				original_tag = BRA
+				original_tag = COL
+				original_tag = ECU
+				original_tag = PRU
+				original_tag = CHL
+				original_tag = BOL
+				original_tag = ARG
+				original_tag = PAR
+				original_tag = URG
+				original_tag = GYA
+				original_tag = SUR
+				original_tag = CAY
+			}
+		}
+	
+		available = {
+			is_puppet = no
+		}
+
+		visible = {
+			ENG = { has_completed_focus = eng_south_found }
+			OR = {
+				has_idea = eng_south_fond_0
+				has_idea = eng_south_fond_1
+				has_idea = eng_south_fond_2
+				has_idea = eng_south_fond_3
+				has_idea = eng_south_fond_4
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 90
+		days_re_enable = 60
+
+		remove_effect = {
+			
+		}
+
+		modifier = {
+			production_speed_buildings_factor = 0.1
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 50
+	}
+
+	eng_fond_research = {
+	
+		icon = generic_research
+		
+		allowed = { 
+			OR = {
+				original_tag = ENG
+				original_tag = VEN
+				original_tag = BRA
+				original_tag = COL
+				original_tag = ECU
+				original_tag = PRU
+				original_tag = CHL
+				original_tag = BOL
+				original_tag = ARG
+				original_tag = PAR
+				original_tag = URG
+				original_tag = GYA
+				original_tag = SUR
+				original_tag = CAY
+			}
+		}
+	
+		available = {
+			is_puppet = no
+		}
+
+		visible = {
+			ENG = { has_completed_focus = eng_south_found }
+			OR = {
+				has_idea = eng_south_fond_0
+				has_idea = eng_south_fond_1
+				has_idea = eng_south_fond_2
+				has_idea = eng_south_fond_3
+				has_idea = eng_south_fond_4
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 90
+		days_re_enable = 60
+
+		remove_effect = {
+			
+		}
+
+		modifier = {
+			research_speed_factor = 0.1
+			political_power_factor = -0.05
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 50
+	}
+
+	eng_fond_political = {
+	
+		icon = generic_political_discourse
+		
+		allowed = { 
+			OR = {
+				original_tag = ENG
+				original_tag = VEN
+				original_tag = BRA
+				original_tag = COL
+				original_tag = ECU
+				original_tag = PRU
+				original_tag = CHL
+				original_tag = BOL
+				original_tag = ARG
+				original_tag = PAR
+				original_tag = URG
+				original_tag = GYA
+				original_tag = SUR
+				original_tag = CAY
+			}
+		}
+	
+		available = {
+			is_puppet = no
+		}
+
+		visible = {
+			ENG = { has_completed_focus = eng_south_found }
+			ENG = { has_completed_focus = eng_south_diplomatic }
+			OR = {
+				has_idea = eng_south_fond_0
+				has_idea = eng_south_fond_1
+				has_idea = eng_south_fond_2
+				has_idea = eng_south_fond_3
+				has_idea = eng_south_fond_4
+			}
+		}
+		
+		fire_only_once = no
+		
+		days_remove = 90
+		days_re_enable = 60
+
+		remove_effect = {
+			
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+			political_power_factor = 0.1
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
+	}
+}

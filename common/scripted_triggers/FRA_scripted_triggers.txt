@@ -1,0 +1,35 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+# 
+#	THIS FILE IS FOR TRIGGERS SPECIFICALLY FOR THE GER TAG
+
+fra_has_una_bills = {
+	OR = {
+		has_idea = fra_una_bills
+		has_idea = fra_una_bills_2
+		has_idea = fra_una_bills_3
+		has_idea = fra_una_bills_4
+		has_idea = fra_una_bills_5
+		has_idea = fra_una_bills_6
+		has_idea = fra_una_bills_7
+		has_idea = fra_una_bills_8
+	}
+}
+
+fra_can_delay_una_payment = {
+	custom_trigger_tooltip = {
+		tooltip = fra_can_delay_una_payment
+		NOT = { has_idea = fra_una_bills_8 }
+	}
+}

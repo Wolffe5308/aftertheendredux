@@ -1,0 +1,15 @@
+jap_foreign_politics_decisions = {
+	icon = generic
+	
+	priority = 50
+	
+	visible_when_empty = yes
+
+	allowed = {
+		original_tag = JAP
+	}
+	
+	visible = {
+		original_tag = JAP
+	}
+}

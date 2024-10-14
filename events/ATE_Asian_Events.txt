@@ -1,0 +1,226 @@
+﻿###########################
+# Asian Events
+###########################
+
+add_namespace = ate_asian
+
+#MAN Concordia members
+country_event = {
+	id = ate_asian.1
+	title = ate_asian.1.t
+	desc = ate_asian.1.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.1.a
+		ai_chance = { 
+			base = 10
+			modifier = {
+				factor = 0.5
+				any_owned_state = {
+					is_core_of = FROM
+				}
+			}
+		}
+		add_ideas = man_concordia_member
+		if = { 
+			limit = { has_idea = neutrality_idea }
+			remove_ideas = neutrality_idea
+		}
+		FROM = { country_event = { id = ate_asian.2 days = 1 } }
+	}
+	
+	option = {
+		name = ate_asian.1.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0.5
+				is_historical_focus_on = yes
+			}
+		}
+		FROM = { country_event = { id = ate_asian.3 days = 1 } }
+	}
+	
+	option = {
+		name = ate_asian.1.c
+		trigger = { 
+			any_owned_state = {
+				is_core_of = FROM
+			}
+		}
+		ai_chance = { 
+			base = 15
+		}
+		FROM = { country_event = { id = ate_asian.4 days = 1 } }
+	}
+}
+
+#MAN Concordia members YES
+country_event = {
+	id = ate_asian.2
+	title = ate_asian.2.t
+	desc = ate_asian.2.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.2.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+	}
+}
+
+#MAN Concordia members NO
+country_event = {
+	id = ate_asian.3
+	title = ate_asian.3.t
+	desc = ate_asian.3.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.3.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -20
+		FROM = {
+			set_country_flag = ate_man_no_concordia
+		}
+	}
+}
+
+#MAN Concordia members CORES
+country_event = {
+	id = ate_asian.4
+	title = ate_asian.4.t
+	desc = ate_asian.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.4.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -10
+		FROM = {
+			every_owned_state = {
+				remove_core_of = ROOT
+			}
+		}
+		FROM = { country_event = { id = ate_asian.5 days = 1 } }
+	}
+	
+	option = {
+		name = ate_asian.4.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0.5
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = -20
+		FROM = {
+			set_country_flag = ate_man_no_concordia
+		}
+	}
+}
+
+#MAN Concordia members CORES YES
+country_event = {
+	id = ate_asian.5
+	title = ate_asian.5.t
+	desc = ate_asian.5.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.5.a
+		ai_chance = { 
+			base = 10
+		}
+		add_ideas = man_concordia_member
+		if = { 
+			limit = { has_idea = neutrality_idea }
+			remove_ideas = neutrality_idea
+		}
+	}
+}
+
+#Japan economy help China
+country_event = {
+	id = ate_asian.6
+	title = ate_asian.6.t
+	desc = ate_asian.6.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.6.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = { has_idea = chi_inflation }
+			remove_ideas = chi_inflation
+		}
+		if = {
+			limit = { has_idea = chi_hyper_inflation }
+			swap_ideas = {
+				remove_idea = chi_hyper_inflation
+				add_idea = chi_inflation
+			}
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_jap_economy_help_modifier
+		}
+	}
+}
+
+#Britain economy help China
+country_event = {
+	id = ate_asian.7
+	title = ate_asian.7.t
+	desc = ate_asian.7.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_asian.7.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = { has_idea = chi_inflation }
+			remove_ideas = chi_inflation
+		}
+		if = {
+			limit = { has_idea = chi_hyper_inflation }
+			swap_ideas = {
+				remove_idea = chi_hyper_inflation
+				add_idea = chi_inflation
+			}
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_jap_economy_help_modifier
+		}
+	}
+}
+
+
+

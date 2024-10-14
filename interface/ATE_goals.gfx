@@ -1,0 +1,328 @@
+spriteTypes = {	
+	
+	SpriteType = {
+		name = "GFX_focus_us_license"
+		texturefile = "gfx/interface/goals/focus_us_license.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_german_license"
+		texturefile = "gfx/interface/goals/focus_german_license.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_focus_french_license"
+		texturefile = "gfx/interface/goals/focus_french_license.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_kurt_schumacher"
+		texturefile = "gfx/interface/goals/goal_ger_kurt_schumacher.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_otto_grotewohl"
+		texturefile = "gfx/interface/goals/goal_ger_otto_grotewohl.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_iron_front"
+		texturefile = "gfx/interface/goals/goal_ger_iron_front.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_fascist_rally"
+		texturefile = "gfx/interface/goals/goal_fra_fascist_rally.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_fascist_unions"
+		texturefile = "gfx/interface/goals/goal_fra_fascist_unions.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_una"
+		texturefile = "gfx/interface/goals/goal_fra_una.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_tradition_army"
+		texturefile = "gfx/interface/goals/goal_fra_tradition_army.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_investments"
+		texturefile = "gfx/interface/goals/goal_fra_investments.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_jews"
+		texturefile = "gfx/interface/goals/goal_fra_jews.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_ger_ostafrika"
+		texturefile = "gfx/interface/goals/goal_ger_ostafrika.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_ger_afrika"
+		texturefile = "gfx/interface/goals/goal_ger_afrika.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_construct_autobahn"
+		texturefile = "gfx/interface/goals/goal_generic_construct_autobahn.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_bel_rexism"
+		texturefile = "gfx/interface/goals/goal_bel_rexism.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_antigerman"
+		texturefile = "gfx/interface/goals/goal_fra_antigerman.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_savoia"
+		texturefile = "gfx/interface/goals/goal_fra_savoia.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_hitler"
+		texturefile = "gfx/interface/goals/goal_fra_hitler.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_ita_national_fascist"
+		texturefile = "gfx/interface/goals/goal_ita_national_fascist.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_friend_rus"
+		texturefile = "gfx/interface/goals/goal_fra_friend_rus.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_war_germany"
+		texturefile = "gfx/interface/goals/goal_fra_war_germany.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_elections"
+		texturefile = "gfx/interface/goals/goal_fra_elections.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_vallonie"
+		texturefile = "gfx/interface/goals/goal_fra_vallonie.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_bel_friend"
+		texturefile = "gfx/interface/goals/goal_fra_bel_friend.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_afrika"
+		texturefile = "gfx/interface/goals/goal_fra_afrika.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_sudetenland"
+		texturefile = "gfx/interface/goals/goal_fra_sudetenland.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_comm_cells"
+		texturefile = "gfx/interface/goals/goal_fra_comm_cells.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_general_stuff"
+		texturefile = "gfx/interface/goals/goal_ger_general_stuff.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_europe"
+		texturefile = "gfx/interface/goals/goal_ger_europe.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_antifascism"
+		texturefile = "gfx/interface/goals/goal_ger_antifascism.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_generic_construct_bank"
+		texturefile = "gfx/interface/goals/goal_generic_construct_bank.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_protect_belgium"
+		texturefile = "gfx/interface/goals/goal_ger_protect_belgium.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_military_traditions"
+		texturefile = "gfx/interface/goals/goal_ger_military_traditions.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_protect_europe"
+		texturefile = "gfx/interface/goals/goal_ger_protect_europe.dds"			
+	}
+
+	SpriteType = {
+		name = "GFX_goal_eng_mosley_plan"
+		texturefile = "gfx/interface/goals/goal_eng_mosley_plan.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_advert"
+		texturefile = "gfx/interface/goals/goal_eng_advert.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_keyns"
+		texturefile = "gfx/interface/goals/goal_eng_keyns.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_end_of_isolation"
+		texturefile = "gfx/interface/goals/goal_eng_end_of_isolation.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_autarky"
+		texturefile = "gfx/interface/goals/goal_eng_autarky.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_global_defence_strategy"
+		texturefile = "gfx/interface/goals/goal_eng_global_defence_strategy.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_jewish_question"
+		texturefile = "gfx/interface/goals/goal_eng_jewish_question.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_usa_pact"
+		texturefile = "gfx/interface/goals/goal_eng_usa_pact.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_germany_treaty"
+		texturefile = "gfx/interface/goals/goal_eng_germany_treaty.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_eng_fra_treaty"
+		texturefile = "gfx/interface/goals/goal_eng_fra_treaty.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_generic_economic_growth"
+		texturefile = "gfx/interface/goals/goal_generic_economic_growth.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_antibritain"
+		texturefile = "gfx/interface/goals/goal_fra_antibritain.dds"			
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_party_cells"
+		texturefile = "gfx/interface/goals/goal_fra_party_cells.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_state_sector"
+		texturefile = "gfx/interface/goals/goal_fra_state_sector.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_reform_army"
+		texturefile = "gfx/interface/goals/goal_fra_reform_army.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_mussolini"
+		texturefile = "gfx/interface/goals/goal_fra_mussolini.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_vallonie_referendum"
+		texturefile = "gfx/interface/goals/goal_fra_vallonie_referendum.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_securite"
+		texturefile = "gfx/interface/goals/goal_fra_securite.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_securite_2"
+		texturefile = "gfx/interface/goals/goal_fra_securite_2.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_end_potsdam"
+		texturefile = "gfx/interface/goals/goal_fra_end_potsdam.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_comm_liquidation"
+		texturefile = "gfx/interface/goals/goal_fra_comm_liquidation.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_lion_tribunal"
+		texturefile = "gfx/interface/goals/goal_ger_lion_tribunal.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_catalonia"
+		texturefile = "gfx/interface/goals/goal_fra_catalonia.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_radical_wing_projects"
+		texturefile = "gfx/interface/goals/goal_fra_radical_wing_projects.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_chevalier"
+		texturefile = "gfx/interface/goals/goal_fra_chevalier.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_rad_nuclear_research"
+		texturefile = "gfx/interface/goals/goal_fra_rad_nuclear_research.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_united_socialist_party"
+		texturefile = "gfx/interface/goals/goal_ger_united_socialist_party.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_ger_stability_in_europe"
+		texturefile = "gfx/interface/goals/goal_ger_stability_in_europe.dds"	
+	}
+	
+	SpriteType = {
+		name = "GFX_goal_fra_mod_projects"
+		texturefile = "gfx/interface/goals/goal_fra_mod_projects.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_goal_fra_mod_influence"
+		texturefile = "gfx/interface/goals/goal_fra_mod_influence.dds"	
+	}
+
+}

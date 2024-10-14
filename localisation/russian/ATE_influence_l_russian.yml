@@ -1,0 +1,108 @@
+﻿l_russian:
+
+#Diplomacy
+ATE_MAKE_INFLUENCE_FRA_ACTION_DESC:0 "Повысить влияние"
+ATE_MAKE_INFLUENCE_FRA_TITLE:0 "Повысить влияние"
+ATE_MAKE_INFLUENCE_ACTION_DESC:0 "Повысить влияние"
+ATE_MAKE_INFLUENCE_TITLE:0 "Повысить влияние"
+ATE_INFLUENCE_LOC:0 "Повысить влияние в государстве §Y[FROM.GetName]§!?\n\nЕсли наши идеологии совпадают, влияние поднимется  на §G8§! очков, в противном случае  на §G4§!.\n\nВлияние на страну позволит повысить популярность идеологии, включить в экономический союз или сделать их страну марионеткой."
+
+ATE_INFLUENCED_TITLE:0 "Иностранное влияние"
+ATE_INFLUENCED_DESC:0 "Государство §Y[ROOT.GetName]§! повысило своё влияние на нашу державу."
+
+ATE_PARTY_BOOST_ACTION_DESC:0 "Повысить популярность идеологии"
+ATE_PARTY_BOOST_TITLE:0 "Популярность идеологии"
+ATE_PARTY_BOOST_LOC:0 "Повысить популярность идеологии §Y[ROOT.GetRulingIdeology]§! в государстве §Y[FROM.GetName]§! на §G2%§!?\n\nЭто будет стоить нам §Y4§! очка влияния."
+
+ATE_PARTY_BOOSTED_TITLE:0 "Иностранное влияние на политику"
+ATE_PARTY_BOOSTED_DESC:0 "Государство §Y[ROOT.GetName]§! повысило популярность своей идеологии в нашей державе на §G2%§!."
+
+ATE_ECONOMIC_PUPPET_ACTION_DESC:0 "Экономическое давление"
+ATE_ECONOMIC_PUPPET_TITLE:0 "Экономическое давление"
+ATE_ECONOMIC_PUPPET_LOC:0 "Оказать давление на государство §Y[FROM.GetName]§!, чтобы оно вступило в наш экономический союз?\n\nМы получим бонус к политической власти, а их экономика получит бонусы.\n\nЭто будет стоить нам §Y25§! очков влияния."
+
+ATE_ECONOMIC_PUPPETED_TITLE:0 "Экономическое давление"
+ATE_ECONOMIC_PUPPETED_DESC:0 "Государство §Y[ROOT.GetName]§! оказало давление на нашу державу. Теперь мы являемся частью их экономического союза."
+
+ATE_PUPPET_ACTION_DESC:0 "Сделать марионеткой"
+ATE_PUPPET_TITLE:0 "Сделать марионеткой"
+ATE_PUPPET_LOC:0 "Сделать марионеткой государство §Y[FROM.GetName]§!?\n\nМы получим союзника, который не сможет осуществлять самостоятельную политику.\n\nЭто будет стоить нам §Y50§! очков влияния."
+
+ATE_PUPPETED_TITLE:0 "Марионеточный режим"
+ATE_PUPPETED_DESC:0 "Государство §Y[ROOT.GetName]§! установило в нашей стране марионеточный режим."
+
+ATE_YES_ECONOMIC_ACTION_DESC:0 "Присоединиться к экономическому союзу"
+ATE_YES_ECONOMIC_TITLE:0 "Экономический союз"
+ATE_YES_ECONOMIC_LOC:0 "Присоединиться к экономическому союзу государства §Y[FROM.GetName]§!?\n\nМы получим некоторые бонусы для нашей экономики, но будем отдавать политическую власть."
+
+ATE_YES_ECONOMICED_TITLE:0 "Новый член экономического союза"
+ATE_YES_ECONOMICED_DESC:0 "Государство §Y[ROOT.GetName]§! присоединилось к нашему экономическому союзу."
+
+
+ATE_LESS_INFLUENCE_ACTION_DESC:0 "Снизить влияние"
+ATE_LESS_INFLUENCE_TITLE:0 "Снизить влияние"
+ATE_LESS_INFLUENCE_LOC:0 "Снизить влияние государства §Y[FROM.GetName]§! на §G2%§!?\n\nВлияние на нашу страну позволит им повысить популярность идеологии, установить экономическую зависимость или сделать нас марионеткой."
+
+ATE_LESS_INFLUENCED_TITLE:0 "Наше влияние снижено"
+ATE_LESS_INFLUENCED_DESC:0 "Наше влияние в государстве §Y[ROOT.GetName]§! снижено на §G2%§! из-за действий их правительства."
+
+ATE_NO_ECONOMIC_ACTION_DESC:0 "Освободиться от экономической зависимости"
+ATE_NO_ECONOMIC_TITLE:0 "Свободная экономика"
+ATE_NO_ECONOMIC_LOC:0 "Освободиться от экономического влияния государства §Y[FROM.GetName]§!?\n\nМы выйдем из их экономического союза и потеряем бонусы."
+
+ATE_NO_ECONOMICED_TITLE:0 "Выход из экономического союза"
+ATE_NO_ECONOMICED_DESC:0 "Государство §Y[ROOT.GetName]§! вышло из нашего экономического союза."
+
+ATE_NO_PUPPET_ACTION_DESC:0 "Освободиться от марионеточного режима"
+ATE_NO_PUPPET_TITLE:0 "Освобождение"
+ATE_NO_PUPPET_LOC:0 "Свергнуть марионеточный режим государства §Y[FROM.GetName]§!?\n\nНаша страна станет свободной."
+
+ATE_NO_PUPPED_TITLE:0 "Свергнут марионеточный режим"
+ATE_NO_PUPPED_DESC:0 "Наш марионеточный режим в государстве §Y[ROOT.GetName]§! был свергнут."
+
+#GUI
+ATE_THEY_INFLUENCE_TT:0 "Показать влияние на другие страны"
+ATE_THEY_INFLUENCE_TTL:0 "Нажмите, чтобы увидеть, на какие державы влияет государство [THIS.GetName]"
+INFLUENCE_TITLE_SL:0 "Влияние на страны"
+INFLUENCE_TT:0 "§Y[?influence@FROM]§!"
+
+ATE_THEY_INFLUENCED_TT:0 "Показать влияние других стран"
+ATE_THEY_INFLUENCED_TTL:0 "Нажмите, чтобы увидеть, какие державы влияют на государство [THIS.GetName]"
+INFLUENCED_TITLE_SL:0 "Влияние других стран"
+INFLUENCED_TT:0 "[?influenced@FROM|H0]"
+
+#Triggers
+ate_influence_less_20_tt:0 "У государства менее §Y20§! очков влияния на нас"
+ate_influence_less_50_tt:0 "У государства менее §Y50§! очков влияния на нас"
+ate_influence_more_5_tt:0 "§Y5§! и более очков влияния на государство §Y[PREV.GetName]§!"
+ate_influence_more_4_tt:0 "§Y4§! и более очков влияния на государство §Y[PREV.GetName]§!"
+ate_influence_less_100_tt:0 "Меньше §Y100§! очков влияния на государство §Y[PREV.GetName]§!"
+ate_influence_more_20_tt:0 "§Y20§! и более очков влияния на государство §Y[PREV.GetName]§!"
+ate_influence_more_50_tt:0 "§Y50§! и более очков влияния на государство §Y[PREV.GetName]§!"
+ate_influence_more_100_tt:0 "§Y100§! очков влияния на государство §Y[PREV.GetName]§!"
+ate_influence_more_0_tt:0 "Есть очки влияния на наше государство"
+ate_not_embargoed_tt:0 "Не введено эмбарго против страны"
+ate_not_embargoed_us_tt:0 "Не введено эмбарго против нас"
+
+#Ideas
+economic_major_1:0 "Экономический гегемон"
+economic_major_2:0 "Экономический гегемон"
+economic_major_3:0 "Экономический гегемон"
+economic_major_4:0 "Экономический гегемон"
+economic_major_5:0 "Экономический гегемон"
+economic_major_6:0 "Экономический гегемон"
+economic_major_7:0 "Экономический гегемон"
+economic_major_8:0 "Экономический гегемон"
+
+#Events
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+cap_building = {
+	icon = generic_economy
+	
+	allowed = {
+		always = yes
+	}
+	visible = {
+		always = no
+	}
+	
+	priority = 90
+}
+
+adm_building = {
+	icon = generic_economy
+	
+	allowed = {
+		always = yes
+	}
+	visible = {
+		has_idea = plan_economy
+	}
+	
+	priority = 90
+}
+
+party_actions = {
+	icon = generic
+
+	allowed = {
+		always = yes
+	}
+	
+	visible = {
+		NOT = { original_tag = GER original_tag = FRA original_tag = ENG }
+	}
+	
+	priority = 10
+}
+
+parlament_actions = {
+	icon = generic_democracy
+
+	allowed = {
+		always = yes
+	}
+	
+	priority = 12
+}

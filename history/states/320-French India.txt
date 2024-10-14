@@ -1,0 +1,22 @@
+
+state={
+	id=320
+	name="STATE_320"
+	manpower = 286410
+
+	state_category = rural
+
+	history={
+		owner = RUS
+		add_core_of = RUS
+		victory_points = {
+			310 1 
+		}
+		buildings = {
+			infrastructure = 5
+
+		}
+	}
+
+	provinces={ 222 310 319 341 415 3219 3310 3333 6326 6459 9275 11259 }
+}

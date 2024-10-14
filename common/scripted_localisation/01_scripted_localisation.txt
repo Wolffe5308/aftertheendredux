@@ -1,0 +1,272 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = {
+	name = GetPartyNumberDem
+	text = {
+		trigger = {
+			has_government = democratic
+			NOT = { has_country_flag = ATE_NO_democratic }
+			NOT = { has_country_flag = ATE_PAR_dem_yes }
+			NOT = { has_country_flag = ATE_PAR_dem_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_DEM
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_dem_yes
+		}
+		localization_key = PARTY_NUMBER_YES_DEM
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_dem_no
+		}
+		localization_key = PARTY_NUMBER_NO_DEM
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_democratic
+		}
+		localization_key = PARTY_NUMBER_BAN_DEM
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_DEM
+	}
+}
+
+defined_text = {
+	name = GetPartyNumberLib
+	text = {
+		trigger = {
+			has_government = liberalism
+			NOT = { has_country_flag = ATE_PAR_lib_yes }
+			NOT = { has_country_flag = ATE_PAR_lib_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_LIB
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_lib_yes
+		}
+		localization_key = PARTY_NUMBER_YES_LIB
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_lib_no
+		}
+		localization_key = PARTY_NUMBER_NO_LIB
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_liberalism
+		}
+		localization_key = PARTY_NUMBER_BAN_LIB
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_LIB
+	}
+}
+
+defined_text = {
+	name = GetPartyNumberSoc
+	text = {
+		trigger = {
+			has_government = socialism
+			NOT = { has_country_flag = ATE_PAR_soc_yes }
+			NOT = { has_country_flag = ATE_PAR_soc_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_SOC
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_soc_yes
+		}
+		localization_key = PARTY_NUMBER_YES_SOC
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_soc_no
+		}
+		localization_key = PARTY_NUMBER_NO_SOC
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_socialism
+		}
+		localization_key = PARTY_NUMBER_BAN_SOC
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_SOC
+	}
+}
+
+defined_text = {
+	name = GetPartyNumberCom
+	text = {
+		trigger = {
+			has_government = communism
+			NOT = { has_country_flag = ATE_PAR_com_yes }
+			NOT = { has_country_flag = ATE_PAR_com_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_COM
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_com_yes
+		}
+		localization_key = PARTY_NUMBER_YES_COM
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_com_no
+		}
+		localization_key = PARTY_NUMBER_NO_COM
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_communism
+		}
+		localization_key = PARTY_NUMBER_BAN_COM
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_COM
+	}
+}
+
+defined_text = {
+	name = GetPartyNumberFas
+	text = {
+		trigger = {
+			has_government = fascism
+			NOT = { has_country_flag = ATE_PAR_fas_yes }
+			NOT = { has_country_flag = ATE_PAR_fas_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_FAS
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_fas_yes
+		}
+		localization_key = PARTY_NUMBER_YES_FAS
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_fas_no
+		}
+		localization_key = PARTY_NUMBER_NO_FAS
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_fascism
+		}
+		localization_key = PARTY_NUMBER_BAN_FAS
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_FAS
+	}
+}
+
+defined_text = {
+	name = GetPartyNumberCent
+	text = {
+		trigger = {
+			has_government = centrism
+			NOT = { has_country_flag = ATE_PAR_cent_yes }
+			NOT = { has_country_flag = ATE_PAR_cent_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_CENT
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_cent_yes
+		}
+		localization_key = PARTY_NUMBER_YES_CENT
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_cent_no
+		}
+		localization_key = PARTY_NUMBER_NO_CENT
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_centrism
+		}
+		localization_key = PARTY_NUMBER_BAN_CENT
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_CENT
+	}
+}
+
+defined_text = {
+	name = GetPartyNumberNeut
+	text = {
+		trigger = {
+			has_government = neutrality
+			NOT = { has_country_flag = ATE_PAR_neut_yes }
+			NOT = { has_country_flag = ATE_PAR_neut_no }
+		}
+		localization_key = PARTY_NUMBER_RULING_NEUT
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_neut_yes
+		}
+		localization_key = PARTY_NUMBER_YES_NEUT
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_PAR_neut_no
+		}
+		localization_key = PARTY_NUMBER_NO_NEUT
+	}
+	text = {
+		trigger = {
+			has_country_flag = ATE_NO_neutrality
+		}
+		localization_key = PARTY_NUMBER_BAN_NEUT
+	}
+	
+	text = {
+		localization_key = PARTY_NUMBER_NEUT
+	}
+}
+
+defined_text = {
+	name = GetManpowerLaw
+	text = {
+		trigger = { has_idea = disarmed_nation }
+		localization_key = volunteer_only
+	}
+	text = {
+		trigger = { has_idea = volunteer_only }
+		localization_key = limited_conscription
+	}
+	text = {
+		trigger = { has_idea = limited_conscription }
+		localization_key = extensive_conscription
+	}
+	text = {
+		trigger = { has_idea = extensive_conscription }
+		localization_key = service_by_requirement
+	}
+	text = {
+		localization_key = service_by_requirement
+	}
+}
+

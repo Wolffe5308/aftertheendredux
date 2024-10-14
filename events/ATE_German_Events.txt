@@ -1,0 +1,2341 @@
+﻿###########################
+# German Events
+###########################
+
+add_namespace = ate_germany
+
+#Invest East
+country_event = {
+	id = ate_germany.1
+	title = ate_germany.1.t
+	desc = ate_germany.1.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.1.a
+		ai_chance = { 
+			base = 10
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = economic_boom }
+			}
+			ATE_better_economic_situatuion = yes
+		}
+		add_opinion_modifier = {
+			target = GER
+			modifier = ate_ger_invest_east_modifier
+		}
+		add_autonomy_ratio = {
+			value = -0.1
+			localization = singapore_focus
+		}
+	}
+}
+
+#Army East
+country_event = {
+	id = ate_germany.2
+	title = ate_germany.2.t
+	desc = ate_germany.2.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.2.a
+		ai_chance = { 
+			base = 10
+		}
+		army_experience = 10
+	}
+}
+
+#Wels death
+country_event = {
+	id = ate_germany.3
+	title = ate_germany.3.t
+	desc = ate_germany.3.d
+	picture = GFX_report_event_ger_otto_wels
+	
+	trigger = {
+		original_tag = GER
+		has_country_leader = {
+			name = "Otto Wels"
+			ruling_only = yes
+		}
+		has_government = socialism
+		date > 1936.3.5
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { 
+		days = 5
+	}
+	
+	option = {
+		name = ate_germany.3.a
+		ai_chance = { 
+			base = 10
+		}
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Kurt Schumacher"
+			desc = ""
+			picture = "gfx/leaders/GER/Portrait_Kurt_Schumacher.dds"
+			expire = "1965.1.1"
+			ideology = socialism_ideology
+			traits = {
+				ate_anticommunist
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_news.3 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_germany.3.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Otto Grotewohl"
+			desc = ""
+			picture = "gfx/leaders/GER/Portrait_Otto_Grotewohl.dds"
+			expire = "1965.1.1"
+			ideology = socialism_ideology
+			traits = {
+				ate_procommunist
+				ate_warmonger
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_news.3 days = 1 }
+			}
+		}
+	}
+}
+
+#Help Spain economy
+country_event = {
+	id = ate_germany.4
+	title = ate_germany.4.t
+	desc = ate_germany.4.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.4.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_opinion_modifier = {
+			target = GER
+			modifier = ate_ger_spanish_help_modifier
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = economic_boom }
+			}
+			ATE_better_economic_situatuion = yes
+		}
+	}
+}
+
+#Help Spain volunteers
+country_event = {
+	id = ate_germany.5
+	title = ate_germany.5.t
+	desc = ate_germany.5.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.5.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 20
+		add_manpower = 1000
+		add_opinion_modifier = {
+			target = GER
+			modifier = ate_ger_spanish_help_modifier
+		}
+	}
+}
+
+#Help Italy
+country_event = {
+	id = ate_germany.6
+	title = ate_germany.6.t
+	desc = ate_germany.6.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.6.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 50
+		add_opinion_modifier = {
+			target = GER
+			modifier = ate_ger_spanish_help_modifier
+		}
+		if = {
+			limit = {
+				FROM = { num_of_civilian_factories_available_for_projects > 5 }
+				NOT = { has_idea = economic_boom }
+			}
+			ATE_better_economic_situatuion = yes
+		}
+		if = {
+			limit = {
+				FROM = { has_manpower > 5000 }
+			}
+			add_manpower = 5000
+		}
+	}
+}
+
+#New Berlin Pact
+country_event = {
+	id = ate_germany.7
+	title = ate_germany.7.t
+	desc = ate_germany.7.d
+	picture = GFX_report_event_german_inspect_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.7.a
+		ai_chance = { 
+			base = 10
+		}
+		add_threat = 2
+		GER = { country_event = { id = ate_germany.8 days = 1 } }
+	}
+	
+	option = {
+		name = ate_germany.7.b
+		ai_chance = { 
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		GER = { country_event = { id = ate_germany.9 days = 2 } }
+	}
+}
+
+#New Berlin Pact yes
+country_event = {
+	id = ate_germany.8
+	title = ate_germany.8.t
+	desc = ate_germany.8.d
+	picture = GFX_report_event_german_inspect_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.8.a
+		ai_chance = { 
+			base = 10
+		}
+		if = {
+			limit = {
+				FROM = { is_faction_leader = yes }
+			}
+			FROM = { dismantle_faction = yes }
+		}
+		add_to_faction = FROM
+		add_threat = 2
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_news.4 days = 1 }
+			}
+		}
+	}
+}
+
+#New Berlin Pact no
+country_event = {
+	id = ate_germany.9
+	title = ate_germany.9.t
+	desc = ate_germany.9.d
+	picture = GFX_report_event_german_inspect_troops
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.9.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Smolensk Treaty
+country_event = {
+	id = ate_germany.10
+	title = ate_germany.10.t
+	desc = ate_germany.10.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.10.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		transfer_state = 240
+		add_state_core = 240
+		transfer_state = 146
+		add_state_core = 146
+		GER = {
+			diplomatic_relation = {
+				country = TCC
+				relation = guarantee
+				active = no
+			}
+		}
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_opinion_modifier = {
+			target = GER
+			modifier = ate_ger_smolensk_treaty_modifier
+		}
+		GER = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = ate_ger_smolensk_treaty_modifier
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_news.5 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_germany.10.b
+		ai_chance = { 
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_political_power = 50
+		FROM = { country_event = { id = ate_germany.11 days = 1 } }
+	}
+}
+
+#Smolensk Treaty no
+country_event = {
+	id = ate_germany.11
+	title = ate_germany.11.t
+	desc = ate_germany.11.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.11.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#Invest Russia
+country_event = {
+	id = ate_germany.12
+	title = ate_germany.12.t
+	desc = ate_germany.12.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = ate_germany.12.a
+		ai_chance = { 
+			base = 10
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 1
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_idea = economic_boom }
+			}
+			ATE_better_economic_situatuion = yes
+		}
+		add_opinion_modifier = {
+			target = GER
+			modifier = ate_ger_invest_russia_modifier
+		}
+	}
+}
+
+#Wilhelm II
+country_event = {
+	id = ate_germany.13
+	title = ate_germany.13.t
+	desc = ate_germany.13.d
+	picture = GFX_report_event_ger_reichstag
+	
+	trigger = {
+		tag = GER
+		has_idea = wilhelm_II
+		NOT = { has_government = communism }
+		date > 1940.4.1
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { 
+		days = 5
+	}
+	
+	option = {
+		name = ate_germany.13.a
+		ai_chance = { 
+			base = 10
+		}
+		remove_ideas = wilhelm_II
+		add_ideas = GER_wilhelm_iii
+		every_other_country = {
+			limit = { has_idea = wilhelm_II }
+			remove_ideas = wilhelm_II
+			add_ideas = GER_wilhelm_iii
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_news.6 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_germany.13.b
+		trigger = {
+			NOT = { has_government = neutrality }
+			if = {
+				limit = { has_government = democratic }
+				check_variable = { dem_parl > 100 }
+			}
+			if = {
+				limit = { has_government = socialism }
+				check_variable = { soc_parl > 100 }
+			}
+			if = {
+				limit = { has_government = liberalism }
+				check_variable = { lib_parl > 100 }
+			}
+			if = {
+				limit = { has_government = fascism }
+				check_variable = { fas_parl > 100 }
+			}
+			if = {
+				limit = { has_government = centrism }
+				check_variable = { cent_parl > 100 }
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		remove_ideas = wilhelm_II
+		drop_cosmetic_tag = yes
+		add_stability = -0.1
+		add_popularity = {
+			ideology = socialism
+			popularity = -0.1
+		}
+		every_other_country = {
+			limit = { has_idea = wilhelm_II }
+			remove_ideas = wilhelm_II
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_news.7 days = 1 }
+			}
+		}
+	}
+}
+
+#Polish rebel
+country_event = {
+	id = ate_germany.14
+	title = ate_germany.14.t
+	desc = ate_germany.14.d
+	picture = GFX_report_event_polish_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.14.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 50
+		GER = { 
+			end_puppet = POL
+			country_event = { id = ate_germany.15 days = 2 }
+		}
+		if = {
+			limit = { has_war_with = FRA }
+			white_peace = FRA
+		}
+		if = {
+			limit = { has_war_with = RUS }
+			white_peace = RUS
+		}
+		if = {
+			limit = { is_in_faction_with = GER }
+			leave_faction = yes
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_germany.17 days = 2 }
+			}
+		}
+	}
+}
+
+#Polish rebel
+country_event = {
+	id = ate_germany.15
+	title = ate_germany.15.t
+	desc = ate_germany.15.d
+	picture = GFX_report_event_polish_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.15.a
+		ai_chance = {
+			base = 5
+		}
+		add_stability = -0.1
+		add_political_power = -50
+	}
+	
+	option = {
+		name = ate_germany.15.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				POL = { is_in_faction_with = FRA }
+			}
+		}
+		add_stability = -0.1
+		add_political_power = -50
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = POL
+		}
+	}
+}
+
+#Polish rebel
+country_event = {
+	id = ate_germany.16
+	title = ate_germany.16.t
+	desc = ate_germany.16.d
+	picture = GFX_report_event_polish_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.16.a
+		ai_chance = { 
+			base = 10
+		}
+		add_stability = -0.05
+		add_political_power = -25
+	}
+}
+
+#Polish rebel
+news_event = {
+	id = ate_germany.17
+	title = ate_germany.17.t
+	desc = ate_germany.17.d
+	picture = GFX_news_event_polish_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.17.a
+	}
+}
+
+#Polish rebel
+news_event = {
+	id = ate_germany.18
+	title = ate_germany.18.t
+	desc = ate_germany.18.d
+	picture = GFX_news_event_polish_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.18.a
+	}
+}
+
+#Economic treaty
+country_event = {
+	id = ate_germany.19
+	title = ate_germany.19.t
+	desc = ate_germany.19.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.19.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = ate_ger_eco_treaty_modifier
+		}
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = ate_ger_eco_treaty_modifier
+			}
+		}
+	}
+	
+	option = {
+		name = ate_germany.19.b
+		trigger = {
+			NOT = {
+				is_puppet_of = GER
+				is_subject_of = GER
+			}
+		}
+		ai_chance = {
+			base = 5
+		}
+		add_political_power = 20
+	}
+}
+
+#Cameroon
+country_event = {
+	id = ate_germany.20
+	title = ate_germany.20.t
+	desc = ate_germany.20.d
+	picture = GFX_report_event_ger_cameroon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.20.a
+		ai_chance = { 
+			base = 10
+		}
+		773 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}					
+		}
+	}
+	
+	option = {
+		name = ate_germany.20.b
+		ai_chance = {
+			base = 10
+		}
+		773 = {
+			add_extra_state_shared_building_slots = 2				
+		}
+	}
+
+	option = {
+		name = ate_germany.20.c
+		ai_chance = {
+			base = 10
+		}
+		add_resource = {
+		    type = rubber
+		    amount = 8
+		    state = 773
+		}
+	}
+}
+
+#Cameroon
+country_event = {
+	id = ate_germany.21
+	title = ate_germany.21.t
+	desc = ate_germany.21.d
+	picture = GFX_report_event_ger_east_afrika
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.21.a
+		ai_chance = { 
+			base = 10
+		}
+		546 = {
+			add_building_construction = {
+			    type = naval_base
+			    level = 1
+			    instant_build = yes
+			    province = 2196
+			}
+		}
+	}
+	
+	option = {
+		name = ate_germany.21.b
+		ai_chance = {
+			base = 10
+		}
+		add_timed_idea = {
+		    idea = ger_food_from_afrika
+		    days = 120
+		}
+	}
+
+	option = {
+		name = ate_germany.21.c
+		ai_chance = {
+			base = 10
+		}
+		add_resource = {
+		    type = rubber
+		    amount = 8
+		    state = 546
+		}
+	}
+}
+
+#Holland influence
+country_event = {
+	id = ate_germany.22
+	title = ate_germany.22.t
+	desc = ate_germany.22.d
+	picture = GFX_report_event_ger_workers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.22.a
+		ai_chance = { 
+			base = 10
+		}
+		HOL = { country_event = { id = ate_germany.23 days = 1 } }
+		effect_tooltip = {
+			HOL = {
+				add_opinion_modifier = {
+				    target = GER
+				    modifier = ate_ger_hol_influence_modifier
+				}
+			}
+			if = {
+				limit = {
+					INS = {
+						OR = {
+							is_puppet_of = HOL
+							is_subject_of = HOL
+						}
+					}
+				}
+				INS = {
+					add_opinion_modifier = {
+					    target = GER
+					    modifier = ate_ger_hol_influence_modifier
+					}
+				}
+			}
+		}
+	}
+}
+
+#Holland influence
+country_event = {
+	id = ate_germany.23
+	title = ate_germany.23.t
+	desc = ate_germany.23.d
+	picture = GFX_report_event_ger_workers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.23.a
+		ai_chance = { 
+			base = 10
+		}
+		add_opinion_modifier = {
+		    target = GER
+			modifier = ate_ger_hol_influence_modifier
+		}
+		GER = {
+			if = {
+				limit = { 
+					ROOT = {
+						NOT = {
+							is_in_array = {
+								array = GER.influenced_countries
+								value = ROOT.id
+							}
+						}
+					}
+				}
+				add_to_array = { array = GER.influenced_countries value = ROOT.id }
+			}
+			ROOT = { 
+				add_to_variable = { influence@GER = 50 } 
+				clamp_variable = {
+					var = influence@GER
+					min = 0
+					max = 100
+				}
+			}
+			ROOT = {
+				GER = { 
+					add_to_variable = { influenced@ROOT = 50 } 
+					clamp_variable = {
+						var = influenced@ROOT
+						min = 0
+						max = 100
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				INS = {
+					OR = {
+						is_puppet_of = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			INS = {
+				add_opinion_modifier = {
+				    target = GER
+				    modifier = ate_ger_hol_influence_modifier
+				}
+			}
+		}
+	}
+}
+
+#Holland no eng
+country_event = {
+	id = ate_germany.24
+	title = ate_germany.24.t
+	desc = ate_germany.24.d
+	picture = GFX_report_event_ger_workers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.24.a
+		ai_chance = { 
+			base = 10
+		}
+		add_ideas = ger_economic_puppet
+		GER = { ate_economic_puppet_major = yes }
+		ENG = { country_event = { id = ate_germany.25 days = 1 } }
+		add_opinion_modifier = { target = ENG modifier = embargo }
+		ENG = { add_opinion_modifier = { target = ROOT modifier = sanctions_relations } }
+	}
+
+	option = {
+		name = ate_germany.24.b
+		ai_chance = { 
+			base = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					is_in_faction_with = ENG
+					has_army_manpower = {
+    					size > 199999
+    				}
+    			}
+			}
+		}
+		add_political_power = -50
+		GER = { country_event = { id = ate_germany.26 days = 1 } }
+	}
+}
+
+#Holland no eng yes
+country_event = {
+	id = ate_germany.25
+	title = ate_germany.25.t
+	desc = ate_germany.25.d
+	picture = GFX_report_event_ger_workers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.25.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		add_opinion_modifier = { target = FROM modifier = embargo }
+		add_opinion_modifier = { target = GER modifier = sanctions_relations } 
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_germany.27 days = 2 }
+			}
+		}
+	}
+}
+
+#Holland no eng no
+country_event = {
+	id = ate_germany.26
+	title = ate_germany.26.t
+	desc = ate_germany.26.d
+	picture = GFX_report_event_ger_workers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.26.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = -50
+		add_opinion_modifier = {
+			target = HOL
+			modifier = ate_ger_hol_yes_eng_modifier
+		}
+	}
+}
+
+#Holland no eng yes
+news_event = {
+	id = ate_germany.27
+	title = ate_germany.27.t
+	desc = ate_germany.27.d
+	picture = GFX_news_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.27.a
+	}
+}
+
+#Germany start
+country_event = {
+	id = ate_germany.28
+	title = ate_germany.28.t
+	desc = ate_germany.28.d
+	picture = GFX_report_event_ger_otto_wels
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.28.a
+		ai_chance = { 
+			base = 10
+		}
+		add_political_power = 10
+	}
+}
+
+#Swedish steel
+country_event = {
+	id = ate_germany.29
+	title = ate_germany.29.t
+	desc = ate_germany.29.d
+	picture = GFX_report_event_ger_swedish_steel
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.29.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ger_sweedish_steel_2
+		effect_tooltip = {
+			GER = { add_ideas = ger_sweedish_steel }
+		}
+		add_opinion_modifier = {
+		    target = GER
+		    modifier = ate_ger_swedish_steel_modifier
+		}
+		GER = { country_event = { id = ate_germany.30 days = 1 } }
+	}
+
+	option = {
+		name = ate_germany.29.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 20
+		GER = { country_event = { id = ate_germany.31 days = 1 } }
+	}
+}
+
+#Swedish steel yes
+country_event = {
+	id = ate_germany.30
+	title = ate_germany.30.t
+	desc = ate_germany.30.d
+	picture = GFX_report_event_ger_swedish_steel
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.30.a
+		ai_chance = {
+			base = 10
+		}
+		add_opinion_modifier = {
+		    target = SWE
+		    modifier = ate_ger_swedish_steel_modifier
+		}
+		add_ideas = ger_sweedish_steel
+	}
+}
+
+#Swedish steel no
+country_event = {
+	id = ate_germany.31
+	title = ate_germany.31.t
+	desc = ate_germany.31.d
+	picture = GFX_report_event_ger_swedish_steel
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.31.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Perspectives
+country_event = {
+	id = ate_germany.32
+	title = ate_germany.32.t
+	desc = ate_germany.32.d
+	picture = GFX_report_event_generic_factory
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.32.a
+		ai_chance = {
+			base = 2
+		}
+		add_political_power = 20
+		add_tech_bonus = {
+			name = GER_coal_liquidization
+			bonus = 0.5
+			uses = 1
+			category = synth_resources
+		}
+	}
+
+	option = {
+		name = ate_germany.32.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 20
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+
+	option = {
+		name = ate_germany.32.c
+		ai_chance = {
+			base = 2
+		}
+		add_political_power = 20
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#Peace
+country_event = {
+	id = ate_germany.33
+	title = ate_germany.33.t
+	desc = ate_germany.33.d
+	picture = GFX_report_event_ger_reichstag
+	
+	trigger = {
+		tag = GER
+		has_war_with = FRA
+		has_capitulated = no
+		surrender_progress > 0.5
+		NOT = { has_government = communism }
+		NOT = { has_government = fascism }
+		FRA = { NOT = { has_country_flag = fra_divided_germany_flag } }
+		NOT = {
+			any_country = {
+				is_major = yes
+				is_in_faction_with = GER
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = ate_germany.33.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		FRA = { country_event = { id = ate_germany.34 days = 1 } }
+	}
+	
+	option = {
+		name = ate_germany.33.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 20
+	}
+}
+
+#Peace france
+country_event = {
+	id = ate_germany.34
+	title = ate_germany.34.t
+	desc = ate_germany.34.d
+	picture = GFX_report_event_ger_reichstag
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.34.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		transfer_state = 28
+		if = {
+			limit = { GER = { owns_state = 777 } }
+			transfer_state = 777
+		}
+		if = {
+			limit = { GER = { owns_state = 773 } }
+			transfer_state = 773
+		}
+		if = {
+			limit = { GER = { owns_state = 541 } }
+			transfer_state = 541
+		}
+		if = {
+			limit = { GER = { owns_state = 523 } }
+			transfer_state = 523
+		}
+		if = {
+			limit = { GER = { owns_state = 737 } }
+			transfer_state = 737
+		}
+		if = {
+			limit = { GER = { owns_state = 743 } }
+			transfer_state = 743
+		}
+		if = {
+			limit = { SWI = { is_in_faction_with = GER } }
+			transfer_state = 3
+		}
+		if = {
+			limit = { 
+				GER = { owns_state = 546 }
+				NOT = { ITA = { is_in_faction_with = ROOT } }
+			}
+			transfer_state = 546
+		}
+		if = {
+			limit = { 
+				GER = { owns_state = 768 }
+				NOT = { ITA = { is_in_faction_with = ROOT } }
+			}
+			transfer_state = 768
+		}
+		if = {
+			limit = { 
+				GER = { owns_state = 769 }
+				NOT = { ITA = { is_in_faction_with = ROOT } }
+			}
+			transfer_state = 769
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				UKR = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = UKR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				BLR = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = BLR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				RUS = { has_idea = fra_rus_secret_idea }
+				97 = { is_core_of = RUS }
+				95 = { is_core_of = RUS }
+				LIT = { is_in_faction_with = GER }
+			}
+			RUS = {
+				transfer_state = 97
+				transfer_state = 95
+			}
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				GER = { owns_state = 546 }
+			}
+			ITA = { transfer_state = 546 }
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				GER = { owns_state = 768 }
+			}
+			ITA = { transfer_state = 768 }
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				GER = { owns_state = 769 }
+			}
+			ITA = { transfer_state = 769 }
+		}
+		if = {
+			limit = { 
+				ITA = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 39 }
+			}
+			ITA = { transfer_state = 39 }
+		}
+		if = {
+			limit = {
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 736 }
+			}
+			ITA = { transfer_state = 736 }
+		}
+		if = {
+			limit = { 
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 102 }
+			}
+			ITA = { transfer_state = 102 }
+		}
+		if = {
+			limit = {
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 103 }
+			}
+			ITA = { transfer_state = 103 }
+		}
+		if = {
+			limit = { 
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				OR = {
+					has_war_with = BOS
+					BOS = { exists = no }
+				}
+				NOT = { is_in_faction_with = BOS }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 109 }
+			}
+			HUN = { release = CRO }
+		}
+		if = {
+			limit = { 
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				BOS = { exists = yes }
+				is_in_faction_with = BOS
+				HUN = { has_war_with = BOS }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 109 }
+			}
+			BOS = { transfer_state = 109 }
+		}
+		if = {
+			limit = {
+				if = {
+					limit = { SER = { has_cosmetic_tag = YUG } }
+					NOT = { is_in_faction_with = SER }
+				}
+				ITA = { is_in_faction_with = ROOT }
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 104 }
+			}
+			ITA = { transfer_state = 104 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 736 }
+			}
+			SER = { transfer_state = 736 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 102 }
+			}
+			SER = { transfer_state = 102 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 109 }
+			}
+			SER = { transfer_state = 109 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 103 }
+			}
+			SER = { transfer_state = 103 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 45 }
+			}
+			SER = { transfer_state = 45 }
+		}
+		if = {
+			limit = {
+				SER = { has_cosmetic_tag = YUG }
+				is_in_faction_with = SER
+				HUN = { is_in_faction_with = GER }
+				HUN = { owns_state = 764 }
+			}
+			SER = { transfer_state = 764 }
+		}
+		if = {
+			limit = {
+				AUS = { is_in_faction_with = GER }
+				AUS = { has_cosmetic_tag = AUS_GER }
+			}
+			AUS = { drop_cosmetic_tag = yes }
+		}
+		if = {
+			limit = { 
+				CZE = { is_in_faction_with = ROOT }
+				GER = { owns_state = 69 }
+			}
+			CZE = { transfer_state = 69 }
+		}
+		if = {
+			limit = { 
+				CZE = { is_in_faction_with = ROOT }
+				AUS = { is_in_faction_with = GER }
+				AUS = { owns_state = 762 }
+			}
+			CZE = { transfer_state = 762 }
+		}
+		if = {
+			limit = { 
+				POL = { is_in_faction_with = ROOT }
+				GER = { owns_state = 86 }
+			}
+			POL = { transfer_state = 86 }
+			POL = { add_state_core = 86 }
+		}
+		if = {
+			limit = { 
+				POL = { is_in_faction_with = ROOT }
+				GER = { owns_state = 85 }
+			}
+			POL = { transfer_state = 85 }
+			POL = { add_state_core = 85 }
+		}
+		if = {
+			limit = { 
+				POL = { is_in_faction_with = ROOT }
+				has_opinion_modifier = ate_fra_pol_secret_modifier
+				GER = { owns_state = 85 }
+			}
+			POL = { 
+				transfer_state = 72
+				transfer_state = 97
+				transfer_state = 95
+				transfer_state = 96
+				transfer_state = 94
+				transfer_state = 93
+				transfer_state = 91
+				transfer_state = 89
+				transfer_state = 80
+			}
+		}
+		if = {
+			limit = { 
+				RUS = { is_in_faction_with = ROOT }
+				has_opinion_modifier = ate_fra_pol_secret_modifier
+				UKR = { is_in_faction_with = GER }
+			}
+			RUS = {
+				annex_country = {
+					target = UKR
+					transfer_troops = no
+				}
+				annex_country = {
+					target = BLR
+					transfer_troops = no
+				}
+			}
+		}
+		if = {
+			limit = { 
+				TUR = { is_in_faction_with = ROOT }
+				GRE = { is_in_faction_with = GER }
+			}
+			GRE = { release = TUR }
+		}
+		every_country = {
+			limit = {
+				OR = { 
+					is_puppet_of = GER
+					is_subject_of = GER
+				}
+			}
+			GER = { end_puppet = PREV }
+			remove_ideas = GER_wilhelm_iii
+			remove_ideas = wilhelm_II
+		}
+		if = {
+			limit = { has_war_with = HUN }
+			every_country = {
+				limit = {
+					OR = { 
+						is_puppet_of = HUN
+						is_subject_of = HUN
+					}
+				}
+				HUN = { end_puppet = PREV }
+			}
+			HUN = { release = ROM }
+			HUN = { release = SER }
+			HUN = { release = SLO }
+			HUN = { release = CRO }
+		}
+		every_country = {
+			limit = { 
+				has_war_with = GER
+				is_in_faction_with = FRA
+			}
+			white_peace = GER
+			white_peace = UKR
+			white_peace = BLR
+			white_peace = POL
+			white_peace = LIT
+			white_peace = AUS
+			white_peace = CRL
+			if = {
+				limit = { HUN = { is_in_faction_with = GER } }
+				white_peace = HUN
+			}
+			if = {
+				limit = { SER = { is_in_faction_with = GER } }
+				white_peace = SER
+			}
+			if = {
+				limit = { BOS = { is_in_faction_with = GER } }
+				white_peace = BOS
+			}
+			if = {
+				limit = { MNT = { is_in_faction_with = GER } }
+				white_peace = MNT
+			}
+		}
+		white_peace = GER
+		every_country = {
+			limit = {
+				is_guaranteed_by = GER
+			}
+			GER = {
+				diplomatic_relation = {
+					country = PREV
+					relation = guarantee
+					active = no
+				}
+			}
+		}
+		GER = { 
+			release = LUX
+			dismantle_faction = yes
+			add_ideas = ger_revanchism
+			remove_ideas = ger_first_economy
+			remove_ideas = ger_rotfront
+			remove_ideas = ger_iron_front
+			remove_ideas = ger_food_from_afrika
+			remove_ideas = ger_settle_programm
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_germany.35 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = ate_germany.34.b
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			has_country_flag = fra_divided_germany_flag
+		}
+		add_political_power = 20
+	}
+}
+
+#Peace france news
+news_event = {
+	id = ate_germany.35
+	title = ate_germany.35.t
+	desc = ate_germany.35.d
+	picture = GFX_news_event_ger_reichstag
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.35.a
+	}
+}
+
+#China advisors
+country_event = {
+	id = ate_germany.36
+	title = ate_germany.36.t
+	desc = ate_germany.36.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.36.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = german_advisors
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_china_advisors_modifier
+		}
+		FROM = { country_event = { id = ate_germany.37 days = 1 } }
+	}
+
+	option = {
+		name = ate_germany.36.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 20
+		FROM = { country_event = { id = ate_germany.38 days = 1 } }
+	}
+}
+
+#China advisors yes
+country_event = {
+	id = ate_germany.37
+	title = ate_germany.37.t
+	desc = ate_germany.37.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.37.a
+		ai_chance = {
+			base = 10
+		}
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_china_advisors_modifier
+		}
+	}
+}
+
+#China advisors no
+country_event = {
+	id = ate_germany.38
+	title = ate_germany.38.t
+	desc = ate_germany.38.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.38.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Hitler
+country_event = {
+	id = ate_germany.39
+	title = ate_germany.39.t
+	desc = ate_germany.39.d
+	picture = GFX_report_event_aus_hitler_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.39.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+		if = {
+			limit = { tag = AUS }
+			add_stability = 0.05
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+		}
+	}
+}
+
+#Sweeden panzers
+country_event = {
+	id = ate_germany.40
+	title = ate_germany.40.t
+	desc = ate_germany.40.d
+	picture = GFX_report_event_generic_panzer_attack
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.40.a
+		ai_chance = {
+			base = 10
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 1
+			name = mech_army_bonus
+			technology = basic_medium_tank
+			technology = improved_medium_tank
+			technology = advanced_medium_tank
+			technology = mechanised_infantry
+		}
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_swe_panzer_modifier
+		}
+		FROM = { country_event = { id = ate_germany.41 days = 1 } }
+	}
+
+	option = {
+		name = ate_germany.40.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 20
+		FROM = { country_event = { id = ate_germany.42 days = 1 } }
+	}
+}
+
+#Sweedish panzers yes
+country_event = {
+	id = ate_germany.41
+	title = ate_germany.41.t
+	desc = ate_germany.41.d
+	picture = GFX_report_event_generic_panzer_attack
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.41.a
+		ai_chance = {
+			base = 10
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 1
+			name = mech_army_bonus
+			technology = basic_medium_tank
+			technology = improved_medium_tank
+			technology = advanced_medium_tank
+			technology = mechanised_infantry
+		}
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_swe_panzer_modifier
+		}
+	}
+}
+
+#Sweedish panzers no
+country_event = {
+	id = ate_germany.42
+	title = ate_germany.42.t
+	desc = ate_germany.42.d
+	picture = GFX_report_event_generic_panzer_attack
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.42.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#European union
+news_event = {
+	id = ate_germany.43
+	title = ate_germany.43.t
+	desc = ate_germany.43.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.43.a
+	}
+}
+
+#EU invite
+country_event = {
+	id = ate_germany.44
+	title = ate_germany.44.t
+	desc = ate_germany.44.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.44.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = ger_european_member
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_eu_treaty_modifier
+		}
+		FROM = { country_event = { id = ate_germany.45 days = 2 } }
+	}
+
+	option = {
+		name = ate_germany.44.b
+		ai_chance = { 
+			base = 2
+		}
+		add_political_power = 10
+		FROM = { country_event = { id = ate_germany.46 days = 2 } }
+	}
+}
+
+#EU invite yes
+country_event = {
+	id = ate_germany.45
+	title = ate_germany.45.t
+	desc = ate_germany.45.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.45.a
+		ai_chance = {
+			base = 10
+		}
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_eu_treaty_modifier
+		}
+	}
+}
+
+#EU invite no
+country_event = {
+	id = ate_germany.46
+	title = ate_germany.46.t
+	desc = ate_germany.46.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.46.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -5
+	}
+}
+
+#Commies coalition
+country_event = {
+	id = ate_germany.47
+	title = ate_germany.47.t
+	desc = ate_germany.47.d
+	picture = GFX_report_event_ger_thalmann
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.47.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+		add_stability = 0.04
+		add_popularity = {
+		    ideology = communism
+			popularity = 0.1
+		}
+	}
+}
+
+#Roque letter
+country_event = {
+	id = ate_germany.48
+	title = ate_germany.48.t
+	desc = ate_germany.48.d
+	picture = GFX_report_event_fra_de_la_roque
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.48.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 25
+		add_war_support = 0.1
+	}
+}
+
+#Protect Europe
+news_event = {
+	id = ate_germany.49
+	title = ate_germany.49.t
+	desc = ate_germany.49.d
+	picture = GFX_news_event_german_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.49.a
+	}
+}
+
+#Ethiope advisors
+country_event = {
+	id = ate_germany.50
+	title = ate_germany.50.t
+	desc = ate_germany.50.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.50.a
+		ai_chance = {
+			base = 10
+		}
+		add_ideas = german_advisors
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_china_advisors_modifier
+		}
+		FROM = { country_event = { id = ate_germany.51 days = 1 } }
+	}
+
+	option = {
+		name = ate_germany.50.b
+		ai_chance = { 
+			base = 1
+		}
+		add_political_power = 20
+		FROM = { country_event = { id = ate_germany.52 days = 1 } }
+	}
+}
+
+#Ethiope advisors yes
+country_event = {
+	id = ate_germany.51
+	title = ate_germany.51.t
+	desc = ate_germany.51.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.51.a
+		ai_chance = {
+			base = 10
+		}
+		add_opinion_modifier = {
+		    target = FROM
+		    modifier = ate_ger_china_advisors_modifier
+		}
+	}
+}
+
+#Ethiope advisors no
+country_event = {
+	id = ate_germany.52
+	title = ate_germany.52.t
+	desc = ate_germany.52.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.52.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -20
+	}
+}
+
+#Lion tribunal
+country_event = {
+	id = ate_germany.53
+	title = ate_germany.53.t
+	desc = ate_germany.53.d
+	picture = GFX_report_event_fra_doriot
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.53.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+		remove_ideas = fra_revanchism
+		activate_decision = ban_fascist_party
+		activate_decision = democratisation
+		if = {
+			limit = { 
+				NOT = { has_idea = press_free }
+			}
+			swap_ideas = {
+				remove_idea = press_state
+				add_idea = press_free
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_idea = meat_free }
+			}
+			swap_ideas = {
+				remove_idea = meat_no
+				add_idea = meat_free
+			}
+		}
+	}
+}
+
+#Veneto crisis ger win
+country_event = {
+	id = ate_germany.54
+	title = ate_germany.54.t
+	desc = ate_germany.54.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.54.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 50
+		effect_tooltip = {
+			ITA = { 
+				add_political_power = -50
+				add_stability = -0.1
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_germany.59 days = 1 }
+			}
+		}
+	}
+}
+
+#Veneto crisis ger lose
+country_event = {
+	id = ate_germany.55
+	title = ate_germany.55.t
+	desc = ate_germany.55.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.55.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+		hidden_effect = {
+			every_country = {
+				country_event = { id = ate_germany.60 days = 1 }
+			}
+		}
+	}
+}
+
+#Veneto crisis cancel
+country_event = {
+	id = ate_germany.56
+	title = ate_germany.56.t
+	desc = ate_germany.56.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.56.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -10
+		if = {
+			limit = { tag = ITA }
+			hidden_effect = {
+				every_country = {
+					country_event = { id = ate_germany.60 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+#Veneto crisis ita win
+country_event = {
+	id = ate_germany.57
+	title = ate_germany.57.t
+	desc = ate_germany.57.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.57.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 50
+		effect_tooltip = {
+			GER = { 
+				add_political_power = -50
+			}
+		}
+	}
+}
+
+#Veneto crisis ita lose
+country_event = {
+	id = ate_germany.58
+	title = ate_germany.58.t
+	desc = ate_germany.58.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.58.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+		add_stability = -0.1
+	}
+}
+
+#Veneto crisis ger win
+news_event = {
+	id = ate_germany.59
+	title = ate_germany.59.t
+	desc = ate_germany.59.d
+	picture = GFX_news_event_german_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.59.a
+	}
+}
+
+#Veneto crisis ger lose
+news_event = {
+	id = ate_germany.60
+	title = ate_germany.60.t
+	desc = ate_germany.60.d
+	picture = GFX_news_event_german_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.60.a
+	}
+}
+
+#Austrian independence
+country_event = {
+	id = ate_germany.61
+	title = ate_germany.61.t
+	desc = ate_germany.61.d
+	picture = GFX_report_event_german_politician_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.61.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				FROM = { is_in_faction_with = FRA }
+			}
+			modifier = {
+				factor = 0.5
+				has_war = yes
+			}
+		}
+		create_wargoal = {
+		    type = puppet_wargoal_focus
+		    target = FROM
+		}
+	}
+
+	option = {
+		name = ate_germany.61.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+	}
+}
+
+#United socialist party
+country_event = {
+	id = ate_germany.62
+	title = ate_germany.62.t
+	desc = ate_germany.62.d
+	picture = GFX_report_event_german_politician_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ate_germany.62.a
+		ai_chance = {
+			base = 10
+		}
+		remove_ideas = ger_rotfront
+		add_popularity = {
+		    ideology = communism
+		    popularity = 0.1
+		}
+		add_popularity = {
+		    ideology = socialism
+		    popularity = 0.1
+		}
+		set_party_name = { 
+		    ideology = socialism 
+		    long_name = GER_socialism_party_united_long 
+		    name = GER_socialism_party_united
+		}
+	}
+}

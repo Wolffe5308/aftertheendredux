@@ -1,0 +1,660 @@
+ATE_vote_more_manpower_effect = {
+	if = {
+		limit = { has_idea = extensive_conscription }
+		swap_ideas = { remove_idea = extensive_conscription add_idea = service_by_requirement }
+	}
+	if = {
+		limit = { has_idea = limited_conscription }
+		swap_ideas = { remove_idea = limited_conscription add_idea = extensive_conscription }
+	}
+	if = {
+		limit = { has_idea = volunteer_only }
+		swap_ideas = { remove_idea = volunteer_only add_idea = limited_conscription }
+	}
+	if = {
+		limit = { has_idea = disarmed_nation }
+		swap_ideas = { remove_idea = disarmed_nation add_idea = volunteer_only }
+	}
+}
+
+ATE_better_economic_situatuion = {
+	if = {
+		limit = { has_idea = economic_groth }
+		swap_ideas = { remove_idea = economic_groth add_idea = economic_boom }
+	}
+	if = {
+		limit = { has_idea = economic_stagnation }
+		swap_ideas = { remove_idea = economic_stagnation add_idea = economic_groth }
+	}
+	if = {
+		limit = { has_idea = economic_recession }
+		swap_ideas = { remove_idea = economic_recession add_idea = economic_stagnation }
+	}
+	if = {
+		limit = { has_idea = economic_crisis }
+		swap_ideas = { remove_idea = economic_crisis add_idea = economic_recession }
+	}
+}
+
+ate_economic_puppet_major = {
+	if = {
+		limit = { has_idea = economic_major_7 }
+		swap_ideas = { remove_idea = economic_major_7 add_idea = economic_major_8 }
+	}
+	if = {
+		limit = { has_idea = economic_major_6 }
+		swap_ideas = { remove_idea = economic_major_6 add_idea = economic_major_7 }
+	}
+	if = {
+		limit = { has_idea = economic_major_5 }
+		swap_ideas = { remove_idea = economic_major_5 add_idea = economic_major_6 }
+	}
+	if = {
+		limit = { has_idea = economic_major_4 }
+		swap_ideas = { remove_idea = economic_major_4 add_idea = economic_major_5 }
+	}
+	if = {
+		limit = { has_idea = economic_major_3 }
+		swap_ideas = { remove_idea = economic_major_3 add_idea = economic_major_4 }
+	}
+	if = {
+		limit = { has_idea = economic_major_2 }
+		swap_ideas = { remove_idea = economic_major_2 add_idea = economic_major_3 }
+	}
+	if = {
+		limit = { has_idea = economic_major_1 }
+		swap_ideas = { remove_idea = economic_major_1 add_idea = economic_major_2 }
+	}
+	if = {
+		limit = { 
+			NOT = { 
+				has_idea = economic_major_1
+				has_idea = economic_major_2
+				has_idea = economic_major_3
+				has_idea = economic_major_4
+				has_idea = economic_major_5
+				has_idea = economic_major_6
+				has_idea = economic_major_7
+				has_idea = economic_major_8
+			}
+		}
+		add_ideas = economic_major_1
+	}
+}
+
+ATE_fra_radical_wing_more = {
+	if = {
+		limit = { has_idea = fra_rad_wing_2 }
+		swap_ideas = { remove_idea = fra_rad_wing_2 add_idea = fra_rad_wing_3 }
+	}
+	if = {
+		limit = { has_idea = fra_rad_wing_1 }
+		swap_ideas = { remove_idea = fra_rad_wing_1 add_idea = fra_rad_wing_2 }
+	}
+	if = {
+		limit = { has_idea = fra_no_wing }
+		swap_ideas = { remove_idea = fra_no_wing add_idea = fra_rad_wing_1 }
+	}
+	if = {
+		limit = { has_idea = fra_mod_wing_1 }
+		swap_ideas = { remove_idea = fra_mod_wing_1 add_idea = fra_no_wing }
+	}
+	if = {
+		limit = { has_idea = fra_mod_wing_2 }
+		swap_ideas = { remove_idea = fra_mod_wing_2 add_idea = fra_mod_wing_1 }
+	}
+	if = {
+		limit = { has_idea = fra_mod_wing_3 }
+		swap_ideas = { remove_idea = fra_mod_wing_3 add_idea = fra_mod_wing_2 }
+	}
+}
+
+ATE_fra_moderate_wing_more = {
+	if = {
+		limit = { has_idea = fra_mod_wing_2 }
+		swap_ideas = { remove_idea = fra_mod_wing_2 add_idea = fra_mod_wing_3 }
+	}
+	if = {
+		limit = { has_idea = fra_mod_wing_1 }
+		swap_ideas = { remove_idea = fra_mod_wing_1 add_idea = fra_mod_wing_2 }
+	}
+	if = {
+		limit = { has_idea = fra_no_wing }
+		swap_ideas = { remove_idea = fra_no_wing add_idea = fra_mod_wing_1 }
+	}
+	if = {
+		limit = { has_idea = fra_rad_wing_1 }
+		swap_ideas = { remove_idea = fra_rad_wing_1 add_idea = fra_no_wing }
+	}
+	if = {
+		limit = { has_idea = fra_rad_wing_2 }
+		swap_ideas = { remove_idea = fra_rad_wing_2 add_idea = fra_rad_wing_1 }
+	}
+	if = {
+		limit = { has_idea = fra_rad_wing_3 }
+		swap_ideas = { remove_idea = fra_rad_wing_3 add_idea = fra_rad_wing_2 }
+	}
+}
+
+ATE_ger_frank_more_capitalists = {
+	add_to_variable = { ger_cap = 10 }
+	subtract_from_variable = { ger_uni = 10 }
+	custom_effect_tooltip = ate_ger_frank_more_cap_tt
+}
+
+ATE_ger_frank_more_unions = {
+	add_to_variable = { ger_uni = 10 }
+	subtract_from_variable = { ger_cap = 10 }
+	custom_effect_tooltip = ate_ger_frank_more_uni_tt
+}
+
+ATE_ger_frank_change_idea = {
+	if = {
+		limit = {
+			NOT = { has_idea = ger_frank_cap_60 }
+			check_variable = { ger_cap < 80 }
+			check_variable = { ger_cap > 59 }
+		}
+		swap_ideas = {
+			remove_idea = ger_frank_equil
+			add_idea = ger_frank_cap_60
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_idea = ger_frank_cap_80 }
+			check_variable = { ger_cap > 79 }
+		}
+		swap_ideas = {
+			remove_idea = ger_frank_cap_60
+			add_idea = ger_frank_cap_80
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_idea = ger_frank_uni_60 }
+			check_variable = { ger_uni < 80 }
+			check_variable = { ger_uni > 59 }
+		}
+		swap_ideas = {
+			remove_idea = ger_frank_equil
+			add_idea = ger_frank_uni_60
+		}
+	}
+	if = {
+		limit = {
+			NOT = { has_idea = ger_frank_uni_80 }
+			check_variable = { ger_uni > 79 }
+		}
+		swap_ideas = {
+			remove_idea = ger_frank_uni_60
+			add_idea = ger_frank_uni_80
+		}
+	}
+}
+
+ATE_remove_cap_loyality = {
+	if = {
+		limit = { has_idea = soc_cap_plus_1 }
+		swap_ideas = { remove_idea = soc_cap_plus_1 add_idea = soc_cap_0 }
+	}
+	if = {
+		limit = { has_idea = soc_cap_plus_2 }
+		swap_ideas = { remove_idea = soc_cap_plus_2 add_idea = soc_cap_plus_1 }
+	}
+	if = {
+		limit = { has_idea = soc_cap_plus_3 }
+		swap_ideas = { remove_idea = soc_cap_plus_3 add_idea = soc_cap_plus_2 }
+	}
+}
+
+ATE_add_cap_loyality = {
+	if = {
+		limit = { has_idea = soc_cap_plus_2 }
+		swap_ideas = { remove_idea = soc_cap_plus_2 add_idea = soc_cap_plus_3 }
+	}
+	if = {
+		limit = { has_idea = soc_cap_plus_1 }
+		swap_ideas = { remove_idea = soc_cap_plus_1 add_idea = soc_cap_plus_2 }
+	}
+	if = {
+		limit = { has_idea = soc_cap_0 }
+		swap_ideas = { remove_idea = soc_cap_0 add_idea = soc_cap_plus_1 }
+	}
+}
+
+ATE_eng_south_fund_more_effect = {
+	if = {
+		limit = { has_idea = eng_south_fond_3 }
+		swap_ideas = { remove_idea = eng_south_fond_3 add_idea = eng_south_fond_4 }
+	}
+	if = {
+		limit = { has_idea = eng_south_fond_2 }
+		swap_ideas = { remove_idea = eng_south_fond_2 add_idea = eng_south_fond_3 }
+	}
+	if = {
+		limit = { has_idea = eng_south_fond_1 }
+		swap_ideas = { remove_idea = eng_south_fond_1 add_idea = eng_south_fond_2 }
+	}
+	if = {
+		limit = { has_idea = eng_south_fond_0 }
+		swap_ideas = { remove_idea = eng_south_fond_0 add_idea = eng_south_fond_1 }
+	}
+}
+
+ate_influence_diplomacy = {
+	if = {
+		limit = { 
+			FROM = {
+				NOT = {
+					is_in_array = {
+						array = ROOT.influenced_countries
+						value = FROM.id
+					}
+				}
+			}
+		}
+		add_to_array = { array = ROOT.influenced_countries value = FROM.id }
+	}
+	if = {
+		limit = { FROM = { has_government = ROOT } }
+		FROM = { 
+			add_to_variable = { influence@ROOT = 8 } 
+			clamp_variable = {
+				var = influence@ROOT
+				min = 0
+				max = 100
+			}
+		}
+		PREV = {
+			ROOT = { 
+				add_to_variable = { influenced@PREV = 8 }
+				clamp_variable = {
+					var = influenced@PREV
+					min = 0
+					max = 100
+				}
+			}
+		}
+	}
+	if = {
+		limit = { FROM = { NOT = { has_government = ROOT } } }
+		FROM = { 
+			add_to_variable = { influence@ROOT = 4 } 
+			clamp_variable = {
+				var = influence@ROOT
+				min = 0
+				max = 100
+			}
+		}
+		PREV = {
+			ROOT = { 
+				add_to_variable = { influenced@PREV = 4 }
+				clamp_variable = {
+					var = influenced@PREV
+					min = 0
+					max = 100
+				}
+			}
+		}
+	}
+}
+
+ate_influence_add_50_diplomacy = {
+	if = {
+		limit = { 
+			FROM = {
+				NOT = {
+					is_in_array = {
+						array = ROOT.influenced_countries
+						value = FROM.id
+					}
+				}
+			}
+		}
+		add_to_array = { array = ROOT.influenced_countries value = FROM.id }
+	}
+	FROM = { 
+		add_to_variable = { influence@ROOT = 50 } 
+		clamp_variable = {
+			var = influence@ROOT
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		ROOT = { 
+			add_to_variable = { influenced@PREV = 50 } 
+			clamp_variable = {
+				var = influenced@PREV
+				min = 0
+				max = 100
+			}
+		}
+	}
+}
+
+ate_influence_minus_10_diplomacy = {
+	if = {
+		limit = { 
+			FROM = {
+				is_in_array = {
+					array = ROOT.influenced_countries
+					value = FROM.id
+				}
+				check_variable = { influence@ROOT < 11 }
+			}
+		}
+		remove_from_array = { array = ROOT.influenced_countries value = FROM.id }
+	}
+	FROM = { 
+		subtract_from_variable = { influence@ROOT = 10 } 
+		clamp_variable = {
+			var = influence@ROOT
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		ROOT = { 
+			subtract_from_variable = { influenced@PREV = 10 } 
+			clamp_variable = {
+				var = influenced@PREV
+				min = 0
+				max = 100
+			}
+		}
+	}
+}
+
+ate_influence_minus_all_diplomacy = {
+	if = {
+		limit = { 
+			FROM = {
+				is_in_array = {
+					array = ROOT.influenced_countries
+					value = FROM.id
+				}
+			}
+		}
+		remove_from_array = { array = ROOT.influenced_countries value = FROM.id }
+	}
+	if = {
+		limit = { 
+			ROOT = {
+				is_in_array = {
+					array = FROM.influenced_countries
+					value = ROOT.id
+				}
+			}
+		}
+		remove_from_array = { array = FROM.influenced_countries value = ROOT.id }
+	}
+	FROM = { clear_variable = influence@ROOT }
+	PREV = {
+		ROOT = { clear_variable = influenced@PREV }
+	}
+	ROOT = { clear_variable = influence@FROM }
+	ROOT = {
+		PREV = { clear_variable = influenced@ROOT }
+	}
+}
+
+ate_influence_party_boost = {
+	if = {
+		limit = { 
+			FROM = {
+				is_in_array = {
+					array = ROOT.influenced_countries
+					value = FROM.id
+				}
+				check_variable = { influence@ROOT < 9 }
+			}
+		}
+		remove_from_array = { array = ROOT.influenced_countries value = FROM.id }
+	}
+	FROM = { 
+		subtract_from_variable = { influence@ROOT = 8 } 
+		clamp_variable = {
+			var = influence@ROOT
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		add_popularity = {
+		    ideology = ROOT
+		    popularity = 0.02
+		}
+		ROOT = { 
+			subtract_from_variable = { influenced@PREV = 8 } 
+			clamp_variable = {
+				var = influenced@PREV
+				min = 0
+				max = 100
+			}
+		}
+	}
+}
+
+ate_influence_economic_puppet = {
+	if = {
+		limit = { 
+			FROM = {
+				is_in_array = {
+					array = ROOT.influenced_countries
+					value = FROM.id
+				}
+				check_variable = { influence@ROOT < 25 }
+			}
+		}
+		remove_from_array = { array = ROOT.influenced_countries value = FROM.id }
+	}
+	FROM = { 
+		subtract_from_variable = { influence@ROOT = 24 } 
+		clamp_variable = {
+			var = influence@ROOT
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		ROOT = { 
+			subtract_from_variable = { influenced@PREV = 24 } 
+			clamp_variable = {
+				var = influenced@PREV
+				min = 0
+				max = 100
+			}
+		}
+		if = {
+			limit = { ROOT = { tag = ENG } }
+			add_ideas = eng_economic_puppet
+			remove_ideas = ger_economic_puppet
+			remove_ideas = fra_econ_member
+		}
+		if = {
+			limit = { 
+				ROOT = { 
+					tag = GER
+					NOT = { has_idea = ger_european_union }
+				}
+			}
+			add_ideas = ger_economic_puppet
+			remove_ideas = eng_economic_puppet
+			remove_ideas = fra_econ_member
+		}
+		if = {
+			limit = { 
+				ROOT = { 
+					tag = GER
+					has_idea = ger_european_union
+				}
+			}
+			add_ideas = ger_european_member
+			remove_ideas = eng_economic_puppet
+			remove_ideas = fra_econ_member
+		}
+		if = {
+			limit = { ROOT = { tag = FRA } }
+			add_ideas = fra_econ_member
+			remove_ideas = ger_economic_puppet
+			remove_ideas = eng_economic_puppet
+		}
+	}
+}
+
+ate_influence_puppet = {
+	FROM = { 
+		subtract_from_variable = { influence@ROOT = 40 } 
+		clamp_variable = {
+			var = influence@ROOT
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		ROOT = { 
+			puppet = PREV
+			subtract_from_variable = { influenced@PREV = 40 } 
+			clamp_variable = {
+				var = influenced@PREV
+				min = 0
+				max = 100
+			}
+		}
+	}
+}
+
+ate_influence_minus_4_diplomacy = {
+	if = {
+		limit = { 
+			ROOT = {
+				is_in_array = {
+					array = PREV.influenced_countries
+					value = ROOT.id
+				}
+				check_variable = { influence@PREV < 6 }
+			}
+		}
+		remove_from_array = { array = PREV.influenced_countries value = ROOT.id }
+	}
+	ROOT = { 
+		subtract_from_variable = { influence@PREV = 4 } 
+		clamp_variable = {
+			var = influence@PREV
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		subtract_from_variable = { influenced@ROOT = 4 } 
+		clamp_variable = {
+			var = influenced@ROOT
+			min = 0
+			max = 100
+		}
+	}
+}
+
+ate_influence_minus_2_diplomacy = {
+	if = {
+		limit = { 
+			ROOT = {
+				is_in_array = {
+					array = PREV.influenced_countries
+					value = ROOT.id
+				}
+				check_variable = { influence@PREV < 3 }
+			}
+		}
+		remove_from_array = { array = PREV.influenced_countries value = ROOT.id }
+	}
+	ROOT = { 
+		subtract_from_variable = { influence@PREV = 2 } 
+		clamp_variable = {
+			var = influence@PREV
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		subtract_from_variable = { influenced@ROOT = 2 } 
+		clamp_variable = {
+			var = influenced@ROOT
+			min = 0
+			max = 100
+		}
+	}
+}
+
+ate_influence_no_puppet_diplomacy = {
+	if = {
+		limit = { 
+			ROOT = {
+				is_in_array = {
+					array = PREV.influenced_countries
+					value = ROOT.id
+				}
+				check_variable = { influence@PREV < 13 }
+			}
+		}
+		remove_from_array = { array = PREV.influenced_countries value = ROOT.id }
+	}
+	ROOT = { 
+		subtract_from_variable = { influence@PREV = 12 } 
+		clamp_variable = {
+			var = influence@PREV
+			min = 0
+			max = 100
+		}
+	}
+	PREV = {
+		end_puppet = ROOT
+		subtract_from_variable = { influenced@ROOT = 12 } 
+		clamp_variable = {
+			var = influenced@ROOT
+			min = 0
+			max = 100
+		}
+	}
+}
+
+ate_influence_no_economic_puppet_diplomacy = {
+	ROOT = {
+		remove_ideas = eng_economic_puppet
+		remove_ideas = ger_economic_puppet
+		remove_ideas = fra_econ_member
+		remove_ideas = ger_european_member
+	}
+}
+
+ate_influence_yes_economic_puppet_diplomacy = {
+	if = {
+		limit = { PREV = { tag = ENG } }
+		ROOT = { add_ideas = eng_economic_puppet }
+	}
+	if = {
+		limit = { 
+			PREV = { 
+				tag = GER
+				NOT = { has_idea = ger_european_union }
+			}
+		}
+		ROOT = { add_ideas = ger_economic_puppet }
+	}
+	if = {
+		limit = { 
+			PREV = { 
+				tag = GER
+				has_idea = ger_european_union
+			}
+		}
+		ROOT = { add_ideas = ger_european_member }
+	}
+	if = {
+		limit = { PREV = { tag = FRA } }
+		ROOT = { add_ideas = fra_econ_member }
+	}
+}
+

@@ -1,0 +1,14 @@
+﻿l_russian:
+ ### EMBARGO DIPLOMATIC ACTIONS ACTIONS ###
+ CW_EMBARGO_TITLE:0 "£embargo_texticon£ Ввести эмбарго"
+ CW_EMBARGO_ACTION_DESC:0 "Введение эмбарго на торговлю с этой державой не позволит им покупать у нас ресурсы.\n\nЭто не помешает нам покупать у них ресурсы, если они не наложат на нас эмбарго.\n\n§YВажно:§!\n - Нельзя накладывать эмбарго при законе §YЗакрытая экономика§!, так как отсутствует экспорт ресурсов.\n - При введении эмбарго §Yвлияние§! на страну будет обнулено." 
+ CW_EMBARGO_LOC:0 "Ввести эмбарго на торговлю с государством\n\n§Y[From.Getname]?§!\n\nЭто не позволит им покупать наши ресурсы.\nОни могут ввести ответное эмбарго."
+ CW_EMBARGO_INITIATED_TITLE:0 "[ROOT.GetAdjective] эмбарго"
+ CW_EMBARGO_INITIATED_DESC:0 "Государство §Y[ROOT.GetName]§!\n\nрешило ввести эмбарго на торговлю с нашей державой.\n\nВ результате мы больше не можем покупать у них ресурсы, но они могут покупать наши ресурсы."
+ CW_CANCEL_EMBARGO_TITLE:0 "£unembargo_texticon£ Отменить эмбарго"
+ CW_CANCEL_EMBARGO_ACTION_DESC:0 "Отмена эмбарго позволит другой державе покупать наши ресурсы."
+ CW_CANCEL_EMBARGO_LOC:0 "Отменить эмбарго на торговлю с государством\n\n§Y[From.Getname]?§!\n\nЭто позволит им покупать наши ресурсы.[FROM.UNSC_SANCTIONS_WARNING]"
+ CW_CANCEL_EMBARGO_INITIATED_TITLE:0 "[ROOT.GetAdjective] эмбарго отменено"
+ CW_CANCEL_EMBARGO_INITIATED_DESC:0 "Государство §Y[ROOT.GetName]§!\n\nрешило отменить эмбарго на торговлю с нами.\n\nЭто улучшит наши отношения и позволит нам покупать их ресурсы.[CW_CHECK_COUNTER_EMBARGO]"
+ CW_WE_ARE_EMBARGO_THEM:0 "\n\n§RВнимание:§! Это не приведёт к автоматическому снятию наложенного на них эмбарго!"
+ CW_CHECK_IS_EMBARGOED_BY_US:0 "Мы наложили на них эмбарго."

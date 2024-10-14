@@ -1,0 +1,203 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_report_event_ger_otto_wels"
+		texturefile = "gfx/event_pictures/report_event_ger_otto_wels.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_ger_wels_death"
+		texturefile = "gfx/event_pictures/news_event_ger_wels_death.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_ger_reichstag"
+		texturefile = "gfx/event_pictures/report_event_ger_reichstag.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_ger_reichstag"
+		texturefile = "gfx/event_pictures/news_event_ger_reichstag.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_ger_swedish_steel"
+		texturefile = "gfx/event_pictures/report_event_ger_swedish_steel.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_rom_codreanu_coup"
+		texturefile = "gfx/event_pictures/report_event_rom_codreanu_coup.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_rom_codreanu_coup"
+		texturefile = "gfx/event_pictures/news_event_rom_codreanu_coup.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_ger_cameroon"
+		texturefile = "gfx/event_pictures/report_event_ger_cameroon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_ger_east_afrika"
+		texturefile = "gfx/event_pictures/report_event_ger_east_afrika.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_de_la_roque"
+		texturefile = "gfx/event_pictures/report_event_fra_de_la_roque.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_catolic"
+		texturefile = "gfx/event_pictures/report_event_fra_catolic.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_ger_workers"
+		texturefile = "gfx/event_pictures/report_event_ger_workers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_doriot"
+		texturefile = "gfx/event_pictures/report_event_fra_doriot.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_ita_victor_emmanuel"
+		texturefile = "gfx/event_pictures/report_event_ita_victor_emmanuel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_ita_victor_emmanuel"
+		texturefile = "gfx/event_pictures/news_event_ita_victor_emmanuel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_troops"
+		texturefile = "gfx/event_pictures/report_event_fra_troops.dds"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_fra_troops"
+		texturefile = "gfx/event_pictures/news_event_fra_troops.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_aus_hitler"
+		texturefile = "gfx/event_pictures/report_event_aus_hitler.dds"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_aus_hitler"
+		texturefile = "gfx/event_pictures/news_event_aus_hitler.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_fra_navy"
+		texturefile = "gfx/event_pictures/report_event_fra_navy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_news_event_fra_navy"
+		texturefile = "gfx/event_pictures/news_event_fra_navy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_tur_ataturk"
+		texturefile = "gfx/event_pictures/report_event_tur_ataturk.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_cze_sudeten"
+		texturefile = "gfx/event_pictures/news_event_cze_sudeten.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_generic_bunker"
+		texturefile = "gfx/event_pictures/report_event_generic_bunker.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_bel_degrelle"
+		texturefile = "gfx/event_pictures/report_event_bel_degrelle.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_bel_degrelle"
+		texturefile = "gfx/event_pictures/news_event_bel_degrelle.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_aus_hitler_2"
+		texturefile = "gfx/event_pictures/report_event_aus_hitler_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_ger_thalmann"
+		texturefile = "gfx/event_pictures/report_event_ger_thalmann.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_eng_farmer"
+		texturefile = "gfx/event_pictures/report_event_eng_farmer.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_eng_aioc"
+		texturefile = "gfx/event_pictures/report_event_eng_aioc.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_eng_vauxhall"
+		texturefile = "gfx/event_pictures/report_event_eng_vauxhall.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_eng_irish_const"
+		texturefile = "gfx/event_pictures/report_event_eng_irish_const.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_eng_irish_const"
+		texturefile = "gfx/event_pictures/news_event_eng_irish_const.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_man_army"
+		texturefile = "gfx/event_pictures/news_event_man_army.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_eng_jewish_immigration"
+		texturefile = "gfx/event_pictures/report_event_eng_jewish_immigration.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_fra_commies_propaganda"
+		texturefile = "gfx/event_pictures/report_event_fra_commies_propaganda.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_fra_commies_murder"
+		texturefile = "gfx/event_pictures/report_event_fra_commies_murder.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_fra_commies_terror"
+		texturefile = "gfx/event_pictures/report_event_fra_commies_terror.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_nuclear_research"
+		texturefile = "gfx/event_pictures/report_event_nuclear_research.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_report_event_fra_chevalier"
+		texturefile = "gfx/event_pictures/report_event_fra_chevalier.dds"
+	}
+
+}

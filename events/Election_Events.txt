@@ -1,0 +1,462 @@
+﻿###########################
+# Election Events
+###########################
+
+add_namespace = elections
+
+#Start
+country_event = {
+	id = elections.1
+	title = elections.1.t
+	desc = elections.1.d
+	picture = GFX_report_event_election_vote
+	
+	trigger = {
+		has_elections = yes
+		NOT = { has_country_flag = ATE_elections_war }
+	}
+	
+	is_triggered_only = yes
+
+	immediate = { 
+		hidden_effect = {
+			set_country_flag = ATE_elections
+			ROOT = { country_event = { id = elections.2 days = 5 } }
+		}
+	}
+	
+	option = {
+		name = elections.1.a
+		ai_chance = { 
+			base = 5
+		}
+		
+	}
+}
+
+#Get it
+country_event = {
+	id = elections.2
+	title = elections.2.t
+	desc = elections.2.d
+	picture = GFX_report_event_election_vote
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.2.a
+		clear_variable = all_parl
+		clear_variable = dem_parl
+		clear_variable = lib_parl
+		clear_variable = soc_parl
+		clear_variable = com_parl
+		clear_variable = fas_parl
+		clear_variable = cent_parl
+		clear_variable = neut_parl
+		if = {
+			limit = {
+				democratic > 0.05
+				NOT = { has_country_flag = ATE_NO_democratic }
+			}
+			set_variable = {
+				var = dem_parl
+				value = party_popularity@democratic
+			}
+			multiply_variable = {
+				var = dem_parl
+				value = 100
+			}
+			round_variable = dem_parl
+			multiply_variable = {
+				var = dem_parl
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				liberalism > 0.05
+				NOT = { has_country_flag = ATE_NO_liberalism }
+			}
+			set_variable = { lib_parl = party_popularity@liberalism } 
+			multiply_variable = {
+				var = lib_parl
+				value = 100
+			}
+			round_variable = lib_parl
+			multiply_variable = {
+				var = lib_parl
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				socialism > 0.05
+				NOT = { has_country_flag = ATE_NO_socialism }
+			}
+			set_variable = { soc_parl = party_popularity@socialism } 
+			multiply_variable = {
+				var = soc_parl
+				value = 100
+			}
+			round_variable = soc_parl
+			multiply_variable = {
+				var = soc_parl
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				communism > 0.05
+				NOT = { has_country_flag = ATE_NO_communism }
+			}
+			set_variable = { com_parl = party_popularity@communism } 
+			multiply_variable = {
+				var = com_parl
+				value = 100
+			}
+			round_variable = com_parl
+			multiply_variable = {
+				var = com_parl
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				fascism > 0.05
+				NOT = { has_country_flag = ATE_NO_fascism }
+			}
+			set_variable = { fas_parl = party_popularity@fascism } 
+			multiply_variable = {
+				var = fas_parl
+				value = 100
+			}
+			round_variable = fas_parl
+			multiply_variable = {
+				var = fas_parl
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				centrism > 0.05
+				NOT = { has_country_flag = ATE_NO_centrism }
+			}
+			set_variable = { cent_parl = party_popularity@centrism } 
+			multiply_variable = {
+				var = cent_parl
+				value = 100
+			}
+			round_variable = cent_parl
+			multiply_variable = {
+				var = cent_parl
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				neutrality > 0.05
+				NOT = { has_country_flag = ATE_NO_neutrality }
+			}
+			set_variable = {
+				var = neut_parl
+				value = party_popularity@neutrality
+			}
+			multiply_variable = {
+				var = neut_parl
+				value = 100
+			}
+			round_variable = neut_parl
+			multiply_variable = {
+				var = neut_parl
+				value = 2
+			}
+		}
+		add_to_variable = {
+			var = all_parl
+			value = dem_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = lib_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = soc_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = com_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = nat_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = fas_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = cent_parl
+		}
+		add_to_variable = {
+			var = all_parl
+			value = neut_parl
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@democratic > party_popularity@liberalism }
+				check_variable = { party_popularity@democratic > party_popularity@socialism }
+				check_variable = { party_popularity@democratic > party_popularity@communism }
+				check_variable = { party_popularity@democratic > party_popularity@fascism }
+				check_variable = { party_popularity@democratic > party_popularity@centrism }
+				check_variable = { party_popularity@democratic > party_popularity@neutrality }
+				NOT = { has_country_flag = ATE_NO_democratic }
+			}
+			ROOT = { country_event = { id = elections.3 days = 2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@liberalism > party_popularity@democratic }
+				check_variable = { party_popularity@liberalism > party_popularity@socialism }
+				check_variable = { party_popularity@liberalism > party_popularity@communism }
+				check_variable = { party_popularity@liberalism > party_popularity@fascism }
+				check_variable = { party_popularity@liberalism > party_popularity@centrism }
+				check_variable = { party_popularity@liberalism > party_popularity@neutrality }
+				NOT = { has_country_flag = ATE_NO_liberalism }
+			}
+			ROOT = { country_event = { id = elections.4 days = 2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@socialism > party_popularity@democratic }
+				check_variable = { party_popularity@socialism > party_popularity@liberalism }
+				check_variable = { party_popularity@socialism > party_popularity@communism }
+				check_variable = { party_popularity@socialism > party_popularity@fascism }
+				check_variable = { party_popularity@socialism > party_popularity@centrism }
+				check_variable = { party_popularity@socialism > party_popularity@neutrality }
+				NOT = { has_country_flag = ATE_NO_socialism }
+			}
+			ROOT = { country_event = { id = elections.5 days = 2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@communism > party_popularity@democratic }
+				check_variable = { party_popularity@communism > party_popularity@liberalism }
+				check_variable = { party_popularity@communism > party_popularity@socialism }
+				check_variable = { party_popularity@communism > party_popularity@fascism }
+				check_variable = { party_popularity@communism > party_popularity@centrism }
+				check_variable = { party_popularity@communism > party_popularity@neutrality }
+				NOT = { has_country_flag = ATE_NO_communism }
+			}
+			ROOT = { country_event = { id = elections.6 days = 2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@fascism > party_popularity@democratic }
+				check_variable = { party_popularity@fascism > party_popularity@liberalism }
+				check_variable = { party_popularity@fascism > party_popularity@socialism }
+				check_variable = { party_popularity@fascism > party_popularity@communism }
+				check_variable = { party_popularity@fascism > party_popularity@centrism }
+				check_variable = { party_popularity@fascism > party_popularity@neutrality }
+				NOT = { has_country_flag = ATE_NO_fascism }
+			}
+			ROOT = { country_event = { id = elections.7 days = 2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@neutrality > party_popularity@democratic }
+				check_variable = { party_popularity@neutrality > party_popularity@liberalism }
+				check_variable = { party_popularity@neutrality > party_popularity@socialism }
+				check_variable = { party_popularity@neutrality > party_popularity@fascism }
+				check_variable = { party_popularity@neutrality > party_popularity@communism }
+				check_variable = { party_popularity@neutrality > party_popularity@centrism }
+				NOT = { has_country_flag = ATE_NO_neutrality }
+			}
+			ROOT = { country_event = { id = elections.9 days = 2 } }
+		}
+		if = {
+			limit = {
+				check_variable = { party_popularity@centrism > party_popularity@democratic }
+				check_variable = { party_popularity@centrism > party_popularity@liberalism }
+				check_variable = { party_popularity@centrism > party_popularity@socialism }
+				check_variable = { party_popularity@centrism > party_popularity@fascism }
+				check_variable = { party_popularity@centrism > party_popularity@communism }
+				check_variable = { party_popularity@centrism > party_popularity@neutrality }
+				NOT = { has_country_flag = ATE_NO_centrism }
+			}
+			ROOT = { country_event = { id = elections.8 days = 2 } }
+		}
+	}
+}
+
+#Democratic win
+country_event = {
+	id = elections.3
+	title = elections.3.t
+	desc = elections.3.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.3.a
+		if = {
+			limit = {
+				NOT = { has_government = democratic }
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+
+#Liberal win
+country_event = {
+	id = elections.4
+	title = elections.4.t
+	desc = elections.4.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.4.a
+		if = {
+			limit = {
+				NOT = { has_government = liberalism }
+			}
+			set_politics = {
+				ruling_party = liberalism
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+
+#Socialist win
+country_event = {
+	id = elections.5
+	title = elections.5.t
+	desc = elections.5.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.5.a
+		if = {
+			limit = {
+				NOT = { has_government = socialism }
+			}
+			set_politics = {
+				ruling_party = socialism
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+
+#Communist win
+country_event = {
+	id = elections.6
+	title = elections.6.t
+	desc = elections.6.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.6.a
+		if = {
+			limit = {
+				NOT = { has_government = communism }
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+
+#Fascist win
+country_event = {
+	id = elections.7
+	title = elections.7.t
+	desc = elections.7.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.7.a
+		if = {
+			limit = {
+				NOT = { has_government = fascism }
+			}
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+
+#Centrism win
+country_event = {
+	id = elections.8
+	title = elections.8.t
+	desc = elections.8.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.8.a
+		if = {
+			limit = {
+				NOT = { has_government = centrism }
+			}
+			set_politics = {
+				ruling_party = centrism
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+
+#Neutrality win
+country_event = {
+	id = elections.9
+	title = elections.9.t
+	desc = elections.9.d
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = elections.9.a
+		if = {
+			limit = {
+				NOT = { has_government = neutrality }
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+		}
+		clr_country_flag = ATE_elections
+	}
+}
+

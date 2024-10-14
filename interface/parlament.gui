@@ -1,0 +1,718 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "economic_alliance_politics_container"
+		position = { x= 0 y= 0 }
+			
+		iconType = {
+			name ="no_economic_icon"
+			spriteType = "GFX_econ_economic_no"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_NO_ALLIANCE_ICON"
+		}
+		
+		iconType = {
+			name ="france_economic_member_icon"
+			spriteType = "GFX_econ_economic_france"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_FRANCE_MEMBER_ICON"
+		}
+		
+		iconType = {
+			name ="france_leader_economic_icon"
+			spriteType = "GFX_econ_economic_france"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_FRANCE_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="germany_economic_leader_icon"
+			spriteType = "GFX_econ_economic_germany"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_GERMANY_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="germany_economic_member_icon"
+			spriteType = "GFX_econ_economic_germany"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_GERMANY_MEMBER_ICON"
+		}
+		
+		iconType = {
+			name ="britain_economic_leader_icon"
+			spriteType = "GFX_econ_economic_britain"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_BRITAIN_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="britain_economic_member_icon"
+			spriteType = "GFX_econ_economic_britain"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_BRITAIN_MEMBER_ICON"
+		}
+		
+		iconType = {
+			name ="europe_economic_leader_icon"
+			spriteType = "GFX_econ_economic_europe"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_EUROPE_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="europe_economic_member_icon"
+			spriteType = "GFX_econ_economic_europe"
+			position = { x= 175 y = 55 }
+			pdx_tooltip = "ECON_EUROPE_MEMBER_ICON"
+		}
+	}
+	
+	containerWindowType = {
+		name = "economic_alliance_diplomatic_container"
+		position = { x= 0 y= 0 }
+			
+		iconType = {
+			name ="no_economic_icon"
+			spriteType = "GFX_econ_economic_no"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_NO_ALLIANCE_DIP_ICON"
+		}
+		
+		iconType = {
+			name ="france_economic_leader_icon"
+			spriteType = "GFX_econ_economic_france"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_FRANCE_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="france_economic_member_icon"
+			spriteType = "GFX_econ_economic_france"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_FRANCE_MEMBER_ICON"
+		}
+		
+		iconType = {
+			name ="germany_economic_leader_icon"
+			spriteType = "GFX_econ_economic_germany"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_GERMANY_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="germany_economic_member_icon"
+			spriteType = "GFX_econ_economic_germany"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_GERMANY_MEMBER_ICON"
+		}
+		
+		iconType = {
+			name ="britain_economic_leader_icon"
+			spriteType = "GFX_econ_economic_britain"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_BRITAIN_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="britain_economic_member_icon"
+			spriteType = "GFX_econ_economic_britain"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_BRITAIN_MEMBER_ICON"
+		}
+		
+		iconType = {
+			name ="europe_economic_leader_icon"
+			spriteType = "GFX_econ_economic_europe"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_EUROPE_LEADER_ICON"
+		}
+		
+		iconType = {
+			name ="europe_economic_member_icon"
+			spriteType = "GFX_econ_economic_europe"
+			scale = 0.9
+			position = { x= 147 y = 198 }
+			pdx_tooltip = "ECON_EUROPE_MEMBER_ICON"
+		}
+	}
+	
+	containerWindowType = {
+		name = "parlament_container"
+		position = { x= 0 y= 0 }
+			
+		buttonType = {
+			name ="parlament_icon"
+			spriteType = "GFX_reinstate_button"
+			position = { x= 30 y = 374 }
+			pdx_tooltip = "PARLAMENT_ICON"
+		}
+		
+		instantTextboxType = {
+			name = "parlament_text"
+			position = { x = 45 y = 387 }
+			font = "hoi_16mbs"
+			text = "PARLAMENT_T"
+			maxWidth = 100
+			alwaystransparent = yes
+			format = center
+		}
+	
+		buttonType = {
+			name ="social_icon"
+			spriteType = "GFX_reinstate_button"
+			position = { x= 185 y = 374 }
+			pdx_tooltip = "SOCIAL_ICON"
+		}
+		
+		instantTextboxType = {
+			name = "social_text"
+			position = { x = 202 y = 387 }
+			font = "hoi_16mbs"
+			text = "SOCIAL_T"
+			maxWidth = 100
+			alwaystransparent = yes
+			format = center
+		}
+		
+	}
+
+	containerWindowType = {
+		name = "parlament_window"
+		position = { x = 540 y = 80 }	
+		size = { width=512 height=550 }
+		show_sound = open_sub_window
+		moveable = no
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_pol_parl_window"
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = { x = 32 y = 20 }
+			font = "hoi_36header"
+			text = "PARL_TEXT"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "democratic_parl"
+			position = {x=60 y=144}
+			font = "hoi_20b"
+			text = "DEM_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "liberalism_parl"
+			position = {x=60 y=176}
+			font = "hoi_20b"
+			text = "LIB_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "socialism_parl"
+			position = {x=60 y=208}
+			font = "hoi_20b"
+			text = "SOC_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "communism_parl"
+			position = {x=60 y=240}
+			font = "hoi_20b"
+			text = "COM_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "fascism_parl"
+			position = {x=60 y=272}
+			font = "hoi_20b"
+			text = "FAS_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "centrism_parl"
+			position = {x=60 y=304}
+			font = "hoi_20b"
+			text = "CENT_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "neutrality_parl"
+			position = {x=60 y=337}
+			font = "hoi_20b"
+			text = "NEUT_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "all_parl"
+			position = {x=-35 y=80}
+			font = "hoi_20b"
+			text = "ALL_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "yes_parl"
+			position = {x=190 y=80}
+			font = "hoi_20b"
+			text = "YES_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = center
+		}
+		
+		instantTextboxType = {
+			name = "no_parl"
+			position = {x=190 y=99}
+			font = "hoi_20b"
+			text = "NO_PARL_TEXT"
+			maxWidth = 400
+			maxHeight = 20
+			format = center
+		}
+		
+		buttonType = {
+			name = "remove_parl_but"
+			position = { x = 150 y = 380 }
+			quadTextureSprite = "GFX_button_221x34"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			buttonText = "REMOVE_PARL_TEXT"
+			pdx_tooltip = "REM_PARL_TT"
+		}
+		
+		buttonType = {
+			name = "elect_parl_but"
+			position = { x = 150 y = 420 }
+			quadTextureSprite = "GFX_button_221x34"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			buttonText = "ELEC_PARL_TEXT"
+			pdx_tooltip = "ELEC_PARL_TT"
+		}
+		
+		buttonType = {
+			name = "chres_parl_but"
+			position = { x = 150 y = 460 }
+			quadTextureSprite = "GFX_button_221x34"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			buttonText = "CHS_PARL_TEXT"
+			pdx_tooltip = "CHS_PARL_TT"
+		}
+		
+		buttonType = {
+			name = "chres_no_parl_but"
+			position = { x = 150 y = 460 }
+			quadTextureSprite = "GFX_button_221x34"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			buttonText = "CHS_NO_PARL_TEXT"
+			pdx_tooltip = "CHS_NO_PARL_TT"
+		}
+		
+		buttonType = {
+			name = "help"
+			position = { x = -120 y = 22 }
+			quadTextureSprite ="GFX_help_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_RIGHT"
+			pdx_tooltip = "ATE_PARLAMENT_HELP"
+		}
+		
+		buttonType = {
+			name = "close"
+			position = { x = -38 y = 4 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+		
+	
+	containerWindowType = {
+		name = "social_window"
+		position = { x = 13 y = 475 }	
+		size = { width=512 height=305 }
+		show_sound = open_sub_window
+		moveable = no
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_social_sphere_window"
+		}
+		
+		instantTextboxType = {
+			name = "title"
+			position = { x = 32 y = 12 }
+			font = "hoi_36header"
+			text = "SOCIAL_TEXT"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+		
+		iconType ={
+			name ="soc_cap_0"
+			spriteType = "GFX_soc_cap_0"
+			position = { x= 17 y = 66 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip_delayed = "SOC_CAP_INFO"
+		}
+		
+		iconType ={
+			name ="soc_cap_plus_1"
+			spriteType = "GFX_soc_cap_plus_1"
+			position = { x= 17 y = 66 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_CAP_PLUS_1_INFO"
+			pdx_tooltip_delayed = "SOC_CAP_INFO"
+		}
+		
+		iconType ={
+			name ="soc_cap_plus_2"
+			spriteType = "GFX_soc_cap_plus_2"
+			position = { x= 17 y = 66 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_CAP_PLUS_2_INFO"
+			pdx_tooltip_delayed = "SOC_CAP_INFO"
+		}
+		
+		iconType ={
+			name ="soc_cap_plus_3"
+			spriteType = "GFX_soc_cap_plus_3"
+			position = { x= 17 y = 66 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_CAP_PLUS_3_INFO"
+			pdx_tooltip_delayed = "SOC_CAP_INFO"
+		}
+		
+		instantTextboxType = {
+			name = "soc_high_class"
+			position = {x=100 y=58}
+			font = "hoi_20b"
+			text = "SOC_HIGH_LEVEL_TEXT"
+			maxWidth = 150
+			maxHeight = 20
+			format = left
+			pdx_tooltip = "SOC_CAP_INFO"
+		}
+		
+		buttonType = {
+			name = "more_capital"
+			position = { x = 120 y = 87 }
+			quadTextureSprite = "GFX_government_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "NEW_CAPITAL_TT"
+		}
+		
+		iconType = {
+			name = "icon_more_capital"
+			spriteType = "GFX_factory_bombing_defence_icon"
+			position = { x = 126 y = 88 }
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "more_capital_text"
+			position = { x = 154 y = 95 }
+			font = "hoi_16mbs"
+			maxWidth = 130
+			maxHeight = 20
+			fixedsize = yes
+			text = "NEW_CAPITAL_TEXT"
+			alwaystransparent = yes
+			format = center
+		}
+		
+		buttonType = {
+			name = "invest_industry"
+			position = { x = 300 y = 87 }
+			quadTextureSprite = "GFX_government_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "INVEST_INDUSTRY_TT"
+		}
+		
+		iconType = {
+			name = "icon_invest_industry"
+			spriteType = "GFX_efficiency_icon"
+			position = { x = 306 y = 93 }
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "invest_industry_text"
+			position = { x = 333 y = 95 }
+			font = "hoi_16mbs"
+			maxWidth = 130
+			maxHeight = 20
+			fixedsize = yes
+			text = "INVEST_INDUSTRY_TEXT"
+			alwaystransparent = yes
+			format = center
+		}
+		
+		
+		
+		iconType ={
+			name ="soc_mid_0"
+			spriteType = "GFX_soc_mid_0"
+			position = { x= 17 y = 143 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip_delayed = "SOC_MID_INFO"
+		}
+		
+		iconType ={
+			name ="soc_mid_plus_1"
+			spriteType = "GFX_soc_mid_plus_1"
+			position = { x= 17 y = 143 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_MID_PLUS_1_INFO"
+			pdx_tooltip_delayed = "SOC_MID_INFO"
+		}
+		
+		iconType ={
+			name ="soc_mid_plus_2"
+			spriteType = "GFX_soc_mid_plus_2"
+			position = { x= 17 y = 143 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_MID_PLUS_2_INFO"
+			pdx_tooltip_delayed = "SOC_MID_INFO"
+		}
+		
+		iconType ={
+			name ="soc_mid_plus_3"
+			spriteType = "GFX_soc_mid_plus_3"
+			position = { x= 17 y = 143 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_MID_PLUS_3_INFO"
+			pdx_tooltip_delayed = "SOC_MID_INFO"
+		}
+		
+		instantTextboxType = {
+			name = "soc_middle_class"
+			position = {x=100 y=135}
+			font = "hoi_20b"
+			text = "SOC_MIDDLE_LEVEL_TEXT"
+			maxWidth = 150
+			maxHeight = 20
+			format = left
+			pdx_tooltip = "SOC_MID_INFO"
+		}
+		
+		buttonType = {
+			name = "more_admins"
+			position = { x = 120 y = 164 }
+			quadTextureSprite = "GFX_government_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "NEW_ADMINS_TT"
+		}
+		
+		iconType = {
+			name = "icon_new_admins"
+			spriteType = "GFX_pol_power_icon"
+			position = { x = 125 y = 164 }
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "new_admins_text"
+			position = { x = 154 y = 172 }
+			font = "hoi_16mbs"
+			maxWidth = 130
+			maxHeight = 20
+			fixedsize = yes
+			text = "NEW_ADMINS_TEXT"
+			alwaystransparent = yes
+			format = center
+		}
+		
+		buttonType = {
+			name = "stabilisation"
+			position = { x = 300 y = 164 }
+			quadTextureSprite = "GFX_government_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "STABILISATION_TT"
+		}
+		
+		iconType = {
+			name = "icon_stabilisation"
+			spriteType = "GFX_resistance_icon"
+			position = { x = 304 y = 166 }
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "stabilisation_text"
+			position = { x = 334 y = 172 }
+			font = "hoi_16mbs"
+			maxWidth = 130
+			maxHeight = 20
+			fixedsize = yes
+			text = "STABILISATION_TEXT"
+			alwaystransparent = yes
+			format = center
+		}
+		
+		
+		
+		iconType ={
+			name ="soc_lab_0"
+			spriteType = "GFX_soc_lab_0"
+			position = { x= 17 y = 220 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip_delayed = "SOC_LAB_INFO"
+		}
+		
+		iconType ={
+			name ="soc_lab_plus_3"
+			spriteType = "GFX_soc_lab_plus_3"
+			position = { x= 17 y = 220 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_LAB_PLUS_3_INFO"
+			pdx_tooltip_delayed = "SOC_LAB_INFO"
+		}
+		
+		iconType ={
+			name ="soc_lab_plus_2"
+			spriteType = "GFX_soc_lab_plus_2"
+			position = { x= 17 y = 220 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_LAB_PLUS_2_INFO"
+			pdx_tooltip_delayed = "SOC_LAB_INFO"
+		}
+		
+		iconType ={
+			name ="soc_lab_plus_1"
+			spriteType = "GFX_soc_lab_plus_1"
+			position = { x= 17 y = 220 }
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "SOC_LAB_PLUS_1_INFO"
+			pdx_tooltip_delayed = "SOC_LAB_INFO"
+		}
+		
+		instantTextboxType = {
+			name = "soc_low_class"
+			position = {x=100 y=212}
+			font = "hoi_20b"
+			text = "SOC_LOW_LEVEL_TEXT"
+			maxWidth = 150
+			maxHeight = 20
+			format = left
+			pdx_tooltip = "SOC_LAB_INFO"
+		}
+		
+		buttonType = {
+			name = "more_immigration"
+			position = { x = 120 y = 241 }
+			quadTextureSprite = "GFX_government_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "MORE_IMM_TT"
+		}
+		
+		iconType = {
+			name = "icon_new_immigration"
+			spriteType = "GFX_manpower_icon"
+			position = { x = 124 y = 243 }
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "more_immigration_text"
+			position = { x = 154 y = 249 }
+			font = "hoi_16mbs"
+			maxWidth = 130
+			maxHeight = 20
+			fixedsize = yes
+			text = "MORE_IMM_TEXT"
+			alwaystransparent = yes
+			format = center
+		}
+		
+		buttonType = {
+			name = "coop_unions"
+			position = { x = 300 y = 241 }
+			quadTextureSprite = "GFX_government_button"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			pdx_tooltip = "COOP_UNIONS_TT"
+		}
+		
+		iconType = {
+			name = "icon_coop_unions"
+			spriteType = "GFX_production_output_icon"
+			position = { x = 304 y = 244 }
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "coop_unions_text"
+			position = { x = 335 y = 249 }
+			font = "hoi_16mbs"
+			maxWidth = 130
+			maxHeight = 20
+			fixedsize = yes
+			text = "COOP_UNIONS_TEXT"
+			alwaystransparent = yes
+			format = center
+		}
+		
+		buttonType = {
+			name = "close"
+			position = { x = -38 y = 4 }
+			quadTextureSprite ="GFX_closebutton"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+	}
+
+
+
+}

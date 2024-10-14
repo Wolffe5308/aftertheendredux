@@ -1,0 +1,22 @@
+state={
+	id=798
+	name="STATE_798"
+
+	history={
+		owner = TRK
+		victory_points = {
+			7597 1
+		}
+		add_core_of = TRK
+		buildings = {
+			infrastructure = 1
+		}
+	}
+
+	provinces={
+		4300 4492 7243 7556 7597 7600 7657 10452 10506 10508 12385 12329 12487 12658 
+	}
+	manpower=667036
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+}

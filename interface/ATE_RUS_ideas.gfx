@@ -1,0 +1,114 @@
+spriteTypes = {
+	
+	#Ministers
+	spriteType = {
+		name = "GFX_idea_alexander_hwostov"
+		texturefile = "gfx/interface/ideas/idea_russia_alexander_hwostow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_georgiy_lwow"
+		texturefile = "gfx/interface/ideas/idea_russia_georgiy_lwow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_alexander_trepov"
+		texturefile = "gfx/interface/ideas/idea_russia_alexander_trepov.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nikolay_golizin"
+		texturefile = "gfx/interface/ideas/idea_russia_nikolay_golizin.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_siemens_schuckertwerke"
+		textureFile = "gfx/interface/ideas/idea_siemens.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_petersburg_polytechnical_institute"
+		textureFile = "gfx/interface/ideas/idea_leningrad_polytechnical_institute.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ivan_romanovskiy"
+		textureFile = "gfx/interface/ideas/idea_russia_ivan_romanovskiy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nikolay_vikorst"
+		textureFile = "gfx/interface/ideas/idea_russia_nikolay_vikorst.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nikolay_zukovskiy"
+		textureFile = "gfx/interface/ideas/idea_russia_nikolay_zukovskiy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_petr_wrangel"
+		textureFile = "gfx/interface/ideas/idea_russia_petr_wrangel.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_lavr_kornilov"
+		textureFile = "gfx/interface/ideas/idea_russia_lavr_kornilov.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_anton_denikin"
+		textureFile = "gfx/interface/ideas/idea_russia_anton_denikin.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_alexander_kolchak"
+		textureFile = "gfx/interface/ideas/idea_russia_alexander_kolchak.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_jewgeniy_miller"
+		textureFile = "gfx/interface/ideas/idea_russia_jewgeniy_miller.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_josep_bashko"
+		textureFile = "gfx/interface/ideas/idea_russia_josep_bashko.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_alexander_romanov"
+		textureFile = "gfx/interface/ideas/idea_russia_alexander_romanov.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_petr_krasnov"
+		textureFile = "gfx/interface/ideas/idea_russia_petr_krasnov.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nikolay_udenich"
+		textureFile = "gfx/interface/ideas/idea_russia_nikolay_udenich.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_eduard_tomson"
+		textureFile = "gfx/interface/ideas/idea_russia_eduard_tomson.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_mihail_alexeev"
+		textureFile = "gfx/interface/ideas/idea_russia_mihail_alexeev.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_vasiliy_kanin"
+		textureFile = "gfx/interface/ideas/idea_russia_vasiliy_kanin.dds"
+	}
+	
+	#Ideas
+	spriteType = {
+		name = "GFX_idea_rus_revolutions_limit"
+		texturefile = "gfx/interface/ideas/idea_mex_revolutionary_army.dds"
+	}
+}

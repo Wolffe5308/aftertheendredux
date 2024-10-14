@@ -1,0 +1,71 @@
+﻿capital = 105 # Montenegro
+
+oob = "MNT_1936"
+set_research_slots = 2
+
+# Starting tech
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+}
+
+give_guarantee = SER
+
+add_ideas = {
+	volunteer_only
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1934.1.11"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 13
+	liberalism = 0
+	socialism = 10
+	communism = 2
+	fascism = 0
+	centrism = 31
+	neutrality = 44
+}
+
+create_country_leader = {
+	name = "Sekula Drljević"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
+	expire = "1953.3.1"
+	ideology = fascism_ideology
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Danilo II"
+	desc = ""
+	picture = "gfx/leaders/MNT/Portrait_Montenegro_Danilo_II.dds"
+	expire = "1953.3.1"
+	ideology = oligarchism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Blažo Jovanović"
+	desc = ""
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
+	expire = "1953.3.1"
+	ideology = leninism
+	traits = {
+		
+	}
+}
+
+

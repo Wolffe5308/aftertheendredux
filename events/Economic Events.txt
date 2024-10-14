@@ -1,0 +1,227 @@
+﻿###########################
+# Economic Events
+###########################
+
+add_namespace = economic
+
+#Постройка фабрики капиталистами
+country_event = {
+	id = economic.1
+	title = economic.1.t
+	desc = economic.1.d
+	picture = GFX_report_event_generic_factory
+	
+	trigger = {
+		NOT = { has_country_flag = no_cap_factories_flag }
+		check_variable = { cap_num > 10 }
+		check_variable = { cap_build < cap_factories }
+		any_owned_state = {
+			is_in_home_area = yes
+			custom_trigger_tooltip = {
+				tooltip = free_building_slots_tt
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 125
+		modifier = {
+			factor = 0.6
+			OR = {
+				has_idea = economic_boom
+				has_idea = free_economic_boom
+			}
+		}
+		modifier = {
+			factor = 0.7
+			OR = {
+				has_idea = economic_groth
+				has_idea = free_economic_groth
+			}
+		}
+	}
+	
+	hidden = yes
+
+	option = {
+		name = economic.1.a
+		ai_chance = { 
+			base = 1
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_1 > 0 }
+				check_variable = { cap_build_2 > 0 }
+				check_variable = { cap_build_3 > 0 }
+				check_variable = { cap_build_4 > 0 }
+				check_variable = { cap_build_5 = 0 }
+			}
+			activate_decision = cap_build_a_factory_5
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_1 > 0 }
+				check_variable = { cap_build_2 > 0 }
+				check_variable = { cap_build_3 > 0 }
+				check_variable = { cap_build_4 = 0 }
+			}
+			activate_decision = cap_build_a_factory_4
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_1 > 0 }
+				check_variable = { cap_build_2 > 0 }
+				check_variable = { cap_build_3 = 0 }
+			}
+			activate_decision = cap_build_a_factory_3
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_1 > 0 }
+				check_variable = { cap_build_2 = 0 }
+			}
+			activate_decision = cap_build_a_factory_2
+		}
+		if = {
+			limit = { 
+				check_variable = { cap_build_1 = 0 }
+			}
+			activate_decision = cap_build_a_factory
+		}
+		subtract_from_variable = { cap_num = 10 }
+	}
+}
+
+#Постройка завода капиталистами
+country_event = {
+	id = economic.2
+	title = economic.2.t
+	desc = economic.2.d
+	picture = GFX_report_event_generic_factory
+	
+	trigger = {
+		NOT = { has_country_flag = no_cap_factories_flag }
+		check_variable = { cap_num > 10 }
+		check_variable = { cap_build < cap_factories }
+		any_owned_state = {
+			is_in_home_area = yes
+			custom_trigger_tooltip = {
+				tooltip = free_building_slots_tt
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 150
+		modifier = {
+			factor = 0.6
+			OR = {
+				has_idea = economic_boom
+				has_idea = free_economic_boom
+			}
+		}
+		modifier = {
+			factor = 0.7
+			OR = {
+				has_idea = economic_groth
+				has_idea = free_economic_groth
+			}
+		}
+	}
+	
+	hidden = yes
+
+	option = {
+		name = economic.2.a
+		ai_chance = { 
+			base = 1
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_arms_1 > 0 }
+				check_variable = { cap_build_arms_2 > 0 }
+				check_variable = { cap_build_arms_3 > 0 }
+				check_variable = { cap_build_arms_4 = 0 }
+			}
+			activate_decision = cap_build_a_arms_4
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_arms_1 > 0 }
+				check_variable = { cap_build_arms_2 > 0 }
+				check_variable = { cap_build_arms_3 = 0 }
+			}
+			activate_decision = cap_build_a_arms_3
+		}
+		if = {
+			limit = {
+				check_variable = { cap_build_arms_1 > 0 }
+				check_variable = { cap_build_arms_2 = 0 }
+			}
+			activate_decision = cap_build_a_arms_2
+		}
+		if = {
+			limit = { 
+				check_variable = { cap_build_arms_1 = 0 }
+			}
+			activate_decision = cap_build_a_arms_1
+		}
+		subtract_from_variable = { cap_num = 10 }
+	}
+}
+
+#Закрытие фабрики
+country_event = {
+	id = economic.3
+	title = economic.3.t
+	desc = economic.3.d
+	picture = GFX_report_event_generic_factory
+	
+	trigger = {
+		NOT = { has_idea = plan_economy }
+		OR = {
+			has_idea = economic_crisis
+			has_idea = economic_recession
+			has_idea = free_economic_crisis
+			has_idea = free_economic_recession
+		}
+		num_of_civilian_factories > 10
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_idea = economic_crisis
+				has_idea = free_economic_crisis
+			}
+		}
+	}
+
+	option = {
+		name = economic.3.a
+		ai_chance = { 
+			base = 1
+		}
+		random_owned_controlled_state = {
+			limit = {
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+	}
+}

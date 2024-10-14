@@ -1,0 +1,77 @@
+scripted_gui = {
+
+	ate_their_influence_show = {
+		context_type = selected_country_context
+		
+		window_name = "ate_they_influence_info_diplomacy"
+		
+		parent_window_token = selected_country_view_diplomacy
+		
+		visible = {
+			ROOT = { has_country_flag = show_who_they_influence }
+		}
+
+		triggers = {
+		}
+
+		effects = {
+		}
+
+		dynamic_lists = {
+			coutnries_they_influence_list_gridbox = {
+				array = THIS.influenced_countries
+				entry_container = countries_they_influence_list_entry
+				change_scope = yes
+			}
+		}
+
+		properties = {
+			country_flag = {
+				image = "[THIS.GetFlag]"
+			}
+		}
+
+		ai_enabled = {
+			always = no
+		}
+	}
+
+	ate_their_influenced_show = {
+		context_type = selected_country_context
+		
+		window_name = "ate_they_influenced_info_diplomacy"
+		
+		parent_window_token = selected_country_view_diplomacy
+		
+		visible = {
+			ROOT = { has_country_flag = show_who_they_influenced }
+		}
+
+		triggers = {
+		}
+
+		effects = {
+		}
+
+		dynamic_lists = {
+			coutnries_they_influenced_list_gridbox = {
+				array = ROOT.view_influence_list
+				entry_container = countries_they_influenced_list_entry
+				change_scope = yes
+			}
+		}
+
+		properties = {
+			country_flag = {
+				image = "[THIS.GetFlag]"
+			}
+		}
+
+		ai_enabled = {
+			always = no
+		}
+	}
+	
+}
+
+

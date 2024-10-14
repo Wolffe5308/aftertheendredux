@@ -1,0 +1,18 @@
+state={
+	id=762
+	name="STATE_762"
+	manpower=1000000
+	state_category = city
+	history={
+		owner = AUS
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 1
+		}
+		add_core_of = AUS
+	}
+	
+	provinces={
+		543 557 5283 11525 
+	}
+}
