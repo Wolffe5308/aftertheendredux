@@ -23,6 +23,7 @@ replace_path="history/units"
 replace_path="history/countries"
 replace_path="gfx/loadingscreens"
 replace_path="gfx/flags"
+replace_path="map"
 tags={
 	"Alternative History"
 	"Events"
